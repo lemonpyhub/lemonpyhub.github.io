@@ -4,22 +4,56 @@
   <meta charset="UTF-8">
   <title>Donate - LemonPyHub</title>
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* Container untuk QR codes */
+    #qr-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    #qr-container div {
+      text-align: center;
+    }
+/* Glow hijau untuk teks */
+    .glow {
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc,
+                   0 0 10px #00ffcc,
+                   0 0 20px #00ffcc;
+    }
+    #qr-container img {
+      width: 350px;  /* separuh saiz daripada asal (~300px) */
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(88,166,255,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #qr-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(88,166,255,0.7);
+    }
+  </style>
 </head>
 <body>
   <!-- Logo -->
   <img src="../pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
 
   <h1 class="fade-in delay-2">☕ Support My Work</h1>
-  <p id="msg" class="fade-in delay-3">Loading donation option...</p>
-
-  <div id="donate-container" class="fade-in delay-4"></div>
-
+  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
   <nav class="fade-in delay-4">
     <a href="../">Home</a>
     <a href="../donate/">Donate</a>
     <a href="../download/">Download</a>
   </nav>
+  <p id="msg" class="fade-in delay-3">Loading donation option...</p>
 
+  <div id="donate-container" class="fade-in delay-4"></div>
+
+  
   <script>
     // Detect negara user
     fetch("https://ipapi.co/json/")

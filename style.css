@@ -137,6 +137,33 @@ h1::after {
   margin-top: 12px; /* jarak ke bawah dari butang */
 }
 
+/* ========================= */
+/* QR Code Donation Styles   */
+/* ========================= */
+#qr-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#qr-container div {
+  text-align: center;
+}
+
+#qr-container img {
+  width: 150px;  /* separuh saiz daripada asal */
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(88,166,255,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#qr-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(88,166,255,0.7);
+}
 
 /* ========================= */
 /* Modal untuk gambar besar  */
@@ -216,4 +243,5 @@ h1::after {
   .tool-text ul { text-align: left; display: inline-block; }
   .tool-img { max-width: 90%; margin: 0 auto; }
   .modal-content { max-width: 90%; max-height: 70%; }
+  #qr-container img { width: 120px; }
 }

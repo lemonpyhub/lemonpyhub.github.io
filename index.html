@@ -4,19 +4,105 @@
   <meta charset="UTF-8">
   <title>LemonPyHub</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Fira Code', monospace;
+      background: #0d1117;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h1, h2, h3 {
+      color: #58a6ff;
+    }
+
+    p {
+      color: #8b949e;
+    }
+
+    /* Glow hijau untuk teks */
+    .glow {
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc,
+                   0 0 10px #00ffcc,
+                   0 0 20px #00ffcc;
+    }
+
+    /* Divider bawah tajuk */
+    h1 {
+      position: relative;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 2px;
+      background: #58a6ff;
+      margin: 10px auto 0 auto;
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(88,166,255,0.6);
+    }
+
+    /* Navigation bawah LemonPyHub */
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #58a6ff;
+      font-weight: bold;
+      transition: color 0.3s, text-shadow 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    /* Animasi fade-in */
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      opacity: 0;
+      animation: fadeSlideUp 1s ease forwards;
+    }
+
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body { padding: 20px; }
+      nav a { display: block; margin: 10px 0; }
+    }
+  </style>
 </head>
 <body>
   <!-- Logo -->
-  <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" 
+       style="height:120px;" class="fade-in delay-1">
 
   <h1 class="fade-in delay-2">LemonPyHub</h1>
   <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
 
+  <!-- Navigation bawah LemonPyHub -->
   <nav class="fade-in delay-4">
     <a href="./">Home</a>
     <a href="./donate/">Donate</a>
     <a href="./download/">Download</a>
-    <a href="https://github.com/lemonpyhub" target="_blank">GitHub</a>
   </nav>
 </body>
 </html>
