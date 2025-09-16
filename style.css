@@ -18,7 +18,7 @@ p {
 }
 
 nav {
-  margin: 20px 0;
+  margin: 15px 0 25px 0;
 }
 
 nav a {
@@ -52,83 +52,137 @@ button:hover, .btn:hover {
 }
 
 /* ========================= */
-/* Glow effect (green neon)  */
+/* Divider bawah tajuk       */
 /* ========================= */
-@keyframes pulseGlow {
-  0% {
-    text-shadow: 
-      0 0 3px #33ff99,
-      0 0 6px #33ff99,
-      0 0 12px #33ff99,
-      0 0 24px #33ff99;
-  }
-  50% {
-    text-shadow: 
-      0 0 6px #33ff99,
-      0 0 12px #33ff99,
-      0 0 24px #33ff99,
-      0 0 48px #33ff99;
-  }
-  100% {
-    text-shadow: 
-      0 0 3px #33ff99,
-      0 0 6px #33ff99,
-      0 0 12px #33ff99,
-      0 0 24px #33ff99;
-  }
+h1 {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.glow {
-  color: #33ff99;
-  font-weight: bold;
-  text-align: center;
-  font-size: 1.4em;
-  text-shadow: 
-    0 0 3px #33ff99,
-    0 0 6px #33ff99,
-    0 0 12px #33ff99,
-    0 0 24px #33ff99;
-  animation: pulseGlow 3s infinite alternate;
+h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #58a6ff;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(88,166,255,0.6);
 }
 
 /* ========================= */
-/* Donate Page Animations    */
+/* Project Box (About Tool)  */
 /* ========================= */
+.about-tool {
+  background: #161b22;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88,166,255,0.2);
+  margin: 25px auto;
+  max-width: 900px;
+  text-align: left;
+}
 
-/* Hover effect Buy Me a Coffee */
-#donate-container a img {
+.tool-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tool-img {
+  max-width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(88,166,255,0.4);
+  cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-#donate-container a img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
-  z-index: 10;
+
+.tool-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(88,166,255,0.7);
 }
 
-/* QR container flexbox (side by side, dengan gap lebih luas) */
-#qr-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 70px;  /* jarak lebih luas untuk desktop */
+.tool-text {
+  flex: 1;
+  text-align: left;
+}
+
+.tool-text h2 {
+  color: #33ffcc;
+  margin-top: 0;
+}
+
+.tool-text h3 {
+  color: #58a6ff;
   margin-top: 20px;
 }
 
-/* QR code size + hover */
-#qr-container img {
-  width: 300px;   /* besarkan QR untuk desktop */
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
+.tool-text ul {
+  padding-left: 20px;
+  margin: 10px 0 20px 0;
 }
-#qr-container img:hover {
-  transform: scale(1.08) rotate(-2deg);
-  box-shadow: 0 0 15px rgba(0, 255, 200, 0.6);
+
+.tool-text li {
+  margin: 6px 0;
 }
 
 /* ========================= */
-/* Page Load Animations      */
+/* Download size text        */
+/* ========================= */
+.download-size {
+  color: #58a6ff;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 12px; /* jarak ke bawah dari butang */
+}
+
+
+/* ========================= */
+/* Modal untuk gambar besar  */
+/* ========================= */
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,255,200,0.6);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal-content:hover {
+  transform: scale(1.02);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #00ffcc;
+}
+
+/* ========================= */
+/* Animations                */
 /* ========================= */
 @keyframes fadeSlideUp {
   from {
@@ -146,32 +200,20 @@ button:hover, .btn:hover {
   animation: fadeSlideUp 1s ease forwards;
 }
 
-/* Staggered delay untuk elemen */
-.fade-in.delay-1 {
-  animation-delay: 0.3s;
-}
-.fade-in.delay-2 {
-  animation-delay: 0.6s;
-}
-.fade-in.delay-3 {
-  animation-delay: 0.9s;
-}
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-4 { animation-delay: 1.2s; }
 
 /* ========================= */
 /* Responsive Mobile Styles  */
 /* ========================= */
-@media (max-width: 600px) {
-  body {
-    padding: 20px;
-  }
-  nav a {
-    display: block;
-    margin: 10px 0;
-  }
-  #qr-container {
-    gap: 20px;  /* kurang jarak di mobile */
-  }
-  #qr-container img {
-    width: 150px;  /* QR kecil sikit di mobile */
-  }
+@media (max-width: 768px) {
+  body { padding: 20px; }
+  nav a { display: block; margin: 10px 0; }
+  .tool-content { flex-direction: column; text-align: center; }
+  .tool-text { text-align: center; }
+  .tool-text ul { text-align: left; display: inline-block; }
+  .tool-img { max-width: 90%; margin: 0 auto; }
+  .modal-content { max-width: 90%; max-height: 70%; }
 }
