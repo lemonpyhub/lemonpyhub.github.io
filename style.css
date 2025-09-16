@@ -51,9 +51,7 @@ button:hover, .btn:hover {
   box-shadow: 0 0 10px #58a6ff;
 }
 
-/* ========================= */
-/* Divider bawah tajuk       */
-/* ========================= */
+/* Divider bawah tajuk */
 h1 {
   position: relative;
   padding-bottom: 10px;
@@ -71,9 +69,28 @@ h1::after {
   box-shadow: 0 0 6px rgba(88,166,255,0.6);
 }
 
-/* ========================= */
-/* Project Box (About Tool)  */
-/* ========================= */
+/* Glow Hijau Universal */
+.glow {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc,
+               0 0 10px #00ffcc,
+               0 0 20px #00ffcc;
+}
+
+/* Intro Box */
+.intro-box {
+  background: #161b22;
+  padding: 25px 20px;
+  margin: 20px auto 30px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,255,200,0.3);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Project Box (About Tool) */
 .about-tool {
   background: #161b22;
   padding: 25px;
@@ -127,19 +144,15 @@ h1::after {
   margin: 6px 0;
 }
 
-/* ========================= */
-/* Download size text        */
-/* ========================= */
+/* Download size text */
 .download-size {
   color: #58a6ff;
   font-weight: bold;
   font-size: 14px;
-  margin-top: 12px; /* jarak ke bawah dari butang */
+  margin-top: 12px;
 }
 
-/* ========================= */
-/* QR Code Donation Styles   */
-/* ========================= */
+/* QR Code Donation Styles */
 #qr-container {
   display: flex;
   justify-content: center;
@@ -153,7 +166,7 @@ h1::after {
 }
 
 #qr-container img {
-  width: 150px;  /* separuh saiz daripada asal */
+  width: 150px;
   height: auto;
   border-radius: 10px;
   box-shadow: 0 0 12px rgba(88,166,255,0.4);
@@ -165,9 +178,7 @@ h1::after {
   box-shadow: 0 0 15px rgba(88,166,255,0.7);
 }
 
-/* ========================= */
-/* Modal untuk gambar besar  */
-/* ========================= */
+/* Modal untuk gambar besar */
 .modal {
   display: none;
   position: fixed;
@@ -208,18 +219,40 @@ h1::after {
   color: #00ffcc;
 }
 
-/* ========================= */
-/* Animations                */
-/* ========================= */
+/* Powered by Text + Laser (only short moving line) */
+.powered {
+  font-size: 12px;
+  color: #00ffcc;
+  text-align: center;
+  text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc, 0 0 12px #00ffcc;
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  padding-bottom: 14px;
+}
+
+.powered::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: 0;
+  height: 4px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+  border-radius: 4px;
+  animation: laser-scan 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+@keyframes laser-scan {
+  from { left: 0; }
+  to   { left: calc(100% - 40px); }
+}
+
+/* Animations */
 @keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
 .fade-in {
@@ -232,9 +265,7 @@ h1::after {
 .fade-in.delay-3 { animation-delay: 0.9s; }
 .fade-in.delay-4 { animation-delay: 1.2s; }
 
-/* ========================= */
-/* Responsive Mobile Styles  */
-/* ========================= */
+/* Responsive Mobile Styles */
 @media (max-width: 768px) {
   body { padding: 20px; }
   nav a { display: block; margin: 10px 0; }
