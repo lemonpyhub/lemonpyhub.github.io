@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background: #0d1117;
+  color: #c9d1d9;
+  text-align: center;
+  padding: 50px;
+}
+
+h1, h2, h3 {
+  color: #58a6ff;
+}
+
+p {
+  color: #8b949e;
+}
+
+nav {
+  margin: 20px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #58a6ff;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+button, .btn {
+  background: #21262d;
+  border: 1px solid #58a6ff;
+  color: #58a6ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+button:hover, .btn:hover {
+  background: #58a6ff;
+  color: #0d1117;
+  box-shadow: 0 0 10px #58a6ff;
+}
+
+/* ========================= */
+/* Glow effect (green neon)  */
+/* ========================= */
+@keyframes pulseGlow {
+  0% {
+    text-shadow: 
+      0 0 3px #33ff99,
+      0 0 6px #33ff99,
+      0 0 12px #33ff99,
+      0 0 24px #33ff99;
+  }
+  50% {
+    text-shadow: 
+      0 0 6px #33ff99,
+      0 0 12px #33ff99,
+      0 0 24px #33ff99,
+      0 0 48px #33ff99;
+  }
+  100% {
+    text-shadow: 
+      0 0 3px #33ff99,
+      0 0 6px #33ff99,
+      0 0 12px #33ff99,
+      0 0 24px #33ff99;
+  }
+}
+
+.glow {
+  color: #33ff99;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.4em;
+  text-shadow: 
+    0 0 3px #33ff99,
+    0 0 6px #33ff99,
+    0 0 12px #33ff99,
+    0 0 24px #33ff99;
+  animation: pulseGlow 3s infinite alternate;
+}
+
+/* ========================= */
+/* Donate Page Animations    */
+/* ========================= */
+
+/* Hover effect Buy Me a Coffee */
+#donate-container a img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#donate-container a img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  z-index: 10;
+}
+
+/* QR container flexbox (side by side, dengan gap lebih luas) */
+#qr-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 70px;  /* jarak lebih luas untuk desktop */
+  margin-top: 20px;
+}
+
+/* QR code size + hover */
+#qr-container img {
+  width: 300px;   /* besarkan QR untuk desktop */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 8px rgba(88, 166, 255, 0.3);
+}
+#qr-container img:hover {
+  transform: scale(1.08) rotate(-2deg);
+  box-shadow: 0 0 15px rgba(0, 255, 200, 0.6);
+}
+
+/* ========================= */
+/* Page Load Animations      */
+/* ========================= */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
+/* Staggered delay untuk elemen */
+.fade-in.delay-1 {
+  animation-delay: 0.3s;
+}
+.fade-in.delay-2 {
+  animation-delay: 0.6s;
+}
+.fade-in.delay-3 {
+  animation-delay: 0.9s;
+}
+
+/* ========================= */
+/* Responsive Mobile Styles  */
+/* ========================= */
+@media (max-width: 600px) {
+  body {
+    padding: 20px;
+  }
+  nav a {
+    display: block;
+    margin: 10px 0;
+  }
+  #qr-container {
+    gap: 20px;  /* kurang jarak di mobile */
+  }
+  #qr-container img {
+    width: 150px;  /* QR kecil sikit di mobile */
+  }
+}

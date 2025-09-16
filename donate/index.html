@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate - LemonPyHub</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <!-- Logo -->
+  <img src="../pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+
+  <h1 class="fade-in delay-2">☕ Support My Work</h1>
+  <p id="msg" class="fade-in delay-3">Loading donation option...</p>
+
+  <div id="donate-container" class="fade-in delay-4"></div>
+
+  <nav class="fade-in delay-4">
+    <a href="../">Home</a>
+    <a href="../donate/">Donate</a>
+    <a href="../download/">Download</a>
+  </nav>
+
+  <script>
+    // Detect negara user
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        const country = data.country_name;
+        const container = document.getElementById("donate-container");
+        const msg = document.getElementById("msg");
+
+        if (country === "Malaysia") {
+          msg.innerText = "Scan QR code to donate:";
+          container.innerHTML = `
+            <div id="qr-container">
+              <div>
+                <p>Touch 'n Go eWallet</p>
+                <img src="../donate/pic/tng.jpg" alt="TNG QR Code">
+              </div>
+              <div>
+                <p>DuitNow</p>
+                <img src="../donate/pic/duitnow.jpg" alt="DuitNow QR Code">
+              </div>
+            </div>
+          `;
+        } else {
+          msg.innerText = "Support me via Buy Me a Coffee:";
+          container.innerHTML = `
+            <a href="https://buymeacoffee.com/lemonpy" target="_blank">
+              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+                   alt="Buy Me A Coffee" height="60">
+            </a>
+          `;
+        }
+      })
+      .catch(err => {
+        document.getElementById("msg").innerText = "Error loading donation options.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
