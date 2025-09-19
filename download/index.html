@@ -5,13 +5,41 @@
   <title>Download - LemonPyHub</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-    
+    /* Glow hijau untuk teks */
     .glow {
       color: #00ffcc;
       text-shadow: 0 0 5px #00ffcc,
                    0 0 10px #00ffcc,
                    0 0 20px #00ffcc;
     }
+
+    /* Block download */
+    .download-block {
+  margin-top: 15px;
+  text-align: left;   /* ubah ke kiri */
+}
+
+.download-date {
+  margin-bottom: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: left;
+}
+
+.download-size {
+  margin: 6px 0 4px;
+  font-size: 0.9em;
+  color: #ccc;
+  text-align: left;
+}
+
+.btn {
+  display: block;
+  margin: 0 0 12px;     /* buang auto center */
+  width: fit-content;
+  text-align: left;
+}
+
   </style>
 </head>
 <body>
@@ -21,9 +49,11 @@
 
   <h1 class="fade-in delay-2">📂 Download My Projects</h1>
 
-    <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
+  <!-- Teks glow -->
+  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
 
-    <nav class="fade-in delay-3">
+  <!-- Nav -->
+  <nav class="fade-in delay-3">
     <a href="../">Home</a>
     <a href="../donate/">Donate</a>
     <a href="../download/">Download</a>
@@ -32,20 +62,37 @@
   <p class="fade-in delay-4">Here are some of my open-source projects:</p>
 
   <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
-  
+    <!-- Windows Maintenance -->
     <li>
-      <a class="btn" href="Windows Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>
-        Windows Maintenance 3.9.5
-      </a>
-      <div class="download-size">Sept 2025 (Size: 10.46 MB)</div>
-
+      <!-- About This Tool Section -->
       <div class="about-tool fade-in delay-2">
         <div class="tool-content">
-  
-          <img src="Windows Utilities/pic/WinMain.png" 
-               alt="Windows Maintenance Screenshot" 
-               class="tool-img" id="winmainImg">
+          
+          <!-- Column kiri -->
+          <div class="tool-left">
+            <!-- Gambar -->
+            <img src="Windows Utilities/pic/WinMain.png" 
+                 alt="Windows Maintenance Screenshot" 
+                 class="tool-img" id="winmainImg">
 
+            <!-- Download section bawah gambar -->
+            <div class="download-block">
+            <div class="download-date">Release date: September 2025</div>
+
+            <div class="download-size">(Installer: 10.40 MB)</div>
+            <a class="btn" href="Windows Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>
+            ⬇ Download Windows Maintenance 3.9.5
+            </a>
+
+            <div class="download-size">(Portable: 11.10 MB)</div>
+            <a class="btn" href="Windows Utilities/Windows_Maintenance_Setup_3.9.5.rar" download>
+              ⬇ Download Mirror Link
+            </a>
+          </div>
+
+          </div>
+
+          <!-- Column kanan (teks) -->
           <div class="tool-text">
             <h2>About This Tool</h2>
             <p>
@@ -74,6 +121,7 @@
     </li>
   </ul>
 
+  <!-- Modal untuk zoom gambar -->
   <div id="imgModal" class="modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImage">
