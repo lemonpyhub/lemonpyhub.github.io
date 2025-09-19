@@ -13,33 +13,120 @@
                    0 0 20px #00ffcc;
     }
 
-    /* Block download */
+    /* Card utama */
+    .about-tool {
+      background: #161b22;
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 25px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .about-tool:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Susun gambar + download info */
+    .tool-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .tool-img {
+      max-width: 250px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
     .download-block {
-  margin-top: 15px;
-  text-align: left;   /* ubah ke kiri */
-}
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      background: #0d1117;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 8px rgba(0, 255, 204, 0.3);
+    }
 
-.download-date {
-  margin-bottom: 12px;
-  font-weight: bold;
-  color: #fff;
-  text-align: left;
-}
+    .download-date {
+      margin-bottom: 12px;
+      font-weight: bold;
+      color: #fff;
+    }
 
-.download-size {
-  margin: 6px 0 4px;
-  font-size: 0.9em;
-  color: #ccc;
-  text-align: left;
-}
+    .download-size {
+      margin: 6px 0 4px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
 
-.btn {
-  display: block;
-  margin: 0 0 12px;     /* buang auto center */
-  width: fit-content;
-  text-align: left;
-}
+    .btn {
+      display: block;
+      margin: 0 0 12px;
+      width: fit-content;
+      text-align: left;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
 
+    .btn:hover {
+      background: #00ffcc;
+      color: #0d1117;
+    }
+
+    /* Penerangan bawah */
+    .tool-description {
+      margin-top: 20px;
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    .tool-description h2 {
+      color: #00ffcc;
+    }
+
+    .tool-description ul {
+      padding-left: 20px;
+    }
+
+    /* Modal zoom */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -64,58 +151,52 @@
   <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
     <!-- Windows Maintenance -->
     <li>
-      <!-- About This Tool Section -->
       <div class="about-tool fade-in delay-2">
         <div class="tool-content">
-          
-          <!-- Column kiri -->
-          <div class="tool-left">
-            <!-- Gambar -->
-            <img src="Windows Utilities/pic/WinMain.png" 
-                 alt="Windows Maintenance Screenshot" 
-                 class="tool-img" id="winmainImg">
+          <!-- Gambar -->
+          <img src="Windows Utilities/pic/WinMain.png" 
+               alt="Windows Maintenance Screenshot" 
+               class="tool-img" id="winmainImg">
 
-            <!-- Download section bawah gambar -->
-            <div class="download-block">
-            <div class="download-date">Release date: September 2025</div>
-
+          <!-- Download info di sebelah kanan gambar -->
+          <div class="download-block">
+            <div class="download-date">Release/Update: September 2025</div>
+            <div class="download-date">(For Windows 10 & 11)</div>
             <div class="download-size">(Installer: 10.45 MB)</div>
             <a class="btn" href="Windows Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>
-            Windows Maintenance 3.9.5 (Installer)
+              Windows Maintenance 3.9.5 (Installer)
             </a>
 
             <div class="download-size">(Portable: 11.16 MB)</div>
             <a class="btn" href="Windows Utilities/Windows_Maintenance_Portable_3.9.5.rar" download>
-             Windows Maintenance 3.9.5 (Portable)
+              Windows Maintenance 3.9.5 (Portable)
             </a>
           </div>
+        </div>
 
-          </div>
+        <!-- Penerangan di bawah -->
+        <div class="tool-description">
+          <h2>Windows Maintenance Tool 3.9.5</h2>
+          <p>
+            This Windows Maintenance Tool is designed to simplify essential system care tasks. 
+            Instead of typing complex commands in Command Prompt, you can now perform them with a single click.
+          </p>
 
-          <!-- Column kanan (teks) -->
-          <div class="tool-text">
-            <h2>Windows Maintenance Tool 3.9.5</h2>
-            <p>
-              This Windows Maintenance Tool is designed to simplify essential system care tasks. 
-              Instead of typing complex commands in Command Prompt, you can now perform them with a single click.
-            </p>
+          <h3>Key features include:</h3>
+          <ul>
+            <li>Clearing temporary and prefetch files</li>
+            <li>Emptying the Recycle Bin</li>
+            <li>Running System File Checker (SFC)</li>
+            <li>Running Deployment Image Servicing and Management (DISM)</li>
+            <li>Drive Health Check</li>
+            <li>Optimize Storage</li>
+            <li>And more...</li>
+          </ul>
 
-            <h3>Key features include:</h3>
-            <ul>
-              <li>Clearing temporary and prefetch files</li>
-              <li>Emptying the Recycle Bin</li>
-              <li>Running System File Checker (SFC)</li>
-              <li>Running Deployment Image Servicing and Management (DISM)</li>
-              <li>Drive Health Check</li>
-              <li>Optimize Storage</li>
-              <li>And more...</li>
-            </ul>
-
-            <p>
-              With this tool, maintaining your Windows system becomes faster, easier, 
-              and more user-friendly — no technical expertise required.
-            </p>
-          </div>
+          <p>
+            With this tool, maintaining your Windows system becomes faster, easier, 
+            and more user-friendly — no technical expertise required.
+          </p>
         </div>
       </div>
     </li>
