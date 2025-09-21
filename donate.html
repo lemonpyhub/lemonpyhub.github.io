@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate - LemonPyHub</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+  
+    #qr-container {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    #qr-container div {
+      text-align: center;
+    }
+
+    .glow {
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc,
+                   0 0 10px #00ffcc,
+                   0 0 20px #00ffcc;
+    }
+    #qr-container img {
+      width: 350px;  
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(88,166,255,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #qr-container img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(88,166,255,0.7);
+    }
+  </style>
+</head>
+<body>
+ 
+  <img src="../pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+
+  <h1 class="fade-in delay-2">LemonPyHub</h1>
+  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
+
+  <nav class="fade-in delay-4">
+    <a href="./">Home</a>
+    <a href="./donate/">Donate</a>
+    <a href="./download/">Download</a>
+    <a href="./helpfaq/">Help/FAQ</a>
+  </nav>
+  
+  <p id="msg" class="fade-in delay-3">Loading donation option...</p>
+
+  <div id="donate-container" class="fade-in delay-4"></div>
+
+  
+  <script>
+ 
+    fetch("https://ipapi.co/json/")
+      .then(res => res.json())
+      .then(data => {
+        const country = data.country_name;
+        const container = document.getElementById("donate-container");
+        const msg = document.getElementById("msg");
+
+        if (country === "Malaysia") {
+          msg.innerText = "Scan QR code to donate:";
+          container.innerHTML = `
+            <div id="qr-container">
+              <div>
+                <p>Touch 'n Go eWallet</p>
+                <img src="../donate/pic/tng.jpg" alt="TNG QR Code">
+              </div>
+              <div>
+                <p>DuitNow</p>
+                <img src="../donate/pic/duitnow.jpg" alt="DuitNow QR Code">
+              </div>
+            </div>
+          `;
+        } else {
+          msg.innerText = "Support me via Buy Me a Coffee:";
+          container.innerHTML = `
+            <a href="https://buymeacoffee.com/lemonpy" target="_blank">
+              <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+                   alt="Buy Me A Coffee" height="60">
+            </a>
+          `;
+        }
+      })
+      .catch(err => {
+        document.getElementById("msg").innerText = "Error loading donation options.";
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
