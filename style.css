@@ -5,16 +5,52 @@ body {
   font-family: 'Fira Code', monospace;
   background: #0d1117;
   color: #c9d1d9;
-  text-align: left;
+  text-align: center;
   padding: 50px;
 }
 
-h1, h2, h3 { color: #58a6ff; }
-p { color: #8b949e; }
+h1, h2, h3 {
+  color: #58a6ff;
+}
 
-.glow {
+p {
+  color: #8b949e;
+}
+
+nav {
+  margin: 15px 0 25px 0;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #58a6ff;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
   color: #00ffcc;
-  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+button, .btn {
+  background: #21262d;
+  border: 1px solid #58a6ff;
+  color: #58a6ff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+button:hover, .btn:hover {
+  background: #58a6ff;
+  color: #0d1117;
+  box-shadow: 0 0 10px #58a6ff;
 }
 
 h1 {
@@ -34,28 +70,17 @@ h1::after {
   box-shadow: 0 0 6px rgba(88,166,255,0.6);
 }
 
-nav {
-  text-align: center;
-  margin-top: 10px;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #58a6ff;
-  font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
-}
-
-nav a:hover {
+.glow {
   color: #00ffcc;
-  text-shadow: 0 0 8px #00ffcc;
+  text-shadow: 0 0 5px #00ffcc,
+               0 0 10px #00ffcc,
+               0 0 20px #00ffcc;
 }
 
 .intro-box {
   background: #161b22;
   padding: 25px 20px;
-  margin: 20px auto 10px auto;
+  margin: 20px auto 30px auto;
   max-width: 800px;
   border-radius: 10px;
   box-shadow: 0 0 15px rgba(0,255,200,0.3);
@@ -64,11 +89,158 @@ nav a:hover {
   line-height: 1.6;
 }
 
+.about-tool {
+  background: #161b22;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(88,166,255,0.2);
+  margin: 25px auto;
+  max-width: 900px;
+  text-align: left;
+}
+
+.tool-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tool-img {
+  max-width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(88,166,255,0.4);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tool-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(88,166,255,0.7);
+}
+
+.tool-text {
+  flex: 1;
+  text-align: left;
+}
+
+.tool-text h2 {
+  color: #33ffcc;
+  margin-top: 0;
+}
+
+.tool-text h3 {
+  color: #58a6ff;
+  margin-top: 20px;
+}
+
+.tool-text ul {
+  padding-left: 20px;
+  margin: 10px 0 20px 0;
+}
+
+.tool-text li {
+  margin: 6px 0;
+}
+
+/* ============= DOWNLOAD SECTION ============= */
+.download-block {
+  text-align: left;   /* semua ke kiri */
+  margin-top: 20px;
+}
+
+.download-date {
+  font-weight: bold;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.download-size {
+  color: #58a6ff;
+  font-size: 14px;
+  margin: 6px 0;
+}
+
+.download-block .btn {
+  display: block;       /* button full row, ikut kiri */
+  margin: 6px 0 14px;   /* jarak atas & bawah */
+  text-align: left;     /* text dalam button align kiri */
+  width: fit-content;   /* ikut panjang teks button */
+}
+
+
+/* ============================================ */
+
+#qr-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+#qr-container div {
+  text-align: center;
+}
+
+#qr-container img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(88,166,255,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#qr-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(88,166,255,0.7);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,255,200,0.6);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.modal-content:hover {
+  transform: scale(1.02);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: #00ffcc;
+}
+
 .powered {
   font-size: 12px;
   color: #00ffcc;
   text-align: center;
-  text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
+  text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc, 0 0 12px #00ffcc;
   position: relative;
   display: inline-block;
   margin-top: 15px;
@@ -95,10 +267,14 @@ nav a:hover {
 
 @keyframes fadeSlideUp {
   from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
+.fade-in {
+  opacity: 0;
+  animation: fadeSlideUp 1s ease forwards;
+}
+
 .fade-in.delay-1 { animation-delay: 0.3s; }
 .fade-in.delay-2 { animation-delay: 0.6s; }
 .fade-in.delay-3 { animation-delay: 0.9s; }
@@ -107,70 +283,13 @@ nav a:hover {
 @media (max-width: 768px) {
   body { padding: 20px; }
   nav a { display: block; margin: 10px 0; }
-  .intro-box { font-size: 14px; padding: 20px; }
-}
+  .tool-content { flex-direction: column; text-align: center; }
+  .tool-text { text-align: center; }
+  .tool-text ul { text-align: left; display: inline-block; }
+  .tool-img { max-width: 90%; margin: 0 auto; }
+  .modal-content { max-width: 90%; max-height: 70%; }
+  #qr-container img { width: 120px; }
 
-.share-buttons {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  z-index: 9999;
-}
-
-.share-buttons a {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #21262d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #58a6ff;
-  transition: all 0.3s ease;
-}
-
-.share-buttons a svg {
-  width: 28px;
-  height: 28px;
-  fill: #58a6ff;
-  transition: fill 0.3s ease;
-}
-
-.share-buttons a:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 12px #58a6ff;
-}
-
-.share-buttons a:hover svg {
-  fill: #fff;
-}
-
-/* Hover colors per platform */
-.share-buttons a.facebook:hover  { background: #1877f2; border-color: #1877f2; }
-.share-buttons a.tiktok:hover    { background: #000; border-color: #ff0050; }
-.share-buttons a.whatsapp:hover  { background: #25d366; border-color: #25d366; }
-.share-buttons a.telegram:hover  { background: #0088cc; border-color: #0088cc; }
-.share-buttons a.twitter:hover   { background: #1da1f2; border-color: #1da1f2; }
-.share-buttons a.reddit:hover    { background: #ff4500; border-color: #ff4500; }
-.share-buttons a.instagram:hover { background: #E1306C; border-color: #E1306C; }
-
-@media (max-width: 768px) {
-  .share-buttons {
-    top: 10px;
-    right: 10px;
-    gap: 10px;
-  }
-
-  .share-buttons a {
-    width: 40px;
-    height: 40px;
-  }
-
-  .share-buttons a svg {
-    width: 24px;
-    height: 24px;
-  }
+  /* kekalkan kiri masa mobile */
+  .download-block { text-align: left; }
 }
