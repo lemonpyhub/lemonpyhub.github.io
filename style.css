@@ -1,18 +1,128 @@
-/* 🎯 Container */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+  background: #0d1117;
+  color: #c9d1d9;
+  text-align: center;
+  padding: 50px;
+}
+
+h1, h2, h3 { color: #58a6ff; }
+p { color: #8b949e; }
+
+.glow {
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+h1 {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+h1::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: #58a6ff;
+  margin: 10px auto 0 auto;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(88,166,255,0.6);
+}
+
+nav {
+  text-align: center;
+  margin-top: 10px;
+}
+
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #58a6ff;
+  font-weight: bold;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc;
+}
+
+.intro-box {
+  background: #161b22;
+  padding: 25px 20px;
+  margin: 20px auto 10px auto;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,255,200,0.3);
+  text-align: center;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.powered {
+  font-size: 12px;
+  color: #00ffcc;
+  text-align: center;
+  text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
+  position: relative;
+  display: inline-block;
+  margin-top: 15px;
+  padding-bottom: 14px;
+}
+
+.powered::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  bottom: 0;
+  height: 4px;
+  width: 40px;
+  background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+  border-radius: 4px;
+  animation: laser-scan 2s ease-in-out infinite alternate;
+  box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+@keyframes laser-scan {
+  from { left: 0; }
+  to   { left: calc(100% - 40px); }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
+.fade-in.delay-1 { animation-delay: 0.3s; }
+.fade-in.delay-2 { animation-delay: 0.6s; }
+.fade-in.delay-3 { animation-delay: 0.9s; }
+.fade-in.delay-4 { animation-delay: 1.2s; }
+
+@media (max-width: 768px) {
+  body { padding: 20px; }
+  nav a { display: block; margin: 10px 0; }
+  .intro-box { font-size: 14px; padding: 20px; }
+}
+
 .share-buttons {
   position: fixed;
   top: 15px;
   right: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
   z-index: 9999;
 }
 
-/* 🎯 Desktop size */
 .share-buttons a {
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   background: #21262d;
   display: flex;
@@ -20,49 +130,47 @@
   justify-content: center;
   border: 1px solid #58a6ff;
   transition: all 0.3s ease;
-  text-decoration: none;
-  cursor: pointer;
-  box-sizing: border-box;
 }
 
 .share-buttons a svg {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   fill: #58a6ff;
-  pointer-events: none;
+  transition: fill 0.3s ease;
 }
 
-/* Hover */
 .share-buttons a:hover {
   transform: scale(1.15);
-  box-shadow: 0 0 10px #58a6ff;
+  box-shadow: 0 0 12px #58a6ff;
 }
-.share-buttons a:hover svg { fill: #fff; }
 
-/* Brand hover */
-.share-buttons a.facebook:hover { background: #1877f2; border-color: #1877f2; }
-.share-buttons a.tiktok:hover   { background: #000;    border-color: #ff0050; }
-.share-buttons a.whatsapp:hover { background: #25d366; border-color: #25d366; }
-.share-buttons a.telegram:hover { background: #0088cc; border-color: #0088cc; }
-.share-buttons a.twitter:hover  { background: #1da1f2; border-color: #1da1f2; }
-.share-buttons a.reddit:hover   { background: #ff4500; border-color: #ff4500; }
+.share-buttons a:hover svg {
+  fill: #fff;
+}
 
-/* 📱 Phone */
-@media (max-width: 600px) {
+/* Hover colors per platform */
+.share-buttons a.facebook:hover  { background: #1877f2; border-color: #1877f2; }
+.share-buttons a.tiktok:hover    { background: #000; border-color: #ff0050; }
+.share-buttons a.whatsapp:hover  { background: #25d366; border-color: #25d366; }
+.share-buttons a.telegram:hover  { background: #0088cc; border-color: #0088cc; }
+.share-buttons a.twitter:hover   { background: #1da1f2; border-color: #1da1f2; }
+.share-buttons a.reddit:hover    { background: #ff4500; border-color: #ff4500; }
+.share-buttons a.instagram:hover { background: #E1306C; border-color: #E1306C; }
+
+@media (max-width: 768px) {
   .share-buttons {
-    flex-direction: row;
-    bottom: 15px;
-    top: auto;
-    right: 50%;
-    transform: translateX(50%);
-    gap: 14px;
+    top: 10px;
+    right: 10px;
+    gap: 10px;
   }
+
   .share-buttons a {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
+
   .share-buttons a svg {
-    width: 22px;
-    height: 22px;
+    width: 24px;
+    height: 24px;
   }
 }
