@@ -1,14 +1,18 @@
+/* 🎯 Container */
 .share-buttons {
+  position: fixed;
+  top: 15px;
+  right: 15px;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin: 25px 0;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
 }
 
+/* 🎯 Desktop size */
 .share-buttons a {
-  width: 42px;
-  height: 42px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #21262d;
   display: flex;
@@ -17,31 +21,52 @@
   border: 1px solid #58a6ff;
   transition: all 0.3s ease;
   text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
 }
 
 .share-buttons a svg {
-  width: 22px;
-  height: 22px;
+  width: 18px !important;
+  height: 18px !important;
+  max-width: 18px;
+  max-height: 18px;
   fill: #58a6ff;
-  transition: fill 0.3s ease;
+  pointer-events: none;
 }
 
+/* Hover */
 .share-buttons a:hover {
-  background: #58a6ff;
-  box-shadow: 0 0 12px #58a6ff;
+  transform: scale(1.15);
+  box-shadow: 0 0 10px #58a6ff;
 }
+.share-buttons a:hover svg { fill: #fff; }
 
-.share-buttons a:hover svg {
-  fill: #0d1117;
-}
+/* Brand hover */
+.share-buttons a.facebook:hover { background: #1877f2; border-color: #1877f2; }
+.share-buttons a.tiktok:hover   { background: #000;    border-color: #ff0050; }
+.share-buttons a.whatsapp:hover { background: #25d366; border-color: #25d366; }
+.share-buttons a.telegram:hover { background: #0088cc; border-color: #0088cc; }
+.share-buttons a.twitter:hover  { background: #1da1f2; border-color: #1da1f2; }
+.share-buttons a.reddit:hover   { background: #ff4500; border-color: #ff4500; }
 
-.share-buttons a.facebook:hover { background: #1877f2; box-shadow: 0 0 12px #1877f2; }
-.share-buttons a.tiktok:hover   { background: #000; box-shadow: 0 0 12px #ff0050; }
-.share-buttons a.whatsapp:hover { background: #25d366; box-shadow: 0 0 12px #25d366; }
-.share-buttons a.telegram:hover { background: #0088cc; box-shadow: 0 0 12px #0088cc; }
-.share-buttons a.twitter:hover  { background: #1da1f2; box-shadow: 0 0 12px #1da1f2; }
-.share-buttons a.reddit:hover   { background: #ff4500; box-shadow: 0 0 12px #ff4500; }
-
-.share-buttons a:hover svg {
-  fill: #fff;
+/* 📱 Phone */
+@media (max-width: 600px) {
+  .share-buttons {
+    flex-direction: row;
+    bottom: 15px;
+    top: auto;
+    right: 50%;
+    transform: translateX(50%);
+    gap: 14px;
+  }
+  .share-buttons a {
+    width: 48px;
+    height: 48px;
+  }
+  .share-buttons a svg {
+    width: 22px !important;
+    height: 22px !important;
+    max-width: 22px;
+    max-height: 22px;
+  }
 }
