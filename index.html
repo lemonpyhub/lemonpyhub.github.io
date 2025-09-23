@@ -126,22 +126,22 @@
     .share-container {
       position: fixed;
       top: 50%;
-      right: 20px;
+      right: 15px;
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 12px;
       z-index: 1000;
     }
 
     .share-btn {
-      width: 50px;
-      height: 50px;
+      width: 45px;
+      height: 45px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 24px;
+      font-size: 20px;
       color: white;
       background-color: #333;
       transition: all 0.3s ease;
@@ -217,34 +217,60 @@
       box-shadow: 0 0 20px #7e57c2;
     }
 
-    /* Mobile Responsive */
+    /* Mobile Responsive - DIKECILKAN */
     @media (max-width: 768px) {
-      body { padding: 20px; }
+      body { 
+        padding: 20px;
+        padding-right: 70px; /* Beri space untuk icon share */
+      }
+      
       nav a { display: block; margin: 10px 0; }
       .intro-box { font-size: 14px; padding: 20px; }
       
       .share-container {
-        right: 10px;
+        right: 8px;
+        gap: 10px;
       }
       
       .share-btn {
-        width: 60px;
-        height: 60px;
-        font-size: 28px;
+        width: 40px;  /* KECIL dari 60px ke 40px */
+        height: 40px; /* KECIL dari 60px ke 40px */
+        font-size: 18px; /* KECIL dari 28px ke 18px */
       }
     }
 
     @media (max-width: 480px) {
+      body {
+        padding-right: 65px;
+      }
+      
       .share-btn {
-        width: 55px;
-        height: 55px;
-        font-size: 26px;
+        width: 38px;   /* KECIL dari 55px ke 38px */
+        height: 38px;  /* KECIL dari 55px ke 38px */
+        font-size: 17px; /* KECIL dari 26px ke 17px */
+      }
+    }
+
+    /* Untuk phone sangat kecil */
+    @media (max-width: 360px) {
+      body {
+        padding-right: 60px;
+      }
+      
+      .share-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+      }
+      
+      .share-container {
+        gap: 8px;
       }
     }
   </style>
 </head>
 <body>
-  <!-- Share Buttons -->
+  <!-- Share Buttons - DIKECILKAN untuk phone -->
   <div class="share-container">
     <button class="share-btn facebook-btn" onclick="shareOnFacebook()">
       <i class="fab fa-facebook-f"></i>
@@ -333,12 +359,10 @@
     }
     
     function shareOnTikTok() {
-      // TikTok doesn't have a direct share API, so we'll open their website
       window.open('https://www.tiktok.com/upload?lang=en', '_blank');
     }
     
     function shareOnInstagram() {
-      // Instagram doesn't have a direct share API for web, so we'll open their website
       window.open('https://www.instagram.com/', '_blank');
     }
     
@@ -368,26 +392,8 @@
         .then(() => console.log('Successful share'))
         .catch(error => console.log('Error sharing:', error));
       } else {
-        // Fallback untuk browser yang tidak support Web Share API
         alert('Web Share not supported in your browser. Please use the specific share buttons above.');
       }
-    }
-    
-    // Detect mobile devices and adjust button size
-    function isMobileDevice() {
-      return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
-    }
-    
-    // Adjust button size for mobile
-    if (isMobileDevice()) {
-      document.addEventListener('DOMContentLoaded', function() {
-        const shareButtons = document.querySelectorAll('.share-btn');
-        shareButtons.forEach(button => {
-          button.style.width = '60px';
-          button.style.height = '60px';
-          button.style.fontSize = '28px';
-        });
-      });
     }
   </script>
 </body>
