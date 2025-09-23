@@ -26,10 +26,8 @@
 }
 
 .share-buttons a svg {
-  width: 18px !important;
-  height: 18px !important;
-  max-width: 18px;
-  max-height: 18px;
+  width: 18px;
+  height: 18px;
   fill: #58a6ff;
   pointer-events: none;
 }
@@ -64,9 +62,7 @@
     height: 48px;
   }
   .share-buttons a svg {
-    width: 22px !important;
-    height: 22px !important;
-    max-width: 22px;
-    max-height: 22px;
+    width: 22px;
+    height: 22px;
   }
 }

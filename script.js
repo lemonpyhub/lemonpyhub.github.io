@@ -19,8 +19,10 @@ document.addEventListener("DOMContentLoaded", function () {
       const appUrl = this.getAttribute("href");
       const fallbackUrl = shareLinks[platform];
 
+      // Cuba buka app
       window.location.href = appUrl;
 
+      // Kalau gagal → fallback ke web
       setTimeout(() => {
         window.open(fallbackUrl, "_blank");
       }, 800);
