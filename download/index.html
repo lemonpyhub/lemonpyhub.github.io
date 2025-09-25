@@ -2,20 +2,19 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-Y88WHZECBL');
-</script>
+    gtag('config', 'G-Y88WHZECBL');
+  </script>
 
   <meta charset="UTF-8">
   <title>Download - LemonPyHub</title>
   <link rel="stylesheet" href="../style.css">
   <style>
-   
     .glow {
       color: #00ffcc;
       text-shadow: 0 0 5px #00ffcc,
@@ -23,14 +22,15 @@
                    0 0 20px #00ffcc;
     }
 
-  
     .about-tool {
       background: #161b22;
       border-radius: 16px;
       padding: 20px;
-      margin-top: 25px;
+      margin: 25px auto;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+      text-align: left;
     }
 
     .about-tool:hover {
@@ -38,7 +38,6 @@
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
     }
 
-    /* Susun gambar + download info */
     .tool-content {
       display: flex;
       align-items: flex-start;
@@ -92,7 +91,6 @@
       color: #0d1117;
     }
 
-  
     .tool-description {
       margin-top: 20px;
       font-family: 'Fira Code', monospace;
@@ -108,7 +106,6 @@
       padding-left: 20px;
     }
 
-   
     .modal {
       display: none;
       position: fixed;
@@ -140,51 +137,37 @@
   </style>
 </head>
 <body>
- 
-  <img src="/pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" 
-       style="height:120px;" class="fade-in delay-1">
-
+  <img src="/pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
   <h1 class="fade-in delay-2">LemonPyHub</h1>
   <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
 
   <nav>
-  <a href="/">Home</a>
-  <a href="/donate/">Donate</a>
-  <a href="/download/">Download</a>
-  <a href="/helpfaq/">Help/FAQ</a>
-</nav>
+    <a href="/">Home</a>
+    <a href="/donate/">Donate</a>
+    <a href="/download/">Download</a>
+    <a href="/helpfaq/">Help/FAQ</a>
+  </nav>
 
   <p class="fade-in delay-4">Here are some of my open-source projects:</p>
 
   <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
-    
     <li>
       <div class="about-tool fade-in delay-2">
         <div class="tool-content">
-          <img src="Windows_Utilities/pic/WinMain.png" 
-               alt="Windows Maintenance Screenshot" 
-               class="tool-img" id="winmainImg1">
+          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Screenshot" class="tool-img" id="windows-maintenance-tool">
           <div class="download-block">
             <div class="download-date">Release/Update: September 2025</div>
             <div class="download-date">(For Windows 10 & 11)</div>
             <div class="download-size">(Installer: 10.45 MB)</div>
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>
-              Windows Maintenance 3.9.5 (Installer)
-            </a>
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Windows Maintenance 3.9.5 (Installer)</a>
             <div class="download-size">(Portable: 11.16 MB)</div>
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.5.rar" download>
-              Windows Maintenance 3.9.5 (Portable)
-            </a>
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.5.rar" download>Windows Maintenance 3.9.5 (Portable)</a>
           </div>
         </div>
 
         <div class="tool-description">
           <h2>Windows Maintenance Tool 3.9.5</h2>
-          <p>
-            This Windows Maintenance Tool is designed to simplify essential system care tasks. 
-            Instead of typing complex commands in Command Prompt, you can now perform them with a single click.
-          </p>
-
+          <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
           <h3>Key features include:</h3>
           <ul>
             <li>Clearing temporary and prefetch files</li>
@@ -195,40 +178,26 @@
             <li>Optimize Storage</li>
             <li>And more...</li>
           </ul>
-
-          <p>
-            With this tool, maintaining your Windows system becomes faster, easier, 
-            and more user-friendly — no technical expertise required.
-          </p>
+          <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
         </div>
       </div>
     </li>
 
-    
     <li>
       <div class="about-tool fade-in delay-2">
         <div class="tool-content">
-          <img src="DNS_Manager/pic/DNSManager.png" 
-               alt="DNS Manager Screenshot" 
-               class="tool-img" id="winmainImg2">
+          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager">
           <div class="download-block">
             <div class="download-date">Release/Update: September 2025</div>
             <div class="download-date">(For Windows 10 & 11)</div>
             <div class="download-size">(Size: 24.58 MB)</div>
-            <a class="btn" href="DNS_Manager/DNS_Manager.rar" download>
-              DNS Manager (Portable)
-            </a>
-            
-            </a>
+            <a class="btn" href="DNS_Manager/DNS_Manager.rar" download>DNS Manager (Portable)</a>
           </div>
         </div>
 
         <div class="tool-description">
           <h2>DNS Manager</h2>
-          <p>
-            DNS Manager lets you easily find and set the fastest DNS for your system—no need to manually enter IP addresses. Scan, compare, and choose from Google, Cloudflare, AdGuard, and other free DNS providers. Switch to a single DNS or multiple DNS servers with just one click—fast, simple, and secure.
-          </p>
-
+          <p>DNS Manager lets you easily find and set the fastest DNS for your system—no need to manually enter IP addresses. Scan, compare, and choose from Google, Cloudflare, AdGuard, and other free DNS providers. Switch to a single DNS or multiple DNS servers with just one click—fast, simple, and secure.</p>
           <h3>Key features include:</h3>
           <ul>
             <li>Scan and benchmark DNS speeds</li>
@@ -239,16 +208,12 @@
             <li>Quick, safe, and hassle-free</li>
             <li>And more...</li>
           </ul>
-
-          <p>
-            DNS Manager makes choosing and switching DNS fast, easy, and safe — just one click, no expertise needed.
-          </p>
+          <p>DNS Manager makes choosing and switching DNS fast, easy, and safe — just one click, no expertise needed.</p>
         </div>
       </div>
     </li>
   </ul>
 
-  
   <div id="imgModal" class="modal">
     <span class="modal-close">&times;</span>
     <img class="modal-content" id="modalImage">
