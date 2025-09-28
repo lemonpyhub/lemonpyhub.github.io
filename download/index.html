@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -10,6 +9,35 @@
 
     gtag('config', 'G-Y88WHZECBL');
   </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("a").forEach(link => {
+    const url = link.getAttribute("href");
+    if (!url) return;
+
+    const downloadExt = [".zip", ".exe", ".rar", ".7z", ".pdf", ".msi", ".apk"];
+
+    if (downloadExt.some(ext => url.toLowerCase().endsWith(ext))) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const filename = url.split("/").pop();
+
+        gtag("event", "download", {
+          event_category: "File",
+          event_label: filename,
+          value: 1
+        });
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 200);
+      });
+    }
+  });
+});
+</script>
+
 
   <meta charset="UTF-8">
   <title>Download - LemonPyHub</title>
