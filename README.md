@@ -102,13 +102,33 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ---
 
-## Changelog
+## Applications Ready To Download
 
-**v3.9.5** — Sept 2025  
-- Release: Windows Maintenance (GUI, compiled `.exe`)  
-- Features: cleanup, system health checks, performance optimization  
+📦 **Windows Maintenance**
+🔖 Version 3.9.7
+📏 20.56 MB
+💻 Windows 10 & 11
+📅 September 2025
+A one-click utility for essential system care, including cleanup, health checks, and optimization, without needing technical expertise.
 
-**Planned v4.0**  
+📦 **DNS Manager**
+🔖 Version 1.0.0
+📏 24.58 MB
+💻 Windows 10 & 11
+📅 September 2025
+Easily test, compare, and apply the fastest DNS servers with just a single click
+
+📦 **Windows Optimizer**
+🔖 Version 1.0.0
+📏 27.24 MB
+💻 Windows 7, 8.0, 8.1, 10 & 11
+📅 October 2025
+Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore.
+
+**Planned** 
+💻 Dockers
+Dockers A PyQt5-based animated dock application offering customizable folder shortcuts, transparency control, tray integration, backup settings, and persistent configuration with user-friendly settings dialog and smooth animations.
+
 - GUI enhancements, automation, and modular optimization features  
 
 ---
