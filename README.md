@@ -37,8 +37,9 @@ Each application is developed in **Python** with a graphical user interface (GUI
 | Status       | Project Name                 | Description                                                                 |
 |--------------|------------------------------|-----------------------------------------------------------------------------|
 | ✅ Released  | **Windows Maintenance 3.9.5**| One-click GUI utility for system cleanup, health checks, and performance optimization. |
-| ⚙️ In Progress | **DNS Manager**              | Fast DNS testing and one-click application of the optimal DNS settings.     |
-| 💻 Planned   | **Windows Optimizer**         | Advanced optimization toolkit and automation modules.                       |
+| ✅ Released | **DNS Manager**              | Fast DNS testing and one-click application of the optimal DNS settings.     |
+| ✅ Released   | **Windows Optimizer**         | Advanced optimization toolkit and automation modules.                       |
+| ⚙️ In Progress | **Dockers**              | Dockers is a PyQt5 animated dock app with customizable shortcuts, transparency, tray integration, and backups. |
 
 ---
 
