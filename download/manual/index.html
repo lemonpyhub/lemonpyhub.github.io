@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y88WHZECBL');
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  document.querySelectorAll("a").forEach(link => {
+    const url = link.getAttribute("href");
+    if (!url) return;
+
+    const downloadExt = [".zip", ".exe", ".rar", ".7z", ".pdf", ".msi", ".apk"];
+
+    if (downloadExt.some(ext => url.toLowerCase().endsWith(ext))) {
+      link.addEventListener("click", function(event) {
+        event.preventDefault();
+        const filename = url.split("/").pop();
+
+        gtag("event", "download", {
+          event_category: "File",
+          event_label: filename,
+          value: 1
+        });
+
+        setTimeout(() => {
+          window.location.href = url;
+        }, 200);
+      });
+    }
+  });
+});
+</script>
+
+  <meta charset="UTF-8">
+  <title>Download - LemonPyHub</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    .glow {
+      color: #00ffcc;
+      text-shadow: 0 0 5px #00ffcc,
+                   0 0 10px #00ffcc,
+                   0 0 20px #00ffcc;
+    }
+
+    .about-tool {
+      background: #161b22;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 25px auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .about-tool:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .tool-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .tool-img {
+      max-width: 250px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .download-block {
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      background: #0d1117;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 8px rgba(0, 255, 204, 0.3);
+    }
+
+    .download-date {
+      margin-bottom: 12px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .download-size {
+      margin: 6px 0 4px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 0 12px;
+      width: fit-content;
+      text-align: left;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #00ffcc;
+      color: #0d1117;
+    }
+
+    .tool-description {
+      margin-top: 20px;
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    .tool-description h2 {
+      color: #00ffcc;
+    }
+
+    .tool-description ul {
+      padding-left: 20px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img src="/pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  <h1 class="fade-in delay-2">LemonPyHub</h1>
+  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/donate/">Donate</a>
+    <a href="/download/">Download</a>
+    <a href="/helpfaq/">Help/FAQ</a>
+  </nav>
+
+  <p class="fade-in delay-4">Here are some of my open-source projects:</p>
+
+  <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Screenshot" class="tool-img" id="windows-maintenance-tool">
+      <div class="download-block">
+        <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Windows Maintenance 3.9.5 (Installer)</a>
+        <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download>Windows Maintenance 3.9.7 (Portable)</a>
+        <div class="download-date">v3.9.7 | Windows 10 & 11</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Installer: 10.45MB | Portable: 11.16MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>Windows Maintenance Tool 3.9.7</h2>
+      <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
+
+      <h3>Key features include:</h3>
+      <ul>
+        <li><strong>Clear all files in "temp" folder</strong><br>Win + R → <code>temp</code> → Ctrl + A → Delete</li>
+        <li><strong>Clear all files in "prefetch" folder</strong><br>Win + R → <code>prefetch</code> → Ctrl + A → Delete</li>
+        <li><strong>Clear all files in "%temp%" folder</strong><br>Win + R → <code>%temp%</code> → Ctrl + A → Delete</li>
+        <li><strong>Run Disk Cleanup</strong><br>Win + R → <code>cleanmgr</code></li>
+        <li><strong>Empty Recycle Bin</strong><br>Win + R → <code>shell:RecycleBinFolder</code> → Ctrl + A → Delete</li>
+        <li><strong>Run SFC (System File Checker)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>sfc /scannow</code></li>
+        <li><strong>Run DISM (Deployment Imaging Service and Management Tool)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>DISM /Online /Cleanup-Image /RestoreHealth</code></li>
+        <li><strong>Release IP Address</strong><br>Admin CMD → <code>ipconfig /release</code></li>
+        <li><strong>Renew IP Address</strong><br>Admin CMD → <code>ipconfig /renew</code></li>
+        <li><strong>Flush DNS Cache</strong><br>Admin CMD → <code>ipconfig /flushdns</code></li>
+      </ul>
+      <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
+    </div>
+  </div>
+</li>
+
+
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager">
+      <div class="download-block">
+        <a class="btn" href="DNS_Manager/DNS_Manager.rar" download>DNS Manager (Portable)</a>
+        <div class="download-date">Windows 10 & 11</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Portable: 24.58MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>DNS Manager</h2>
+      <p>DNS Manager makes it simple to switch your system DNS to Google or Cloudflare—no need to manually configure network settings. With one click, you can apply the most reliable DNS servers for faster browsing and improved privacy.</p>
+
+      <h3>Change DNS Options:</h3>
+      <ul>
+        <li><strong>Google DNS (IPv4)</strong><br>
+          Preferred: <code>8.8.8.8</code><br>
+          Alternate: <code>8.8.4.4</code>
+        </li>
+        <li><strong>Cloudflare DNS (IPv4)</strong><br>
+          Preferred: <code>1.1.1.1</code><br>
+          Alternate: <code>1.0.0.1</code>
+        </li>
+        <li>Switch DNS instantly with one click (via DNS Manager)</li>
+        <li>Automatically applies settings system-wide</li>
+        <li>Quick, safe, and hassle-free</li>
+      </ul>
+
+      <h3>Step-by-step (GUI)</h3>
+      <ol>
+        <li>Press <strong>Win + R</strong>, type <code>ncpa.cpl</code> and press <strong>Enter</strong> → opens Network Connections.</li>
+        <li>Right-click your active adapter (e.g. <em>Wi-Fi</em> or <em>Ethernet</em>) → choose <strong>Properties</strong>.</li>
+        <li>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> → click <strong>Properties</strong>.</li>
+        <li>Choose <strong>Use the following DNS server addresses</strong> and enter the addresses for Google or Cloudflare (see list above).</li>
+        <li>Click <strong>OK</strong> → <strong>Close</strong>. Optionally repeat for <strong>Internet Protocol Version 6 (TCP/IPv6)</strong> if you use IPv6.</li>
+        <li>Flush DNS cache: press <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong> to open Admin CMD → run <code>ipconfig /flushdns</code>.</li>
+      </ol>
+
+      <h3>Step-by-step (Command Prompt / netsh)</h3>
+      <ol>
+        <li>Open Admin Command Prompt: <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong>.</li>
+        <li>For Wi-Fi (replace <code>Wi-Fi</code> with <code>Ethernet</code> if wired):</li>
+        <li>
+          <code>netsh interface ip set dns name="Wi-Fi" static 8.8.8.8</code><br>
+          <code>netsh interface ip add dns name="Wi-Fi" 8.8.4.4 index=2</code>
+        </li>
+        <li>Or for Cloudflare:</li>
+        <li>
+          <code>netsh interface ip set dns name="Wi-Fi" static 1.1.1.1</code><br>
+          <code>netsh interface ip add dns name="Wi-Fi" 1.0.0.1 index=2</code>
+        </li>
+        <li>After running commands, run <code>ipconfig /flushdns</code> to clear DNS cache.</li>
+      </ol>
+
+      <h3>Step-by-step (PowerShell)</h3>
+      <ol>
+        <li>Open PowerShell as Admin: <strong>Win + X</strong> → <strong>Windows PowerShell (Admin)</strong> or press <strong>Win + R</strong>, type <code>powershell</code>, then <strong>Ctrl + Shift + Enter</strong>.</li>
+        <li>For Google DNS (replace <code>Wi-Fi</code> if your adapter name differs):</li>
+        <li>
+          <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 8.8.8.8,8.8.4.4</code>
+        </li>
+        <li>For Cloudflare DNS:</li>
+        <li>
+          <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 1.1.1.1,1.0.0.1</code>
+        </li>
+        <li>Flush DNS cache after changes: <code>ipconfig /flushdns</code>.</li>
+      </ol>
+
+      <p><em>Notes:</em> If you're unsure of your adapter name, run <code>netsh interface show interface</code> (CMD) or <code>Get-NetAdapter</code> (PowerShell). Replace <code>"Wi-Fi"</code> with the correct adapter name. If you want IPv6 addresses too, I can add those into the UI.</p>
+
+      <p>With DNS Manager, you can also switch between these presets automatically—no manual typing required.</p>
+    </div>
+  </div>
+</li>
+
+
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot" class="tool-img" id="Windows-Optimizer">
+      <div class="download-block">
+        <a class="btn" href="Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
+        <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
+        <div class="download-date">Auto-Detect Windows</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Portable: 27.24MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>Windows Optimizer</h2>
+      <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
+
+      <p><strong>Important before you start:</strong> create a System Restore point and export registry backups. Many tweaks require Administrator rights and may need sign-out/restart or Explorer restart to take effect.</p>
+
+      <h3>Tweaks — Step by step</h3>
+
+      <h4>1) Visual Effects (appearance vs performance)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Press <code>Win + R</code>, type <code>SystemPropertiesPerformance.exe</code> and press Enter.</li>
+        <li>In Performance Options → Visual Effects select <em>Adjust for best performance</em>, <em>Adjust for best appearance</em>, or <em>Custom</em>.</li>
+        <li>Click <strong>Apply → OK</strong>. Sign out or restart Explorer if needed.</li>
+      </ol>
+      <strong>PowerShell / Registry (current user)</strong>
+      <pre><code>Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
+# Restart Explorer to apply:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>2) Background Apps (allow / block UWP apps)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Win + I → Apps (or Settings → Privacy → Background apps on Win10).</li>
+        <li>For each app: click the three dots → Advanced options → Background apps permissions → choose <em>Never</em>.</li>
+      </ol>
+      <strong>PowerShell / Registry (disable all background apps via policy)</strong>
+      <pre><code># Run as Admin PowerShell
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Force | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsRunInBackground" -PropertyType DWord -Value 2 -Force
+# Reboot for policy to take full effect</code></pre>
+
+      <h4>3) Taskbar Small Icon (make taskbar icons smaller)</h4>
+      <strong>Windows 10 (GUI)</strong>
+      <ol>
+        <li>Win + I → Personalization → Taskbar → turn <em>Use small taskbar buttons</em> On.</li>
+      </ol>
+      <strong>Windows 11 (Registry / PowerShell)</strong>
+      <pre><code># set Taskbar to small icons (Windows 11)
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSi" -Value 0 -Type DWord
+# Restart Explorer:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>4) Transparency Effect (enable / disable acrylic)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Win + I → Personalization → Colors (or Accessibility → Visual effects) → toggle <em>Transparency effects</em> On/Off.</li>
+      </ol>
+      <strong>PowerShell / Registry</strong>
+      <pre><code># 0 = Off, 1 = On
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0 -Type DWord
+# Restart Explorer:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>5) Search Indexing (Windows Search)</h4>
+      <strong>Adjust locations (GUI)</strong>
+      <ol>
+        <li>Start → type <em>Indexing Options</em> → Open → click <strong>Modify</strong> → add/remove indexed folders.</li>
+      </ol>
+      <strong>Stop / Disable Indexer (Service)</strong>
+      <pre><code># Disable Windows Search service (Admin PowerShell)
+Set-Service -Name WSearch -StartupType Disabled
+Stop-Service -Name WSearch -Force
+
+# Re-enable when needed:
+Set-Service -Name WSearch -StartupType "Automatic"
+Start-Service -Name WSearch</code></pre>
+      <p><em>Note:</em> disabling indexing reduces background disk/CPU usage but makes file searches slower.</p>
+
+      <h4>6) Create Backup Settings (recommended before applying tweaks)</h4>
+      <strong>Create a System Restore point (GUI)</strong>
+      <ol>
+        <li>Win + R → type <code>SystemPropertiesProtection.exe</code> → Enter.</li>
+        <li>Select your system drive (usually C:) → <strong>Create</strong> → name e.g. "Before Windows Optimizer".</li>
+      </ol>
+      <strong>Create a Restore point (PowerShell — Admin)</strong>
+      <pre><code>Checkpoint-Computer -Description "Before Windows Optimizer" -RestorePointType "MODIFY_SETTINGS"</code></pre>
+      <strong>Export registry keys you will change</strong>
+      <pre><code>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "%USERPROFILE%\Desktop\visualfx_backup.reg"
+reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "%USERPROFILE%\Desktop\taskbar_backup.reg"
+reg export "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "%USERPROFILE%\Desktop\personalize_backup.reg"
+reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" "%USERPROFILE%\Desktop\appprivacy_backup.reg"</code></pre>
+
+      <h4>7) Rollback / Restore</h4>
+      <strong>Restore System Restore point (GUI)</strong>
+      <ol>
+        <li>Win + R → type <code>rstrui.exe</code> → Enter → follow the wizard to restore a saved restore point.</li>
+      </ol>
+      <strong>Import registry backups (if you exported .reg files)</strong>
+      <pre><code>reg import "%USERPROFILE%\Desktop\visualfx_backup.reg"
+reg import "%USERPROFILE%\Desktop\taskbar_backup.reg"</code></pre>
+      <strong>Re-enable services</strong>
+      <pre><code>Set-Service -Name WSearch -StartupType "Automatic"
+Start-Service -Name WSearch</code></pre>
+
+      <h4>8) Quick commands & tips</h4>
+      <ul>
+        <li>Restart Explorer to apply many UI/registry changes: <code>Stop-Process -Name explorer -Force; Start-Process explorer</code></li>
+        <li>If unsure of adapter names / settings, test changes on a non-critical account first.</li>
+        <li>Always create a restore point & export the registry keys you modify.</li>
+      </ul>
+
+      <p>This Windows Optimizer workflow lets users safely toggle visual effects, background apps, taskbar sizing, transparency, and indexing — with easy rollback through restore points or registry imports. If you want, I can generate a ready-to-use <code>.ps1</code> script (with confirmations and automatic backups) that performs these tweaks and also provides a one-click rollback option.</p>
+    </div>
+  </div>
+</li>
+
+
+  </ul>
+
+  <div id="imgModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".modal-close");
+
+    const images = ["windows-maintenance-tool", "DNS-Manager", "Windows-Optimizer"];
+    images.forEach(id => {
+      document.getElementById(id).onclick = function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      }
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = e => { if(e.target === modal) modal.style.display = "none"; }
+    modalImg.onclick = () => modal.style.display = "none";
+  </script>
+</body>
+</html>
