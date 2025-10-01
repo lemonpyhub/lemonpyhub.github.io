@@ -123,13 +123,13 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - 📏 27.24 MB
 - 💻 Windows 7, 8.0, 8.1, 10 & 11
 - 📅 October 2025
-- Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore.
+- Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore. GUI enhancements, automation, and modular optimization features.  
 
 **Planned** 
 - 💻 Dockers
 - Dockers A PyQt5-based animated dock application offering customizable folder shortcuts, transparency control, tray integration, backup settings, and persistent configuration with user-friendly settings dialog and smooth animations.
 
-- GUI enhancements, automation, and modular optimization features  
+  
 
 ---
 
