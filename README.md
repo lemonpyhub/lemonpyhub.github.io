@@ -105,14 +105,14 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## Applications Ready To Download
 
 📦 **Windows Maintenance**
-🔖 Version 3.9.7
-📏 20.56 MB
-💻 Windows 10 & 11
-📅 September 2025
-A one-click utility for essential system care, including cleanup, health checks, and optimization, without needing technical expertise.
+- 🔖 Version 3.9.7
+- 📏 20.56 MB
+- 💻 Windows 10 & 11
+- 📅 September 2025
+- A one-click utility for essential system care, including cleanup, health checks, and optimization, without needing technical expertise.
 
 📦 **DNS Manager**
-🔖 Version 1.0.0
+- 🔖 Version 1.0.0
 📏 24.58 MB
 💻 Windows 10 & 11
 📅 September 2025
