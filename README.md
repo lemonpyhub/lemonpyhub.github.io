@@ -58,10 +58,9 @@ The applications are portable and ready to use immediately after extraction.
 
 <img width="1050" height="728" alt="windows-maintenance-tool" src="https://github.com/user-attachments/assets/90dbfe22-74da-4108-b9dd-9bf6bbf45bac" />
 
-
-
 <img width="1050" height="679" alt="DNS-Manager" src="https://github.com/user-attachments/assets/33034cbc-a31f-49c7-9d91-4391062ef63d" />
 
+https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png
 ---
 
 ## Technology & Distribution
