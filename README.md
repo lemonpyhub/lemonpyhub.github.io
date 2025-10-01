@@ -60,7 +60,9 @@ The applications are portable and ready to use immediately after extraction.
 
 <img width="1050" height="679" alt="DNS-Manager" src="https://github.com/user-attachments/assets/33034cbc-a31f-49c7-9d91-4391062ef63d" />
 
-https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png
+<img width="851" height="548" alt="Windows-Optimizer" src="https://github.com/user-attachments/assets/62599e6e-e36e-4a6f-a441-191af91d4f0c" />
+
+
 ---
 
 ## Technology & Distribution
