@@ -21,22 +21,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (downloadExt.some(ext => url.toLowerCase().endsWith(ext))) {
       link.addEventListener("click", function(event) {
-        // HENTI DEFAULT LINK BEHAVIOR
         event.preventDefault();
         
         const filename = url.split("/").pop();
 
-        // GUNA BEACON API - LEBIH STABLE
         gtag("event", "file_download", {
-          event_category: "File Download",
-          event_label: filename,
-          transport: "beacon" // INI YANG PENTING!
-        });
+        file_name: filename,     
+        file_extension: filename.split('.').pop(), 
+        link_url: url,           
+        transport: "beacon"      
+      });
 
-        // CONTINUE KE DOWNLOAD
+
         setTimeout(() => {
           window.location.href = url;
-        }, 100); // waktu lebih pendek
+        }, 100); 
       });
     }
   });
