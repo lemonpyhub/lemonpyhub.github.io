@@ -145,6 +145,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## 🌐 Visit the Official Website
 
 [![Website](https://img.shields.io/badge/Visit-LemonPyHub-blue?style=for-the-badge&logo=windows)](https://lemonpyhub.github.io)
+<a href="https://www.freecounterstat.com" title="page counter"><img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=qglp48fr24bhfefbeej628glcgrgr5sk" border="0" title="page counter" alt="page counter"></a>
 
 ---
 
