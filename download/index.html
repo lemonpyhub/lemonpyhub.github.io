@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -24,20 +24,20 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         const filename = url.split("/").pop();
 
-        gtag("event", "download", {
+        gtag("event", "file_download", {
           event_category: "File",
-          event_label: filename,
-          value: 1
+          event_label: filename
         });
 
         setTimeout(() => {
           window.location.href = url;
-        }, 200);
+        }, 500); // beri masa cukup
       });
     }
   });
 });
 </script>
+
 
   <meta charset="UTF-8">
   <title>Download - LemonPyHub</title>
