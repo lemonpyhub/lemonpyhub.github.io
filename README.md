@@ -63,6 +63,8 @@ The applications are portable and ready to use immediately after extraction.
 
 <img width="851" height="548" alt="Windows-Optimizer" src="https://github.com/user-attachments/assets/62599e6e-e36e-4a6f-a441-191af91d4f0c" />
 
+<img width="1071" height="581" alt="dockers" src="https://github.com/user-attachments/assets/9333212c-6ac5-4399-aa54-19a3316188b2" />
+
 
 ---
 
@@ -124,11 +126,18 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - 📏 27.24 MB
 - 💻 Windows 7, 8.0, 8.1, 10 & 11
 - 📅 October 2025
-- Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore. GUI enhancements, automation, and modular optimization features.  
+- Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore. GUI enhancements, automation, and modular optimization features.
+
+📦 **Dockers**
+- 🔖 Version 1.0.0
+- 📏 25.91 MB
+- 💻 Windows 10 & 11
+- 📅 October 2025
+- LemonPy Dockers is a sleek, auto-hiding dock that gives instant access to 7 customizable folder shortcuts. With custom icons, transparency, system tray integration, and quick toggle (Ctrl+Shift+L), it keeps your desktop clean, efficient, and clutter-free. Simply drag and drop—productivity made effortless.  
 
 **Planned** 
-- 💻 Dockers
-- Dockers A PyQt5-based animated dock application offering customizable folder shortcuts, transparency control, tray integration, backup settings, and persistent configuration with user-friendly settings dialog and smooth animations.
+- 💻 I.D.E.A.S
+- Not sure where to kick things off. I’m sitting on almost 30 coding ideas waiting to come alive. Give me some time to watch a movie first. Once the inspiration hits, my keyboard won’t stay quiet. Stay tuned!!
 
   
 
