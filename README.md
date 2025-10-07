@@ -135,10 +135,10 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 📦 **Winget Tool**  
 - 🔖 Version 1.0.0  
-- 📏 25.91 MB  
+- 📏 35.2 MB  
 - 💻 Windows 10 & 11  
 - 📅 October 2025  
-- LemonPy Dockers is a sleek, auto-hiding dock that gives instant access to 7 customizable folder shortcuts.  
+- WingetTool simplifies Windows app updates with a modern dark GUI, real-time logs, progress tracking, and one-click upgrades—offering full control, admin access, and smooth management. 
 
 **Planned:**  
 - 💻 **I.D.E.A.S** — Experimental project incubator.
