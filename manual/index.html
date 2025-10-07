@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LemonPyHub",
+  "url": "https://lemonpyhub.github.io",
+  "description": "LemonPyHub provides free Python scripts, tools, and applications to make things easier for users.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "LemonPyHub"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://lemonpyhub.github.io/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-Q9HFE57YHB');
+</script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y88WHZECBL');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download - LemonPyHub</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
+
+    html {
+      height: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: #1a1a1a;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 50px;
+      position: relative;
+    }
+
+    /* MATRIX CANVAS STYLING */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    p { color: #c9d1d9; }
+
+    .glow, .glow * {
+      color: #00ffcc !important;
+      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    /*	
+    ============
+      Light
+    ============
+    */
+    body::before {
+      content:"";
+      width: 100%;
+      height: 750px;
+      position: absolute;
+      top: -200px;
+      left: 10px;
+      transform: rotate(55deg);
+      background: rgba(255,255,255,0.1);
+      background: -moz-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0.1)), color-stop(65%, rgba(42,31,25,0)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#2a1f19', GradientType=0.7 );
+      z-index: -1;
+    }
+
+    /*	
+    ========================
+        3D Effect for Title
+    ========================
+    */
+    h1 {
+      width: 100%;
+      margin: 0 auto 0 auto;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      font-size: 5rem;
+      padding: 80px 50px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      color: #00ffcc; /* Changed to neon green */
+      letter-spacing: .15em;
+      text-shadow: 
+        -1px -1px 1px #00ffcc, 
+        0px 1px 0 #2e2e2e, 
+        0px 2px 0 #2c2c2c, 
+        0px 3px 0 #2a2a2a, 
+        0px 4px 0 #282828, 
+        0px 5px 0 #262626, 
+        0px 6px 0 #242424, 
+        0px 7px 0 #222, 
+        0px 8px 0 #202020, 
+        0px 9px 0 #1e1e1e, 
+        0px 10px 0 #1c1c1c, 
+        0px 11px 0 #1a1a1a, 
+        0px 12px 0 #181818, 
+        0px 13px 0 #161616, 
+        0px 14px 0 #141414, 
+        0px 15px 0 #121212,
+        2px 20px 5px rgba(0, 0, 0, 0.9),
+        5px 23px 5px rgba(0, 0, 0, 0.3),
+        8px 27px 8px rgba(0, 0, 0, 0.5),
+        8px 28px 35px rgba(0, 0, 0, 0.9),
+        0 0 10px #00ffcc, /* Added neon glow */
+        0 0 20px #00ffcc, /* Added neon glow */
+        0 0 30px #00ffcc; /* Added neon glow */
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      width: 120px;
+      height: 2px;
+      background: #00ffcc; /* Changed to neon green */
+      margin: 30px auto 0 auto;
+      border-radius: 2px;
+      box-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
+    }
+
+    h2, h3 { color: #58a6ff; }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* UPDATED NAVIGATION BUTTONS - Pulse on entire button hover */
+    .nav-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 15px;
+      padding: 12px 24px;
+      text-decoration: none;
+      color: #58a6ff;
+      font-weight: bold;
+      border-radius: 8px;
+      background: #21262d;
+      border: 1px solid #58a6ff;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
+    }
+
+    .nav-btn:hover {
+      color: #00ffcc;
+      border-color: #00ffcc;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+      /* Pulse animation on entire button during hover */
+      animation: pulse 1s infinite;
+    }
+
+    .nav-btn i {
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-btn:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Pulse animation for the entire button */
+    @keyframes pulse {
+      0% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7);
+      }
+      70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 10px rgba(0, 255, 204, 0);
+      }
+      100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0);
+      }
+    }
+
+    .intro-box {
+      background: #161b22;
+      padding: 25px 20px;
+      margin: 20px auto 10px auto;
+      max-width: 800px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,255,200,0.3);
+      text-align: center;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .powered {
+      font-size: 12px;
+      color: #00ffcc;
+      text-align: center;
+      text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
+      position: relative;
+      display: inline-block;
+      margin-top: 15px;
+      padding-bottom: 14px; 
+    }
+
+    .powered::before {
+      content: "";
+      position: absolute;
+      left: -40px;
+      bottom: 0;
+      height: 4px;
+      width: 40px;
+      background: linear-gradient(90deg, transparent, #00ffcc, transparent);
+      border-radius: 4px;
+      animation: laser-scan 2s ease-in-out infinite alternate;
+      box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    @keyframes laser-scan {
+      from { left: 0; }
+      to   { left: calc(100% - 40px); }
+    }
+
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+
+  
+    .share-container {
+      position: fixed;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .share-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      background-color: #333;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffcc;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+
+    .share-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00ffcc;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .share-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .share-btn:hover::before { opacity: 0; }
+
+    .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+    .tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
+    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+    .whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+    .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+    .reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+    .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+
+    /* STYLES FROM OLD TEMPLATE */
+    .about-tool {
+      background: #161b22;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 25px auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-block;
+      text-align: left;
+    }
+
+    .about-tool:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    .tool-content {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .tool-img {
+      max-width: 250px;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .download-block {
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      background: #0d1117;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: inset 0 0 8px rgba(0, 255, 204, 0.3);
+    }
+
+    .download-date {
+      margin-bottom: 12px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .download-size {
+      margin: 6px 0 4px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+
+    .btn {
+      display: block;
+      margin: 0 0 12px;
+      width: fit-content;
+      text-align: left;
+      color: #00ffcc;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 10px;
+      border: 1px solid #00ffcc;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: #00ffcc;
+      color: #0d1117;
+    }
+
+    .tool-description {
+      margin-top: 20px;
+      font-family: 'Fira Code', monospace;
+      color: #c9d1d9;
+      line-height: 1.6;
+    }
+
+    .tool-description h2 {
+      color: #00ffcc;
+    }
+
+    .tool-description ul {
+      padding-left: 20px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 35px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 20px; padding-right: 70px; }
+      h1 { font-size: 3.5rem; padding: 60px 20px 20px; }
+      .nav-btn { display: block; margin: 10px auto; width: 80%; justify-content: center; }
+      .intro-box { font-size: 14px; padding: 20px; }
+      .share-container { right: 8px; gap: 10px; }
+      .share-btn { width: 40px; height: 40px; font-size: 18px; }
+      .tool-content { flex-direction: column; }
+    }
+    @media (max-width: 480px) {
+      body { padding-right: 65px; }
+      h1 { font-size: 2.8rem; padding: 40px 15px 15px; }
+      .nav-btn { padding: 10px 15px; font-size: 14px; }
+      .share-btn { width: 38px; height: 38px; font-size: 17px; }
+    }
+    @media (max-width: 360px) {
+      body { padding-right: 60px; }
+      h1 { font-size: 2.2rem; }
+      .nav-btn { margin: 8px auto; padding: 8px 12px; }
+      .share-btn { width: 35px; height: 35px; font-size: 16px; }
+      .share-container { gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Matrix Effect Canvas -->
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="share-container">
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
+  </div>
+
+  <div class="logo-container">
+    <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  </div>
+  <h1 class="fade-in delay-2">LemonPyHub</h1>
+  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
+
+  <nav>
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+  </nav>
+
+  <p class="fade-in delay-4">Here are some of my open-source projects:</p>
+
+  <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="../Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Screenshot" class="tool-img" id="windows-maintenance-tool">
+      <div class="download-block">
+        <a class="btn" href="../Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Windows Maintenance 3.9.5 (Installer)</a>
+        <a class="btn" href="../Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download>Windows Maintenance 3.9.7 (Portable)</a>
+        <div class="download-date">v3.9.7 | Windows 10 & 11</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Installer: 10.45MB | Portable: 11.16MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>Windows Maintenance Tool 3.9.7</h2>
+      <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
+
+      <h3>Key features include:</h3>
+      <ul>
+        <li><strong>Clear all files in "temp" folder</strong><br>Win + R → <code>temp</code> → Ctrl + A → Delete</li>
+        <li><strong>Clear all files in "prefetch" folder</strong><br>Win + R → <code>prefetch</code> → Ctrl + A → Delete</li>
+        <li><strong>Clear all files in "%temp%" folder</strong><br>Win + R → <code>%temp%</code> → Ctrl + A → Delete</li>
+        <li><strong>Run Disk Cleanup</strong><br>Win + R → <code>cleanmgr</code></li>
+        <li><strong>Empty Recycle Bin</strong><br>Win + R → <code>shell:RecycleBinFolder</code> → Ctrl + A → Delete</li>
+        <li><strong>Run SFC (System File Checker)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>sfc /scannow</code></li>
+        <li><strong>Run DISM (Deployment Imaging Service and Management Tool)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>DISM /Online /Cleanup-Image /RestoreHealth</code></li>
+        <li><strong>Release IP Address</strong><br>Admin CMD → <code>ipconfig /release</code></li>
+        <li><strong>Renew IP Address</strong><br>Admin CMD → <code>ipconfig /renew</code></li>
+        <li><strong>Flush DNS Cache</strong><br>Admin CMD → <code>ipconfig /flushdns</code></li>
+      </ul>
+      <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
+    </div>
+  </div>
+</li>
+
+
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="../DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager">
+      <div class="download-block">
+        <a class="btn" href="../DNS_Manager/DNS_Manager.rar" download>DNS Manager (Portable)</a>
+        <div class="download-date">Windows 10 & 11</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Portable: 24.58MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>DNS Manager</h2>
+      <p>DNS Manager makes it simple to switch your system DNS to Google or Cloudflare—no need to manually configure network settings. With one click, you can apply the most reliable DNS servers for faster browsing and improved privacy.</p>
+
+      <h3>Change DNS Options:</h3>
+      <ul>
+        <li><strong>Google DNS (IPv4)</strong><br>
+          Preferred: <code>8.8.8.8</code><br>
+          Alternate: <code>8.8.4.4</code>
+        </li>
+        <li><strong>Cloudflare DNS (IPv4)</strong><br>
+          Preferred: <code>1.1.1.1</code><br>
+          Alternate: <code>1.0.0.1</code>
+        </li>
+        <li>Switch DNS instantly with one click (via DNS Manager)</li>
+        <li>Automatically applies settings system-wide</li>
+        <li>Quick, safe, and hassle-free</li>
+      </ul>
+
+      <h3>Step-by-step (GUI)</h3>
+      <ol>
+        <li>Press <strong>Win + R</strong>, type <code>ncpa.cpl</code> and press <strong>Enter</strong> → opens Network Connections.</li>
+        <li>Right-click your active adapter (e.g. <em>Wi-Fi</em> or <em>Ethernet</em>) → choose <strong>Properties</strong>.</li>
+        <li>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> → click <strong>Properties</strong>.</li>
+        <li>Choose <strong>Use the following DNS server addresses</strong> and enter the addresses for Google or Cloudflare (see list above).</li>
+        <li>Click <strong>OK</strong> → <strong>Close</strong>. Optionally repeat for <strong>Internet Protocol Version 6 (TCP/IPv6)</strong> if you use IPv6.</li>
+        <li>Flush DNS cache: press <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong> to open Admin CMD → run <code>ipconfig /flushdns</code>.</li>
+      </ol>
+
+      <h3>Step-by-step (Command Prompt / netsh)</h3>
+      <ol>
+        <li>Open Admin Command Prompt: <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong>.</li>
+        <li>For Wi-Fi (replace <code>Wi-Fi</code> with <code>Ethernet</code> if wired):</li>
+        <li>
+          <code>netsh interface ip set dns name="Wi-Fi" static 8.8.8.8</code><br>
+          <code>netsh interface ip add dns name="Wi-Fi" 8.8.4.4 index=2</code>
+        </li>
+        <li>Or for Cloudflare:</li>
+        <li>
+          <code>netsh interface ip set dns name="Wi-Fi" static 1.1.1.1</code><br>
+          <code>netsh interface ip add dns name="Wi-Fi" 1.0.0.1 index=2</code>
+        </li>
+        <li>After running commands, run <code>ipconfig /flushdns</code> to clear DNS cache.</li>
+      </ol>
+
+      <h3>Step-by-step (PowerShell)</h3>
+      <ol>
+        <li>Open PowerShell as Admin: <strong>Win + X</strong> → <strong>Windows PowerShell (Admin)</strong> or press <strong>Win + R</strong>, type <code>powershell</code>, then <strong>Ctrl + Shift + Enter</strong>.</li>
+        <li>For Google DNS (replace <code>Wi-Fi</code> if your adapter name differs):</li>
+        <li>
+          <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 8.8.8.8,8.8.4.4</code>
+        </li>
+        <li>For Cloudflare DNS:</li>
+        <li>
+          <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 1.1.1.1,1.0.0.1</code>
+        </li>
+        <li>Flush DNS cache after changes: <code>ipconfig /flushdns</code>.</li>
+      </ol>
+
+      <p><em>Notes:</em> If you're unsure of your adapter name, run <code>netsh interface show interface</code> (CMD) or <code>Get-NetAdapter</code> (PowerShell). Replace <code>"Wi-Fi"</code> with the correct adapter name. If you want IPv6 addresses too, I can add those into the UI.</p>
+
+      <p>With DNS Manager, you can also switch between these presets automatically—no manual typing required.</p>
+    </div>
+  </div>
+</li>
+
+
+    <li>
+  <div class="about-tool fade-in delay-2">
+    <div class="tool-content">
+      <img src="../Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot" class="tool-img" id="Windows-Optimizer">
+      <div class="download-block">
+        <a class="btn" href="../Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
+        <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
+        <div class="download-date">Auto-Detect Windows</div>
+        <div class="download-date">Freeware | September 2025</div>
+        <div class="download-size">Portable: 27.24MB</div>
+      </div>
+    </div>
+
+    <div class="tool-description">
+      <h2>Windows Optimizer</h2>
+      <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
+
+      <p><strong>Important before you start:</strong> create a System Restore point and export registry backups. Many tweaks require Administrator rights and may need sign-out/restart or Explorer restart to take effect.</p>
+
+      <h3>Tweaks — Step by step</h3>
+
+      <h4>1) Visual Effects (appearance vs performance)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Press <code>Win + R</code>, type <code>SystemPropertiesPerformance.exe</code> and press Enter.</li>
+        <li>In Performance Options → Visual Effects select <em>Adjust for best performance</em>, <em>Adjust for best appearance</em>, or <em>Custom</em>.</li>
+        <li>Click <strong>Apply → OK</strong>. Sign out or restart Explorer if needed.</li>
+      </ol>
+      <strong>PowerShell / Registry (current user)</strong>
+      <pre><code>Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
+# Restart Explorer to apply:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>2) Background Apps (allow / block UWP apps)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Win + I → Apps (or Settings → Privacy → Background apps on Win10).</li>
+        <li>For each app: click the three dots → Advanced options → Background apps permissions → choose <em>Never</em>.</li>
+      </ol>
+      <strong>PowerShell / Registry (disable all background apps via policy)</strong>
+      <pre><code># Run as Admin PowerShell
+New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Force | Out-Null
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsRunInBackground" -PropertyType DWord -Value 2 -Force
+# Reboot for policy to take full effect</code></pre>
+
+      <h4>3) Taskbar Small Icon (make taskbar icons smaller)</h4>
+      <strong>Windows 10 (GUI)</strong>
+      <ol>
+        <li>Win + I → Personalization → Taskbar → turn <em>Use small taskbar buttons</em> On.</li>
+      </ol>
+      <strong>Windows 11 (Registry / PowerShell)</strong>
+      <pre><code># set Taskbar to small icons (Windows 11)
+Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSi" -Value 0 -Type DWord
+# Restart Explorer:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>4) Transparency Effect (enable / disable acrylic)</h4>
+      <strong>GUI</strong>
+      <ol>
+        <li>Win + I → Personalization → Colors (or Accessibility → Visual effects) → toggle <em>Transparency effects</em> On/Off.</li>
+      </ol>
+      <strong>PowerShell / Registry</strong>
+      <pre><code># 0 = Off, 1 = On
+Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0 -Type DWord
+# Restart Explorer:
+Stop-Process -Name explorer -Force
+Start-Process explorer</code></pre>
+
+      <h4>5) Search Indexing (Windows Search)</h4>
+      <strong>Adjust locations (GUI)</strong>
+      <ol>
+        <li>Start → type <em>Indexing Options</em> → Open → click <strong>Modify</strong> → add/remove indexed folders.</li>
+      </ol>
+      <strong>Stop / Disable Indexer (Service)</strong>
+      <pre><code># Disable Windows Search service (Admin PowerShell)
+Set-Service -Name WSearch -StartupType Disabled
+Stop-Service -Name WSearch -Force
+
+# Re-enable when needed:
+Set-Service -Name WSearch -StartupType "Automatic"
+Start-Service -Name WSearch</code></pre>
+      <p><em>Note:</em> disabling indexing reduces background disk/CPU usage but makes file searches slower.</p>
+
+      <h4>6) Create Backup Settings (recommended before applying tweaks)</h4>
+      <strong>Create a System Restore point (GUI)</strong>
+      <ol>
+        <li>Win + R → type <code>SystemPropertiesProtection.exe</code> → Enter.</li>
+        <li>Select your system drive (usually C:) → <strong>Create</strong> → name e.g. "Before Windows Optimizer".</li>
+      </ol>
+      <strong>Create a Restore point (PowerShell — Admin)</strong>
+      <pre><code>Checkpoint-Computer -Description "Before Windows Optimizer" -RestorePointType "MODIFY_SETTINGS"</code></pre>
+      <strong>Export registry keys you will change</strong>
+      <pre><code>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "%USERPROFILE%\Desktop\visualfx_backup.reg"
+reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "%USERPROFILE%\Desktop\taskbar_backup.reg"
+reg export "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "%USERPROFILE%\Desktop\personalize_backup.reg"
+reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" "%USERPROFILE%\Desktop\appprivacy_backup.reg"</code></pre>
+
+      <h4>7) Rollback / Restore</h4>
+      <strong>Restore System Restore point (GUI)</strong>
+      <ol>
+        <li>Win + R → type <code>rstrui.exe</code> → Enter → follow the wizard to restore a saved restore point.</li>
+      </ol>
+      <strong>Import registry backups (if you exported .reg files)</strong>
+      <pre><code>reg import "%USERPROFILE%\Desktop\visualfx_backup.reg"
+reg import "%USERPROFILE%\Desktop\taskbar_backup.reg"</code></pre>
+      <strong>Re-enable services</strong>
+      <pre><code>Set-Service -Name WSearch -StartupType "Automatic"
+Start-Service -Name WSearch</code></pre>
+
+      <h4>8) Quick commands & tips</h4>
+      <ul>
+        <li>Restart Explorer to apply many UI/registry changes: <code>Stop-Process -Name explorer -Force; Start-Process explorer</code></li>
+        <li>If unsure of adapter names / settings, test changes on a non-critical account first.</li>
+        <li>Always create a restore point & export the registry keys you modify.</li>
+      </ul>
+
+      <p>This Windows Optimizer workflow lets users safely toggle visual effects, background apps, taskbar sizing, transparency, and indexing — with easy rollback through restore points or registry imports. If you want, I can generate a ready-to-use <code>.ps1</code> script (with confirmations and automatic backups) that performs these tweaks and also provides a one-click rollback option.</p>
+    </div>
+  </div>
+</li>
+
+
+  </ul>
+
+  <div id="imgModal" class="modal">
+    <span class="modal-close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <div class="powered fade-in delay-4">Powered by LΣⱮØπPy 2025</div>
+
+  <script>
+    // Matrix Digital Rain Effect
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas to full window size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      // Semi-transparent black to create trail effect
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#00ffcc';
+      ctx.font = `${fontSize}px 'Fira Code', monospace`;
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+        
+        ctx.fillText(text, x, y);
+        
+        // Reset drop to top when it reaches bottom with random condition
+        if (y > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    // Start Matrix animation
+    setInterval(drawMatrix, 50);
+
+    // Original share functions
+    function getCurrentURL() { return encodeURIComponent(window.location.href); }
+    function getPageTitle() { return encodeURIComponent(document.title); }
+    function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
+    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en','_blank'); }
+    function shareOnInstagram() { window.open('https://www.instagram.com/','_blank'); }
+    function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
+    function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
+    function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
+    function nativeShare() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: 'Check out this awesome website - LemonPyHub!', url: window.location.href });
+      } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Download tracking script
+    document.addEventListener("DOMContentLoaded", function() {
+      document.querySelectorAll("a").forEach(link => {
+        const url = link.getAttribute("href");
+        if (!url) return;
+
+        const downloadExt = [".zip", ".exe", ".rar", ".7z", ".pdf", ".msi", ".apk"];
+
+        if (downloadExt.some(ext => url.toLowerCase().endsWith(ext))) {
+          link.addEventListener("click", function(event) {
+            event.preventDefault();
+            const filename = url.split("/").pop();
+
+            gtag("event", "download", {
+              event_category: "File",
+              event_label: filename,
+              value: 1
+            });
+
+            setTimeout(() => {
+              window.location.href = url;
+            }, 200);
+          });
+        }
+      });
+    });
+
+    // Modal image functionality
+    const modal = document.getElementById("imgModal");
+    const modalImg = document.getElementById("modalImage");
+    const closeBtn = document.querySelector(".modal-close");
+
+    const images = ["windows-maintenance-tool", "DNS-Manager", "Windows-Optimizer"];
+    images.forEach(id => {
+      document.getElementById(id).onclick = function() {
+        modal.style.display = "flex";
+        modalImg.src = this.src;
+      }
+    });
+
+    closeBtn.onclick = () => modal.style.display = "none";
+    modal.onclick = e => { if(e.target === modal) modal.style.display = "none"; }
+    modalImg.onclick = () => modal.style.display = "none";
+  </script>
+</body>
+</html>

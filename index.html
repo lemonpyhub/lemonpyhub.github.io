@@ -25,7 +25,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-Q9HFE57YHB');
 </script>
 
@@ -42,30 +41,114 @@
   <title>LemonPyHub (LΣⱮØπPy)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
+
+    html {
+      height: 100%;
+    }
 
     body {
+      overflow-x: hidden;
       margin: 0;
+      padding: 0;
       font-family: 'Fira Code', monospace;
-      background: #0d1117;
+      background: #1a1a1a;
       color: #c9d1d9;
       text-align: center;
       padding: 50px;
       position: relative;
     }
 
-    h1, h2, h3 { color: #58a6ff; }
+    /* MATRIX CANVAS STYLING */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
     p { color: #c9d1d9; }
 
-      .glow, .glow * {
+    .glow, .glow * {
       color: #00ffcc !important;
       text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
+    /*	
+    ============
+      Light
+    ============
+    */
+    body::before {
+      content:"";
+      width: 100%;
+      height: 750px;
+      position: absolute;
+      top: -200px;
+      left: 10px;
+      transform: rotate(55deg);
+      background: rgba(255,255,255,0.1);
+      background: -moz-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0.1)), color-stop(65%, rgba(42,31,25,0)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#2a1f19', GradientType=0.7 );
+      z-index: -1;
+    }
+
+    /*	
+    ========================
+        3D Effect for Title
+    ========================
+    */
     h1 {
+      width: 100%;
+      margin: 0 auto 0 auto;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      font-size: 5rem;
+      padding: 80px 50px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      color: #00ffcc; /* Changed to neon green */
+      letter-spacing: .15em;
+      text-shadow: 
+        -1px -1px 1px #00ffcc, 
+        0px 1px 0 #2e2e2e, 
+        0px 2px 0 #2c2c2c, 
+        0px 3px 0 #2a2a2a, 
+        0px 4px 0 #282828, 
+        0px 5px 0 #262626, 
+        0px 6px 0 #242424, 
+        0px 7px 0 #222, 
+        0px 8px 0 #202020, 
+        0px 9px 0 #1e1e1e, 
+        0px 10px 0 #1c1c1c, 
+        0px 11px 0 #1a1a1a, 
+        0px 12px 0 #181818, 
+        0px 13px 0 #161616, 
+        0px 14px 0 #141414, 
+        0px 15px 0 #121212,
+        2px 20px 5px rgba(0, 0, 0, 0.9),
+        5px 23px 5px rgba(0, 0, 0, 0.3),
+        8px 27px 8px rgba(0, 0, 0, 0.5),
+        8px 28px 35px rgba(0, 0, 0, 0.9),
+        0 0 10px #00ffcc, /* Added neon glow */
+        0 0 20px #00ffcc, /* Added neon glow */
+        0 0 30px #00ffcc; /* Added neon glow */
       position: relative;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
     }
 
     h1::after {
@@ -73,28 +156,69 @@
       display: block;
       width: 120px;
       height: 2px;
-      background: #58a6ff;
-      margin: 10px auto 0 auto;
+      background: #00ffcc; /* Changed to neon green */
+      margin: 30px auto 0 auto;
       border-radius: 2px;
-      box-shadow: 0 0 6px rgba(88,166,255,0.6);
+      box-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
     }
+
+    h2, h3 { color: #58a6ff; }
 
     nav {
       text-align: center;
       margin-top: 10px;
     }
 
-    nav a {
+    /* UPDATED NAVIGATION BUTTONS - Pulse on entire button hover */
+    .nav-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       margin: 0 15px;
+      padding: 12px 24px;
       text-decoration: none;
       color: #58a6ff;
       font-weight: bold;
-      transition: color 0.3s, text-shadow 0.3s;
+      border-radius: 8px;
+      background: #21262d;
+      border: 1px solid #58a6ff;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
     }
 
-    nav a:hover {
+    .nav-btn:hover {
       color: #00ffcc;
-      text-shadow: 0 0 8px #00ffcc;
+      border-color: #00ffcc;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+      /* Pulse animation on entire button during hover */
+      animation: pulse 1s infinite;
+    }
+
+    .nav-btn i {
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-btn:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Pulse animation for the entire button */
+    @keyframes pulse {
+      0% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7);
+      }
+      70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 10px rgba(0, 255, 204, 0);
+      }
+      100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0);
+      }
     }
 
     .intro-box {
@@ -209,23 +333,31 @@
 
     @media (max-width: 768px) {
       body { padding: 20px; padding-right: 70px; }
-      nav a { display: block; margin: 10px 0; }
+      h1 { font-size: 3.5rem; padding: 60px 20px 20px; }
+      .nav-btn { display: block; margin: 10px auto; width: 80%; justify-content: center; }
       .intro-box { font-size: 14px; padding: 20px; }
       .share-container { right: 8px; gap: 10px; }
       .share-btn { width: 40px; height: 40px; font-size: 18px; }
     }
     @media (max-width: 480px) {
       body { padding-right: 65px; }
+      h1 { font-size: 2.8rem; padding: 40px 15px 15px; }
+      .nav-btn { padding: 10px 15px; font-size: 14px; }
       .share-btn { width: 38px; height: 38px; font-size: 17px; }
     }
     @media (max-width: 360px) {
       body { padding-right: 60px; }
+      h1 { font-size: 2.2rem; }
+      .nav-btn { margin: 8px auto; padding: 8px 12px; }
       .share-btn { width: 35px; height: 35px; font-size: 16px; }
       .share-container { gap: 8px; }
     }
   </style>
 </head>
 <body>
+  <!-- Matrix Effect Canvas -->
+  <canvas id="matrixCanvas"></canvas>
+
   <div class="share-container">
     <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
     <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
@@ -236,18 +368,20 @@
     <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
   </div>
 
-  <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  <div class="logo-container">
+    <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  </div>
   <h1 class="fade-in delay-2">LemonPyHub</h1>
   <p class="glow fade-in delay-3">Where coding meets efficiency and innovation <br>
 transforming ideas into powerful digital solutions <br> 
-serving as your hub for advanced system optimization 🚀</p>
+serving as your hub for advanced system optimization 🚀</p><br>
 
   <nav>
-    <a href="/">Home</a>
-    <a href="/donate/">Donate</a>
-    <a href="/download/">Download</a>
-    <a href="/helpfaq/">Help/FAQ</a>
-  </nav>
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+  </nav><br>
 
   <div class="intro-box glow fade-in delay-4">
     
@@ -256,9 +390,9 @@ serving as your hub for advanced system optimization 🚀</p>
     and <strong>coding</strong>, mainly using <strong>Python</strong>. My goal is to design tools 
     that make life simpler, more efficient, and enjoyable for everyone. Everything I share is 
     completely free, as I believe in learning, experimenting, and growing together with the community.<br><br>
-    Although I’m still new to coding, I enjoy exploring new ideas, testing different concepts, 
+    Although I'm still new to coding, I enjoy exploring new ideas, testing different concepts, 
     and improving my skills with every project I build. Many more apps and programs are on the way, 
-    and I hope you’ll find them practical, fun, and helpful.<br><br>
+    and I hope you'll find them practical, fun, and helpful.<br><br>
     All of my software is compatible with <strong>Windows 10</strong> and <strong>Windows 11</strong>, 
     so you can start using them right away. Thank you for trying out my creations, supporting my work, 
     and being part of my programming journey!
@@ -273,7 +407,7 @@ serving as your hub for advanced system optimization 🚀</p>
     <li style="margin-top: 15px;"><strong>📌 Released Apps</strong> : Oct 2025 - Windows Optimizer (Uploaded!!)<br>
       Free Windows optimizer tool to boost performance, disable unnecessary features, manage settings, and ensure safety with backup/restore.</li>
     <li style="margin-top: 15px;"><strong>📌 Released Apps</strong> : Oct 2025 - Dockers A PyQt6-based animated dock application offering customizable folder shortcuts, transparency control, tray integration, backup settings, and persistent configuration with user-friendly settings dialog and smooth animations.(Uploaded!!)</li>
-    <li style="margin-top: 15px;"><strong>💻 Planned</strong> : Not sure where to kick things off. I’m sitting on almost 30 coding ideas waiting to come alive. Give me some time to watch a movie first. Once the inspiration hits, my keyboard won’t stay quiet. Stay tuned!!</li>
+    <li style="margin-top: 15px;"><strong>💻 Planned</strong> : Not sure where to kick things off. I'm sitting on almost 30 coding ideas waiting to come alive. Give me some time to watch a movie first. Once the inspiration hits, my keyboard won't stay quiet. Stay tuned!!</li>
   </ul>
 </div>
 
@@ -295,6 +429,46 @@ serving as your hub for advanced system optimization 🚀</p>
   <div class="powered fade-in delay-4">Powered by LΣⱮØπPy 2025</div>
 
   <script>
+    // Matrix Digital Rain Effect
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas to full window size
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      // Semi-transparent black to create trail effect
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      
+      ctx.fillStyle = '#00ffcc';
+      ctx.font = `${fontSize}px 'Fira Code', monospace`;
+      
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        const x = i * fontSize;
+        const y = drops[i] * fontSize;
+        
+        ctx.fillText(text, x, y);
+        
+        // Reset drop to top when it reaches bottom with random condition
+        if (y > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    }
+
+    // Start Matrix animation
+    setInterval(drawMatrix, 50);
+
+    // Original share functions
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
     function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
@@ -308,6 +482,12 @@ serving as your hub for advanced system optimization 🚀</p>
         navigator.share({ title: document.title, text: 'Check out this awesome website - LemonPyHub!', url: window.location.href });
       } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
     }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
   </script>
 </body>
 </html>

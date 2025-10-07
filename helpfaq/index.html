@@ -1,47 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ms">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "LemonPyHub",
+  "url": "https://lemonpyhub.github.io",
+  "description": "LemonPyHub provides free Python scripts, tools, and applications to make things easier for users.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "LemonPyHub"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://lemonpyhub.github.io/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
-  gtag('config', 'G-Y88WHZECBL');
+  gtag('config', 'G-Q9HFE57YHB');
 </script>
 
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Y88WHZECBL');
+  </script>
+
   <meta charset="UTF-8">
-  <title>LemonPyHub</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LemonPyHub (LΣⱮØπPy)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
+
+    html {
+      height: 100%;
+    }
 
     body {
+      overflow-x: hidden;
       margin: 0;
+      padding: 0;
       font-family: 'Fira Code', monospace;
-      background: #0d1117;
+      background: #1a1a1a;
       color: #c9d1d9;
-      text-align: center;
+      text-align: left; /* Changed from center to left */
       padding: 50px;
+      position: relative;
     }
 
-    h1, h2, h3 { color: #58a6ff; }
-    p { color: #8b949e; }
-
-    .muted {
-      color: #00ffcc;
+    /* MATRIX CANVAS STYLING */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
     }
 
-    .glow {
-      color: #00ffcc;
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-align: center; /* Keep logo centered */
+      width: 100%;
+    }
+
+    p { color: #c9d1d9; }
+
+    .glow, .glow * {
+      color: #00ffcc !important;
       text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
+    /*	
+    ============
+      Light
+    ============
+    */
+    body::before {
+      content:"";
+      width: 100%;
+      height: 750px;
+      position: absolute;
+      top: -200px;
+      left: 10px;
+      transform: rotate(55deg);
+      background: rgba(255,255,255,0.1);
+      background: -moz-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,0.1)), color-stop(65%, rgba(42,31,25,0)));
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -o-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: -ms-linear-gradient(left, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#2a1f19', GradientType=0.7 );
+      z-index: -1;
+    }
+
+    /*	
+    ========================
+        3D Effect for Title
+    ========================
+    */
     h1 {
+      width: 100%;
+      margin: 0 auto 0 auto;
+      font-family: 'Lato', sans-serif;
+      line-height: 1.2;
+      font-size: 5rem;
+      padding: 80px 50px 30px;
+      text-align: center; /* Keep title centered */
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      color: #00ffcc; /* Changed to neon green */
+      letter-spacing: .15em;
+      text-shadow: 
+        -1px -1px 1px #00ffcc, 
+        0px 1px 0 #2e2e2e, 
+        0px 2px 0 #2c2c2c, 
+        0px 3px 0 #2a2a2a, 
+        0px 4px 0 #282828, 
+        0px 5px 0 #262626, 
+        0px 6px 0 #242424, 
+        0px 7px 0 #222, 
+        0px 8px 0 #202020, 
+        0px 9px 0 #1e1e1e, 
+        0px 10px 0 #1c1c1c, 
+        0px 11px 0 #1a1a1a, 
+        0px 12px 0 #181818, 
+        0px 13px 0 #161616, 
+        0px 14px 0 #141414, 
+        0px 15px 0 #121212,
+        2px 20px 5px rgba(0, 0, 0, 0.9),
+        5px 23px 5px rgba(0, 0, 0, 0.3),
+        8px 27px 8px rgba(0, 0, 0, 0.5),
+        8px 28px 35px rgba(0, 0, 0, 0.9),
+        0 0 10px #00ffcc, /* Added neon glow */
+        0 0 20px #00ffcc, /* Added neon glow */
+        0 0 30px #00ffcc; /* Added neon glow */
       position: relative;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
     }
 
     h1::after {
@@ -49,28 +158,72 @@
       display: block;
       width: 120px;
       height: 2px;
-      background: #58a6ff;
-      margin: 10px auto 0 auto;
+      background: #00ffcc; /* Changed to neon green */
+      margin: 30px auto 0 auto;
       border-radius: 2px;
-      box-shadow: 0 0 6px rgba(88,166,255,0.6);
+      box-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
+    }
+
+    h2, h3 { 
+      color: #58a6ff; 
+      text-align: left; /* Align headings to left */
     }
 
     nav {
-      text-align: center;
+      text-align: center; /* Keep navigation centered */
       margin-top: 10px;
     }
 
-    nav a {
+    /* UPDATED NAVIGATION BUTTONS - Pulse on entire button hover */
+    .nav-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       margin: 0 15px;
+      padding: 12px 24px;
       text-decoration: none;
       color: #58a6ff;
       font-weight: bold;
-      transition: color 0.3s, text-shadow 0.3s;
+      border-radius: 8px;
+      background: #21262d;
+      border: 1px solid #58a6ff;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
     }
 
-    nav a:hover {
+    .nav-btn:hover {
       color: #00ffcc;
-      text-shadow: 0 0 8px #00ffcc;
+      border-color: #00ffcc;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
+      /* Pulse animation on entire button during hover */
+      animation: pulse 1s infinite;
+    }
+
+    .nav-btn i {
+      font-size: 1.1em;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-btn:hover i {
+      transform: scale(1.2);
+    }
+
+    /* Pulse animation for the entire button */
+    @keyframes pulse {
+      0% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0.7);
+      }
+      70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 10px rgba(0, 255, 204, 0);
+      }
+      100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 0 rgba(0, 255, 204, 0);
+      }
     }
 
     .intro-box {
@@ -80,26 +233,21 @@
       max-width: 800px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,255,200,0.3);
-      text-align: left;
+      text-align: left; /* Changed from center to left */
       font-size: 16px;
       line-height: 1.6;
-    }
-
-    .intro-box h2 {
-      text-align: center;
-      color: #58a6ff;
-      margin-bottom: 15px;
     }
 
     .powered {
       font-size: 12px;
       color: #00ffcc;
-      text-align: center;
+      text-align: center; /* Keep powered by centered */
       text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
       position: relative;
       display: inline-block;
       margin-top: 15px;
       padding-bottom: 14px; 
+      width: 100%;
     }
 
     .powered::before {
@@ -131,35 +279,139 @@
     .fade-in.delay-3 { animation-delay: 0.9s; }
     .fade-in.delay-4 { animation-delay: 1.2s; }
 
+  
+    .share-container {
+      position: fixed;
+      top: 50%;
+      right: 15px;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .share-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      background-color: #333;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffcc;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+
+    .share-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00ffcc;
+      opacity: 0.7;
+      transition: opacity 0.3s ease;
+    }
+
+    .share-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+
+    .share-btn:hover::before { opacity: 0; }
+
+    .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+    .tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
+    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+    .whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+    .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+    .reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+    .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+
+    /* Additional styles for left alignment */
+    .muted {
+      color: #8b949e;
+      text-align: left;
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
     @media (max-width: 768px) {
-      body { padding: 20px; }
-      nav a { display: block; margin: 10px 0; }
+      body { padding: 20px; padding-right: 70px; }
+      h1 { font-size: 3.5rem; padding: 60px 20px 20px; }
+      .nav-btn { display: block; margin: 10px auto; width: 80%; justify-content: center; }
       .intro-box { font-size: 14px; padding: 20px; }
+      .share-container { right: 8px; gap: 10px; }
+      .share-btn { width: 40px; height: 40px; font-size: 18px; }
+    }
+    @media (max-width: 480px) {
+      body { padding-right: 65px; }
+      h1 { font-size: 2.8rem; padding: 40px 15px 15px; }
+      .nav-btn { padding: 10px 15px; font-size: 14px; }
+      .share-btn { width: 38px; height: 38px; font-size: 17px; }
+    }
+    @media (max-width: 360px) {
+      body { padding-right: 60px; }
+      h1 { font-size: 2.2rem; }
+      .nav-btn { margin: 8px auto; padding: 8px 12px; }
+      .share-btn { width: 35px; height: 35px; font-size: 16px; }
+      .share-container { gap: 8px; }
     }
   </style>
 </head>
 <body>
-  <img src="/pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" 
-       style="height:120px;" class="fade-in delay-1">
+  <!-- Matrix Effect Canvas -->
+  <canvas id="matrixCanvas"></canvas>
 
+  <div class="share-container">
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
+  </div>
+
+  <div class="logo-container">
+    <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
+  </div>
   <h1 class="fade-in delay-2">LemonPyHub</h1>
-  <p class="glow fade-in delay-3">Exploring coding, technology, and the future 🚀</p>
+  <p class="glow fade-in delay-3" style="text-align: center;">Where coding meets efficiency and innovation <br>
+transforming ideas into powerful digital solutions <br> 
+serving as your hub for advanced system optimization 🚀</p><br>
 
   <nav>
-  <a href="/">Home</a>
-  <a href="/donate/">Donate</a>
-  <a href="/download/">Download</a>
-  <a href="/helpfaq/">Help/FAQ</a>
-</nav>
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+  </nav><br>
 
-    <div class="intro-box glow fade-in delay-4">
+  <div class="intro-box glow fade-in delay-4">
     <h2>Help &amp; Troubleshooting</h2>
 
     <h3>1. Why does my antivirus flag the app?</h3>
     <p class="muted"><strong>The app does not contain malware or harmful code.</strong></p>
     <p class="muted">Some antivirus programs (including Windows Defender) may mistakenly flag this app as harmful. This is known as a <em>false positive</em>.</p>
     <p class="muted"><strong>What is a false positive?</strong>  
-    A false positive means the antivirus incorrectly marks safe software as a threat. This often happens with new or lesser-known programs because they don’t yet have a reputation in the antivirus company’s database.</p>
+    A false positive means the antivirus incorrectly marks safe software as a threat. This often happens with new or lesser-known programs because they don't yet have a reputation in the antivirus company's database.</p>
     <ul>
       <li class="muted">Detection occurs because the app interacts with system settings and files to perform its functions.</li>
       <li class="muted">This behaviour, while safe, can sometimes be misinterpreted by security software.</li>
@@ -167,7 +419,7 @@
 
     <h3>2. Why does Windows Defender block the download?</h3>
     <p class="muted">Windows Defender or certain browsers may display a warning when you download the app. This is a standard safety measure for software that is <strong>new or not yet widely distributed</strong>.</p>
-    <p class="muted">You may see a message like <em>“This file may be harmful”</em>. This does not mean the app is unsafe, only that it hasn’t yet built a large reputation in Microsoft’s or the browser’s database.</p>
+    <p class="muted">You may see a message like <em>"This file may be harmful"</em>. This does not mean the app is unsafe, only that it hasn't yet built a large reputation in Microsoft's or the browser's database.</p>
 
     <h3>3. Why does the app need Administrator rights?</h3>
     <p class="muted">Some advanced features require access to system-level settings. To ensure full functionality:</p>
@@ -199,7 +451,7 @@
     <p class="muted">A: This is a false positive. The app is safe, but some antivirus programs may wrongly flag it because of how it works with system files.</p>
 
     <h3>Q2: Why does Windows Defender block the download?</h3>
-    <p class="muted">A: Windows Defender (and sometimes your browser) may show warnings for apps that are not widely downloaded yet. This does not mean the app is harmful — it’s just a precaution.</p>
+    <p class="muted">A: Windows Defender (and sometimes your browser) may show warnings for apps that are not widely downloaded yet. This does not mean the app is harmful — it's just a precaution.</p>
 
     <h3>Q3: Do I need to run the app as Administrator?</h3>
     <p class="muted">A: Yes. Some apps use Command Prompt (cmd) or PowerShell commands that require administrator rights to work correctly.</p>
@@ -212,11 +464,11 @@
       <li class="muted">Open your antivirus program.</li>
       <li class="muted">Go to Quarantine or Virus Chest.</li>
       <li class="muted">Restore the file.</li>
-      <li class="muted">Add the app to your antivirus Whitelist / Exclusion list so it won’t be flagged again.</li>
+      <li class="muted">Add the app to your antivirus Whitelist / Exclusion list so it won't be flagged again.</li>
     </ul>
 
     <h3>Q5: How do I whitelist the app in my antivirus?</h3>
-    <p class="muted">A: Most antivirus software has a section called Exclusions, Exceptions, or Whitelist. Add the app’s .exe file (or folder) there. This tells your antivirus to ignore it.</p>
+    <p class="muted">A: Most antivirus software has a section called Exclusions, Exceptions, or Whitelist. Add the app's .exe file (or folder) there. This tells your antivirus to ignore it.</p>
 
     <h3>Q6: How do I make sure I download the safe version?</h3>
     <p class="muted">A: Always download directly from our official website. Do not use third-party links or file-sharing sites.</p>
