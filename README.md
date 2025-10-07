@@ -41,6 +41,7 @@ Each application is developed in **Python** with a graphical user interface (GUI
 | ✅ Released | **DNS Manager** | Fast DNS testing and one-click application of the optimal DNS settings. |
 | ✅ Released | **Windows Optimizer** | Advanced optimization toolkit and automation modules. |
 | ✅ Released | **Dockers** | Dockers is a PyQt6 animated dock app with customizable shortcuts, transparency, tray integration, and backups. |
+| ✅ Released | **Winget Tool** | WingetTool simplifies Windows app updates with a modern dark GUI, real-time logs, progress tracking, and one-click upgrades—offering full control, admin access, and smooth management. |
 | ⚙️ In Progress | **I.D.E.A.S** | Not sure where to kick things off. I’m sitting on almost 30 coding ideas waiting to come alive. Stay tuned! |
 
 ---
@@ -126,6 +127,13 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - Free Windows optimizer tool with automation and modular performance tools.
 
 📦 **Dockers**  
+- 🔖 Version 1.0.0  
+- 📏 25.91 MB  
+- 💻 Windows 10 & 11  
+- 📅 October 2025  
+- LemonPy Dockers is a sleek, auto-hiding dock that gives instant access to 7 customizable folder shortcuts.  
+
+📦 **Winget Tool**  
 - 🔖 Version 1.0.0  
 - 📏 25.91 MB  
 - 💻 Windows 10 & 11  
