@@ -10,7 +10,11 @@
   "description": "LemonPyHub provides free Python scripts, tools, and applications to make things easier for users.",
   "publisher": {
     "@type": "Organization",
-    "name": "LemonPyHub"
+    "name": "LemonPyHub",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lemonpyhub.github.io/pic/LΣⱮØπPy2.png"
+    }
   },
   "potentialAction": {
     "@type": "SearchAction",
@@ -38,13 +42,31 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LemonPyHub (LΣⱮØπPy)</title>
+  <title>Help & FAQ - LemonPyHub</title>
+  <meta name="description" content="Get help and troubleshooting for LemonPyHub applications. FAQ about antivirus false positives, Windows Defender, administrator rights, and installation issues.">
+
+  <!-- Open Graph tags for better social sharing -->
+  <meta property="og:title" content="Help & FAQ - LemonPyHub - Troubleshooting and Support">
+  <meta property="og:description" content="Get help and troubleshooting for LemonPyHub applications. FAQ about antivirus false positives, Windows Defender, administrator rights, and installation issues.">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/LΣⱮØπPy2.png">
+  <meta property="og:url" content="https://lemonpyhub.github.io/helpfaq/">
+  <meta property="og:type" content="website">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lemonpyhub.github.io/helpfaq/">
+
+  <!-- Font performance: preconnect & load -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
 
     html {
       height: 100%;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -53,10 +75,28 @@
       padding: 0;
       font-family: 'Fira Code', monospace;
       background: #1a1a1a;
-      color: #c9d1d9;
+      color: #e8e6e3; /* Improved contrast for better readability */
       text-align: left; /* Changed from center to left */
       padding: 50px;
       position: relative;
+    }
+
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 6px;
+      background: #00ffcc;
+      color: #000;
+      padding: 8px;
+      text-decoration: none;
+      border-radius: 4px;
+      z-index: 10000;
+      font-weight: bold;
+    }
+
+    .skip-link:focus {
+      top: 6px;
     }
 
     /* MATRIX CANVAS STYLING */
@@ -78,7 +118,10 @@
       width: 100%;
     }
 
-    p { color: #c9d1d9; }
+    p { 
+      color: #e8e6e3; /* Improved contrast */
+      line-height: 1.7; /* Better readability */
+    }
 
     .glow, .glow * {
       color: #00ffcc !important;
@@ -174,14 +217,15 @@
       margin-top: 10px;
     }
 
-    /* UPDATED NAVIGATION BUTTONS - Pulse on entire button hover */
+    /* PERBAIKAN UTAMA: Navigation Buttons untuk Mobile */
     .nav-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin: 0 15px;
-      padding: 12px 24px;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 10px 10px 10px;
+      padding: 12px 20px;
       text-decoration: none;
       color: #58a6ff;
       font-weight: bold;
@@ -190,15 +234,21 @@
       border: 1px solid #58a6ff;
       transition: all 0.3s ease;
       box-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
+      box-sizing: border-box;
+      min-width: 140px;
+      max-width: 200px;
+      font-size: 14px;
     }
 
-    .nav-btn:hover {
+    .nav-btn:hover,
+    .nav-btn:focus {
       color: #00ffcc;
       border-color: #00ffcc;
       transform: scale(1.05);
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.9);
-      /* Pulse animation on entire button during hover */
       animation: pulse 1s infinite;
+      outline: 2px solid #00ffcc;
+      outline-offset: 2px;
     }
 
     .nav-btn i {
@@ -279,7 +329,6 @@
     .fade-in.delay-3 { animation-delay: 0.9s; }
     .fade-in.delay-4 { animation-delay: 1.2s; }
 
-  
     .share-container {
       position: fixed;
       top: 50%;
@@ -307,6 +356,8 @@
       border: none;
       outline: none;
       position: relative;
+      min-width: 44px;
+      min-height: 44px;
     }
 
     .share-btn::before {
@@ -322,20 +373,29 @@
       transition: opacity 0.3s ease;
     }
 
-    .share-btn:hover {
+    .share-btn:hover,
+    .share-btn:focus {
       transform: scale(1.1);
       box-shadow: 0 0 20px #00ffcc;
+      outline: 2px solid #00ffcc;
     }
 
     .share-btn:hover::before { opacity: 0; }
 
-    .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
-    .tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
-    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
-    .whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
-    .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
-    .reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
-    .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+    .facebook-btn:hover,
+    .facebook-btn:focus { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+    .tiktok-btn:hover,
+    .tiktok-btn:focus   { background-color: #000000; box-shadow: 0 0 20px #000000; }
+    .instagram-btn:hover,
+    .instagram-btn:focus { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+    .whatsapp-btn:hover,
+    .whatsapp-btn:focus { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+    .telegram-btn:hover,
+    .telegram-btn:focus { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+    .reddit-btn:hover,
+    .reddit-btn:focus   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+    .native-share-btn:hover,
+    .native-share-btn:focus { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
 
     /* Additional styles for left alignment */
     .muted {
@@ -352,136 +412,342 @@
       margin-bottom: 8px;
     }
 
+    /* PERBAIKAN MEDIA QUERIES UNTUK MOBILE */
     @media (max-width: 768px) {
-      body { padding: 20px; padding-right: 70px; }
-      h1 { font-size: 3.5rem; padding: 60px 20px 20px; }
-      .nav-btn { display: block; margin: 10px auto; width: 80%; justify-content: center; }
-      .intro-box { font-size: 14px; padding: 20px; }
-      .share-container { right: 8px; gap: 10px; }
-      .share-btn { width: 40px; height: 40px; font-size: 18px; }
+      body { 
+        padding: 20px; 
+        padding-right: 70px; 
+      }
+      
+      h1 { 
+        font-size: 3.2rem; 
+        padding: 50px 20px 20px;
+        letter-spacing: .1em;
+      }
+      
+      .nav-btn { 
+        display: inline-block;
+        margin: 8px 10px;
+        width: auto;
+        min-width: 150px;
+        max-width: 180px;
+        padding: 12px 18px;
+        font-size: 13px;
+      }
+      
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      
+      .intro-box { 
+        font-size: 14px; 
+        padding: 20px; 
+        margin: 15px auto;
+      }
+      
+      .share-container { 
+        right: 8px; 
+        gap: 10px; 
+      }
+      
+      .share-btn { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 18px;
+        min-width: 44px;
+        min-height: 44px;
+      }
     }
+
     @media (max-width: 480px) {
-      body { padding-right: 65px; }
-      h1 { font-size: 2.8rem; padding: 40px 15px 15px; }
-      .nav-btn { padding: 10px 15px; font-size: 14px; }
-      .share-btn { width: 38px; height: 38px; font-size: 17px; }
+      body { 
+        padding: 15px;
+        padding-right: 65px;
+      }
+      
+      h1 { 
+        font-size: 2.4rem; 
+        padding: 40px 15px 15px;
+      }
+      
+      .nav-btn { 
+        margin: 6px 8px;
+        min-width: 140px;
+        max-width: 160px;
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+      
+      nav {
+        gap: 6px;
+      }
+      
+      .share-btn { 
+        width: 38px; 
+        height: 38px; 
+        font-size: 17px;
+        min-width: 44px;
+        min-height: 44px;
+      }
     }
+
     @media (max-width: 360px) {
-      body { padding-right: 60px; }
-      h1 { font-size: 2.2rem; }
-      .nav-btn { margin: 8px auto; padding: 8px 12px; }
-      .share-btn { width: 35px; height: 35px; font-size: 16px; }
-      .share-container { gap: 8px; }
+      body { 
+        padding: 12px;
+        padding-right: 60px;
+      }
+      
+      h1 { 
+        font-size: 2rem; 
+        padding: 30px 10px 10px;
+      }
+      
+      .nav-btn { 
+        margin: 4px 6px;
+        min-width: 130px;
+        max-width: 150px;
+        padding: 8px 12px;
+        font-size: 11px;
+      }
+      
+      nav {
+        gap: 4px;
+      }
+      
+      .share-btn { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 16px;
+        min-width: 44px;
+        min-height: 44px;
+      }
+      
+      .share-container { 
+        gap: 8px; 
+      }
     }
   </style>
 </head>
 <body>
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Matrix Effect Canvas -->
   <canvas id="matrixCanvas"></canvas>
 
   <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
-    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
-    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
-    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
   </div>
 
-  <div class="logo-container">
-    <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo" style="height:120px;" class="fade-in delay-1">
-  </div>
-  <h1 class="fade-in delay-2">LemonPyHub</h1>
-  <p class="glow fade-in delay-3">Where coding meets efficiency and innovation <br>
-transforming ideas into powerful digital solutions <br> 
-serving as your hub for advanced system optimization 🚀</p><br>
+  <main id="main-content">
+    <div class="logo-container">
+      <img src="pic/LΣⱮØπPy2.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
+    </div>
+    
+    <h1 class="fade-in delay-2" style="text-align:center;">LemonPyHub</h1>
+    <p class="glow fade-in delay-3" style="text-align:center;">
+      Where coding meets efficiency and innovation <br>
+      transforming ideas into powerful digital solutions <br> 
+      serving as your hub for advanced system optimization 🚀
+    </p><br>
 
-  <nav>
-    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
-  </nav><br>
-
-  <div class="intro-box glow fade-in delay-4">
-    <h2>Help &amp; Troubleshooting</h2>
-
-    <h3>1. Why does my antivirus flag the app?</h3>
-    <p class="muted"><strong>The app does not contain malware or harmful code.</strong></p>
-    <p class="muted">Some antivirus programs (including Windows Defender) may mistakenly flag this app as harmful. This is known as a <em>false positive</em>.</p>
-    <p class="muted"><strong>What is a false positive?</strong>  
-    A false positive means the antivirus incorrectly marks safe software as a threat. This often happens with new or lesser-known programs because they don't yet have a reputation in the antivirus company's database.</p>
-    <ul>
-      <li class="muted">Detection occurs because the app interacts with system settings and files to perform its functions.</li>
-      <li class="muted">This behaviour, while safe, can sometimes be misinterpreted by security software.</li>
-    </ul>
-
-    <h3>2. Why does Windows Defender block the download?</h3>
-    <p class="muted">Windows Defender or certain browsers may display a warning when you download the app. This is a standard safety measure for software that is <strong>new or not yet widely distributed</strong>.</p>
-    <p class="muted">You may see a message like <em>"This file may be harmful"</em>. This does not mean the app is unsafe, only that it hasn't yet built a large reputation in Microsoft's or the browser's database.</p>
-
-    <h3>3. Why does the app need Administrator rights?</h3>
-    <p class="muted">Some advanced features require access to system-level settings. To ensure full functionality:</p>
-    <ul>
-      <li class="muted">Right-click the app → <strong>Run as Administrator</strong>.</li>
-      <li class="muted">Without admin rights, certain features (like system-level changes or optimizations) may not work as intended.</li>
-    </ul>
-
-    <h3>4. Tips for a smooth installation</h3>
-    <ul>
-      <li class="muted">✅ Always download from the official website.</li>
-      <li class="muted">✅ If antivirus flags it, add the app to your safe list/whitelist.</li>
-      <li class="muted">✅ Keep your Windows system up to date (Windows Update).</li>
-      <li class="muted">✅ Avoid renaming or moving the installer until the setup is complete.</li>
-    </ul>
-
-    <h3>5. Still experiencing problems?</h3>
-    <ul>
-      <li class="muted">Check antivirus quarantine — the app may have been placed there.</li>
-      <li class="muted">Ensure stable internet connection — required for download and updates.</li>
-      <li class="muted">Run with administrator permissions — make sure admin rights are enabled.</li>
-    </ul>
-  </div>
+    <nav>
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+    </nav><br>
 
     <div class="intro-box glow fade-in delay-4">
-    <h2>(FAQ)</h2>
+      <h2>Help &amp; Troubleshooting</h2>
 
-    <h3>Q1: Why does my antivirus say the app is a virus?</h3>
-    <p class="muted">A: This is a false positive. The app is safe, but some antivirus programs may wrongly flag it because of how it works with system files.</p>
+      <h3>1. Why does my antivirus flag the app?</h3>
+      <p class="muted"><strong>The app does not contain malware or harmful code.</strong></p>
+      <p class="muted">Some antivirus programs (including Windows Defender) may mistakenly flag this app as harmful. This is known as a <em>false positive</em>.</p>
+      <p class="muted"><strong>What is a false positive?</strong>  
+      A false positive means the antivirus incorrectly marks safe software as a threat. This often happens with new or lesser-known programs because they don't yet have a reputation in the antivirus company's database.</p>
+      <ul>
+        <li class="muted">Detection occurs because the app interacts with system settings and files to perform its functions.</li>
+        <li class="muted">This behaviour, while safe, can sometimes be misinterpreted by security software.</li>
+      </ul>
 
-    <h3>Q2: Why does Windows Defender block the download?</h3>
-    <p class="muted">A: Windows Defender (and sometimes your browser) may show warnings for apps that are not widely downloaded yet. This does not mean the app is harmful — it's just a precaution.</p>
+      <h3>2. Why does Windows Defender block the download?</h3>
+      <p class="muted">Windows Defender or certain browsers may display a warning when you download the app. This is a standard safety measure for software that is <strong>new or not yet widely distributed</strong>.</p>
+      <p class="muted">You may see a message like <em>"This file may be harmful"</em>. This does not mean the app is unsafe, only that it hasn't yet built a large reputation in Microsoft's or the browser's database.</p>
 
-    <h3>Q3: Do I need to run the app as Administrator?</h3>
-    <p class="muted">A: Yes. Some apps use Command Prompt (cmd) or PowerShell commands that require administrator rights to work correctly.</p>
-    <p class="muted">Right-click the app → <strong>Run as administrator</strong>.</p>
-    <p class="muted">Without admin rights, these commands may fail and certain features will not work.</p>
+      <h3>3. Why does the app need Administrator rights?</h3>
+      <p class="muted">Some advanced features require access to system-level settings. To ensure full functionality:</p>
+      <ul>
+        <li class="muted">Right-click the app → <strong>Run as Administrator</strong>.</li>
+        <li class="muted">Without admin rights, certain features (like system-level changes or optimizations) may not work as intended.</li>
+      </ul>
 
-    <h3>Q4: What should I do if my antivirus deletes the file?</h3>
-    <p class="muted">A: If your antivirus mistakenly deletes the app:</p>
-    <ul>
-      <li class="muted">Open your antivirus program.</li>
-      <li class="muted">Go to Quarantine or Virus Chest.</li>
-      <li class="muted">Restore the file.</li>
-      <li class="muted">Add the app to your antivirus Whitelist / Exclusion list so it won't be flagged again.</li>
-    </ul>
+      <h3>4. Tips for a smooth installation</h3>
+      <ul>
+        <li class="muted">✅ Always download from the official website.</li>
+        <li class="muted">✅ If antivirus flags it, add the app to your safe list/whitelist.</li>
+        <li class="muted">✅ Keep your Windows system up to date (Windows Update).</li>
+        <li class="muted">✅ Avoid renaming or moving the installer until the setup is complete.</li>
+      </ul>
 
-    <h3>Q5: How do I whitelist the app in my antivirus?</h3>
-    <p class="muted">A: Most antivirus software has a section called Exclusions, Exceptions, or Whitelist. Add the app's .exe file (or folder) there. This tells your antivirus to ignore it.</p>
+      <h3>5. Still experiencing problems?</h3>
+      <ul>
+        <li class="muted">Check antivirus quarantine — the app may have been placed there.</li>
+        <li class="muted">Ensure stable internet connection — required for download and updates.</li>
+        <li class="muted">Run with administrator permissions — make sure admin rights are enabled.</li>
+      </ul>
+    </div>
 
-    <h3>Q6: How do I make sure I download the safe version?</h3>
-    <p class="muted">A: Always download directly from our official website. Do not use third-party links or file-sharing sites.</p>
+    <div class="intro-box glow fade-in delay-4">
+      <h2>(FAQ)</h2>
 
-    <h3>Q7: Are these apps paid or free?</h3>
-    <p class="muted">A: All apps provided here are Freeware. You can download and use them at no cost. Donations are optional and help support further development.</p>
+      <h3>Q1: Why does my antivirus say the app is a virus?</h3>
+      <p class="muted">A: This is a false positive. The app is safe, but some antivirus programs may wrongly flag it because of how it works with system files.</p>
 
-    <h3>Q8: Still having issues?</h3>
-    <p class="muted">A: Double-check your antivirus settings, whitelist the file, and ensure you have admin rights.</p>
-  </div>
+      <h3>Q2: Why does Windows Defender block the download?</h3>
+      <p class="muted">A: Windows Defender (and sometimes your browser) may show warnings for apps that are not widely downloaded yet. This does not mean the app is harmful — it's just a precaution.</p>
 
-  <div class="powered fade-in delay-4">
-    Powered by LΣⱮØπPy 2025
-  </div>
+      <h3>Q3: Do I need to run the app as Administrator?</h3>
+      <p class="muted">A: Yes. Some apps use Command Prompt (cmd) or PowerShell commands that require administrator rights to work correctly.</p>
+      <p class="muted">Right-click the app → <strong>Run as administrator</strong>.</p>
+      <p class="muted">Without admin rights, these commands may fail and certain features will not work.</p>
+
+      <h3>Q4: What should I do if my antivirus deletes the file?</h3>
+      <p class="muted">A: If your antivirus mistakenly deletes the app:</p>
+      <ul>
+        <li class="muted">Open your antivirus program.</li>
+        <li class="muted">Go to Quarantine or Virus Chest.</li>
+        <li class="muted">Restore the file.</li>
+        <li class="muted">Add the app to your antivirus Whitelist / Exclusion list so it won't be flagged again.</li>
+      </ul>
+
+      <h3>Q5: How do I whitelist the app in my antivirus?</h3>
+      <p class="muted">A: Most antivirus software has a section called Exclusions, Exceptions, or Whitelist. Add the app's .exe file (or folder) there. This tells your antivirus to ignore it.</p>
+
+      <h3>Q6: How do I make sure I download the safe version?</h3>
+      <p class="muted">A: Always download directly from our official website. Do not use third-party links or file-sharing sites.</p>
+
+      <h3>Q7: Are these apps paid or free?</h3>
+      <p class="muted">A: All apps provided here are Freeware. You can download and use them at no cost. Donations are optional and help support further development.</p>
+
+      <h3>Q8: Still having issues?</h3>
+      <p class="muted">A: Double-check your antivirus settings, whitelist the file, and ensure you have admin rights.</p>
+    </div>
+
+    <div class="powered fade-in delay-4">
+      Powered by LΣⱮØπPy 2025
+    </div>
+  </main>
+
+  <script>
+    // Optimized Matrix Digital Rain Effect with error handling
+    let animationId;
+
+    function initMatrix() {
+      try {
+        const canvas = document.getElementById('matrixCanvas');
+        if (!canvas) {
+          console.warn('Matrix canvas not found');
+          return;
+        }
+        
+        const ctx = canvas.getContext('2d');
+        if (!ctx) {
+          console.warn('Canvas context not supported');
+          return;
+        }
+
+        // Set canvas to full window size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+        const fontSize = 14;
+        const columns = canvas.width / fontSize;
+        const drops = Array(Math.floor(columns)).fill(1);
+
+        function drawMatrix() {
+          // Semi-transparent black to create trail effect
+          ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+          
+          ctx.fillStyle = '#00ffcc';
+          ctx.font = `${fontSize}px 'Fira Code', monospace`;
+          
+          for (let i = 0; i < drops.length; i++) {
+            const text = characters.charAt(Math.floor(Math.random() * characters.length));
+            const x = i * fontSize;
+            const y = drops[i] * fontSize;
+            
+            ctx.fillText(text, x, y);
+            
+            // Reset drop to top when it reaches bottom with random condition
+            if (y > canvas.height && Math.random() > 0.975) {
+              drops[i] = 0;
+            }
+            drops[i]++;
+          }
+        }
+
+        // Optimized animation using requestAnimationFrame
+        function animateMatrix() {
+          drawMatrix();
+          animationId = requestAnimationFrame(animateMatrix);
+        }
+
+        // Start optimized animation
+        animateMatrix();
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+        });
+
+        // Pause animation when tab is not visible for performance
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            cancelAnimationFrame(animationId);
+          } else {
+            animateMatrix();
+          }
+        });
+
+      } catch (error) {
+        console.warn('Matrix animation initialization failed:', error);
+      }
+    }
+
+    // Initialize matrix when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMatrix);
+    } else {
+      initMatrix();
+    }
+
+    // Original share functions
+    function getCurrentURL() { return encodeURIComponent(window.location.href); }
+    function getPageTitle() { return encodeURIComponent(document.title); }
+    function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
+    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en','_blank'); }
+    function shareOnInstagram() { window.open('https://www.instagram.com/','_blank'); }
+    function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
+    function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
+    function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
+    function nativeShare() {
+      if (navigator.share) {
+        navigator.share({ title: document.title, text: 'Check out this awesome website - LemonPyHub!', url: window.location.href });
+      } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
+    }
+  </script>
 </body>
 </html>
