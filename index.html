@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ms">
 <head>
+  <!-- 🔹 Structured Data (WebSite + Person) -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -22,17 +23,56 @@
     "query-input": "required name=search_term_string"
   }
 }
-</script>
+  </script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "LΣⱮØπPy",
+  "url": "https://lemonpyhub.github.io/",
+  "sameAs": [
+    "https://github.com/lemonpyhub",
+    "https://www.youtube.com/@lemonpyhub"
+  ]
+}
+  </script>
+
+  <!-- 🔹 Standard Meta Tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LemonPyHub (LΣⱮØπPy)</title>
+  <meta name="description" content="LemonPyHub provides free Python scripts, tools, and applications to make things easier for users.">
+  <meta name="keywords" content="LemonPyHub, Python tools, Windows utilities, free apps, coding, software development, LΣⱮØπPy, optimization, scripts, open source">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lemonpyhub.github.io/">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-Q9HFE57YHB');
-</script>
+  <meta name="theme-color" content="#00ffcc">
+
+  <!-- 🔹 Open Graph / Facebook Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LemonPyHub - Free Python Tools & Apps">
+  <meta property="og:description" content="Download free Python-based tools and apps for Windows 10/11. Created by LemonPyHub (LΣⱮØπPy).">
+  <meta property="og:url" content="https://lemonpyhub.github.io/">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/LΣⱮØπPy2.png">
+  <meta property="og:site_name" content="LemonPyHub">
+
+  <!-- 🔹 Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="LemonPyHub - Free Python Tools & Apps">
+  <meta name="twitter:description" content="Explore free Windows utilities built with Python to simplify your workflow.">
+  <meta name="twitter:image" content="https://lemonpyhub.github.io/pic/LΣⱮØπPy2.png">
+
+  <!-- 🔹 Favicon -->
+  <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
+
+  <!-- Google tag (gtag.js) - preserved as original (two IDs) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB');
+  </script>
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y88WHZECBL"></script>
   <script>
@@ -42,17 +82,16 @@
     gtag('config', 'G-Y88WHZECBL');
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LemonPyHub (LΣⱮØπPy)</title>
-  <meta name="description" content="LemonPyHub provides free Python scripts, tools, and applications to make things easier for users.">
-
   <!-- Font performance: preconnect & load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Manifest for PWA Support (optional, recommended) -->
+  <link rel="manifest" href="/manifest.json">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
 
@@ -99,7 +138,7 @@
     /*	
     ============
       Light
-    ============
+    ============ 
     */
     body::before {
       content:"";
@@ -461,6 +500,7 @@
     }
   </style>
 </head>
+
 <body>
   <!-- Matrix Effect Canvas -->
   <canvas id="matrixCanvas"></canvas>
