@@ -23,7 +23,6 @@
   }
 }
 </script>
-<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -45,17 +44,15 @@
   <title>Donate - LemonPyHub</title>
   <meta name="description" content="Support LemonPyHub - Free Python scripts, tools, and applications. Donate via Touch 'n Go, DuitNow, or Buy Me a Coffee.">
 
-  <!-- Open Graph tags for better social sharing -->
+   <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
   <meta property="og:title" content="Donate - LemonPyHub - Support Free Python Tools">
   <meta property="og:description" content="Support LemonPyHub's free Python scripts, tools, and applications. Donate via Touch 'n Go, DuitNow, or Buy Me a Coffee.">
   <meta property="og:image" content="https://lemonpyhub.github.io/pic/LΣⱮØπPy2.png">
   <meta property="og:url" content="https://lemonpyhub.github.io/donate/">
   <meta property="og:type" content="website">
 
-  <!-- Canonical URL -->
   <link rel="canonical" href="https://lemonpyhub.github.io/donate/">
 
-  <!-- Font performance: preconnect & load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
@@ -75,13 +72,12 @@
       padding: 0;
       font-family: 'Fira Code', monospace;
       background: #1a1a1a;
-      color: #e8e6e3; /* Improved contrast for better readability */
+      color: #e8e6e3; 
       text-align: center;
       padding: 50px;
       position: relative;
     }
 
-    /* Skip link for accessibility */
     .skip-link {
       position: absolute;
       top: -40px;
@@ -99,7 +95,6 @@
       top: 6px;
     }
 
-    /* MATRIX CANVAS STYLING */
     #matrixCanvas {
       position: fixed;
       top: 0;
@@ -117,8 +112,8 @@
     }
 
     p { 
-      color: #e8e6e3; /* Improved contrast */
-      line-height: 1.7; /* Better readability */
+      color: #e8e6e3; 
+      line-height: 1.7; 
     }
 
     .glow, .glow * {
@@ -126,11 +121,7 @@
       text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
-    /*	
-    ============
-      Light
-    ============
-    */
+    
     body::before {
       content:"";
       width: 100%;
@@ -150,11 +141,7 @@
       z-index: -1;
     }
 
-    /*	
-    ========================
-        3D Effect for Title
-    ========================
-    */
+    
     h1 {
       width: 100%;
       margin: 0 auto 0 auto;
@@ -165,7 +152,7 @@
       text-align: center;
       text-transform: uppercase;
       text-rendering: optimizeLegibility;
-      color: #00ffcc; /* Changed to neon green */
+      color: #00ffcc; 
       letter-spacing: .15em;
       text-shadow: 
         -1px -1px 1px #00ffcc, 
@@ -188,9 +175,9 @@
         5px 23px 5px rgba(0, 0, 0, 0.3),
         8px 27px 8px rgba(0, 0, 0, 0.5),
         8px 28px 35px rgba(0, 0, 0, 0.9),
-        0 0 10px #00ffcc, /* Added neon glow */
-        0 0 20px #00ffcc, /* Added neon glow */
-        0 0 30px #00ffcc; /* Added neon glow */
+        0 0 10px #00ffcc, 
+        0 0 20px #00ffcc, 
+        0 0 30px #00ffcc; 
       position: relative;
     }
 
@@ -199,7 +186,7 @@
       display: block;
       width: 120px;
       height: 2px;
-      background: #00ffcc; /* Changed to neon green */
+      background: #00ffcc; 
       margin: 30px auto 0 auto;
       border-radius: 2px;
       box-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
@@ -212,7 +199,7 @@
       margin-top: 10px;
     }
 
-    /* PERBAIKAN UTAMA: Navigation Buttons untuk Mobile */
+    
     .nav-btn {
       position: relative;
       display: inline-flex;
@@ -255,7 +242,7 @@
       transform: scale(1.2);
     }
 
-    /* Pulse animation for the entire button */
+    
     @keyframes pulse {
       0% {
         transform: scale(1.05);
@@ -323,7 +310,6 @@
     .fade-in.delay-3 { animation-delay: 0.9s; }
     .fade-in.delay-4 { animation-delay: 1.2s; }
 
-    /* QR Container Styles */
     #qr-container {
       display: flex;
       justify-content: center;
@@ -415,7 +401,6 @@
     .native-share-btn:hover,
     .native-share-btn:focus { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
 
-    /* PERBAIKAN MEDIA QUERIES UNTUK MOBILE */
     @media (max-width: 768px) {
       body { 
         padding: 20px; 
@@ -429,9 +414,9 @@
       }
       
       .nav-btn { 
-        display: inline-block; /* KUNCI: bukan block */
+        display: inline-block; 
         margin: 8px 10px;
-        width: auto; /* KUNCI: hapus width 80% */
+        width: auto; 
         min-width: 150px;
         max-width: 180px;
         padding: 12px 18px;
@@ -542,10 +527,8 @@
   </style>
 </head>
 <body>
-  <!-- Skip link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <!-- Matrix Effect Canvas -->
   <canvas id="matrixCanvas"></canvas>
 
   <div class="share-container">
@@ -581,7 +564,6 @@
   </main>
 
   <script>
-    // Optimized Matrix Digital Rain Effect with error handling
     let animationId;
 
     function initMatrix() {
@@ -598,7 +580,6 @@
           return;
         }
 
-        // Set canvas to full window size
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
@@ -608,7 +589,6 @@
         const drops = Array(Math.floor(columns)).fill(1);
 
         function drawMatrix() {
-          // Semi-transparent black to create trail effect
           ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           
@@ -622,7 +602,6 @@
             
             ctx.fillText(text, x, y);
             
-            // Reset drop to top when it reaches bottom with random condition
             if (y > canvas.height && Math.random() > 0.975) {
               drops[i] = 0;
             }
@@ -630,22 +609,18 @@
           }
         }
 
-        // Optimized animation using requestAnimationFrame
         function animateMatrix() {
           drawMatrix();
           animationId = requestAnimationFrame(animateMatrix);
         }
 
-        // Start optimized animation
         animateMatrix();
 
-        // Handle window resize
         window.addEventListener('resize', function() {
           canvas.width = window.innerWidth;
           canvas.height = window.innerHeight;
         });
 
-        // Pause animation when tab is not visible for performance
         document.addEventListener('visibilitychange', function() {
           if (document.hidden) {
             cancelAnimationFrame(animationId);
@@ -659,14 +634,12 @@
       }
     }
 
-    // Initialize matrix when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initMatrix);
     } else {
       initMatrix();
     }
 
-    // Original share functions
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
     function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
@@ -681,7 +654,6 @@
       } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
     }
 
-    // Donation functionality with better error handling
     function loadDonationOptions() {
       fetch("https://ipapi.co/json/")
         .then(res => {
@@ -722,7 +694,6 @@
         .catch(err => {
           console.error('Donation options loading error:', err);
           document.getElementById("msg").innerText = "Error loading donation options. Please try again later.";
-          // Fallback to international option
           document.getElementById("donate-container").innerHTML = `
             <a href="https://buymeacoffee.com/lemonpy" target="_blank" aria-label="Support LemonPyHub on Buy Me a Coffee">
               <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
@@ -732,7 +703,6 @@
         });
     }
 
-    // Load donation options when DOM is ready
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', loadDonationOptions);
     } else {
