@@ -671,6 +671,12 @@
       text-align: left;
     }
 
+    /* ensure download-hash content is left-aligned inside modal */
+    .download-hash {
+      text-align: left;
+      margin-top: 8px;
+    }
+
     .pagination {
       display: flex;
       justify-content: center;
@@ -762,6 +768,26 @@
     .reddit-btn:focus   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
     .native-share-btn:hover,
     .native-share-btn:focus { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+
+    /* Tambahan gaya untuk butang salin hash (copy button) */
+    .copy-btn {
+      display: inline-block;
+      margin-left: 10px;
+      padding: 6px 10px;
+      font-size: 0.85rem;
+      border-radius: 6px;
+      border: 1px solid #00ffcc;
+      background: #21262d;
+      color: #00ffcc;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .copy-btn:hover, .copy-btn:focus {
+      background: #00ffcc;
+      color: #0d1117;
+      transform: translateY(-1px);
+      box-shadow: 0 0 8px rgba(0,255,204,0.4);
+    }
 
     @media (max-width: 768px) {
       body { 
@@ -1183,9 +1209,22 @@
           <div class="download-block">
             <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Windows Maintenance 3.9.5 (Installer)</a>
             <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download>Windows Maintenance 3.9.7 (Portable)</a>
-            <div class="download-date">v3.9.7 | Windows 10 & 11</div>
-            <div class="download-date">Freeware | September 2025</div>
-            <div class="download-size">Installer: 10.45MB | Portable: 11.16MB</div>
+            <div class="download-date" style="text-align:left;">v3.9.7 | Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Installer: 10.45MB | Portable: 11.16MB</div>
+
+
+            <!-- ✅ Maklumat SHA256 & VirusTotal (Windows Maintenance Tool) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-wmt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/4546fbbc933457bd4562795aed8b6a54613e7ec5c2dbf3a16671e376707a2c90/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-wmt" style="display:none;">5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6</code>
+            </div>
+            <!-- ✅ Tamat Windows Maintenance Tool info -->
+
           </div>
         </div>
         <div class="tool-description">
@@ -1213,9 +1252,21 @@
           <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager-modal">
           <div class="download-block">
             <a class="btn" href="DNS_Manager/DNS_Manager.rar" download>DNS Manager (Portable)</a>
-            <div class="download-date">Windows 10 & 11</div>
-            <div class="download-date">Freeware | September 2025</div>
-            <div class="download-size">Portable: 24.58MB</div>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 24.58MB</div>
+
+            <!-- ✅ Maklumat SHA256 & VirusTotal (DNS Manager) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-dns')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/a5422dc5065ad20fe9de6b2e99c59d8fa84e4dff98136ac34fd39edc39121c96" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-dns" style="display:none;">f4ff4d285fe8c37c2b809bb5d03d941ad0181ae1e42776f4d9c508347101c9f7</code>
+            </div>
+            <!-- ✅ Tamat DNS Manager info -->
+
           </div>
         </div>
         <div class="tool-description">
@@ -1243,10 +1294,22 @@
           <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot" class="tool-img" id="Windows-Optimizer-modal">
           <div class="download-block">
             <a class="btn" href="Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
-            <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
-            <div class="download-date">Auto-Detect Windows</div>
-            <div class="download-date">Freeware | September 2025</div>
-            <div class="download-size">Portable: 27.24MB</div>
+            <div class="download-date" style="text-align:left;">Win7, Win8, Win8.1, Win10, Win11</div>
+            <div class="download-date" style="text-align:left;">Auto-Detect Windows</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 27.24MB</div>
+
+            <!-- ✅ Maklumat SHA256 & VirusTotal (Windows Optimizer) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-wopt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/d0f93823ef8781b4a42e8ee591e09cbb6fedabbf1bbfe5837e52e1caf8f5eedd" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-wopt" style="display:none;">4e42b76a1cd1c801561b4e4b2c057b044aa27dff4ce6677c36365e4d3c28d9bc</code>
+            </div>
+            <!-- ✅ Tamat Windows Optimizer info -->
+
           </div>
         </div>
         <div class="tool-description">
@@ -1275,10 +1338,22 @@
           <img src="Dockers/pic/dockers.png" alt="Dockers Screenshot" class="tool-img" id="Dockers-modal">
           <div class="download-block">
             <a class="btn" href="Dockers/DockersSetup.rar" download>Dockers</a>
-            <div class="download-date">Windows 10 & 11</div>
-            <div class="download-date">Quick Folder Access</div>
-            <div class="download-date">Freeware | October 2025</div>
-            <div class="download-size">Portable: 24.91MB</div>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Quick Folder Access</div>
+            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 24.91MB</div>
+
+            <!-- ✅ Maklumat SHA256 & VirusTotal (Dockers) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-dockers')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/e3c238dc6fb3abbf4f844b14da449c1841fa5f4faf2ac0b35f8fec796af6592b?nocache=1" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-dockers" style="display:none;">2cdee2f7561f9723ec12cee6696e472240a2d797f64707e6a66bc84d6312baf3</code>
+            </div>
+            <!-- ✅ Tamat Dockers info -->
+
           </div>
         </div>
         <div class="tool-description">
@@ -1307,10 +1382,22 @@
           <img src="WingetTool/pic/Winget.png" alt="Winget Tool Screenshot" class="tool-img" id="Winget-modal">
           <div class="download-block">
             <a class="btn" href="WingetTool/WingetTool.rar" download>Winget Tool</a>
-            <div class="download-date">Windows 10 & 11</div>
-            <div class="download-date">Just Select & Click</div>
-            <div class="download-date">Freeware | October 2025</div>
-            <div class="download-size">Portable: 35.2MB</div>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Just Select & Click</div>
+            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 35.2MB</div>
+
+            <!-- ✅ Maklumat SHA256 & VirusTotal (Winget Tool) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-winget')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-winget" style="display:none;">0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e</code>
+            </div>
+            <!-- ✅ Tamat Winget Tool info -->
+
           </div>
         </div>
         <div class="tool-description">
@@ -1497,7 +1584,7 @@
         });
       }
     });
-
+    
 
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', function() {
@@ -1595,6 +1682,43 @@
         btn.style.padding = '12px 16px';
       });
     }
+
+    /* ---------- Fungsi tambahan: salin SHA256 ---------- */
+    function copyHash(elementId) {
+      try {
+        var el = document.getElementById(elementId);
+        if (!el) {
+          alert('Hash element not found.');
+          return;
+        }
+        var text = el.innerText || el.textContent;
+        if (!navigator.clipboard) {
+          // fallback
+          var textarea = document.createElement('textarea');
+          textarea.value = text;
+          document.body.appendChild(textarea);
+          textarea.select();
+          try {
+            document.execCommand('copy');
+            alert('SHA256 copied to clipboard!');
+          } catch (err) {
+            alert('Copy failed - please select and copy manually.');
+          }
+          document.body.removeChild(textarea);
+          return;
+        }
+        navigator.clipboard.writeText(text).then(function() {
+          alert('SHA256 copied to clipboard!');
+        }, function() {
+          alert('Copy failed - please select and copy manually.');
+        });
+      } catch (error) {
+        console.error('copyHash error:', error);
+        alert('An error occurred while trying to copy the hash.');
+      }
+    }
+    /* ---------- Tamat fungsi salin ---------- */
+
   </script>
 </body>
 </html>
