@@ -331,174 +331,101 @@
     .fade-in.delay-4 { animation-delay: 1.2s; }
 
   
-    .share-container {
-      position: fixed;
-      top: 50%;
-      right: 15px;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      z-index: 1000;
-    }
+    /* SHARE BUTTONS RESPONSIVE */
+.share-container {
+  position: fixed;
+  top: 50%;
+  right: 2vw; /* auto ikut screen/device */
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1000;
+}
 
-    .share-btn {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: white;
-      background-color: #333;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px #00ffcc;
-      cursor: pointer;
-      border: none;
-      outline: none;
-      position: relative;
-    }
+.share-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: white;
+  background-color: #333;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px #00ffcc;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  position: relative;
+}
 
-    .share-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      border-radius: 50%;
-      box-shadow: 0 0 15px #00ffcc;
-      opacity: 0.7;
-      transition: opacity 0.3s ease;
-    }
+.share-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00ffcc;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
 
-    .share-btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 20px #00ffcc;
-    }
+.share-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px #00ffcc;
+}
 
-    .share-btn:hover::before { opacity: 0; }
+.share-btn:hover::before { opacity: 0; }
 
-    .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
-    .tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
-    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
-    .whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
-    .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
-    .reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
-    .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+.facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+.tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
+.instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+.whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+.telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+.reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+.native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
 
-    /* PERBAIKAN MEDIA QUERIES UNTUK MOBILE */
-    @media (max-width: 768px) {
-      body { 
-        padding: 20px; 
-        padding-right: 70px; 
-      }
-      
-      h1 { 
-        font-size: 3.2rem; 
-        padding: 50px 20px 20px;
-        letter-spacing: .1em;
-      }
-      
-      .nav-btn { 
-        display: inline-block; /* KUNCI: bukan block */
-        margin: 8px 10px;
-        width: auto; /* KUNCI: hapus width 80% */
-        min-width: 150px;
-        max-width: 180px;
-        padding: 12px 18px;
-        font-size: 13px;
-      }
-      
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-      }
-      
-      .intro-box { 
-        font-size: 14px; 
-        padding: 20px; 
-        margin: 15px auto;
-      }
-      
-      .share-container { 
-        right: 8px; 
-        gap: 10px; 
-      }
-      
-      .share-btn { 
-        width: 40px; 
-        height: 40px; 
-        font-size: 18px;
-      }
-    }
+/* MEDIA QUERIES RESPONSIVE */
+@media (max-width: 768px) {
+  .share-container { 
+    right: 3vw; 
+    gap: 10px; 
+  }
+  .share-btn { 
+    width: 40px; 
+    height: 40px; 
+    font-size: 18px;
+  }
+}
 
-    @media (max-width: 480px) {
-      body { 
-        padding: 15px;
-        padding-right: 65px;
-      }
-      
-      h1 { 
-        font-size: 2.4rem; 
-        padding: 40px 15px 15px;
-      }
-      
-      .nav-btn { 
-        margin: 6px 8px;
-        min-width: 140px;
-        max-width: 160px;
-        padding: 10px 15px;
-        font-size: 12px;
-      }
-      
-      nav {
-        gap: 6px;
-      }
-      
-      .share-btn { 
-        width: 38px; 
-        height: 38px; 
-        font-size: 17px;
-      }
-    }
+@media (max-width: 480px) {
+  .share-container { 
+    right: 2.5vw; 
+    gap: 8px; 
+  }
+  .share-btn { 
+    width: 38px; 
+    height: 38px; 
+    font-size: 17px;
+  }
+}
 
-    @media (max-width: 360px) {
-      body { 
-        padding: 12px;
-        padding-right: 60px;
-      }
-      
-      h1 { 
-        font-size: 2rem; 
-        padding: 30px 10px 10px;
-      }
-      
-      .nav-btn { 
-        margin: 4px 6px;
-        min-width: 130px;
-        max-width: 150px;
-        padding: 8px 12px;
-        font-size: 11px;
-      }
-      
-      nav {
-        gap: 4px;
-      }
-      
-      .share-btn { 
-        width: 35px; 
-        height: 35px; 
-        font-size: 16px;
-      }
-      
-      .share-container { 
-        gap: 8px; 
-      }
-    }
+@media (max-width: 360px) {
+  .share-container { 
+    right: 2vw; 
+    gap: 8px; 
+  }
+  .share-btn { 
+    width: 35px; 
+    height: 35px; 
+    font-size: 16px;
+  }
+}
+
   </style>
 </head>
 
