@@ -286,15 +286,16 @@
       text-align: center;
       text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
       position: relative;
-      display: inline-block;
-      margin-top: 15px;
-      padding-bottom: 14px; 
+      display: block;
+      margin: 30px auto 0 auto;
+      padding-bottom: 14px;
+      width: 100%;
     }
 
     .powered::before {
       content: "";
       position: absolute;
-      left: -40px;
+      left: 50%;
       bottom: 0;
       height: 4px;
       width: 40px;
@@ -302,11 +303,12 @@
       border-radius: 4px;
       animation: laser-scan 2s ease-in-out infinite alternate;
       box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+      transform: translateX(-50%);
     }
 
     @keyframes laser-scan {
-      from { left: 0; }
-      to   { left: calc(100% - 40px); }
+      0% { left: 30%; }
+      100% { left: 70%; }
     }
 
     @keyframes fadeSlideUp {
@@ -331,6 +333,7 @@
       display: inline-block;
       text-align: left;
       max-width: 900px;
+      width: 100%;
     }
 
     .about-tool:hover {
@@ -363,6 +366,7 @@
       padding: 15px;
       border-radius: 12px;
       box-shadow: inset 0 0 8px rgba(0, 255, 204, 0.3);
+      flex: 1;
     }
 
     .download-date {
@@ -814,124 +818,126 @@
       <li>
         <div class="about-tool fade-in delay-2">
           <div class="tool-content">
-    <img src="https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot - Performance enhancement tool" class="tool-img" id="Windows-Optimizer">
-    <div class="download-block">
-      <a class="btn" href="../Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
-      <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
-      <div class="download-date">Auto-Detect Windows</div>
-      <div class="download-date">Freeware | September 2025</div>
-      <div class="download-size">Portable: 27.24MB</div>
-    </div>
-  </div>
-  <div class="tool-description" style="max-width: 800px; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.6; margin-top: 20px;">
-    <h2>Windows Optimizer</h2>
-    <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
+            <img src="https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot - Performance enhancement tool" class="tool-img" id="Windows-Optimizer">
+            <div class="download-block">
+              <a class="btn" href="../Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
+              <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
+              <div class="download-date">Auto-Detect Windows</div>
+              <div class="download-date">Freeware | September 2025</div>
+              <div class="download-size">Portable: 27.24MB</div>
+            </div>
+          </div>
 
-    <p><strong>Important before you start:</strong> create a System Restore point and export registry backups. Many tweaks require Administrator rights and may need sign-out/restart or Explorer restart to take effect.</p>
+          <div class="tool-description" style="max-width: 800px; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.6; margin-top: 20px;">
+            <h2>Windows Optimizer</h2>
+            <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
 
-    <h3>Tweaks — Step by step</h3>
+            <p><strong>Important before you start:</strong> create a System Restore point and export registry backups. Many tweaks require Administrator rights and may need sign-out/restart or Explorer restart to take effect.</p>
 
-    <h4>1) Visual Effects (appearance vs performance)</h4>
-    <strong>GUI</strong>
-    <ol>
-      <li>Press <code>Win + R</code>, type <code>SystemPropertiesPerformance.exe</code> and press Enter.</li>
-      <li>In Performance Options → Visual Effects select <em>Adjust for best performance</em>, <em>Adjust for best appearance</em>, or <em>Custom</em>.</li>
-      <li>Click <strong>Apply → OK</strong>. Sign out or restart Explorer if needed.</li>
-    </ol>
-    <strong>PowerShell / Registry (current user)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
-# Restart Explorer to apply:
-Stop-Process -Name explorer -Force
-Start-Process explorer</code></pre>
+            <h3>Tweaks — Step by step</h3>
 
-    <h4>2) Background Apps (allow / block UWP apps)</h4>
-    <strong>GUI</strong>
-    <ol>
-      <li>Win + I → Apps (or Settings → Privacy → Background apps on Win10).</li>
-      <li>For each app: click the three dots → Advanced options → Background apps permissions → choose <em>Never</em>.</li>
-    </ol>
-    <strong>PowerShell / Registry (disable all background apps via policy)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Run as Admin PowerShell
-New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Force | Out-Null
-New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsRunInBackground" -PropertyType DWord -Value 2 -Force
-# Reboot for policy to take full effect</code></pre>
+            <h4>1) Visual Effects (appearance vs performance)</h4>
+            <strong>GUI</strong>
+            <ol>
+              <li>Press <code>Win + R</code>, type <code>SystemPropertiesPerformance.exe</code> and press Enter.</li>
+              <li>In Performance Options → Visual Effects select <em>Adjust for best performance</em>, <em>Adjust for best appearance</em>, or <em>Custom</em>.</li>
+              <li>Click <strong>Apply → OK</strong>. Sign out or restart Explorer if needed.</li>
+            </ol>
+            <strong>PowerShell / Registry (current user)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
+    # Restart Explorer to apply:
+    Stop-Process -Name explorer -Force
+    Start-Process explorer</code></pre>
 
-    <h4>3) Taskbar Small Icon (make taskbar icons smaller)</h4>
-    <strong>Windows 10 (GUI)</strong>
-    <ol>
-      <li>Win + I → Personalization → Taskbar → turn <em>Use small taskbar buttons</em> On.</li>
-    </ol>
-    <strong>Windows 11 (Registry / PowerShell)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># set Taskbar to small icons (Windows 11)
-Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSi" -Value 0 -Type DWord
-# Restart Explorer:
-Stop-Process -Name explorer -Force
-Start-Process explorer</code></pre>
+            <h4>2) Background Apps (allow / block UWP apps)</h4>
+            <strong>GUI</strong>
+            <ol>
+              <li>Win + I → Apps (or Settings → Privacy → Background apps on Win10).</li>
+              <li>For each app: click the three dots → Advanced options → Background apps permissions → choose <em>Never</em>.</li>
+            </ol>
+            <strong>PowerShell / Registry (disable all background apps via policy)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Run as Admin PowerShell
+    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Force | Out-Null
+    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsRunInBackground" -PropertyType DWord -Value 2 -Force
+    # Reboot for policy to take full effect</code></pre>
 
-    <h4>4) Transparency Effect (enable / disable acrylic)</h4>
-    <strong>GUI</strong>
-    <ol>
-      <li>Win + I → Personalization → Colors (or Accessibility → Visual effects) → toggle <em>Transparency effects</em> On/Off.</li>
-    </ol>
-    <strong>PowerShell / Registry</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># 0 = Off, 1 = On
-Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0 -Type DWord
-# Restart Explorer:
-Stop-Process -Name explorer -Force
-Start-Process explorer</code></pre>
+            <h4>3) Taskbar Small Icon (make taskbar icons smaller)</h4>
+            <strong>Windows 10 (GUI)</strong>
+            <ol>
+              <li>Win + I → Personalization → Taskbar → turn <em>Use small taskbar buttons</em> On.</li>
+            </ol>
+            <strong>Windows 11 (Registry / PowerShell)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># set Taskbar to small icons (Windows 11)
+    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSi" -Value 0 -Type DWord
+    # Restart Explorer:
+    Stop-Process -Name explorer -Force
+    Start-Process explorer</code></pre>
 
-    <h4>5) Search Indexing (Windows Search)</h4>
-    <strong>Adjust locations (GUI)</strong>
-    <ol>
-      <li>Start → type <em>Indexing Options</em> → Open → click <strong>Modify</strong> → add/remove indexed folders.</li>
-    </ol>
-    <strong>Stop / Disable Indexer (Service)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Disable Windows Search service (Admin PowerShell)
-Set-Service -Name WSearch -StartupType Disabled
-Stop-Service -Name WSearch -Force
+            <h4>4) Transparency Effect (enable / disable acrylic)</h4>
+            <strong>GUI</strong>
+            <ol>
+              <li>Win + I → Personalization → Colors (or Accessibility → Visual effects) → toggle <em>Transparency effects</em> On/Off.</li>
+            </ol>
+            <strong>PowerShell / Registry</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># 0 = Off, 1 = On
+    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0 -Type DWord
+    # Restart Explorer:
+    Stop-Process -Name explorer -Force
+    Start-Process explorer</code></pre>
 
-# Re-enable when needed:
-Set-Service -Name WSearch -StartupType "Automatic"
-Start-Service -Name WSearch</code></pre>
-    <p><em>Note:</em> disabling indexing reduces background disk/CPU usage but makes file searches slower.</p>
+            <h4>5) Search Indexing (Windows Search)</h4>
+            <strong>Adjust locations (GUI)</strong>
+            <ol>
+              <li>Start → type <em>Indexing Options</em> → Open → click <strong>Modify</strong> → add/remove indexed folders.</li>
+            </ol>
+            <strong>Stop / Disable Indexer (Service)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Disable Windows Search service (Admin PowerShell)
+    Set-Service -Name WSearch -StartupType Disabled
+    Stop-Service -Name WSearch -Force
 
-    <h4>6) Create Backup Settings (recommended before applying tweaks)</h4>
-    <strong>Create a System Restore point (GUI)</strong>
-    <ol>
-      <li>Win + R → type <code>SystemPropertiesProtection.exe</code> → Enter.</li>
-      <li>Select your system drive (usually C:) → <strong>Create</strong> → name e.g. "Before Windows Optimizer".</li>
-    </ol>
-    <strong>Create a Restore point (PowerShell — Admin)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Checkpoint-Computer -Description "Before Windows Optimizer" -RestorePointType "MODIFY_SETTINGS"</code></pre>
-    <strong>Export registry keys you will change</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "%USERPROFILE%\Desktop\visualfx_backup.reg"
-reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "%USERPROFILE%\Desktop\taskbar_backup.reg"
-reg export "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "%USERPROFILE%\Desktop\personalize_backup.reg"
-reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" "%USERPROFILE%\Desktop\appprivacy_backup.reg"</code></pre>
+    # Re-enable when needed:
+    Set-Service -Name WSearch -StartupType "Automatic"
+    Start-Service -Name WSearch</code></pre>
+            <p><em>Note:</em> disabling indexing reduces background disk/CPU usage but makes file searches slower.</p>
 
-    <h4>7) Rollback / Restore</h4>
-    <strong>Restore System Restore point (GUI)</strong>
-    <ol>
-      <li>Win + R → type <code>rstrui.exe</code> → Enter → follow the wizard to restore a saved restore point.</li>
-    </ol>
-    <strong>Import registry backups (if you exported .reg files)</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg import "%USERPROFILE%\Desktop\visualfx_backup.reg"
-reg import "%USERPROFILE%\Desktop\taskbar_backup.reg"</code></pre>
-    <strong>Re-enable services</strong>
-    <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-Service -Name WSearch -StartupType "Automatic"
-Start-Service -Name WSearch</code></pre>
+            <h4>6) Create Backup Settings (recommended before applying tweaks)</h4>
+            <strong>Create a System Restore point (GUI)</strong>
+            <ol>
+              <li>Win + R → type <code>SystemPropertiesProtection.exe</code> → Enter.</li>
+              <li>Select your system drive (usually C:) → <strong>Create</strong> → name e.g. "Before Windows Optimizer".</li>
+            </ol>
+            <strong>Create a Restore point (PowerShell — Admin)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Checkpoint-Computer -Description "Before Windows Optimizer" -RestorePointType "MODIFY_SETTINGS"</code></pre>
+            <strong>Export registry keys you will change</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "%USERPROFILE%\Desktop\visualfx_backup.reg"
+    reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "%USERPROFILE%\Desktop\taskbar_backup.reg"
+    reg export "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "%USERPROFILE%\Desktop\personalize_backup.reg"
+    reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" "%USERPROFILE%\Desktop\appprivacy_backup.reg"</code></pre>
 
-    <h4>8) Quick commands & tips</h4>
-    <ul>
-      <li>Restart Explorer to apply many UI/registry changes: <code>Stop-Process -Name explorer -Force; Start-Process explorer</code></li>
-      <li>If unsure of adapter names / settings, test changes on a non-critical account first.</li>
-      <li>Always create a restore point & export the registry keys you modify.</li>
+            <h4>7) Rollback / Restore</h4>
+            <strong>Restore System Restore point (GUI)</strong>
+            <ol>
+              <li>Win + R → type <code>rstrui.exe</code> → Enter → follow the wizard to restore a saved restore point.</li>
+            </ol>
+            <strong>Import registry backups (if you exported .reg files)</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg import "%USERPROFILE%\Desktop\visualfx_backup.reg"
+    reg import "%USERPROFILE%\Desktop\taskbar_backup.reg"</code></pre>
+            <strong>Re-enable services</strong>
+            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-Service -Name WSearch -StartupType "Automatic"
+    Start-Service -Name WSearch</code></pre>
+
+            <h4>8) Quick commands & tips</h4>
+            <ul>
+              <li>Restart Explorer to apply many UI/registry changes: <code>Stop-Process -Name explorer -Force; Start-Process explorer</code></li>
+              <li>If unsure of adapter names / settings, test changes on a non-critical account first.</li>
+              <li>Always create a restore point & export the registry keys you modify.</li>
+            </ul>
+
+            <p>This Windows Optimizer workflow lets users safely toggle visual effects, background apps, taskbar sizing, transparency, and indexing — with easy rollback through restore points or registry imports. If you want, I can generate a ready-to-use <code>.ps1</code> script (with confirmations and automatic backups) that performs these tweaks and also provides a one-click rollback option.</p>
+          </div>
+        </div>
+      </li>
     </ul>
-
-    <p>This Windows Optimizer workflow lets users safely toggle visual effects, background apps, taskbar sizing, transparency, and indexing — with easy rollback through restore points or registry imports. If you want, I can generate a ready-to-use <code>.ps1</code> script (with confirmations and automatic backups) that performs these tweaks and also provides a one-click rollback option.</p>
-  </div>
-</div>
-
 
     <div id="imgModal" class="modal">
       <span class="modal-close">&times;</span>
