@@ -256,7 +256,7 @@ function Show-Menu-And-Run {
                         if (-not $logical) { Write-Log "No local fixed drives found." Yellow } else {
                             # Determine SSD/HDD best-effort
                             foreach ($ld in $logical) {
-                                $driveLetter = $ld.DeviceID.TrimEnd(':')
+                                ${driveLetter} = $ld.DeviceID.TrimEnd(':')
                                 $isSSD = $false
                                 if ($Caps.SupportsGetPhysicalDisk) {
                                     try {
@@ -272,11 +272,11 @@ function Show-Menu-And-Run {
                                 }
 
                                 if ($isSSD) {
-                                    Write-Log "🔵 SSD detected on $driveLetter — running Optimize-Volume -ReTrim" Cyan
-                                    try { Optimize-Volume -DriveLetter $driveLetter -ReTrim -ErrorAction Stop; Write-Log "SSD optimized for $driveLetter" Green } catch { Write-Log "SSD optimize error for $driveLetter: $($_.Exception.Message)" Red }
+                                    Write-Log "🔵 SSD detected on ${driveLetter} — running Optimize-Volume -ReTrim" Cyan
+                                    try { Optimize-Volume -DriveLetter ${driveLetter} -ReTrim -ErrorAction Stop; Write-Log "SSD optimized for ${driveLetter}" Green } catch { Write-Log "SSD optimize error for ${driveLetter}: $($_.Exception.Message)" Red }
                                 } else {
-                                    Write-Log "🟡 Treating $driveLetter as HDD — running defrag" Yellow
-                                    SafeStartAndWait (Join-Path $env:SystemRoot 'System32\defrag.exe') "$driveLetter /O /U"
+                                    Write-Log "🟡 Treating ${driveLetter} as HDD — running defrag" Yellow
+                                    SafeStartAndWait (Join-Path $env:SystemRoot 'System32\defrag.exe') "${driveLetter} /O /U"
                                 }
                             }
                         }
