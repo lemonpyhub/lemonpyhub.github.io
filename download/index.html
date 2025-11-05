@@ -1053,7 +1053,7 @@
       <div style="width:100%; display:flex; justify-content:center;">
         <input type="text" class="search-box" id="searchInput" placeholder="Search Free Apps..." style="text-align:center;">
       </div>
-      <div class="filter-buttons"></div>
+      <div class="filter-buttons">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="windows">Windows</button>
         <button class="filter-btn" data-filter="optimization">Optimization</button>
@@ -1457,43 +1457,44 @@
     // Start animation
     let matrixInterval = setInterval(drawMatrix, 33);
 
-    // ✅ TRACKING BARU UNTUK MONITOR DOWNLOAD SETIAP APP
+    // ✅ ENHANCED GOOGLE ANALYTICS DOWNLOAD TRACKING
     document.addEventListener("DOMContentLoaded", function() {
       document.querySelectorAll("a.download-btn").forEach(link => {
-        const url = link.getAttribute("href");
-        if (!url) return;
-
         link.addEventListener("click", function(event) {
           event.preventDefault();
           
+          const url = this.href;
           const filename = url.split("/").pop();
           const appId = this.getAttribute('data-app-id') || 'unknown';
           const appVersion = this.getAttribute('data-version') || 'unknown';
           const downloadType = this.getAttribute('data-type') || 'unknown';
           
           // Enhanced Google Analytics tracking
-          gtag("event", "app_download", {
-            event_category: "Download",
-            event_label: `${appId}_${appVersion}_${downloadType}`,
-            value: 1,
-            app_id: appId,
-            app_version: appVersion,
-            download_type: downloadType,
-            file_name: filename,
-            file_extension: filename.split('.').pop(),
-            link_url: url
-          });
+          if (typeof gtag !== 'undefined') {
+            gtag("event", "app_download", {
+              event_category: "Download",
+              event_label: `${appId}_${appVersion}_${downloadType}`,
+              value: 1,
+              app_id: appId,
+              app_version: appVersion,
+              download_type: downloadType,
+              file_name: filename,
+              file_extension: filename.split('.').pop(),
+              link_url: url
+            });
+          }
 
-          // Console log untuk debugging
-          console.log(`Download tracked: ${appId} v${appVersion} (${downloadType}) - ${filename}`);
-
-          // Teruskan download
+          // Proceed with download after short delay
           setTimeout(() => {
             window.location.href = url;
-          }, 100);
+          }, 150);
         });
       });
     });
+
+    // =============================================
+    // EXISTING FUNCTIONALITY (ORIGINAL CODE)
+    // =============================================
 
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImage");
@@ -1670,6 +1671,57 @@
       } catch (error) {
         console.error('copyHash error:', error);
         alert('An error occurred while trying to copy the hash.');
+      }
+    }
+
+    // Share functions
+    function shareOnFacebook() {
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+    }
+
+    function shareOnTikTok() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard! You can now paste it in TikTok.');
+      });
+    }
+
+    function shareOnInstagram() {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard! You can now paste it in Instagram.');
+      });
+    }
+
+    function shareOnWhatsApp() {
+      const text = encodeURIComponent('Check out these free Python tools from LemonPyHub! ');
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+    }
+
+    function shareOnTelegram() {
+      const text = encodeURIComponent('Check out these free Python tools from LemonPyHub! ');
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank');
+    }
+
+    function shareOnReddit() {
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent('Free Python Tools and Applications - LemonPyHub');
+      window.open(`https://reddit.com/submit?url=${url}&title=${title}`, '_blank');
+    }
+
+    function nativeShare() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'LemonPyHub - Free Python Tools',
+          text: 'Check out these amazing free Python tools and applications!',
+          url: window.location.href,
+        })
+        .catch((error) => console.log('Error sharing', error));
+      } else {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          alert('Link copied to clipboard!');
+        });
       }
     }
 
