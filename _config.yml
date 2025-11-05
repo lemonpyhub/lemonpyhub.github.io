@@ -1,0 +1,9 @@
+include:
+  - _headers
+  - _redirects
+
+# Force correct MIME types for XML files
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# Optional: Add safe mode to prevent plugin issues
+safe: true
