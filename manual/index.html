@@ -2,13 +2,29 @@
 <html lang="en">
 <head>
   <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
-  <!-- End Google Tag Manager -->
-
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
+<!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows System Maintenance Manual - LemonPyHub Tools & Guides</title>
+  <meta name="description" content="Learn how to maintain your Windows system with LemonPyHub tools: clearing temp folders, running DISM, flushing DNS cache, and optimizing performance.">
+  <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://lemonpyhub.github.io/manual/">
+  
+  <!-- Open Graph tags for better social sharing -->
+  <meta property="og:title" content="Windows System Maintenance Manual - LemonPyHub Tools & Guides">
+  <meta property="og:description" content="Learn how to maintain your Windows system with LemonPyHub tools: clearing temp folders, running DISM, flushing DNS cache, and optimizing performance.">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.png">
+  <meta property="og:url" content="https://lemonpyhub.github.io/manual/">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#00ffcc">
+  
   <!-- Schema.org structured data -->
   <script type="application/ld+json">
   {
@@ -19,25 +35,140 @@
     "description": "Step-by-step manual and guides for using LemonPyHub tools and downloads.",
     "publisher": {
       "@type": "Organization",
-      "name": "LemonPyHub"
+      "name": "LemonPyHub",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lemonpyhub.github.io/pic/lemonpy.png"
+      }
     }
   }
   </script>
-
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows System Maintenance Manual - LemonPyHub Tools & Guides</title>
-  <meta name="description" content="Learn how to maintain your Windows system with LemonPyHub tools: clearing temp folders, running DISM, flushing DNS cache, and optimizing performance.">
-  <meta name="theme-color" content="#00ffcc">
   
-  <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
+  <!-- FAQ Schema for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How do I clear temporary files in Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can clear temporary files by pressing Win + R, typing 'temp', then pressing Ctrl + A to select all files and deleting them. Alternatively, use the Windows Maintenance Tool for one-click cleaning."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I run System File Checker (SFC)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Run SFC by opening Command Prompt as administrator and typing 'sfc /scannow'. This scans and repairs system files. The Windows Maintenance Tool automates this process with one click."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I change DNS settings to Google or Cloudflare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use the DNS Manager tool for one-click DNS switching. Manually, go to Network Connections, select your adapter properties, and set preferred DNS to 8.8.8.8 (Google) or 1.1.1.1 (Cloudflare)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I optimize Windows performance?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use Windows Optimizer tool to adjust visual effects, disable background apps, modify taskbar settings, and manage search indexing for better system performance."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I flush DNS cache in Windows?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Open Command Prompt as administrator and run 'ipconfig /flushdns'. This clears the DNS resolver cache and can help resolve network connectivity issues."
+        }
+      }
+    ]
+  }
+  </script>
   
-  <!-- Open Graph tags for better social sharing -->
-  <meta property="og:title" content="Windows System Maintenance Manual - LemonPyHub Tools & Guides">
-  <meta property="og:description" content="Learn how to maintain your Windows system with LemonPyHub tools: clearing temp folders, running DISM, flushing DNS cache, and optimizing performance.">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.png">
-  <meta property="og:url" content="https://lemonpyhub.github.io/manual/">
-  <meta property="og:type" content="website">
+  <!-- How-To Schema for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Perform Windows System Maintenance",
+    "description": "Step-by-step guide to optimize Windows performance using system maintenance tools",
+    "totalTime": "PT10M",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Windows Maintenance Tool"
+      }
+    ],
+    "tool": [
+      {
+        "@type": "HowToTool",
+        "name": "Command Prompt"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Clear temporary files",
+        "text": "Press Win + R, type 'temp', select all files with Ctrl + A and delete them",
+        "url": "https://lemonpyhub.github.io/manual/#clear-temp"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Run System File Checker",
+        "text": "Open Command Prompt as administrator and run 'sfc /scannow'",
+        "url": "https://lemonpyhub.github.io/manual/#run-sfc"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Flush DNS cache",
+        "text": "In Command Prompt, run 'ipconfig /flushdns' to clear DNS resolver cache",
+        "url": "https://lemonpyhub.github.io/manual/#flush-dns"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Software Application Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Windows Maintenance Tool",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Windows 10, Windows 11",
+    "description": "One-click Windows system maintenance and optimization tool",
+    "downloadUrl": "https://lemonpyhub.github.io/Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe",
+    "softwareVersion": "3.9.7",
+    "fileSize": "11.16 MB",
+    "license": "Freeware",
+    "datePublished": "2025-09-01",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+  
+  <meta name="robots" content="index, follow">
+  
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB');
+  </script>
 
   <!-- Font performance: preconnect & load -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -699,10 +830,9 @@
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
   <!-- Skip link for accessibility -->
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -724,16 +854,17 @@
       <img src="https://lemonpyhub.github.io/pic/lemonpy.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
     </div>
     
-    <h1 class="fade-in delay-2">
-      LemonPyHub
-      <span style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-        — Free Python Tools and Windows Utilities for Windows 10 &amp; 11
-      </span>
-    </h1>
+  <h1 class="fade-in delay-2">
+    LemonPyHub
+    <span style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
+      — Free Python Tools and Windows Utilities for Windows 10 &amp; 11
+    </span>
+  </h1>
+
 
     <p class="glow fade-in delay-3" style="text-align:center;">
-      LemonPyHub Manual & Guides<br> Complete guides, tutorials, and API references for mastering LemonPyHub development
-    </p>
+  LemonPyHub Manual & Guides<br> Complete guides, tutorials, and API references for mastering LemonPyHub development
+</p>
 
     <nav>
       <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
@@ -747,7 +878,7 @@
 
     <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
       <li>
-        <div class="about-tool fade-in delay-2">
+        <div class="about-tool fade-in delay-2" id="clear-temp">
           <div class="tool-content">
             <img src="https://lemonpyhub.github.io/download/Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool Screenshot - System optimization utility" class="tool-img" id="windows-maintenance-tool">
             <div class="download-block">
@@ -782,7 +913,7 @@
       </li>
 
       <li>
-        <div class="about-tool fade-in delay-2">
+        <div class="about-tool fade-in delay-2" id="run-sfc">
           <div class="tool-content">
             <img src="https://lemonpyhub.github.io/download/DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot - Network optimization tool" class="tool-img" id="DNS-Manager">
             <div class="download-block">
@@ -860,7 +991,7 @@
       </li>
 
       <li>
-        <div class="about-tool fade-in delay-2">
+        <div class="about-tool fade-in delay-2" id="flush-dns">
           <div class="tool-content">
             <img src="https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot - Performance enhancement tool" class="tool-img" id="Windows-Optimizer">
             <div class="download-block">
@@ -982,6 +1113,7 @@
         </div>
       </li>
     </ul>
+
 
     <!-- External Links Section -->
     <div class="external-links fade-in delay-3">
