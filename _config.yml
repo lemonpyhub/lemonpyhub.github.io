@@ -1,2 +1,19 @@
 include:
   - _headers
+  - sitemap.xml
+  - robots.txt
+  - googlee4b91e620bd47c0c.html
+
+# Basic configuration
+title: "LΣⱮØπPy Hub"
+baseurl: ""
+url: "https://lemonpyhub.github.io"
+
+# Exclude unnecessary files from processing
+exclude:
+  - README.md
+  - script.js
+  - style.css
+  - lemonpy.png
+  - "LΣⱮØπPy.png"
+  - "LΣⱮØπPy2.png"
