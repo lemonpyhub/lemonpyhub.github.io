@@ -1446,68 +1446,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Start animation
     let matrixInterval = setInterval(drawMatrix, 33);
 
-    // ✅ PERFECT DOWNLOAD TRACKING - NO ERRORS
+    // ✅ ENHANCED GOOGLE ANALYTICS DOWNLOAD TRACKING - FIXED FOR ALL APPS
     document.addEventListener("DOMContentLoaded", function() {
-        console.log('🚀 Initializing download tracking...');
-        
-        // Track all download links
-        const downloadLinks = document.querySelectorAll('a.download-btn, a.btn');
-        
-        downloadLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                // Check if this is a download link
-                const isDownload = this.download || 
-                                  this.href.includes('.exe') || 
-                                  this.href.includes('.rar') || 
-                                  this.href.includes('.zip') ||
-                                  this.classList.contains('download-btn') ||
-                                  this.classList.contains('btn');
-                
-                if (isDownload) {
-                    event.preventDefault();
-                    
-                    // Get tracking data
-                    const url = this.href;
-                    const filename = url.split('/').pop();
-                    const appId = this.getAttribute('data-app-id') || 'unknown';
-                    const version = this.getAttribute('data-version') || '1.0';
-                    const type = this.getAttribute('data-type') || 'installer';
-                    const linkText = this.textContent.trim() || 'Download';
-                    
-                    console.log('📊 Tracking download:', {appId, version, type, filename});
-                    
-                    // Send to GTM
-                    if (window.dataLayer) {
-                        window.dataLayer.push({
-                            'event': 'file_download',
-                            'event_category': 'App Downloads',
-                            'event_action': 'download',
-                            'event_label': `${appId} v${version} (${type})`,
-                            'app_id': appId,
-                            'app_version': version,
-                            'download_type': type,
-                            'file_name': filename,
-                            'file_extension': filename.split('.').pop(),
-                            'link_url': url,
-                            'link_text': linkText,
-                            'timestamp': new Date().toISOString()
-                        });
-                    }
-                    
-                    // Start download after tracking
-                    setTimeout(() => {
-                        console.log('⬇️ Downloading:', filename);
-                        window.location.href = url;
-                    }, 100);
-                }
-            });
+      document.querySelectorAll("a.download-btn, a.btn").forEach(link => {
+        link.addEventListener("click", function(event) {
+          // Only track download links, not navigation
+          if (this.download || this.href.includes('.exe') || this.href.includes('.rar')) {
+            event.preventDefault();
+            
+            const url = this.href;
+            const filename = url.split("/").pop();
+            const appId = this.getAttribute('data-app-id') || 'unknown';
+            const appVersion = this.getAttribute('data-version') || 'unknown';
+            const downloadType = this.getAttribute('data-type') || 'unknown';
+            
+            console.log('GA Tracking:', {appId, appVersion, downloadType, filename});
+            
+            // Enhanced Google Analytics tracking
+            if (typeof gtag !== 'undefined') {
+              gtag("event", "app_download", {
+                event_category: "Download",
+                event_label: `${appId}_${appVersion}_${downloadType}`,
+                value: 1,
+                app_id: appId,
+                app_version: appVersion,
+                download_type: downloadType,
+                file_name: filename,
+                file_extension: filename.split('.').pop(),
+                link_url: url
+              });
+            }
+
+            // Proceed with download after short delay
+            setTimeout(() => {
+              window.location.href = url;
+            }, 150);
+          }
         });
-        
-        console.log('✅ Download tracking ready -', downloadLinks.length, 'links found');
-        console.log('🔍 GTM:', typeof dataLayer !== 'undefined');
+      });
     });
 
-    // Modal functionality
+    // =============================================
+    // EXISTING FUNCTIONALITY (ORIGINAL CODE) - TIDAK DIUBAH
+    // =============================================
+
     const modal = document.getElementById("imgModal");
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
@@ -1553,8 +1535,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       }
     });
+    
 
-    // Filter functionality
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', function() {
         document.querySelectorAll('.filter-btn').forEach(btn => {
@@ -1600,7 +1582,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
 
-    // Detail modal functionality
     document.querySelectorAll('.details-btn').forEach(button => {
       button.addEventListener('click', function() {
         const appId = this.getAttribute('data-app');
@@ -1630,7 +1611,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // App icon hover effects
     document.querySelectorAll('.app-icon').forEach(icon => {
       icon.addEventListener('mouseenter', function() {
         this.style.transform = 'scale(1.05)';
@@ -1641,7 +1621,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // Mobile optimization
     function isMobileDevice() {
       return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1);
     }
@@ -1655,7 +1634,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     }
 
-    // Utility functions
     function copyHash(elementId) {
       try {
         var el = document.getElementById(elementId);
