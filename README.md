@@ -171,7 +171,7 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 - 🌐 Website: [https://lemonpyhub.github.io](https://lemonpyhub.github.io/?utm_source=github&utm_medium=repo&utm_campaign=readme-footer)  
 - 🧩 Repository: [https://github.com/lemonpyhub/lemonpyhub.github.io](https://github.com/lemonpyhub/lemonpyhub.github.io)  
 - 🐞 Issues & Feature Requests: via GitHub Issues  
-- 📧 Email: *(your.email@example.com)*  
+- 📧 Email: *(lemonpyhub@gmail.com)*  
 
 ---
 
