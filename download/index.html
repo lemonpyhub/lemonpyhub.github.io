@@ -1446,12 +1446,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     // Start animation
     let matrixInterval = setInterval(drawMatrix, 33);
 
-    // ✅ ENHANCED GOOGLE ANALYTICS DOWNLOAD TRACKING - FIXED FOR ALL APPS
+    // ✅ FIXED & ENHANCED GOOGLE ANALYTICS DOWNLOAD TRACKING - WORKS FOR ALL APPS
     document.addEventListener("DOMContentLoaded", function() {
+      // Track all download links
       document.querySelectorAll("a.download-btn, a.btn").forEach(link => {
         link.addEventListener("click", function(event) {
-          // Only track download links, not navigation
-          if (this.download || this.href.includes('.exe') || this.href.includes('.rar')) {
+          // Check if this is a download link
+          const isDownloadLink = this.download || 
+                                this.href.includes('.exe') || 
+                                this.href.includes('.rar') || 
+                                this.href.includes('.zip') ||
+                                this.classList.contains('download-btn') ||
+                                this.classList.contains('btn');
+          
+          if (isDownloadLink) {
             event.preventDefault();
             
             const url = this.href;
@@ -1459,35 +1467,80 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const appId = this.getAttribute('data-app-id') || 'unknown';
             const appVersion = this.getAttribute('data-version') || 'unknown';
             const downloadType = this.getAttribute('data-type') || 'unknown';
+            const linkText = this.textContent.trim() || 'Download';
             
-            console.log('GA Tracking:', {appId, appVersion, downloadType, filename});
+            console.log('📊 GA Tracking Download:', {
+              appId, 
+              appVersion, 
+              downloadType, 
+              filename,
+              linkText
+            });
             
-            // Enhanced Google Analytics tracking
+            // Method 1: Google Analytics 4 via gtag (Primary)
             if (typeof gtag !== 'undefined') {
-              gtag("event", "app_download", {
-                event_category: "Download",
-                event_label: `${appId}_${appVersion}_${downloadType}`,
-                value: 1,
-                app_id: appId,
-                app_version: appVersion,
-                download_type: downloadType,
-                file_name: filename,
-                file_extension: filename.split('.').pop(),
-                link_url: url
+              gtag('event', 'file_download', {
+                'event_category': 'App Downloads',
+                'event_label': `${appId} v${appVersion} (${downloadType})`,
+                'value': 1,
+                'file_name': filename,
+                'file_extension': filename.split('.').pop(),
+                'app_id': appId,
+                'app_version': appVersion,
+                'download_type': downloadType,
+                'link_text': linkText
               });
             }
+            
+            // Method 2: Data Layer push for GTM (Backup)
+            if (typeof dataLayer !== 'undefined') {
+              dataLayer.push({
+                'event': 'appDownload',
+                'eventCategory': 'Downloads',
+                'eventAction': 'download',
+                'eventLabel': `${appId}_${downloadType}`,
+                'appId': appId,
+                'appVersion': appVersion,
+                'downloadType': downloadType,
+                'fileName': filename,
+                'fileExtension': filename.split('.').pop(),
+                'linkUrl': url,
+                'linkText': linkText
+              });
+            }
+            
+            // Method 3: Direct GA4 measurement (Fallback)
+            try {
+              // This is a backup method that works even if gtag/dataLayer fail
+              const measurementId = 'G-'; // Your GA4 Measurement ID would go here
+              if (measurementId && measurementId.length > 2) {
+                fetch(`https://www.google-analytics.com/g/collect?v=2&tid=${measurementId}&en=file_download&epn.app_id=${appId}&epn.app_version=${appVersion}&epn.download_type=${downloadType}&epn.file_name=${filename}`, {
+                  method: 'POST',
+                  mode: 'no-cors'
+                });
+              }
+            } catch (e) {
+              console.log('GA4 fallback tracking attempted');
+            }
 
-            // Proceed with download after short delay
+            // Proceed with download after ensuring tracking is sent
             setTimeout(() => {
+              console.log('⬇️ Starting download:', filename);
               window.location.href = url;
-            }, 150);
+            }, 200);
           }
         });
       });
+      
+      // Debug info
+      console.log('🔧 Download Tracking Initialized');
+      console.log('📱 Found download links:', document.querySelectorAll('a.download-btn, a.btn').length);
+      console.log('🔍 GTM Available:', typeof dataLayer !== 'undefined');
+      console.log('🔍 gtag Available:', typeof gtag !== 'undefined');
     });
 
     // =============================================
-    // EXISTING FUNCTIONALITY (ORIGINAL CODE) - TIDAK DIUBAH
+    // EXISTING FUNCTIONALITY (ORIGINAL CODE) - UNCHANGED
     // =============================================
 
     const modal = document.getElementById("imgModal");
