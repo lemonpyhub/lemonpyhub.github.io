@@ -39,7 +39,7 @@
         "url": "https://lemonpyhub.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://lemonpyhub.github.io/pic/lemonpy.webp",
+          "url": "https://lemonpyhub.github.io/pic/lemonpy.png",
           "width": 373,
           "height": 210
         }
@@ -70,7 +70,7 @@
   <meta property="og:title" content="Download Free Python Tools for Windows | LemonPyHub">
   <meta property="og:description" content="Free and lightweight Python-based Windows utilities — Optimizer, DNS Manager, Winget Tool, Dockers, and more.">
   <meta property="og:url" content="https://lemonpyhub.github.io/">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.webp">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.png">
   <meta property="og:site_name" content="LemonPyHub">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -99,11 +99,11 @@
     });
   </script>
 
-  <!-- 🔹 Load only essential Font Awesome icons -->
+  <!-- 🔹 Optimized Font Awesome with font-display -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
 
-  <!-- 🔹 Load Google Fonts asynchronously -->
+  <!-- 🔹 Optimized Google Fonts with font-display -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap"></noscript>
 
@@ -282,9 +282,12 @@
   <header class="logo-container" role="banner">
     <img src="/pic/lemonpy.png" 
          alt="LemonPyHub Logo - Free Python Tools and Applications" 
-         style="height:120px;" 
+         width="373" 
+         height="210"
+         style="height:120px; width:auto;" 
          class="fade-in delay-1"
-         fetchpriority="high">
+         fetchpriority="high"
+         loading="eager">
   </header>
 
   <main>
@@ -442,34 +445,71 @@
   </footer>
 
   <script>
-    // Matrix Digital Rain Effect
+    // Matrix Digital Rain Effect - OPTIMIZED (no forced reflow)
+    let resizeTimeout;
     const canvas = document.getElementById('matrixCanvas');
-    if (canvas) {
+    
+    function initMatrix() {
+      if (!canvas) return;
+      
       const ctx = canvas.getContext('2d');
-      canvas.width = window.innerWidth; 
-      canvas.height = window.innerHeight;
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
-      const fontSize = 14; 
-      const columns = canvas.width / fontSize; 
-      const drops = Array(Math.floor(columns)).fill(1);
+      const fontSize = 14;
+      
+      function setCanvasSize() {
+        // Cache dimensions to avoid forced reflow
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        return { width, height };
+      }
+      
+      const { width, height } = setCanvasSize();
+      const columns = Math.floor(width / fontSize);
+      const drops = Array(columns).fill(1);
       
       function drawMatrix() {
-        ctx.fillStyle = 'rgba(13, 17, 23, 0.1)'; 
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#00ffcc'; 
+        ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+        ctx.fillRect(0, 0, width, height);
+        ctx.fillStyle = '#00ffcc';
         ctx.font = `${fontSize}px 'Fira Code', monospace`;
+        
         for (let i = 0; i < drops.length; i++) {
           const text = characters.charAt(Math.floor(Math.random() * characters.length));
-          const x = i * fontSize; 
+          const x = i * fontSize;
           const y = drops[i] * fontSize;
           ctx.fillText(text, x, y);
-          if (y > canvas.height && Math.random() > 0.975) { 
-            drops[i] = 0; 
+          
+          if (y > height && Math.random() > 0.975) {
+            drops[i] = 0;
           }
           drops[i]++;
         }
       }
+      
       setInterval(drawMatrix, 50);
+      
+      // Debounced resize handler to prevent forced reflows
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          const { width: newWidth, height: newHeight } = setCanvasSize();
+          // Update drops array if column count changed significantly
+          const newColumns = Math.floor(newWidth / fontSize);
+          if (Math.abs(newColumns - columns) > 10) {
+            drops.length = newColumns;
+            drops.fill(1);
+          }
+        }, 250);
+      });
+    }
+
+    // Load matrix effect after page is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMatrix);
+    } else {
+      initMatrix();
     }
 
     // Share functions
@@ -492,14 +532,6 @@
         alert('Web Share not supported in your browser. Please use the specific share buttons above.'); 
       } 
     }
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-      if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-    });
   </script>
 </body>
 </html>
