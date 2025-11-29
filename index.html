@@ -1,33 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager - Ultra Lightweight for Mobile -->
+  <!-- Google Tag Manager -->
   <script>
-    // Minimal GTM for mobile - load only after user interaction
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-    
-    function loadGTM() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P5MN58K4';
-      document.head.appendChild(script);
-    }
-    
-    // Load GTM only after user scrolls or interacts
-    var gtmLoaded = false;
-    function loadGTMOnInteraction() {
-      if (!gtmLoaded) {
-        gtmLoaded = true;
-        loadGTM();
-      }
-    }
-    
-    window.addEventListener('scroll', loadGTMOnInteraction, { once: true, passive: true });
-    window.addEventListener('touchstart', loadGTMOnInteraction, { once: true, passive: true });
-    
-    // Fallback: load after 10 seconds if no interaction
-    setTimeout(loadGTMOnInteraction, 10000);
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0], j=d.createElement(s);
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P5MN58K4');
   </script>
   <!-- End Google Tag Manager -->
   
@@ -59,8 +40,8 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://lemonpyhub.github.io/pic/lemonpy-optimized.webp",
-          "width": 213,
-          "height": 120
+          "width": 373,
+          "height": 210
         }
       },
       {
@@ -99,395 +80,304 @@
   <!-- 🔹 Cache Control -->
   <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
 
-  <!-- 🔹 Preconnect for critical domains ONLY -->
+  <!-- 🔹 Preconnect for critical domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
 
-  <!-- 🔹 Load Google Analytics - Mobile Deferred -->
+  <!-- 🔹 Load Google Analytics asynchronously -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
   <script>
-    // Ultra lightweight analytics for mobile - load only after page is fully loaded
-    function loadAnalytics() {
-      var script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB';
-      document.head.appendChild(script);
-      
-      // Minimal gtag config
-      window.gtag = function() {
-        (window.dataLayer = window.dataLayer || []).push(arguments);
-      };
-      gtag('js', new Date());
-      gtag('config', 'G-Q9HFE57YHB', { 
-        transport_type: 'beacon',
-        page_title: document.title,
-        page_location: location.href
-      });
-    }
-    
-    // Load analytics only after everything else is done
-    window.addEventListener('load', function() {
-      setTimeout(loadAnalytics, 7000);
-    }, { once: true });
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB', { 
+      transport_type: 'beacon',
+      page_title: document.title,
+      page_location: window.location.href
+    });
   </script>
 
-  <!-- 🔹 Optimized Google Fonts - Inline the CSS -->
-  <style>
-    /* Google Fonts - Fira Code */
-    @font-face {
-      font-family: 'Fira Code';
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/firacode/v21/uU9eCBsR6Z2vfE9aq3bL0fxyUs4tcw4W_GNsJXHV.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-    
-    /* Google Fonts - Lato Bold */
-    @font-face {
-      font-family: 'Lato';
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-      src: url(https://fonts.gstatic.com/s/lato/v24/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
-      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-    }
-  </style>
+  <!-- 🔹 Load Font Awesome CSS asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+
+  <!-- 🔹 Load Google Fonts asynchronously -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap"></noscript>
 
   <link rel="manifest" href="/manifest.json">
 
-  <!-- 🔹 Preload critical image -->
-  <link rel="preload" href="/pic/lemonpy-optimized.webp" as="image" type="image/webp">
-
-  <!-- 🔹 ALL CSS INLINE - Mobile Optimized - NO EXTERNAL FONTS -->
+  <!-- 🔹 ALL CSS INLINE - No external files -->
   <style>
-    /* CRITICAL CSS - Mobile First */
-    html { 
-      height: 100%; 
-      box-sizing: border-box;
-      -webkit-text-size-adjust: 100%;
-    }
-    *, *:before, *:after { 
-      box-sizing: inherit;
-      margin: 0;
-      padding: 0;
-    }
-    
+    /* Critical CSS for initial render */
+    html { height: 100%; }
     body {
       overflow-x: hidden;
       margin: 0;
-      padding: 15px;
-      font-family: 'Fira Code', 'Courier New', monospace, sans-serif;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
       background: #1a1a1a;
       color: #c9d1d9;
       text-align: center;
+      padding: 20px;
       position: relative;
-      -webkit-tap-highlight-color: transparent;
-      line-height: 1.4;
     }
 
-    /* Hide matrix canvas completely on mobile */
     #matrixCanvas { 
-      display: none !important;
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      z-index: -1; 
+      opacity: 0.3; 
     }
 
-    .logo-container { 
-      position: relative; 
-      display: inline-block; 
-      margin-bottom: 12px; 
-    }
+    .logo-container { position: relative; display: inline-block; margin-bottom: 15px; }
     
-    .glow, .glow * { 
-      color: #00ffcc !important; 
-      text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc, 0 0 10px #00ffcc; 
-    }
+    .glow, .glow * { color: #00ffcc !important; text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
 
     h1 {
       width: 100%; 
       margin: 0 auto; 
-      font-family: 'Lato', 'Arial Black', Arial, sans-serif; 
+      font-family: 'Lato', sans-serif; 
       line-height: 1.1; 
-      font-size: 2rem;
-      padding: 20px 10px 10px; 
+      font-size: 2.2rem;
+      padding: 30px 15px 15px; 
       text-align: center; 
       text-transform: uppercase; 
       color: #00ffcc; 
-      letter-spacing: .05em;
-      text-shadow: -1px -1px 1px #00ffcc, 0px 1px 0 #2e2e2e, 0 0 5px #00ffcc, 0 0 10px #00ffcc;
+      letter-spacing: .1em;
+      text-shadow: -1px -1px 1px #00ffcc, 0px 1px 0 #2e2e2e, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
       position: relative;
     }
 
     h1::after { 
       content: ""; 
       display: block; 
-      width: 60px; 
-      height: 1px; 
+      width: 80px; 
+      height: 2px; 
       background: #00ffcc; 
-      margin: 15px auto 0 auto; 
-      border-radius: 1px; 
-      box-shadow: 0 0 4px rgba(0,255,204,0.6); 
+      margin: 20px auto 0 auto; 
+      border-radius: 2px; 
+      box-shadow: 0 0 6px rgba(0,255,204,0.6); 
     }
 
-    /* Simple fade animation - No complex transforms */
-    @keyframes fadeIn { 
-      from { opacity: 0; } 
-      to { opacity: 1; } 
+    /* Animation for initial content */
+    @keyframes fadeSlideUp { 
+      from { opacity: 0; transform: translateY(20px); } 
+      to { opacity: 1; transform: translateY(0); } 
     }
-    .fade-in { 
-      opacity: 0; 
-      animation: fadeIn 0.6s ease forwards; 
-    }
-    .fade-in.delay-1 { animation-delay: 0.1s; }
-    .fade-in.delay-2 { animation-delay: 0.2s; }
-    .fade-in.delay-3 { animation-delay: 0.3s; }
-    .fade-in.delay-4 { animation-delay: 0.4s; }
-    .fade-in.delay-5 { animation-delay: 0.5s; }
+    .fade-in { opacity: 0; animation: fadeSlideUp 0.8s ease forwards; }
+    .fade-in.delay-1 { animation-delay: 0.2s; }
+    .fade-in.delay-2 { animation-delay: 0.4s; }
+    .fade-in.delay-3 { animation-delay: 0.6s; }
 
-    /* Simple gradient background */
+    /* Non-critical CSS juga inline */
     body::before {
-      content: ""; 
+      content:""; 
       width: 100%; 
-      height: 300px; 
+      height: 500px; 
       position: absolute; 
-      top: -50px; 
-      left: 0; 
-      transform: rotate(45deg);
-      background: linear-gradient(75deg, rgba(255,255,255,0.05) 0%, rgba(42,31,25,0) 70%);
+      top: -100px; 
+      left: 5px; 
+      transform: rotate(55deg);
+      background: rgba(255,255,255,0.1);
+      background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
       z-index: -1;
     }
 
-    p { 
-      color: #c9d1d9; 
-      font-size: 13px;
-      line-height: 1.3;
-      margin: 8px 0;
-    }
+    p { color: #c9d1d9; }
 
-    h2, h3 { 
-      color: #58a6ff; 
-      font-size: 1.1rem;
-      margin: 15px 0 8px 0;
-    }
+    h2, h3 { color: #58a6ff; }
 
-    nav { 
-      text-align: center; 
-      margin-top: 8px; 
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 5px;
-    }
-    
+    nav { text-align: center; margin-top: 10px; }
     .nav-btn { 
+      position: relative; 
       display: inline-flex; 
       align-items: center; 
       justify-content: center; 
-      gap: 4px; 
-      margin: 2px; 
-      padding: 8px 12px; 
+      gap: 6px; 
+      margin: 5px; 
+      padding: 10px 16px; 
       text-decoration: none; 
       color: #58a6ff; 
       font-weight: bold; 
-      border-radius: 5px; 
+      border-radius: 6px; 
       background: #21262d; 
       border: 1px solid #58a6ff; 
-      transition: all 0.2s ease; 
-      box-shadow: 0 0 5px rgba(88, 166, 255, 0.5); 
-      min-width: 100px; 
-      font-size: 11px; 
-      -webkit-tap-highlight-color: rgba(0, 255, 204, 0.2);
-      flex: 1;
-      max-width: 120px;
+      transition: all 0.3s ease; 
+      box-shadow: 0 0 8px rgba(88, 166, 255, 0.7); 
+      box-sizing: border-box; 
+      min-width: 120px; 
+      max-width: 160px; 
+      font-size: 12px; 
     }
-    
+    .nav-btn:hover,
     .nav-btn:active { 
       color: #00ffcc; 
       border-color: #00ffcc; 
-      transform: scale(0.98); 
-      box-shadow: 0 0 8px rgba(0, 255, 204, 0.7); 
+      transform: scale(1.03); 
+      box-shadow: 0 0 15px rgba(0, 255, 204, 0.9); 
     }
+    .nav-btn i { font-size: 1em; transition: transform 0.3s ease; }
+    .nav-btn:hover i,
+    .nav-btn:active i { transform: scale(1.1); }
 
-    /* SIMPLE ICONS USING EMOJI & SYMBOLS - NO FONT AWESOME */
-    .nav-btn i::before {
-      font-style: normal;
-      font-weight: normal;
+    @keyframes pulse { 
+      0% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0.7); } 
+      70% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(0,255,204,0); } 
+      100% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0); } 
     }
-    .fa-home::before { content: "🏠"; }
-    .fa-heart::before { content: "❤️"; }
-    .fa-download::before { content: "📥"; }
-    .fa-question-circle::before { content: "❓"; }
-    .fa-tools::before { content: "🛠️"; }
 
     .intro-box { 
       background: #161b22; 
-      padding: 15px 12px; 
-      margin: 12px auto 8px auto; 
+      padding: 20px 15px; 
+      margin: 15px auto 10px auto; 
       max-width: 100%; 
-      border-radius: 6px; 
-      box-shadow: 0 0 8px rgba(0,255,200,0.2); 
+      border-radius: 8px; 
+      box-shadow: 0 0 12px rgba(0,255,200,0.3); 
       text-align: center; 
-      font-size: 13px; 
-      line-height: 1.4; 
+      font-size: 14px; 
+      line-height: 1.5; 
     }
 
     .powered { 
-      font-size: 10px; 
+      font-size: 11px; 
       color: #00ffcc; 
       text-align: center; 
-      text-shadow: 0 0 2px #00ffcc, 0 0 4px #00ffcc; 
+      text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
       position: relative; 
       display: inline-block; 
-      margin-top: 8px; 
-      padding-bottom: 10px; 
+      margin-top: 10px; 
+      padding-bottom: 12px; 
     }
     .powered::before { 
       content: ""; 
       position: absolute; 
-      left: -25px; 
+      left: -30px; 
       bottom: 0; 
-      height: 2px; 
-      width: 25px; 
+      height: 3px; 
+      width: 30px; 
       background: linear-gradient(90deg, transparent, #00ffcc, transparent); 
-      border-radius: 2px; 
-      animation: laser-scan 1.5s ease-in-out infinite alternate; 
-      box-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; 
+      border-radius: 3px; 
+      animation: laser-scan 2s ease-in-out infinite alternate; 
+      box-shadow: 0 0 8px #00ffcc, 0 0 15px #00ffcc; 
     }
 
     @keyframes laser-scan { 
       from { left: 0; } 
-      to { left: calc(100% - 25px); } 
+      to { left: calc(100% - 30px); } 
     }
+
+    .fade-in.delay-4 { animation-delay: 0.8s; }
+    .fade-in.delay-5 { animation-delay: 1.0s; }
 
     .share-container { 
       position: fixed; 
       top: 50%; 
-      right: 8px; 
+      right: 10px; 
       transform: translateY(-50%); 
       display: flex; 
       flex-direction: column; 
-      gap: 6px; 
+      gap: 8px; 
       z-index: 1000; 
     }
     .share-btn { 
-      width: 35px; 
-      height: 35px; 
+      width: 40px; 
+      height: 40px; 
       border-radius: 50%; 
       display: flex; 
       align-items: center; 
       justify-content: center; 
-      font-size: 16px; 
+      font-size: 18px; 
       color: white; 
       background-color: #333; 
-      transition: all 0.2s ease; 
-      box-shadow: 0 0 6px #00ffcc; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 0 8px #00ffcc; 
       cursor: pointer; 
       border: none; 
+      outline: none; 
       position: relative;
-      -webkit-tap-highlight-color: transparent;
     }
-    
+    .share-btn::before { 
+      content: ''; 
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      border-radius: 50%; 
+      box-shadow: 0 0 12px #00ffcc; 
+      opacity: 0.7; 
+      transition: opacity 0.3s ease; 
+    }
+    .share-btn:hover,
     .share-btn:active { 
-      transform: scale(0.95); 
-      box-shadow: 0 0 10px #00ffcc; 
+      transform: scale(1.05); 
+      box-shadow: 0 0 15px #00ffcc; 
     }
-
-    /* SIMPLE SHARE BUTTON ICONS USING EMOJI */
-    .facebook-btn::before { content: "📘"; }
-    .tiktok-btn::before { content: "🎵"; }
-    .instagram-btn::before { content: "📷"; }
-    .whatsapp-btn::before { content: "💬"; }
-    .telegram-btn::before { content: "✈️"; }
-    .reddit-btn::before { content: "👽"; }
-    .native-share-btn::before { content: "↗️"; }
-    
-    .share-btn i { display: none; } /* Hide Font Awesome icons */
-    .share-btn::before {
-      font-size: 14px;
+    .share-btn:hover::before,
+    .share-btn:active::before { 
+      opacity: 0; 
     }
+    .facebook-btn:hover,
+    .facebook-btn:active { background-color: #1877F2; box-shadow: 0 0 15px #1877F2; }
+    .tiktok-btn:hover,
+    .tiktok-btn:active   { background-color: #000000; box-shadow: 0 0 15px #000000; }
+    .instagram-btn:hover,
+    .instagram-btn:active { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 15px #d6249f; }
+    .whatsapp-btn:hover,
+    .whatsapp-btn:active { background-color: #25D366; box-shadow: 0 0 15px #25D366; }
+    .telegram-btn:hover,
+    .telegram-btn:active { background-color: #0088cc; box-shadow: 0 0 15px #0088cc; }
+    .reddit-btn:hover,
+    .reddit-btn:active   { background-color: #FF4500; box-shadow: 0 0 15px #FF4500; }
+    .native-share-btn:hover,
+    .native-share-btn:active { background-color: #7e57c2; box-shadow: 0 0 15px #7e57c2; }
 
-    /* Mobile First Media Queries */
-    @media (min-width: 361px) {
-      body { padding: 18px; }
-      h1 { font-size: 2.2rem; padding: 25px 15px 15px; }
-      .nav-btn { padding: 9px 14px; font-size: 12px; min-width: 110px; }
+    /* Media queries */
+    @media (max-width: 768px) {
+      body { padding: 20px; padding-right: 70px; }
+      h1 { font-size: 2.2rem; padding: 30px 20px 20px; letter-spacing: .1em; }
+      .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 130px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
+      nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+      .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
+      .share-container { right: 8px; gap: 10px; }
       .share-btn { width: 38px; height: 38px; font-size: 17px; }
-      .share-btn::before { font-size: 15px; }
     }
 
-    @media (min-width: 481px) {
-      body { padding: 25px; padding-right: 60px; }
-      h1 { font-size: 2.8rem; padding: 35px 20px 20px; }
-      .nav-btn { padding: 10px 16px; font-size: 13px; min-width: 120px; }
-      .intro-box { padding: 20px 18px; font-size: 14px; }
-      .share-btn { width: 42px; height: 42px; font-size: 18px; }
-      .share-btn::before { font-size: 16px; }
+    @media (max-width: 480px) {
+      body { padding: 15px; padding-right: 65px; }
+      h1 { font-size: 1.8rem; padding: 25px 15px 15px; }
+      .nav-btn { margin: 6px 8px; min-width: 120px; max-width: 140px; padding: 8px 12px; font-size: 11px; }
+      nav { gap: 6px; }
+      .share-btn { width: 35px; height: 35px; font-size: 16px; }
     }
 
-    /* Desktop styles */
     @media (min-width: 769px) {
-      body { padding: 50px; padding-right: 70px; }
-      h1 { 
-        font-size: 5rem; 
-        padding: 80px 50px 30px; 
-        letter-spacing: .15em; 
-        text-shadow: -1px -1px 1px #00ffcc, 0px 1px 0 #2e2e2e, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
-      }
-      h1::after { width: 120px; height: 2px; margin: 30px auto 0 auto; }
-      
-      .nav-btn { 
-        margin: 0 8px 8px 8px; 
-        padding: 12px 20px; 
-        font-size: 14px; 
-        min-width: 140px; 
-        max-width: 200px;
-        flex: none;
-      }
-      
-      .intro-box { 
-        max-width: 800px; 
-        font-size: 16px; 
-        padding: 25px 20px; 
-        line-height: 1.6;
-      }
-      
-      .share-container { right: 15px; gap: 10px; }
-      .share-btn { width: 45px; height: 45px; font-size: 20px; }
-      .share-btn::before { font-size: 18px; }
-      
-      p { font-size: 16px; line-height: 1.6; }
-      
-      /* Enable matrix effect only on desktop */
-      #matrixCanvas { 
-        display: block !important; 
-        position: fixed; 
-        top: 0; 
-        left: 0; 
-        width: 100%; 
-        height: 100%; 
-        z-index: -1; 
-        opacity: 0.3;
-      }
-      
-      /* Desktop hover effects */
+      body { padding: 50px; }
+      h1 { font-size: 5rem; padding: 80px 50px 30px; letter-spacing: .15em; }
+      .nav-btn { margin: 0 10px 10px 10px; padding: 12px 20px; font-size: 14px; min-width: 140px; max-width: 200px; }
       .nav-btn:hover { 
-        color: #00ffcc; 
-        border-color: #00ffcc; 
         transform: scale(1.05); 
-        box-shadow: 0 0 15px rgba(0, 255, 204, 0.9); 
+        box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); 
+        animation: pulse 1s infinite; 
       }
-      
-      .share-btn:hover { 
-        transform: scale(1.1); 
-        box-shadow: 0 0 15px #00ffcc; 
-      }
+      .share-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #00ffcc; }
+      .share-container { right: 15px; gap: 12px; }
+      .share-btn { width: 45px; height: 45px; font-size: 20px; }
     }
 
     @media (max-width: 360px) {
-      body { padding: 12px; }
-      h1 { font-size: 1.8rem; padding: 15px 8px 8px; }
-      .nav-btn { margin: 1px; min-width: 90px; max-width: 100px; padding: 7px 10px; font-size: 10px; }
-      .share-container { right: 5px; gap: 4px; }
-      .share-btn { width: 32px; height: 32px; font-size: 14px; }
-      .share-btn::before { font-size: 12px; }
+      body { padding: 12px; padding-right: 60px; }
+      h1 { font-size: 1.6rem; padding: 20px 10px 10px; }
+      .nav-btn { margin: 4px 6px; min-width: 110px; max-width: 130px; padding: 7px 10px; font-size: 10px; }
+      nav { gap: 4px; }
+      .share-btn { width: 32px; height: 32px; font-size: 15px; }
+      .share-container { gap: 6px; }
     }
   </style>
 </head>
@@ -497,24 +387,24 @@
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
   
-  <!-- Matrix Effect Canvas - Hidden on mobile -->
+  <!-- Matrix Effect Canvas - ACTIVE FOR MOBILE TOO -->
   <canvas id="matrixCanvas"></canvas>
 
   <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"></button>
-    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"></button>
-    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()"></button>
-    <button class="share-btn native-share-btn" onclick="nativeShare()"></button>
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
   </div>
 
   <header class="logo-container" role="banner">
-    <img src="/pic/lemonpy.webp" 
+    <img src="/pic/lemonpy-optimized.webp" 
          alt="LemonPyHub Logo - Free Python Tools and Applications" 
-         width="213" 
-         height="120"
+         width="373" 
+         height="210"
          style="height:120px; width:auto;" 
          class="fade-in delay-1"
          fetchpriority="high"
@@ -553,8 +443,107 @@
         with no need to install Python or any complex dependencies.
       </p>
 
-      <!-- Rest of your content remains exactly the same -->
-      <!-- ... (sama seperti sebelumnya) ... -->
+      <p>
+        Our mission is to provide lightweight, practical solutions for everyday Windows tasks. From system optimization to 
+        DNS management, and from productivity enhancements to visual customization, LemonPyHub offers tools that empower 
+        users to take control of their digital environment. Each utility is thoroughly tested and built using Python 
+        frameworks such as Tkinter and PyQt6, ensuring a balance of functionality, aesthetics, and reliability.
+      </p>
+
+      <h3>Why LemonPyHub?</h3>
+      <ul>
+        <li>🧰 100% free and lightweight — no hidden trackers, bloatware, or intrusive installers. Every package is portable or easy-to-install.</li>
+        <li>⚡ Optimized for Windows 10 &amp; Windows 11 — most applications also support legacy versions of Windows for compatibility.</li>
+        <li>🔒 Secure and safe — tools include built-in options for backups, restore points, and undo features where relevant.</li>
+        <li>🧑‍💻 Python-powered — built with Python for flexibility, maintainability, and the ability to extend functionality easily.</li>
+        <li>📦 Ready-to-run packages — download, extract, and use immediately; no additional setup required.</li>
+        <li>🔄 Regular updates — we continuously improve tools based on user feedback and emerging Windows features.</li>
+        <li>🌱 Open and transparent — while primarily free, some source code and documentation are shared for educational purposes.</li>
+        <li>💡 Productivity-focused — designed to simplify repetitive or technical tasks so users can focus on more important work.</li>
+      </ul>
+
+      <p>
+        Each tool available on LemonPyHub is designed not just for utility, but also for understanding. 
+        Users can peek under the hood and see Python scripts in action, which makes this platform both a practical 
+        solution hub and a learning resource for Python enthusiasts. Whether you are maintaining your personal PC or 
+        exploring software development, our tools serve as a bridge between efficiency and learning.
+      </p>
+
+      <h3>Featured Tools</h3>
+      <ul>
+        <li>
+          <a href="https://lemonpyhub.github.io/download/Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" 
+             class="download-btn" 
+             download 
+             data-app-id="WMT" 
+             data-version="3.9.7" 
+             data-type="portable">
+            <strong>Windows Maintenance Tool</strong>
+          </a> — a comprehensive system helper that automates cleaning temporary files, monitoring system health, 
+          checking for outdated drivers, and performing essential maintenance routines. Ideal for users who want 
+          hands-free optimization with minimal effort.
+        </li>
+
+        <li>
+          <a href="https://lemonpyhub.github.io/download/Windows_Optimizer/Windows_Optimizer.rar" 
+             class="download-btn" 
+             download 
+             data-app-id="WOpt" 
+             data-version="1.0" 
+             data-type="portable">
+            <strong>Windows Optimizer</strong>
+          </a> — unlock maximum system performance by disabling unnecessary background services, adjusting system 
+          settings, and applying intelligent performance tweaks. Backup and restore options ensure safe experimentation.
+        </li>
+
+        <li>
+          <a href="https://lemonpyhub.github.io/download/DNS_Manager/DNS_Manager.rar" 
+             class="download-btn" 
+             download 
+             data-app-id="DNSM" 
+             data-version="1.0" 
+             data-type="portable">
+            <strong>DNS Manager</strong>
+          </a> — effortlessly test and apply the fastest DNS servers, enhance your internet speed, and monitor DNS 
+          response times. A must-have for network optimization and troubleshooting.
+        </li>
+
+        <li>
+          <a href="https://lemonpyhub.github.io/download/WingetTool/WingetTool.rar" 
+             class="download-btn" 
+             download 
+             data-app-id="WGet" 
+             data-version="1.0" 
+             data-type="portable">
+            <strong>Winget Tool</strong>
+          </a> — a user-friendly GUI for Microsoft Winget, allowing seamless searching, installation, and updates of 
+          software packages. Ideal for users looking for an easier interface than the command line.
+        </li>
+
+        <li>
+          <a href="https://lemonpyhub.github.io/download/Dockers/DockersSetup.rar" 
+             class="download-btn" 
+             download 
+             data-app-id="Dock" 
+             data-version="1.0" 
+             data-type="installer">
+            <strong>Dockers</strong>
+          </a> — an elegant PyQt6-based dock that lets you pin, organize, and launch applications quickly. Includes 
+          animated icons, transparency, and system tray integration for a polished desktop experience.
+        </li>
+      </ul>
+
+      <p>
+        LemonPyHub is committed to keeping all tools accessible, intuitive, and safe. We believe that system optimization 
+        and utility management should be hassle-free, and our curated collection of Python tools empowers Windows users 
+        of all levels to enhance productivity, maintain stability, and explore Python-powered customization.
+      </p>
+
+      <p>
+        Whether your goal is faster boot times, smoother multitasking, safer browsing, or simply a more organized 
+        desktop, LemonPyHub's tools provide practical, ready-to-use solutions. Join a community of learners and 
+        tinkerers who appreciate open, well-documented software built with care and passion.
+      </p>
     </section>
 
     <section class="intro-box glow fade-in delay-5" style="text-align:left; max-width:900px;">
@@ -577,67 +566,102 @@
   </footer>
 
   <script>
-    // ULTRA LIGHTWEIGHT JAVASCRIPT - Mobile Optimized
-    'use strict';
+    // Matrix Digital Rain Effect - OPTIMIZED FOR MOBILE & DESKTOP
+    let resizeTimeout;
+    const canvas = document.getElementById('matrixCanvas');
     
-    // Matrix Effect - Only for desktop
     function initMatrix() {
-      const canvas = document.getElementById('matrixCanvas');
-      if (!canvas || window.innerWidth < 769) return;
+      if (!canvas) return;
       
-      // Simple matrix effect without reflows
       const ctx = canvas.getContext('2d');
-      const width = canvas.width = window.innerWidth;
-      const height = canvas.height = window.innerHeight;
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-      const fontSize = 14;
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+      const fontSize = window.innerWidth < 768 ? 12 : 14; // Smaller font on mobile
+      
+      function setCanvasSize() {
+        // Cache dimensions to avoid forced reflow
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        canvas.width = width;
+        canvas.height = height;
+        return { width, height };
+      }
+      
+      const { width, height } = setCanvasSize();
       const columns = Math.floor(width / fontSize);
       const drops = Array(columns).fill(1);
       
-      function draw() {
+      function drawMatrix() {
         ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
         ctx.fillRect(0, 0, width, height);
         ctx.fillStyle = '#00ffcc';
-        ctx.font = fontSize + 'px "Fira Code", monospace';
+        ctx.font = `${fontSize}px 'Fira Code', monospace`;
         
         for (let i = 0; i < drops.length; i++) {
-          const text = chars[Math.floor(Math.random() * chars.length)];
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-          if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+          const text = characters.charAt(Math.floor(Math.random() * characters.length));
+          const x = i * fontSize;
+          const y = drops[i] * fontSize;
+          ctx.fillText(text, x, y);
+          
+          if (y > height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
           drops[i]++;
         }
       }
       
-      setInterval(draw, 50);
-    }
-
-    // Start matrix only on desktop after delay
-    if (window.innerWidth >= 769) {
-      setTimeout(initMatrix, 1000);
-    }
-
-    // Simple share functions
-    function shareOnFacebook() { window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(location.href), '_blank'); }
-    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en', '_blank'); }
-    function shareOnInstagram() { window.open('https://www.instagram.com/', '_blank'); }
-    function shareOnWhatsApp() { window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(document.title + ' - ' + location.href), '_blank'); }
-    function shareOnTelegram() { window.open('https://t.me/share/url?url=' + encodeURIComponent(location.href) + '&text=' + encodeURIComponent(document.title), '_blank'); }
-    function shareOnReddit() { window.open('https://reddit.com/submit?url=' + encodeURIComponent(location.href) + '&title=' + encodeURIComponent(document.title), '_blank'); }
-    function nativeShare() { 
-      navigator.share ? navigator.share({ 
-        title: document.title, 
-        text: 'Check out LemonPyHub — free Python tools for Windows!', 
-        url: location.href 
-      }) : alert('Use the share buttons above.'); 
-    }
-
-    // Mobile performance boost - disable animations on slow devices
-    if ('connection' in navigator && navigator.connection.saveData) {
-      document.querySelectorAll('.fade-in').forEach(el => {
-        el.style.animation = 'none';
-        el.style.opacity = '1';
+      // Slower interval on mobile to save battery
+      const interval = window.innerWidth < 768 ? 80 : 50;
+      setInterval(drawMatrix, interval);
+      
+      // Debounced resize handler
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+          const { width: newWidth, height: newHeight } = setCanvasSize();
+          const newColumns = Math.floor(newWidth / fontSize);
+          if (Math.abs(newColumns - columns) > 10) {
+            drops.length = newColumns;
+            drops.fill(1);
+          }
+        }, 250);
       });
     }
+
+    // Load matrix effect after page is fully loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initMatrix);
+    } else {
+      initMatrix();
+    }
+
+    // Share functions
+    function getCurrentURL() { return encodeURIComponent(window.location.href); }
+    function getPageTitle() { return encodeURIComponent(document.title); }
+    function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
+    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en','_blank'); }
+    function shareOnInstagram() { window.open('https://www.instagram.com/','_blank'); }
+    function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
+    function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
+    function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
+    function nativeShare() { 
+      if (navigator.share) { 
+        navigator.share({ 
+          title: document.title, 
+          text: 'Check out LemonPyHub — free Python tools for Windows!', 
+          url: window.location.href 
+        }); 
+      } else { 
+        alert('Web Share not supported in your browser. Please use the specific share buttons above.'); 
+      } 
+    }
+
+    // Handle window resize
+    window.addEventListener('resize', function() {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    });
   </script>
 </body>
 </html>
