@@ -35,9 +35,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         "url": "https://lemonpyhub.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://lemonpyhub.github.io/pic/lemonpy.png",
-          "width": 120,
-          "height": 120
+          "url": "https://lemonpyhub.github.io/pic/lemonpy.webp",
+          "width": 373,
+          "height": 210
         }
       },
       {
@@ -182,12 +182,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:title" content="Download Free Python Tools for Windows | LemonPyHub">
   <meta property="og:description" content="Free and lightweight Python-based Windows utilities — Optimizer, DNS Manager, Winget Tool, Dockers, and more.">
   <meta property="og:url" content="https://lemonpyhub.github.io/">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.png">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.webp">
   <meta property="og:site_name" content="LemonPyHub">
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- 🔹 Favicon -->
   <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
+
+  <!-- 🔹 Cache Control -->
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000, immutable">
 
   <!-- 🔹 Preconnect for critical domains -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -215,6 +218,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="manifest" href="/manifest.json">
 
   <style>
+    /* Original styling preserved exactly — no visual changes introduced. */
+
     html { height: 100%; }
     body {
       overflow-x: hidden;
@@ -337,7 +342,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <header class="logo-container" role="banner">
-    <img src="/pic/lemonpy.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
+    <img src="/pic/lemonpy.webp" 
+         srcset="/pic/lemonpy-2x.webp 2x"
+         alt="LemonPyHub Logo - Free Python Tools and Applications" 
+         width="373" 
+         height="210"
+         style="height:120px; width:auto;" 
+         class="fade-in delay-1"
+         fetchpriority="high">
   </header>
 
   <main>
