@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
+  <!-- Google Tag Manager - Deferred -->
   <script>
-    (function(w,d,s,l,i){
-      w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
-      var f=d.getElementsByTagName(s)[0], j=d.createElement(s);
-      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;
-      f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P5MN58K4');
+    // Defer GTM to reduce main-thread work
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+    
+    // Load GTM after page is interactive
+    setTimeout(function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P5MN58K4';
+      document.head.appendChild(script);
+    }, 3000); // Load after 3 seconds
   </script>
   <!-- End Google Tag Manager -->
   
@@ -39,9 +44,9 @@
         "url": "https://lemonpyhub.github.io/",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://lemonpyhub.github.io/pic/lemonpy.webp",
-          "width": 373,
-          "height": 210
+          "url": "https://lemonpyhub.github.io/pic/lemonpy-optimized.webp",
+          "width": 213,
+          "height": 120
         }
       },
       {
@@ -70,7 +75,7 @@
   <meta property="og:title" content="Download Free Python Tools for Windows | LemonPyHub">
   <meta property="og:description" content="Free and lightweight Python-based Windows utilities — Optimizer, DNS Manager, Winget Tool, Dockers, and more.">
   <meta property="og:url" content="https://lemonpyhub.github.io/">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy.webp">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpy-optimized.webp">
   <meta property="og:site_name" content="LemonPyHub">
   <meta name="twitter:card" content="summary_large_image">
 
@@ -84,33 +89,84 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link rel="preconnect" href="https://www.googletagmanager.com">
 
-  <!-- 🔹 Load Google Analytics asynchronously -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+  <!-- 🔹 Load Google Analytics asynchronously - Deferred -->
   <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q9HFE57YHB', { 
-      transport_type: 'beacon',
-      page_title: document.title,
-      page_location: window.location.href
-    });
+    // Defer Google Analytics
+    setTimeout(function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB';
+      script.onload = function() {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-Q9HFE57YHB', { 
+          transport_type: 'beacon',
+          page_title: document.title,
+          page_location: window.location.href
+        });
+      };
+      document.head.appendChild(script);
+    }, 4000); // Load after 4 seconds
   </script>
 
-  <!-- 🔹 Optimized Font Awesome with font-display -->
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+  <!-- 🔹 Self-host Font Awesome icons to reduce external requests -->
+  <style>
+    /* Font Awesome Icons - Only the icons we actually use */
+    .fa-home:before { content: "\f015"; }
+    .fa-heart:before { content: "\f004"; }
+    .fa-download:before { content: "\f019"; }
+    .fa-question-circle:before { content: "\f059"; }
+    .fa-tools:before { content: "\f7d9"; }
+    .fa-facebook-f:before { content: "\f39e"; }
+    .fa-tiktok:before { content: "\e07b"; }
+    .fa-instagram:before { content: "\f16d"; }
+    .fa-whatsapp:before { content: "\f232"; }
+    .fa-telegram-plane:before { content: "\f3fe"; }
+    .fa-reddit-alien:before { content: "\f281"; }
+    .fa-share-alt:before { content: "\f1e0"; }
+    
+    /* Font Awesome base styles */
+    .fab, .fas { 
+      font-family: 'Font Awesome 6 Brands', 'Font Awesome 6 Free'; 
+      font-weight: 400; 
+      font-style: normal;
+      display: inline-block;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+    }
+    .fas { font-weight: 900; }
+  </style>
 
-  <!-- 🔹 Optimized Google Fonts with font-display -->
+  <!-- 🔹 Optimized Google Fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap"></noscript>
 
   <link rel="manifest" href="/manifest.json">
 
+  <!-- 🔹 Preload critical image -->
+  <link rel="preload" href="/pic/lemonpy-optimized.webp" as="image" type="image/webp">
+
   <!-- 🔹 ALL CSS INLINE - No external files -->
   <style>
+    /* Font face declarations with font-display: swap */
+    @font-face {
+      font-family: 'Font Awesome 6 Brands';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2) format('woff2');
+    }
+    
+    @font-face {
+      font-family: 'Font Awesome 6 Free';
+      font-style: normal;
+      font-weight: 900;
+      font-display: swap;
+      src: url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2) format('woff2');
+    }
+
     /* Critical CSS for initial render */
     html { height: 100%; }
     body {
@@ -280,10 +336,10 @@
   </div>
 
   <header class="logo-container" role="banner">
-    <img src="/pic/lemonpy.webp" 
+    <img src="/pic/lemonpy-optimized.webp" 
          alt="LemonPyHub Logo - Free Python Tools and Applications" 
-         width="373" 
-         height="210"
+         width="213" 
+         height="120"
          style="height:120px; width:auto;" 
          class="fade-in delay-1"
          fetchpriority="high"
@@ -314,6 +370,7 @@
 
     <!-- SEO-friendly introduction section -->
     <section class="intro-box glow fade-in delay-4" aria-labelledby="seo-intro" style="text-align:left; max-width:900px;">
+      <!-- Your existing content remains exactly the same -->
       <h2 id="seo-intro">Free Python Tools for Windows — Easy, Safe, and Open</h2>
       <p>
         Welcome to <strong>LemonPyHub</strong>, your go-to hub for <strong>free Python-based tools for Windows</strong>. 
@@ -445,27 +502,22 @@
   </footer>
 
   <script>
-    // Matrix Digital Rain Effect - OPTIMIZED (no forced reflow)
+    // Matrix Digital Rain Effect - ULTRA OPTIMIZED (no forced reflow)
     let resizeTimeout;
     const canvas = document.getElementById('matrixCanvas');
     
     function initMatrix() {
       if (!canvas) return;
       
+      // Set initial size once
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      canvas.width = width;
+      canvas.height = height;
+      
       const ctx = canvas.getContext('2d');
       const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
       const fontSize = 14;
-      
-      function setCanvasSize() {
-        // Cache dimensions to avoid forced reflow
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        canvas.width = width;
-        canvas.height = height;
-        return { width, height };
-      }
-      
-      const { width, height } = setCanvasSize();
       const columns = Math.floor(width / fontSize);
       const drops = Array(columns).fill(1);
       
@@ -488,28 +540,34 @@
         }
       }
       
-      setInterval(drawMatrix, 50);
+      // Start animation
+      const matrixInterval = setInterval(drawMatrix, 50);
       
-      // Debounced resize handler to prevent forced reflows
+      // Debounced resize handler - completely prevents forced reflow
       window.addEventListener('resize', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-          const { width: newWidth, height: newHeight } = setCanvasSize();
-          // Update drops array if column count changed significantly
-          const newColumns = Math.floor(newWidth / fontSize);
-          if (Math.abs(newColumns - columns) > 10) {
-            drops.length = newColumns;
-            drops.fill(1);
+          // Only resize if significantly different
+          const newWidth = window.innerWidth;
+          const newHeight = window.innerHeight;
+          
+          if (Math.abs(newWidth - width) > 100 || Math.abs(newHeight - height) > 100) {
+            // Stop current animation
+            clearInterval(matrixInterval);
+            // Reinitialize with new dimensions
+            initMatrix();
           }
-        }, 250);
+        }, 500); // Increased debounce time
       });
     }
 
-    // Load matrix effect after page is fully loaded
+    // Load matrix effect after page is fully loaded and idle
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initMatrix);
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initMatrix, 1000); // Delay start by 1 second
+      });
     } else {
-      initMatrix();
+      setTimeout(initMatrix, 1000); // Delay start by 1 second
     }
 
     // Share functions
