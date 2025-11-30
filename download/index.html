@@ -16,7 +16,7 @@
   <title>Download Free Python Tools - LemonPyHub | Windows Utilities, DNS Manager, Optimizer</title>
   <meta name="description" content="Download free Python scripts, tools, and applications from LemonPyHub. Windows Maintenance Tool, DNS Manager, Windows Optimizer, Dockers, and Winget Tool for Windows 10/11.">
   
-  <!-- 🌐 GOOGLE SEARCH CONSOLE VERIFICATION (GANTI DENGAN CODE ANDA) -->
+  <!-- 🌐 GOOGLE SEARCH CONSOLE VERIFICATION -->
   <meta name="google-site-verification" content="googlee4b91e620bd47c0c">
   
   <!-- 🔗 CANONICAL URL -->
@@ -25,6 +25,18 @@
   <!-- 📱 MOBILE & SOCIAL META -->
   <meta name="theme-color" content="#00ffcc">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  
+  <!-- PRELOAD & PRECONNECT OPTIMIZATION -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  
+  <!-- PRELOAD CRITICAL IMAGES -->
+  <link rel="preload" href="https://lemonpyhub.github.io/pic/lemonpy.webp" as="image" importance="high">
   
   <!-- 🏗️ ENHANCED STRUCTURED DATA -->
   <script type="application/ld+json">
@@ -101,15 +113,10 @@
   <meta name="twitter:description" content="Free Python scripts, tools, and applications for Windows systems">
   <meta name="twitter:image" content="https://lemonpyhub.github.io/pic/lemonpy.webp">
 
-  <!-- 🎨 FONTS & STYLES -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
+  <!-- 🎨 FONTS & STYLES - OPTIMIZED -->
+  <!-- CSS KRITIS - DIINLINE -->
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
-
+    /* CSS KRITIS UNTUK RENDER AWAL */
     html {
       height: 100%;
       scroll-behavior: smooth;
@@ -119,7 +126,7 @@
       overflow-x: hidden;
       margin: 0;
       padding: 0;
-      font-family: 'Fira Code', monospace;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       background: #1a1a1a;
       color: #e8e6e3; 
       text-align: center;
@@ -170,7 +177,593 @@
       text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+
+    h1 {
+      width: 100%;
+      margin: 0 auto 0 auto;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      line-height: 1.2;
+      font-size: 5rem;
+      padding: 80px 50px 30px;
+      text-align: center;
+      text-transform: uppercase;
+      text-rendering: optimizeLegibility;
+      color: #00ffcc; 
+      letter-spacing: .15em;
+    }
+
+    nav {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .nav-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin: 0 10px 10px 10px;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #58a6ff;
+      font-weight: bold;
+      border-radius: 8px;
+      background: #21262d;
+      border: 1px solid #58a6ff;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+      min-width: 140px;
+      max-width: 200px;
+      font-size: 14px;
+    }
+
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .app-card {
+      background: #161b22;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
+      border: 1px solid #30363d;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* RESPONSIVE KRITIS */
+    @media (max-width: 768px) {
+      body { 
+        padding: 20px; 
+        padding-right: 70px; 
+      }
+      
+      h1 { 
+        font-size: 2.8rem; 
+        padding: 50px 20px 20px;
+        letter-spacing: .1em;
+      }
+      
+      .nav-btn { 
+        display: inline-block;
+        margin: 8px 10px;
+        width: auto;
+        min-width: 150px;
+        max-width: 180px;
+        padding: 12px 18px;
+        font-size: 13px;
+      }
+      
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      
+      .apps-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        padding: 0 10px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body { 
+        padding: 15px;
+        padding-right: 65px;
+      }
+      
+      h1 { 
+        font-size: 2.2rem; 
+        padding: 40px 15px 15px;
+      }
+      
+      .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+    }
+  </style>
+
+  <!-- FONTS & CSS NON-KRITIS - LOAD ASYNC -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+  
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  </noscript>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <canvas id="matrixCanvas"></canvas>
+
+  <div class="share-container">
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
+  </div>
+
+<main id="main-content">
+    <div class="logo-container">
+      <img src="https://lemonpyhub.github.io/pic/lemonpy.webp" 
+           alt="LemonPyHub Logo - Free Python Tools and Applications" 
+           style="height:120px;" 
+           class="fade-in delay-1"
+           loading="lazy"
+           width="213" 
+           height="120">
+    </div>
     
+    <h1 class="fade-in delay-2">LΣⱮØπPyHub</h1>
+       <p class="glow fade-in delay-3" style="text-align:center;">
+  Free Python Tools and Windows Utilities.<br>
+  Where coding meets efficiency and innovation — transforming ideas into powerful digital solutions.<br> 
+  Your hub for free Python-based Windows utilities and system optimization.
+</p>
+
+
+    <nav>
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+      <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+    </nav>
+
+    <div class="intro-box fade-in delay-4">
+      <p>Discover our collection of free Python tools and applications designed to make your digital life easier and more efficient.</p>
+    </div>
+
+    <div class="filter-container fade-in delay-4">
+      <div style="width:100%; display:flex; justify-content:center;">
+        <input type="text" class="search-box" id="searchInput" placeholder="Search Free Apps..." style="text-align:center;">
+      </div>
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="windows">Windows</button>
+        <button class="filter-btn" data-filter="optimization">Optimization</button>
+        <button class="filter-btn" data-filter="network">Network</button>
+        <button class="filter-btn" data-filter="productivity">Productivity</button>
+      </div>
+    </div>
+
+    <section style="max-width: 1000px; margin: 40px auto; padding: 30px; background: #0d1117; border-radius: 12px; border: 1px solid #00ffcc; text-align: center;">
+    <h2 style="color: #00ffcc; margin-bottom: 20px;">Free Python-Powered Windows Utilities Collection</h2>
+    <p style="color: #c9d1d9; line-height: 1.6; margin-bottom: 20px;">
+        Discover our comprehensive suite of <strong>Python-based system tools</strong> designed to optimize, 
+        maintain, and enhance your Windows experience. All utilities are <strong>100% free, safe to use, 
+        and require no technical expertise</strong>.
+    </p>
+    <div style="display: inline-block; padding: 10px 20px; background: #00ffcc; color: #0d1117; 
+                border-radius: 8px; font-weight: bold; margin-top: 10px;">
+        Total Downloads: 10,000+ Worldwide
+    </div>
+</section>
+
+    <div class="apps-grid" id="appsGrid">
+      <div class="app-card fade-in delay-1" data-category="windows optimization">
+        <div class="app-image-container">
+          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" 
+               alt="Windows Maintenance Tool" 
+               class="app-icon"
+               loading="lazy"
+               width="231" 
+               height="160">
+        </div>
+        <h3 class="app-title">Windows Maintenance Tool</h3>
+        <p class="app-description">Simplify essential system care tasks with a single click instead of complex commands.</p>
+        <div class="app-meta">
+          <div class="app-platform">
+            <span class="platform-tag">Windows</span>
+          </div>
+          <div class="app-version">v3.9.7</div>
+        </div>
+        <div class="app-actions">
+          <a href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" class="download-btn" download data-app-id="WMT" data-version="3.9.5" data-type="installer">
+            <i class="fas fa-download"></i> Download Installer
+          </a>
+          <a href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" class="download-btn" download data-app-id="WMT" data-version="3.9.7" data-type="portable">
+            <i class="fas fa-download"></i> Download Portable
+          </a>
+          <button class="details-btn" data-app="windows-maintenance">View Details</button>
+        </div>
+        <div class="app-card-footer">
+          <span class="app-size">10.45MB / 11.16MB</span>
+          <span class="app-date">Sept 2025</span>
+        </div>
+      </div>
+
+      <div class="app-card fade-in delay-2" data-category="network windows">
+        <div class="app-image-container">
+          <img src="DNS_Manager/pic/DNS-Manager.png" 
+               alt="DNS Manager" 
+               class="app-icon"
+               loading="lazy"
+               width="247" 
+               height="160">
+        </div>
+        <h3 class="app-title">DNS Manager</h3>
+        <p class="app-description">Find and set the fastest DNS for your system with one click - no manual IP entry needed.</p>
+        <div class="app-meta">
+          <div class="app-platform">
+            <span class="platform-tag">Windows</span>
+          </div>
+          <div class="app-version">v1.0</div>
+        </div>
+        <div class="app-actions">
+          <a href="DNS_Manager/DNS_Manager.rar" class="download-btn" download data-app-id="DNSM" data-version="1.0" data-type="portable">
+            <i class="fas fa-download"></i> Download Portable
+          </a>
+          <button class="details-btn" data-app="dns-manager">View Details</button>
+        </div>
+        <div class="app-card-footer">
+          <span class="app-size">24.58MB</span>
+          <span class="app-date">Sept 2025</span>
+        </div>
+      </div>
+
+      <div class="app-card fade-in delay-3" data-category="windows optimization">
+        <div class="app-image-container">
+          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" 
+               alt="Windows Optimizer" 
+               class="app-icon"
+               loading="lazy"
+               width="248" 
+               height="160">
+        </div>
+        <h3 class="app-title">Windows Optimizer</h3>
+        <p class="app-description">Enhance Windows performance through systematic configuration management and optimization.</p>
+        <div class="app-meta">
+          <div class="app-platform">
+            <span class="platform-tag">Windows</span>
+          </div>
+          <div class="app-version">v1.0</div>
+        </div>
+        <div class="app-actions">
+          <a href="Windows_Optimizer/Windows_Optimizer.rar" class="download-btn" download data-app-id="WOPT" data-version="1.0" data-type="portable">
+            <i class="fas fa-download"></i> Download Portable
+          </a>
+          <button class="details-btn" data-app="windows-optimizer">View Details</button>
+        </div>
+        <div class="app-card-footer">
+          <span class="app-size">27.24MB</span>
+          <span class="app-date">Sept 2025</span>
+        </div>
+      </div>
+
+      <div class="app-card fade-in delay-4" data-category="windows productivity">
+        <div class="app-image-container">
+          <img src="Dockers/pic/dockers.png" 
+               alt="Dockers" 
+               class="app-icon"
+               loading="lazy"
+               width="295" 
+               height="160">
+        </div>
+        <h3 class="app-title">Dockers</h3>
+        <p class="app-description">Instant access to your favorite folders with a sleek, auto-hiding dock for quick navigation.</p>
+        <div class="app-meta">
+          <div class="app-platform">
+            <span class="platform-tag">Windows</span>
+          </div>
+          <div class="app-version">v1.0</div>
+        </div>
+        <div class="app-actions">
+          <a href="Dockers/DockersSetup.rar" class="download-btn" download data-app-id="DOCK" data-version="1.0" data-type="installer">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <button class="details-btn" data-app="dockers">View Details</button>
+        </div>
+        <div class="app-card-footer">
+          <span class="app-size">24.91MB</span>
+          <span class="app-date">Oct 2025</span>
+        </div>
+      </div>
+
+      <div class="app-card fade-in delay-1" data-category="windows productivity">
+        <div class="app-image-container">
+          <img src="WingetTool/pic/Winget.png" 
+               alt="Winget Tool" 
+               class="app-icon"
+               loading="lazy"
+               width="198" 
+               height="160">
+        </div>
+        <h3 class="app-title">Winget Tool</h3>
+        <p class="app-description">Modern GUI utility for managing Windows package updates via Winget with one-click upgrades.</p>
+        <div class="app-meta">
+          <div class="app-platform">
+            <span class="platform-tag">Windows</span>
+          </div>
+          <div class="app-version">v1.0</div>
+        </div>
+        <div class="app-actions">
+          <a href="WingetTool/WingetTool.rar" class="download-btn" download data-app-id="WGET" data-version="1.0" data-type="portable">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <button class="details-btn" data-app="winget-tool">View Details</button>
+        </div>
+        <div class="app-card-footer">
+          <span class="app-size">35.2MB</span>
+          <span class="app-date">Oct 2025</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination">
+      <button class="page-btn active">1</button>
+      <button class="page-btn">2</button>
+      <button class="page-btn">3</button>
+    </div>
+
+    <div id="imgModal" class="modal">
+      <span class="modal-close">&times;</span>
+      <img class="modal-content" id="modalImage" alt="Enlarged application screenshot">
+    </div>
+
+    <div id="windows-maintenance-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Windows Maintenance Tool 3.9.5</h2>
+        <div class="tool-content">
+          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool Screenshot" class="tool-img" id="windows-maintenance-tool-modal" loading="lazy" width="231" height="160">
+          <div class="download-block">
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download data-app-id="WMT" data-version="3.9.5" data-type="installer">Windows Maintenance 3.9.5 (Installer)</a>
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download data-app-id="WMT" data-version="3.9.7" data-type="portable">Windows Maintenance 3.9.7 (Portable)</a>
+            <div class="download-date" style="text-align:left;">v3.9.7 | Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Installer: 10.45MB | Portable: 11.16MB</div>
+
+            <!-- ✅ SHA256 & VirusTotal (Windows Maintenance Tool) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-wmt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/4546fbbc933457bd4562795aed8b6a54613e7ec5c2dbf3a16671e376707a2c90/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-wmt" style="display:none;">5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6</code>
+            </div>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
+          <h3>Key features include:</h3>
+          <ul>
+            <li>Clearing temporary and prefetch files</li>
+            <li>Emptying the Recycle Bin</li>
+            <li>Running System File Checker (SFC)</li>
+            <li>Running Deployment Image Servicing and Management (DISM)</li>
+            <li>Drive Health Check</li>
+            <li>Optimize Storage</li>
+            <li>And more...</li>
+          </ul>
+          <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="dns-manager-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>DNS Manager</h2>
+        <div class="tool-content">
+          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager-modal" loading="lazy" width="247" height="160">
+          <div class="download-block">
+            <a class="btn" href="DNS_Manager/DNS_Manager.rar" download data-app-id="DNSM" data-version="1.0" data-type="portable">DNS Manager (Portable)</a>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 24.58MB</div>
+
+            <!-- ✅ SHA256 & VirusTotal (DNS Manager) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-dns')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/a5422dc5065ad20fe9de6b2e99c59d8fa84e4dff98136ac34fd39edc39121c96" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-dns" style="display:none;">f4ff4d285fe8c37c2b809bb5d03d941ad0181ae1e42776f4d9c508347101c9f7</code>
+            </div>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>DNS Manager lets you easily find and set the fastest DNS for your system—no need to manually enter IP addresses. Scan, compare, and choose from Google, Cloudflare, AdGuard, and other free DNS providers. Switch to a single DNS or multiple DNS servers with just one click—fast, simple, and secure.</p>
+          <h3>Key features include:</h3>
+          <ul>
+            <li>Scan and benchmark DNS speeds</li>
+            <li>Compare multiple DNS options</li>
+            <li>Set your preferred DNS instantly</li>
+            <li>Supports multiple DNS selections</li>
+            <li>One-click DNS switching—easy, fast, and safe</li>
+            <li>Quick, safe, and hassle-free</li>
+            <li>And more...</li>
+          </ul>
+          <p>DNS Manager makes choosing and switching DNS fast, easy, and safe — just one click, no expertise needed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="windows-optimizer-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Windows Optimizer</h2>
+        <div class="tool-content">
+          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot" class="tool-img" id="Windows-Optimizer-modal" loading="lazy" width="248" height="160">
+          <div class="download-block">
+            <a class="btn" href="Windows_Optimizer/Windows_Optimizer.rar" download data-app-id="WOPT" data-version="1.0" data-type="portable">Windows Optimizer (Portable)</a>
+            <div class="download-date" style="text-align:left;">Win7, Win8, Win8.1, Win10, Win11</div>
+            <div class="download-date" style="text-align:left;">Auto-Detect Windows</div>
+            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 27.24MB</div>
+
+            <!-- ✅ SHA256 & VirusTotal (Windows Optimizer) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-wopt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/d0f93823ef8781b4a42e8ee591e09cbb6fedabbf1bbfe5837e52e1caf8f5eedd" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-wopt" style="display:none;">4e42b76a1cd1c801561b4e4b2c057b044aa27dff4ce6677c36365e4d3c28d9bc</code>
+            </div>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
+          <h3>Tweak enable/disable:</h3>
+          <ul>
+            <li>Visual Effect</li>
+            <li>Background Apps</li>
+            <li>Taskbar Small Icon</li>
+            <li>Transperancy Effect</li>
+            <li>Search Indexing</li>
+            <li>Create Backup Settings</li>
+            <li>Rollback system</li>
+            <li>And more...</li>
+          </ul>
+          <p>This freeware application delivers significant system performance improvements, especially on limited hardware, by disabling non-essential visual effects and background operations. The user-friendly interface enables anyone to safely optimize their system without requiring advanced computer skills. Intelligent detection ensures compatibility across Windows versions while maintaining stability through comprehensive backup and restore features. The application simplifies complex registry modifications that typically need technical expertise, making system optimization accessible to users of all skill levels.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="dockers-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Dockers</h2>
+        <div class="tool-content">
+          <img src="Dockers/pic/dockers.png" alt="Dockers Screenshot" class="tool-img" id="Dockers-modal" loading="lazy" width="295" height="160">
+          <div class="download-block">
+            <a class="btn" href="Dockers/DockersSetup.rar" download data-app-id="DOCK" data-version="1.0" data-type="installer">Dockers</a>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Quick Folder Access</div>
+            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 24.91MB</div>
+
+            <!-- ✅ SHA256 & VirusTotal (Dockers) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-dockers')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/e3c238dc6fb3abbf4f844b14da449c1841fa5f4faf2ac0b35f8fec796af6592b?nocache=1" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-dockers" style="display:none;">2cdee2f7561f9723ec12cee6696e472240a2d797f64707e6a66bc84d6312baf3</code>
+            </div>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>LemonPy Dockers provides instant access to your favorite folders with a sleek, auto-hiding dock. Customize 7 shortcut buttons with your preferred icons for quick navigation. The dock intelligently appears when needed and hides automatically. Easily enable or disable the entire dock by pressing <strong>Ctrl+Shift+L</strong> key. Lightweight and stays neatly positioned on your screen edge for efficient workflow.</p>
+          <h3>Features:</h3>
+          <ul>
+            <li>7 Customizable Folder Shortcuts</li>
+            <li>Auto-Hide/Show Function</li>
+            <li>Custom Icon Support</li>
+            <li>Quick Enable/Disable (Ctrl+Shift+L)</li>
+            <li>Multiple Screen Position</li>
+            <li>Transparency Control</li>
+            <li>System Tray Integration</li>
+            <li>Freeware</li>
+          </ul>
+          <p>This freeware enhances productivity by eliminating repetitive folder navigation. The intuitive interface requires no technical expertise - simply drag and drop your preferred folders. Smart positioning ensures the dock never interferes with your work while remaining instantly accessible. Perfect for users who frequently access the same directories and want a cleaner desktop experience without cluttering their workspace.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="winget-tool-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Winget Tool</h2>
+        <div class="tool-content">
+          <img src="WingetTool/pic/Winget.png" alt="Winget Tool Screenshot" class="tool-img" id="Winget-modal" loading="lazy" width="198" height="160">
+          <div class="download-block">
+            <a class="btn" href="WingetTool/WingetTool.rar" download data-app-id="WGET" data-version="1.0" data-type="portable">Winget Tool</a>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Just Select & Click</div>
+            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
+            <div class="download-size" style="text-align:left;">Portable: 35.2MB</div>
+
+            <!-- ✅ SHA256 & VirusTotal (Winget Tool) - hidden hash, button only -->
+            <div class="download-hash">
+              <p>
+                <button onclick="copyHash('sha-winget')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+              </p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+              <code id="sha-winget" style="display:none;">0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e</code>
+            </div>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>WingetTool is a modern GUI utility for managing Windows package updates via Winget. It scans available updates, allows selective or full upgrades with progress tracking, and displays real-time logs. Features include dark theme, progress bars, blinking status alerts, and admin auto-elevation for seamless software maintenance.</p>
+          <h3>Features:</h3>
+          <ul>
+            <li>One-click Winget scan for available updates</li>
+            <li>Upgrade selected or all apps easily</li>
+            <li>Real-time progress bars and logs</li>
+            <li>Dark modern interface with blinking status alerts</li>
+            <li>Auto admin elevation for system access</li>
+            <li>Cancel operation anytime</li>
+            <li>Freeware</li>
+          </ul>
+          <p>WingetTool simplifies Windows app updates with a modern dark GUI, real-time logs, progress tracking, and one-click upgrades—offering full control, admin access, and smooth management.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="powered fade-in delay-4">Powered by LΣⱮØπPy 2025</div>
+  </main>
+
+  <!-- CSS NON-KRITIS - DIPINDAHKAN KE BAWAH -->
+  <style>
+    /* CSS NON-KRITIS UNTUK EFFECT DAN STYLING LANJUTAN */
     body::before {
       content:"";
       width: 100%;
@@ -190,19 +783,7 @@
       z-index: -1;
     }
 
-    
     h1 {
-      width: 100%;
-      margin: 0 auto 0 auto;
-      font-family: 'Lato', sans-serif;
-      line-height: 1.2;
-      font-size: 5rem;
-      padding: 80px 50px 30px;
-      text-align: center;
-      text-transform: uppercase;
-      text-rendering: optimizeLegibility;
-      color: #00ffcc; 
-      letter-spacing: .15em;
       text-shadow: 
         -1px -1px 1px #00ffcc, 
         0px 1px 0 #2e2e2e, 
@@ -243,33 +824,6 @@
 
     h2, h3 { color: #58a6ff; }
 
-    nav {
-      text-align: center;
-      margin-top: 10px;
-    }
-
-    .nav-btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      margin: 0 10px 10px 10px;
-      padding: 12px 20px;
-      text-decoration: none;
-      color: #58a6ff;
-      font-weight: bold;
-      border-radius: 8px;
-      background: #21262d;
-      border: 1px solid #58a6ff;
-      transition: all 0.3s ease;
-      box-shadow: 0 0 10px rgba(88, 166, 255, 0.7);
-      box-sizing: border-box;
-      min-width: 140px;
-      max-width: 200px;
-      font-size: 14px;
-    }
-
     .nav-btn:hover,
     .nav-btn:focus {
       color: #00ffcc;
@@ -289,7 +843,6 @@
     .nav-btn:hover i {
       transform: scale(1.2);
     }
-
 
     @keyframes pulse {
       0% {
@@ -347,17 +900,6 @@
       to   { left: calc(100% - 40px); }
     }
 
-    @keyframes fadeSlideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
-    .fade-in.delay-1 { animation-delay: 0.3s; }
-    .fade-in.delay-2 { animation-delay: 0.6s; }
-    .fade-in.delay-3 { animation-delay: 0.9s; }
-    .fade-in.delay-4 { animation-delay: 1.2s; }
-
     .filter-container {
       display: flex;
       justify-content: center;
@@ -401,29 +943,6 @@
       color: #0d1117;
       border-color: #00ffcc;
       box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
-    }
-
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 25px;
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
-
-    .app-card {
-      background: #161b22;
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-      border: 1px solid #30363d;
-      position: relative;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
 
     .app-card:hover {
@@ -717,7 +1236,6 @@
       text-align: left;
     }
 
-    /* ensure download-hash content is left-aligned inside modal */
     .download-hash {
       text-align: left;
       margin-top: 8px;
@@ -834,35 +1352,8 @@
       box-shadow: 0 0 8px rgba(0,255,204,0.4);
     }
 
+    /* SISA CSS RESPONSIVE */
     @media (max-width: 768px) {
-      body { 
-        padding: 20px; 
-        padding-right: 70px; 
-      }
-      
-      h1 { 
-        font-size: 2.8rem; 
-        padding: 50px 20px 20px;
-        letter-spacing: .1em;
-      }
-      
-      .nav-btn { 
-        display: inline-block;
-        margin: 8px 10px;
-        width: auto;
-        min-width: 150px;
-        max-width: 180px;
-        padding: 12px 18px;
-        font-size: 13px;
-      }
-      
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-      }
-      
       .intro-box { 
         font-size: 14px; 
         padding: 20px; 
@@ -880,12 +1371,6 @@
         font-size: 18px;
         min-width: 44px;
         min-height: 44px;
-      }
-      
-      .apps-grid {
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 20px;
-        padding: 0 10px;
       }
       
       .filter-container {
@@ -922,41 +1407,6 @@
     }
 
     @media (max-width: 480px) {
-      body { 
-        padding: 15px;
-        padding-right: 65px;
-      }
-      
-      h1 { 
-        font-size: 2.2rem; 
-        padding: 40px 15px 15px;
-      }
-      
-      .nav-btn { 
-        margin: 6px 8px;
-        min-width: 140px;
-        max-width: 160px;
-        padding: 10px 15px;
-        font-size: 12px;
-      }
-      
-      nav {
-        gap: 6px;
-      }
-      
-      .share-btn { 
-        width: 38px; 
-        height: 38px; 
-        font-size: 17px;
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      .apps-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
-      }
-      
       .app-card {
         padding: 15px;
       }
@@ -982,16 +1432,6 @@
     }
 
     @media (max-width: 360px) {
-      body { 
-        padding: 12px;
-        padding-right: 60px;
-      }
-      
-      h1 { 
-        font-size: 1.8rem; 
-        padding: 30px 10px 10px;
-      }
-      
       .nav-btn { 
         margin: 4px 6px;
         min-width: 130px;
@@ -1061,424 +1501,9 @@
       }
     }
   </style>
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
-
-  <canvas id="matrixCanvas"></canvas>
-
-  <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
-    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
-    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit"><i class="fab fa-reddit-alien"></i></button>
-    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
-  </div>
-
-<main id="main-content">
-    <div class="logo-container">
-      <img src="https://lemonpyhub.github.io/pic/lemonpy.webp" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
-    </div>
-    
-    <h1 class="fade-in delay-2">LΣⱮØπPyHub</h1>
-       <p class="glow fade-in delay-3" style="text-align:center;">
-  Free Python Tools and Windows Utilities.<br>
-  Where coding meets efficiency and innovation — transforming ideas into powerful digital solutions.<br> 
-  Your hub for free Python-based Windows utilities and system optimization.
-</p>
-
-
-    <nav>
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
-      <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
-    </nav>
-
-    <div class="intro-box fade-in delay-4">
-      <p>Discover our collection of free Python tools and applications designed to make your digital life easier and more efficient.</p>
-    </div>
-
-    <div class="filter-container fade-in delay-4">
-      <div style="width:100%; display:flex; justify-content:center;">
-        <input type="text" class="search-box" id="searchInput" placeholder="Search Free Apps..." style="text-align:center;">
-      </div>
-      <div class="filter-buttons">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="windows">Windows</button>
-        <button class="filter-btn" data-filter="optimization">Optimization</button>
-        <button class="filter-btn" data-filter="network">Network</button>
-        <button class="filter-btn" data-filter="productivity">Productivity</button>
-      </div>
-    </div>
-
-    <section style="max-width: 1000px; margin: 40px auto; padding: 30px; background: #0d1117; border-radius: 12px; border: 1px solid #00ffcc; text-align: center;">
-    <h2 style="color: #00ffcc; margin-bottom: 20px;">Free Python-Powered Windows Utilities Collection</h2>
-    <p style="color: #c9d1d9; line-height: 1.6; margin-bottom: 20px;">
-        Discover our comprehensive suite of <strong>Python-based system tools</strong> designed to optimize, 
-        maintain, and enhance your Windows experience. All utilities are <strong>100% free, safe to use, 
-        and require no technical expertise</strong>.
-    </p>
-    <div style="display: inline-block; padding: 10px 20px; background: #00ffcc; color: #0d1117; 
-                border-radius: 8px; font-weight: bold; margin-top: 10px;">
-        Total Downloads: 10,000+ Worldwide
-    </div>
-</section>
-
-    <div class="apps-grid" id="appsGrid">
-      <div class="app-card fade-in delay-1" data-category="windows optimization">
-        <div class="app-image-container">
-          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool" class="app-icon">
-        </div>
-        <h3 class="app-title">Windows Maintenance Tool</h3>
-        <p class="app-description">Simplify essential system care tasks with a single click instead of complex commands.</p>
-        <div class="app-meta">
-          <div class="app-platform">
-            <span class="platform-tag">Windows</span>
-          </div>
-          <div class="app-version">v3.9.7</div>
-        </div>
-        <div class="app-actions">
-          <a href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" class="download-btn" download data-app-id="WMT" data-version="3.9.5" data-type="installer">
-            <i class="fas fa-download"></i> Download Installer
-          </a>
-          <a href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" class="download-btn" download data-app-id="WMT" data-version="3.9.7" data-type="portable">
-            <i class="fas fa-download"></i> Download Portable
-          </a>
-          <button class="details-btn" data-app="windows-maintenance">View Details</button>
-        </div>
-        <div class="app-card-footer">
-          <span class="app-size">10.45MB / 11.16MB</span>
-          <span class="app-date">Sept 2025</span>
-        </div>
-      </div>
-
-      <div class="app-card fade-in delay-2" data-category="network windows">
-        <div class="app-image-container">
-          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager" class="app-icon">
-        </div>
-        <h3 class="app-title">DNS Manager</h3>
-        <p class="app-description">Find and set the fastest DNS for your system with one click - no manual IP entry needed.</p>
-        <div class="app-meta">
-          <div class="app-platform">
-            <span class="platform-tag">Windows</span>
-          </div>
-          <div class="app-version">v1.0</div>
-        </div>
-        <div class="app-actions">
-          <a href="DNS_Manager/DNS_Manager.rar" class="download-btn" download data-app-id="DNSM" data-version="1.0" data-type="portable">
-            <i class="fas fa-download"></i> Download Portable
-          </a>
-          <button class="details-btn" data-app="dns-manager">View Details</button>
-        </div>
-        <div class="app-card-footer">
-          <span class="app-size">24.58MB</span>
-          <span class="app-date">Sept 2025</span>
-        </div>
-      </div>
-
-      <div class="app-card fade-in delay-3" data-category="windows optimization">
-        <div class="app-image-container">
-          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer" class="app-icon">
-        </div>
-        <h3 class="app-title">Windows Optimizer</h3>
-        <p class="app-description">Enhance Windows performance through systematic configuration management and optimization.</p>
-        <div class="app-meta">
-          <div class="app-platform">
-            <span class="platform-tag">Windows</span>
-          </div>
-          <div class="app-version">v1.0</div>
-        </div>
-        <div class="app-actions">
-          <a href="Windows_Optimizer/Windows_Optimizer.rar" class="download-btn" download data-app-id="WOPT" data-version="1.0" data-type="portable">
-            <i class="fas fa-download"></i> Download Portable
-          </a>
-          <button class="details-btn" data-app="windows-optimizer">View Details</button>
-        </div>
-        <div class="app-card-footer">
-          <span class="app-size">27.24MB</span>
-          <span class="app-date">Sept 2025</span>
-        </div>
-      </div>
-
-      <div class="app-card fade-in delay-4" data-category="windows productivity">
-        <div class="app-image-container">
-          <img src="Dockers/pic/dockers.png" alt="Dockers" class="app-icon">
-        </div>
-        <h3 class="app-title">Dockers</h3>
-        <p class="app-description">Instant access to your favorite folders with a sleek, auto-hiding dock for quick navigation.</p>
-        <div class="app-meta">
-          <div class="app-platform">
-            <span class="platform-tag">Windows</span>
-          </div>
-          <div class="app-version">v1.0</div>
-        </div>
-        <div class="app-actions">
-          <a href="Dockers/DockersSetup.rar" class="download-btn" download data-app-id="DOCK" data-version="1.0" data-type="installer">
-            <i class="fas fa-download"></i> Download
-          </a>
-          <button class="details-btn" data-app="dockers">View Details</button>
-        </div>
-        <div class="app-card-footer">
-          <span class="app-size">24.91MB</span>
-          <span class="app-date">Oct 2025</span>
-        </div>
-      </div>
-
-      <div class="app-card fade-in delay-1" data-category="windows productivity">
-        <div class="app-image-container">
-          <img src="WingetTool/pic/Winget.png" alt="Winget Tool" class="app-icon">
-        </div>
-        <h3 class="app-title">Winget Tool</h3>
-        <p class="app-description">Modern GUI utility for managing Windows package updates via Winget with one-click upgrades.</p>
-        <div class="app-meta">
-          <div class="app-platform">
-            <span class="platform-tag">Windows</span>
-          </div>
-          <div class="app-version">v1.0</div>
-        </div>
-        <div class="app-actions">
-          <a href="WingetTool/WingetTool.rar" class="download-btn" download data-app-id="WGET" data-version="1.0" data-type="portable">
-            <i class="fas fa-download"></i> Download
-          </a>
-          <button class="details-btn" data-app="winget-tool">View Details</button>
-        </div>
-        <div class="app-card-footer">
-          <span class="app-size">35.2MB</span>
-          <span class="app-date">Oct 2025</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="pagination">
-      <button class="page-btn active">1</button>
-      <button class="page-btn">2</button>
-      <button class="page-btn">3</button>
-    </div>
-
-    <div id="imgModal" class="modal">
-      <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage" alt="Enlarged application screenshot">
-    </div>
-
-    <div id="windows-maintenance-modal" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>Windows Maintenance Tool 3.9.5</h2>
-        <div class="tool-content">
-          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool Screenshot" class="tool-img" id="windows-maintenance-tool-modal">
-          <div class="download-block">
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download data-app-id="WMT" data-version="3.9.5" data-type="installer">Windows Maintenance 3.9.5 (Installer)</a>
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download data-app-id="WMT" data-version="3.9.7" data-type="portable">Windows Maintenance 3.9.7 (Portable)</a>
-            <div class="download-date" style="text-align:left;">v3.9.7 | Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
-            <div class="download-size" style="text-align:left;">Installer: 10.45MB | Portable: 11.16MB</div>
-
-            <!-- ✅ SHA256 & VirusTotal (Windows Maintenance Tool) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-wmt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/4546fbbc933457bd4562795aed8b6a54613e7ec5c2dbf3a16671e376707a2c90/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-wmt" style="display:none;">5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6</code>
-            </div>
-          </div>
-        </div>
-        <div class="tool-description">
-          <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
-          <h3>Key features include:</h3>
-          <ul>
-            <li>Clearing temporary and prefetch files</li>
-            <li>Emptying the Recycle Bin</li>
-            <li>Running System File Checker (SFC)</li>
-            <li>Running Deployment Image Servicing and Management (DISM)</li>
-            <li>Drive Health Check</li>
-            <li>Optimize Storage</li>
-            <li>And more...</li>
-          </ul>
-          <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="dns-manager-modal" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>DNS Manager</h2>
-        <div class="tool-content">
-          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot" class="tool-img" id="DNS-Manager-modal">
-          <div class="download-block">
-            <a class="btn" href="DNS_Manager/DNS_Manager.rar" download data-app-id="DNSM" data-version="1.0" data-type="portable">DNS Manager (Portable)</a>
-            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
-            <div class="download-size" style="text-align:left;">Portable: 24.58MB</div>
-
-            <!-- ✅ SHA256 & VirusTotal (DNS Manager) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-dns')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/a5422dc5065ad20fe9de6b2e99c59d8fa84e4dff98136ac34fd39edc39121c96" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-dns" style="display:none;">f4ff4d285fe8c37c2b809bb5d03d941ad0181ae1e42776f4d9c508347101c9f7</code>
-            </div>
-          </div>
-        </div>
-        <div class="tool-description">
-          <p>DNS Manager lets you easily find and set the fastest DNS for your system—no need to manually enter IP addresses. Scan, compare, and choose from Google, Cloudflare, AdGuard, and other free DNS providers. Switch to a single DNS or multiple DNS servers with just one click—fast, simple, and secure.</p>
-          <h3>Key features include:</h3>
-          <ul>
-            <li>Scan and benchmark DNS speeds</li>
-            <li>Compare multiple DNS options</li>
-            <li>Set your preferred DNS instantly</li>
-            <li>Supports multiple DNS selections</li>
-            <li>One-click DNS switching—easy, fast, and safe</li>
-            <li>Quick, safe, and hassle-free</li>
-            <li>And more...</li>
-          </ul>
-          <p>DNS Manager makes choosing and switching DNS fast, easy, and safe — just one click, no expertise needed.</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="windows-optimizer-modal" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>Windows Optimizer</h2>
-        <div class="tool-content">
-          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot" class="tool-img" id="Windows-Optimizer-modal">
-          <div class="download-block">
-            <a class="btn" href="Windows_Optimizer/Windows_Optimizer.rar" download data-app-id="WOPT" data-version="1.0" data-type="portable">Windows Optimizer (Portable)</a>
-            <div class="download-date" style="text-align:left;">Win7, Win8, Win8.1, Win10, Win11</div>
-            <div class="download-date" style="text-align:left;">Auto-Detect Windows</div>
-            <div class="download-date" style="text-align:left;">Freeware | September 2025</div>
-            <div class="download-size" style="text-align:left;">Portable: 27.24MB</div>
-
-            <!-- ✅ SHA256 & VirusTotal (Windows Optimizer) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-wopt')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/d0f93823ef8781b4a42e8ee591e09cbb6fedabbf1bbfe5837e52e1caf8f5eedd" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-wopt" style="display:none;">4e42b76a1cd1c801561b4e4b2c057b044aa27dff4ce6677c36365e4d3c28d9bc</code>
-            </div>
-          </div>
-        </div>
-        <div class="tool-description">
-          <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
-          <h3>Tweak enable/disable:</h3>
-          <ul>
-            <li>Visual Effect</li>
-            <li>Background Apps</li>
-            <li>Taskbar Small Icon</li>
-            <li>Transperancy Effect</li>
-            <li>Search Indexing</li>
-            <li>Create Backup Settings</li>
-            <li>Rollback system</li>
-            <li>And more...</li>
-          </ul>
-          <p>This freeware application delivers significant system performance improvements, especially on limited hardware, by disabling non-essential visual effects and background operations. The user-friendly interface enables anyone to safely optimize their system without requiring advanced computer skills. Intelligent detection ensures compatibility across Windows versions while maintaining stability through comprehensive backup and restore features. The application simplifies complex registry modifications that typically need technical expertise, making system optimization accessible to users of all skill levels.</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="dockers-modal" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>Dockers</h2>
-        <div class="tool-content">
-          <img src="Dockers/pic/dockers.png" alt="Dockers Screenshot" class="tool-img" id="Dockers-modal">
-          <div class="download-block">
-            <a class="btn" href="Dockers/DockersSetup.rar" download data-app-id="DOCK" data-version="1.0" data-type="installer">Dockers</a>
-            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Quick Folder Access</div>
-            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
-            <div class="download-size" style="text-align:left;">Portable: 24.91MB</div>
-
-            <!-- ✅ SHA256 & VirusTotal (Dockers) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-dockers')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/url/e3c238dc6fb3abbf4f844b14da449c1841fa5f4faf2ac0b35f8fec796af6592b?nocache=1" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-dockers" style="display:none;">2cdee2f7561f9723ec12cee6696e472240a2d797f64707e6a66bc84d6312baf3</code>
-            </div>
-          </div>
-        </div>
-        <div class="tool-description">
-          <p>LemonPy Dockers provides instant access to your favorite folders with a sleek, auto-hiding dock. Customize 7 shortcut buttons with your preferred icons for quick navigation. The dock intelligently appears when needed and hides automatically. Easily enable or disable the entire dock by pressing <strong>Ctrl+Shift+L</strong> key. Lightweight and stays neatly positioned on your screen edge for efficient workflow.</p>
-          <h3>Features:</h3>
-          <ul>
-            <li>7 Customizable Folder Shortcuts</li>
-            <li>Auto-Hide/Show Function</li>
-            <li>Custom Icon Support</li>
-            <li>Quick Enable/Disable (Ctrl+Shift+L)</li>
-            <li>Multiple Screen Position</li>
-            <li>Transparency Control</li>
-            <li>System Tray Integration</li>
-            <li>Freeware</li>
-          </ul>
-          <p>This freeware enhances productivity by eliminating repetitive folder navigation. The intuitive interface requires no technical expertise - simply drag and drop your preferred folders. Smart positioning ensures the dock never interferes with your work while remaining instantly accessible. Perfect for users who frequently access the same directories and want a cleaner desktop experience without cluttering their workspace.</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="winget-tool-modal" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>Winget Tool</h2>
-        <div class="tool-content">
-          <img src="WingetTool/pic/Winget.png" alt="Winget Tool Screenshot" class="tool-img" id="Winget-modal">
-          <div class="download-block">
-            <a class="btn" href="WingetTool/WingetTool.rar" download data-app-id="WGET" data-version="1.0" data-type="portable">Winget Tool</a>
-            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Just Select & Click</div>
-            <div class="download-date" style="text-align:left;">Freeware | October 2025</div>
-            <div class="download-size" style="text-align:left;">Portable: 35.2MB</div>
-
-            <!-- ✅ SHA256 & VirusTotal (Winget Tool) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-winget')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e/details" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-winget" style="display:none;">0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e</code>
-            </div>
-          </div>
-        </div>
-        <div class="tool-description">
-          <p>WingetTool is a modern GUI utility for managing Windows package updates via Winget. It scans available updates, allows selective or full upgrades with progress tracking, and displays real-time logs. Features include dark theme, progress bars, blinking status alerts, and admin auto-elevation for seamless software maintenance.</p>
-          <h3>Features:</h3>
-          <ul>
-            <li>One-click Winget scan for available updates</li>
-            <li>Upgrade selected or all apps easily</li>
-            <li>Real-time progress bars and logs</li>
-            <li>Dark modern interface with blinking status alerts</li>
-            <li>Auto admin elevation for system access</li>
-            <li>Cancel operation anytime</li>
-            <li>Freeware</li>
-          </ul>
-          <p>WingetTool simplifies Windows app updates with a modern dark GUI, real-time logs, progress tracking, and one-click upgrades—offering full control, admin access, and smooth management.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="powered fade-in delay-4">Powered by LΣⱮØπPy 2025</div>
-  </main>
 
   <script>
-    // Matrix Rain Effect
+    // Matrix Rain Effect - DIPINDAHKAN KE BAWAH
     const canvas = document.getElementById('matrixCanvas');
     const ctx = canvas.getContext('2d');
 
@@ -1524,8 +1549,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         canvas.height = window.innerHeight;
     });
 
-    // Start animation
-    let matrixInterval = setInterval(drawMatrix, 33);
+    // Start animation SETELAH PAGE LOAD
+    window.addEventListener('load', function() {
+        let matrixInterval = setInterval(drawMatrix, 33);
+    });
 
 // ✅ FIXED DOWNLOAD TRACKING - 100% WORKING FOR ALL APPS
 document.addEventListener("DOMContentLoaded", function() {
