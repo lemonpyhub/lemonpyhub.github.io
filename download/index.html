@@ -1444,27 +1444,38 @@
     // KEEP ALL YOUR OTHER JAVASCRIPT FUNCTIONS EXACTLY THE SAME
     // ... (your existing JavaScript code for modals, filtering, etc.)
   </script>
-  <script>
+<script>
 document.addEventListener('DOMContentLoaded', function() {
-  const downloadButtons = document.querySelectorAll('a[download]');
+  // 1. Cari semua link yang ada atribut 'download'
+  const allDownloadLinks = document.querySelectorAll('a[download]');
 
-  downloadButtons.forEach(button => {
-    button.addEventListener('click', function() {
-      const appId = this.getAttribute('data-app-id');
-      const appVersion = this.getAttribute('data-version');
-      const appType = this.getAttribute('data-type');
-      const appName = this.closest('.app-card').querySelector('.app-title').innerText;
+  allDownloadLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      // 2. Ambil nama aplikasi daripada tajuk kad (app-title)
+      const appCard = this.closest('.app-card');
+      const appName = appCard ? appCard.querySelector('.app-title').innerText : 'Unknown App';
+      
+      // 3. Ambil nama fail daripada link href
+      const fileName = this.getAttribute('href').split('/').pop();
 
+      // 4. Hantar data ke Google Analytics (GA4)
+      if (typeof gtag === 'function') {
+        gtag('event', 'download_completed', {
+          'app_name': appName,
+          'file_name': fileName,
+          'event_callback': function() {
+            console.log('Tracking success for: ' + appName);
+          }
+        });
+      }
+      
+      // Juga hantar ke dataLayer untuk backup GTM
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
-        'event': 'app_download',
+        'event': 'download_completed',
         'app_name': appName,
-        'app_id': appId,
-        'version': appVersion,
-        'download_type': appType
+        'file_name': fileName
       });
-      
-      console.log('Tracking download for: ' + appName); 
     });
   });
 });
