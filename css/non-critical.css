@@ -1,0 +1,109 @@
+/* NON-CRITICAL CSS - Loaded after initial render */
+
+body::before {
+  content:""; width: 100%; height: 750px; position: absolute; top: -200px; left: 10px; transform: rotate(55deg);
+  background: rgba(255,255,255,0.1);
+  background: linear-gradient(to right, rgba(255,255,255,0.1) 0%, rgba(42,31,25,0) 65%);
+  z-index: -1;
+}
+
+p { color: #c9d1d9; }
+
+h2, h3 { color: #58a6ff; }
+
+nav { text-align: center; margin-top: 10px; }
+.nav-btn { 
+  position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
+  margin: 0 10px 10px 10px; padding: 12px 20px; text-decoration: none; color: #58a6ff; 
+  font-weight: bold; border-radius: 8px; background: #21262d; border: 1px solid #58a6ff; 
+  transition: all 0.3s ease; box-shadow: 0 0 10px rgba(88, 166, 255, 0.7); box-sizing: border-box; 
+  min-width: 140px; max-width: 200px; font-size: 14px; 
+}
+.nav-btn:hover { 
+  color: #00ffcc; border-color: #00ffcc; transform: scale(1.05); 
+  box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); animation: pulse 1s infinite; 
+}
+.nav-btn i { font-size: 1.1em; transition: transform 0.3s ease; }
+.nav-btn:hover i { transform: scale(1.2); }
+
+@keyframes pulse { 
+  0% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0.7); } 
+  70% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(0,255,204,0); } 
+  100% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0); } 
+}
+
+.intro-box { 
+  background: #161b22; padding: 25px 20px; margin: 20px auto 10px auto; 
+  max-width: 800px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,255,200,0.3); 
+  text-align: center; font-size: 16px; line-height: 1.6; 
+}
+
+.powered { 
+  font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
+  position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
+}
+.powered::before { 
+  content: ""; position: absolute; left: -40px; bottom: 0; height: 4px; width: 40px; 
+  background: linear-gradient(90deg, transparent, #00ffcc, transparent); border-radius: 4px; 
+  animation: laser-scan 2s ease-in-out infinite alternate; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+}
+
+@keyframes laser-scan { 
+  from { left: 0; } 
+  to { left: calc(100% - 40px); } 
+}
+
+.fade-in.delay-4 { animation-delay: 1.2s; }
+.fade-in.delay-5 { animation-delay: 1.5s; }
+
+.share-container { 
+  position: fixed; top: 50%; right: 15px; transform: translateY(-50%); 
+  display: flex; flex-direction: column; gap: 12px; z-index: 1000; 
+}
+.share-btn { 
+  width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; 
+  justify-content: center; font-size: 20px; color: white; background-color: #333; 
+  transition: all 0.3s ease; box-shadow: 0 0 10px #00ffcc; cursor: pointer; 
+  border: none; outline: none; position: relative; 
+}
+.share-btn::before { 
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
+  border-radius: 50%; box-shadow: 0 0 15px #00ffcc; opacity: 0.7; transition: opacity 0.3s ease; 
+}
+.share-btn:hover { transform: scale(1.1); box-shadow: 0 0 20px #00ffcc; }
+.share-btn:hover::before { opacity: 0; }
+.facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+.tiktok-btn:hover   { background-color: #000000; box-shadow: 0 0 20px #000000; }
+.instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+.whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+.telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+.reddit-btn:hover   { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+.native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+
+/* Media queries */
+@media (max-width: 768px) {
+  body { padding: 20px; padding-right: 70px; }
+  h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
+  .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 150px; max-width: 180px; padding: 12px 18px; font-size: 13px; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
+  .share-container { right: 8px; gap: 10px; }
+  .share-btn { width: 40px; height: 40px; font-size: 18px; }
+}
+
+@media (max-width: 480px) {
+  body { padding: 15px; padding-right: 65px; }
+  h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
+  .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
+  nav { gap: 6px; }
+  .share-btn { width: 38px; height: 38px; font-size: 17px; }
+}
+
+@media (max-width: 360px) {
+  body { padding: 12px; padding-right: 60px; }
+  h1 { font-size: 2rem; padding: 30px 10px 10px; }
+  .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
+  nav { gap: 4px; }
+  .share-btn { width: 35px; height: 35px; font-size: 16px; }
+  .share-container { gap: 8px; }
+}
