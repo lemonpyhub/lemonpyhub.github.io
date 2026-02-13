@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lemonpyhub.github.io/sitemap.txt
+Sitemap: https://lemonpyhub.github.io/sitemap.xml
