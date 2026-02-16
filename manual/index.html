@@ -402,16 +402,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-align: center;
       text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc;
       position: relative;
-      display: block;
-      margin: 30px auto 0 auto;
-      padding-bottom: 14px;
-      width: 100%;
+      display: inline-block;
+      margin-top: 15px;
+      padding-bottom: 14px; 
     }
 
     .powered::before {
       content: "";
       position: absolute;
-      left: 50%;
+      left: -40px;
       bottom: 0;
       height: 4px;
       width: 40px;
@@ -419,7 +418,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 4px;
       animation: laser-scan 4s ease-in-out infinite alternate;
       box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-      transform: translateX(-50%);
     }
 
     @keyframes laser-scan {
