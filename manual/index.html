@@ -417,14 +417,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 40px;
       background: linear-gradient(90deg, transparent, #00ffcc, transparent);
       border-radius: 4px;
-      animation: laser-scan 2s ease-in-out infinite alternate;
+      animation: laser-scan 4s ease-in-out infinite alternate;
       box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
       transform: translateX(-50%);
     }
 
     @keyframes laser-scan {
-      0% { left: 30%; }
-      100% { left: 70%; }
+      from { left: 0; }
+      to   { left: calc(100% - 40px); }
     }
 
     @keyframes fadeSlideUp {
@@ -1137,8 +1137,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span class="modal-close">&times;</span>
       <img class="modal-content" id="modalImage" alt="Enlarged application screenshot">
     </div>
-
-    <div class="powered fade-in delay-4">Powered by LΣⱮØπPyHub 2026</div>
   </main>
 
 <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #8b949e; text-align: center;">
@@ -1148,7 +1146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="/manual/" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Support</a>
     </div>
     <p>Disclaimer: LemonPyHub is not affiliated with Microsoft. Windows is a registered trademark of Microsoft Corporation.</p>
-    <div class="powered">Powered by LemonPyHub © 2026</div>
+    <div class="powered">Powered by LΣⱮØπPyHub 2026 - Free Tools for Everyone</div>
 </footer>
 
   <script>
@@ -1318,6 +1316,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 </body>
 </html>
-
-
-
