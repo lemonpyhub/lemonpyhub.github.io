@@ -1,0 +1,46 @@
+Control Windows security with one click! Toggle 8 critical settings instantly. Enable/disable Defender, Firewall, RDP, UAC & more. Simple, powerful, free!
+
+Windows Security Manager v3.0 by LΣⱮØπPy
+Your all-in-one solution for complete Windows security control. This powerful application lets you manage 8 critical security.
+Key features 
+Windows Defender
+Firewall Remote Desktop (RDP)
+User Account Control (UAC)
+Windows Update
+SmartScreen
+Core Isolation
+BitLocker Encryption 
+
+through an intuitive dark-themed interface. With just one click, you can check real-time status, enable or disable any security feature, and monitor all changes through the detailed activity log. The app includes advanced features like creating security backups, system restore points, quick actions menu, and automatic administrator privilege detection. Powered by PowerShell integration, it executes commands silently without showing windows. The color-coded interface uses green for safe/enabled settings and red for disabled/dangerous settings, with special warning indicators for RDP. Additional features include one-click enable/disable all, individual check/apply buttons for each setting, tooltips with detailed explanations, and direct links to our website and donate page. Perfect for IT professionals, security enthusiasts, and regular users who want complete control over their Windows security configuration. Simple, powerful, and absolutely free!
+
+---
+
+Windows Security Manager v3.0 by LΣⱮØπPy
+Your Ultimate Windows Security Control Center
+
+Take command of your system's safety with our all-in-one security management solution. This powerful application puts you in complete control of eight critical Windows security features:
+
+• Windows Defender
+• Windows Firewall
+• Remote Desktop (RDP)
+• User Account Control (UAC)
+• Windows Update
+• Windows SmartScreen
+• Core Isolation
+• BitLocker Encryption
+
+Key Features:
+
+🔹 One-Click Control – Instantly check, enable, or disable any security feature through our intuitive dark-themed interface.
+🔹 Real-Time Monitoring – Track all security changes via the detailed activity log with color-coded status indicators.
+🔹 Advanced Protection – Create security backups, system restore points, and access quick actions menu for essential tasks.
+🔹 Smart PowerShell Integration – Executes commands silently in the background with automatic administrator privilege detection.
+🔹 Visual Safety Cues – Green for secure/enabled settings, red for disabled/dangerous configurations, with special warnings for RDP.
+🔹 Comprehensive Tools – Individual check/apply buttons for each setting, detailed tooltips, and one-click enable/disable all.
+
+Whether you're an IT professional, security enthusiast, or everyday user, Windows Security Manager delivers enterprise-grade protection with consumer-friendly simplicity. No complex commands – just pure, powerful security at your fingertips.
+
+Simple. Powerful. Absolutely Free.
+
+Version 3.0 – Empowering you to master Windows security
+
