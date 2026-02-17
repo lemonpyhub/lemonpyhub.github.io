@@ -1298,7 +1298,7 @@
         </div>
         <div class="app-actions">
           <a href="WinSecurityManager/WindowsSecurityManager.rar" class="download-btn" download data-app-id="WSM" data-version="3.0" data-type="portable">
-            <i class="fas fa-download"></i> Download
+            <i class="fas fa-download"></i> Download Installer
           </a>
           <button class="details-btn" data-app="windows-security-manager">View Details</button>
         </div>
@@ -1659,45 +1659,49 @@
     <!-- 4 NEW MODALS FOR COMING SOON APPS START HERE - WITH LAZY LOAD ADDED -->
     <!-- ============================================= -->
 
-    <div id="windows-security-manager" class="app-detail-modal">
-      <div class="modal-app-content">
-        <span class="close-detail">&times;</span>
-        <h2>Windows Security Manager v3.0</h2>
-        <div class="tool-content">
-          <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager Screenshot" class="tool-img" id="windows-security-manager" loading="lazy">
-            <a class="btn" href="WinSecurityManager/WindowsSecurityManager.rar" download data-app-id="WSM" data-version="3.0" data-type="portable">Windows Security Manager</a>
-            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Just Select & Click</div>
-            <div class="download-date" style="text-align:left;">Freeware | Feb 2026</div>
-            <div class="download-size" style="text-align:left;">Portable: 29.2MB</div>
+<div id="windows-security-manager-modal" class="app-detail-modal">
+  <div class="modal-app-content">
+    <span class="close-detail">&times;</span>
+    <h2>Windows Security Manager v3.0</h2>
+    
+    <div class="tool-content">
+      <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager Screenshot" class="tool-img" loading="lazy">
+      
+      <div class="download-block">
+        <a class="btn" href="WinSecurityManager/WindowsSecurityManager.rar" download data-app-id="WSM" data-version="3.0" data-type="portable">Windows Security Manager</a>
+        <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+        <div class="download-date" style="text-align:left;">Just Select & Click</div>
+        <div class="download-date" style="text-align:left;">Freeware | Feb 2026</div>
+        <div class="download-size" style="text-align:left;">Portable: 29.2MB</div>
 
-            <!-- ✅ SHA256 & VirusTotal (Windows Security Manager) - hidden hash, button only -->
-            <div class="download-hash">
-              <p>
-                <button onclick="copyHash('sha-WinSecurityManager')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
-              </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f" target="_blank" rel="noopener noreferrer">View Report</a></p>
-              <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-WinSecurityManager" style="display:none;">e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f</code>
-            </div>
-          </div>
+        <!-- SHA256 & VirusTotal -->
+        <div class="download-hash">
+          <p>
+            <button onclick="copyHash('sha-WinSecurityManager')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+          </p>
+          <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f" target="_blank" rel="noopener noreferrer">View Report</a></p>
+          <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
+          <code id="sha-WinSecurityManager" style="display:none;">e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f</code>
         </div>
-        <div class="tool-description">
-          <p><strong>Windows Security Manager v3.0 by LΣⱮØπPy</strong></p>
-          <p>Take command of your system's safety with this all-in-one security management solution. It puts you in complete control of eight critical Windows security features, including Windows Defender, Firewall, Remote Desktop, UAC, Windows Update, SmartScreen, Core Isolation, and BitLocker Encryption.</p>
-          
-          <h3>Key Features:</h3>
-          <ul>
-            <li><strong>One-Click Control:</strong> Instantly check, enable, or disable any security feature through an intuitive dark-themed interface.</li>
-            <li><strong>Real-Time Monitoring:</strong> Track all security changes via a detailed activity log with color-coded status indicators.</li>
-            <li><strong>Advanced Protection:</strong> Create security backups, system restore points, and access quick actions for essential tasks.</li>
-            <li><strong>Smart PowerShell Integration:</strong> Executes commands silently with automatic administrator privilege detection.</li>
-            <li><strong>Visual Safety Cues:</strong> Green for secure settings and red for disabled/dangerous configurations.</li>
-            <li><strong>Comprehensive Tools:</strong> Individual check/apply buttons, detailed tooltips, and one-click "Enable/Disable All" function.</li>
-            <li><strong>Freeware:</strong> Simple, powerful, and absolutely free.</li>
-          </ul>
-          
-          <p>Whether you're an IT professional or an everyday user, Windows Security Manager delivers enterprise-grade protection with consumer-friendly simplicity—no complex commands required.</p>
+      </div> <!-- tutup download-block -->
+    </div> <!-- tutup tool-content -->
+    
+    <div class="tool-description">
+      <p><strong>Windows Security Manager v3.0 by LΣⱮØπPy</strong></p>
+      <p>Take command of your system's safety with this all-in-one security management solution. It puts you in complete control of eight critical Windows security features, including Windows Defender, Firewall, Remote Desktop, UAC, Windows Update, SmartScreen, Core Isolation, and BitLocker Encryption.</p>
+      
+      <h3>Key Features:</h3>
+      <ul>
+        <li><strong>One-Click Control:</strong> Instantly check, enable, or disable any security feature through an intuitive dark-themed interface.</li>
+        <li><strong>Real-Time Monitoring:</strong> Track all security changes via a detailed activity log with color-coded status indicators.</li>
+        <li><strong>Advanced Protection:</strong> Create security backups, system restore points, and access quick actions for essential tasks.</li>
+        <li><strong>Smart PowerShell Integration:</strong> Executes commands silently with automatic administrator privilege detection.</li>
+        <li><strong>Visual Safety Cues:</strong> Green for secure settings and red for disabled/dangerous configurations.</li>
+        <li><strong>Comprehensive Tools:</strong> Individual check/apply buttons, detailed tooltips, and one-click "Enable/Disable All" function.</li>
+        <li><strong>Freeware:</strong> Simple, powerful, and absolutely free.</li>
+      </ul>
+      
+      <p>Whether you're an IT professional or an everyday user, Windows Security Manager delivers enterprise-grade protection with consumer-friendly simplicity—no complex commands required.</p>
         </div>
       </div>
     </div>
