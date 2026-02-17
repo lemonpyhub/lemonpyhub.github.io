@@ -1662,10 +1662,10 @@
 <div id="windows-security-manager-modal" class="app-detail-modal">
   <div class="modal-app-content">
     <span class="close-detail">&times;</span>
-    <h2>Windows Security Manager v3.0</h2>
+    <h2>Windows Security Manager</h2>
     
     <div class="tool-content">
-      <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager Screenshot" class="tool-img" loading="lazy">
+      <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager Screenshot" class="tool-img" id="windows-security-manager-modal-img" loading="lazy">
       
       <div class="download-block">
         <a class="btn" href="WinSecurityManager/WindowsSecurityManager.rar" download data-app-id="WSM" data-version="3.0" data-type="portable">Windows Security Manager</a>
@@ -1930,27 +1930,15 @@
     const modalImg = document.getElementById("modalImage");
     const closeBtn = document.querySelector(".modal-close");
 
-    function initModalImages() {
-      const modalImages = [
-        "windows-maintenance-tool-modal", 
-        "DNS-Manager-modal", 
-        "Windows-Optimizer-modal", 
-        "Dockers-modal", 
-        "windows-debloater-modal",
-        "Winget-modal"
-      ];
-      
-      modalImages.forEach(id => {
-        const element = document.getElementById(id);
-        if (element) {
-          element.onclick = function() {
-            modal.style.display = "flex";
-            modalImg.src = this.src;
-            modalImg.alt = this.alt + " - Enlarged view";
-          }
-        }
-      });
+function initModalImages() {
+  document.querySelectorAll('.tool-img').forEach(element => {
+    element.onclick = function() {
+      modal.style.display = "flex";
+      modalImg.src = this.src;
+      modalImg.alt = this.alt + " - Enlarged view";
     }
+  });
+}
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', initModalImages);
