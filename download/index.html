@@ -1073,7 +1073,6 @@
 
   <canvas id="matrixCanvas"></canvas>
 
-  <!-- SHARING BUTTONS - ICON AKAN NAMPAK -->
   <div class="share-container">
     <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
     <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
@@ -1285,33 +1284,27 @@
         </div>
       </div>
 
-      <!-- ============================================= -->
-      <!-- 4 NEW COMING SOON APP CARDS START HERE -->
-      <!-- ============================================= -->
-
-      <!-- COMING SOON CARD 1 -->
-      <div class="app-card fade-in delay-3" data-category="coming-soon">
+      <div class="app-card fade-in delay-2" data-category="windows productivity">
         <div class="app-image-container">
-          <!-- Using a generic placeholder image. You can replace the src with your actual image path. -->
-          <img src="path/to/coming-soon-image1.png" alt="App Coming Soon" class="app-icon" loading="lazy" width="380" height="245" onerror="this.src='https://via.placeholder.com/380x245?text=Coming+Soon'">
+          <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager" class="app-icon" loading="lazy" width="303" height="245">
         </div>
-        <h3 class="app-title">App Coming Soon 1</h3>
-        <p class="app-description">coming soon... coming soon... coming soon</p>
+        <h3 class="app-title">Windows Security Manager v3.0</h3>
+        <p class="app-description">Control Windows security with one click! Toggle 8 critical settings instantly. Enable/disable Defender, Firewall, RDP, UAC & more. Simple, powerful, free!</p>
         <div class="app-meta">
           <div class="app-platform">
             <span class="platform-tag">Windows</span>
           </div>
-          <div class="app-version">vcoming.soon</div>
+          <div class="app-version">v3.0</div>
         </div>
         <div class="app-actions">
-          <!-- Disabled buttons for coming soon apps -->
-          <a href="#" class="download-btn" style="opacity:0.5; pointer-events:none;" onclick="return false;"><i class="fas fa-download"></i> Download Installer</a>
-          <a href="#" class="download-btn" style="opacity:0.5; pointer-events:none;" onclick="return false;"><i class="fas fa-download"></i> Download Portable</a>
-          <button class="details-btn" data-app="coming-soon-1">View Details</button>
+          <a href="WinSecurityManager/WindowsSecurityManager.rar" class="download-btn" download data-app-id="WSM" data-version="3.0" data-type="portable">
+            <i class="fas fa-download"></i> Download
+          </a>
+          <button class="details-btn" data-app="windows-security-manager">View Details</button>
         </div>
         <div class="app-card-footer">
-          <span class="app-size">0.00MB</span>
-          <span class="app-date">coming soon 2026</span>
+          <span class="app-size">29.1MB</span>
+          <span class="app-date">Feb 2026</span>
         </div>
       </div>
 
@@ -1666,42 +1659,45 @@
     <!-- 4 NEW MODALS FOR COMING SOON APPS START HERE - WITH LAZY LOAD ADDED -->
     <!-- ============================================= -->
 
-    <!-- Modal for Coming Soon App 1 -->
-    <div id="coming-soon-1-modal" class="app-detail-modal">
+    <div id="win-sec-manager-modal" class="app-detail-modal">
       <div class="modal-app-content">
         <span class="close-detail">&times;</span>
-        <h2>App Coming Soon 1</h2>
+        <h2>Windows Security Manager v3.0</h2>
         <div class="tool-content">
-          <img src="path/to/coming-soon-image1.png" alt="App Coming Soon Screenshot" class="tool-img" loading="lazy" onerror="this.src='https://via.placeholder.com/380x245?text=Coming+Soon'">
-          <div class="download-block">
-            <!-- Disabled download links -->
-            <a class="btn" href="#" style="opacity:0.5; pointer-events:none;" onclick="return false;">Download Installer (Coming Soon)</a>
-            <a class="btn" href="#" style="opacity:0.5; pointer-events:none;" onclick="return false;">Download Portable (Coming Soon)</a>
-            <div class="download-date" style="text-align:left;">vcoming.soon | Windows 10 & 11</div>
-            <div class="download-date" style="text-align:left;">Freeware | coming soon 2026</div>
-            <div class="download-size" style="text-align:left;">Installer: 00.00MB | Portable: 00.00MB</div>
+          <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager Screenshot" class="tool-img" id="win-sec-manager-modal" loading="lazy">
+            <a class="btn" href="WinSecurityManager/WindowsSecurityManager.rar" download data-app-id="WSM" data-version="3.0" data-type="portable">Windows Security Manager</a>
+            <div class="download-date" style="text-align:left;">Windows 10 & 11</div>
+            <div class="download-date" style="text-align:left;">Just Select & Click</div>
+            <div class="download-date" style="text-align:left;">Freeware | Feb 2026</div>
+            <div class="download-size" style="text-align:left;">Portable: 29.2MB</div>
 
-            <!-- SHA256 & VirusTotal Placeholder -->
+            <!-- ✅ SHA256 & VirusTotal (Windows Security Manager) - hidden hash, button only -->
             <div class="download-hash">
               <p>
-                <button onclick="copyHash('sha-coming1')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
+                <button onclick="copyHash('sha-WinSecurityManager')" class="copy-btn" aria-label="Copy SHA256">Copy SHA256</button>
               </p>
-              <p><strong>🔹 VirusTotal Scan:</strong> <a href="#" target="_blank" rel="noopener noreferrer">View Report</a></p>
+              <p><strong>🔹 VirusTotal Scan:</strong> <a href="https://www.virustotal.com/gui/file/e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f" target="_blank" rel="noopener noreferrer">View Report</a></p>
               <p><strong>🔹 Scan Result:</strong> 0/98 Clean (Scanned on 1 Nov 2025)</p>
-              <code id="sha-coming1" style="display:none;">coming-soon-sha256-hash-placeholder</code>
+              <code id="sha-WinSecurityManager" style="display:none;">e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f</code>
             </div>
           </div>
         </div>
         <div class="tool-description">
-          <p>coming soon... coming soon... coming soon. This application is currently in development and will be available in 2026. Stay tuned for updates!</p>
-          <h3>Features (Coming Soon):</h3>
+          <p><strong>Windows Security Manager v3.0 by LΣⱮØπPy</strong></p>
+          <p>Take command of your system's safety with this all-in-one security management solution. It puts you in complete control of eight critical Windows security features, including Windows Defender, Firewall, Remote Desktop, UAC, Windows Update, SmartScreen, Core Isolation, and BitLocker Encryption.</p>
+          
+          <h3>Key Features:</h3>
           <ul>
-            <li>Feature 1 is being developed</li>
-            <li>Feature 2 is being developed</li>
-            <li>Feature 3 is being developed</li>
-            <li>And more...</li>
+            <li><strong>One-Click Control:</strong> Instantly check, enable, or disable any security feature through an intuitive dark-themed interface.</li>
+            <li><strong>Real-Time Monitoring:</strong> Track all security changes via a detailed activity log with color-coded status indicators.</li>
+            <li><strong>Advanced Protection:</strong> Create security backups, system restore points, and access quick actions for essential tasks.</li>
+            <li><strong>Smart PowerShell Integration:</strong> Executes commands silently with automatic administrator privilege detection.</li>
+            <li><strong>Visual Safety Cues:</strong> Green for secure settings and red for disabled/dangerous configurations.</li>
+            <li><strong>Comprehensive Tools:</strong> Individual check/apply buttons, detailed tooltips, and one-click "Enable/Disable All" function.</li>
+            <li><strong>Freeware:</strong> Simple, powerful, and absolutely free.</li>
           </ul>
-          <p>We are working hard to bring you this new tool. Please check back later.</p>
+          
+          <p>Whether you're an IT professional or an everyday user, Windows Security Manager delivers enterprise-grade protection with consumer-friendly simplicity—no complex commands required.</p>
         </div>
       </div>
     </div>
