@@ -1,0 +1,21 @@
+{
+  "name": "LemonPyHub - Free Python Tools",
+  "short_name": "LemonPy",
+  "description": "Download free Python scripts, tools, and applications for Windows.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#00ffcc",
+  "icons": [
+    {
+      "src": "pic/lemonpy.webp",
+      "sizes": "192x192",
+      "type": "image/webp"
+    },
+    {
+      "src": "pic/lemonpy.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
