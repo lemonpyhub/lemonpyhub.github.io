@@ -2105,40 +2105,59 @@ function initModalImages() {
   
   <!-- KEEP YOUR EXISTING DOWNLOAD TRACKING SCRIPT -->
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // 1. Cari semua link yang ada atribut 'download'
-      const allDownloadLinks = document.querySelectorAll('a[download]');
+    // Gunakan 'click' listener pada level 'document'
+    // Ini memastikan butang di dalam MODAL juga dapat dijejak walaupun ia muncul secara dinamik
+    document.addEventListener('click', function(event) {
+      
+      // 1. Semak jika elemen yang diklik (atau anak elemennya) adalah link download
+      const link = event.target.closest('a[download]');
+      
+      if (link) {
+        let appName = 'Unknown App';
+        
+        // 2. Kenal pasti lokasi klik (dalam Modal atau di Halaman Utama)
+        const modalContent = link.closest('.modal-content');
+        const appCard = link.closest('.app-card');
+        
+        if (modalContent) {
+          // Jika dalam modal, cari tajuk utama (biasanya tag h2 atau h3)
+          const titleEl = modalContent.querySelector('h2') || modalContent.querySelector('h3') || modalContent.querySelector('.modal-title');
+          appName = titleEl ? titleEl.innerText : 'Modal App';
+        } else if (appCard) {
+          // Jika di grid utama, cari class .app-title
+          const titleEl = appCard.querySelector('.app-title');
+          appName = titleEl ? titleEl.innerText : 'Unknown App';
+        }
+        
+        // 3. Ambil nama fail daripada atribut href (contoh: 'file.rar')
+        const fileName = link.getAttribute('href').split('/').pop();
+        const clickLocation = modalContent ? 'Modal View' : 'Main List';
 
-      allDownloadLinks.forEach(link => {
-        link.addEventListener('click', function() {
-          // 2. Ambil nama aplikasi daripada tajuk kad (app-title)
-          const appCard = this.closest('.app-card');
-          const appName = appCard ? appCard.querySelector('.app-title').innerText : 'Unknown App';
-          
-          // 3. Ambil nama fail daripada link href
-          const fileName = this.getAttribute('href').split('/').pop();
+        // Log ke Console untuk tujuan debugging (anda boleh nampak di F12)
+        console.log('--- Download Detected ---');
+        console.log('App Name:', appName);
+        console.log('File Name:', fileName);
+        console.log('Location:', clickLocation);
 
-          // 4. Hantar data ke Google Analytics (GA4)
-          if (typeof gtag === 'function') {
-            gtag('event', 'download_completed', {
-              'app_name': appName,
-              'file_name': fileName,
-              'event_callback': function() {
-                console.log('Tracking success for: ' + appName);
-              }
-            });
-          }
-          
-          // Juga hantar ke dataLayer untuk backup GTM
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': 'download_completed',
+        // 4. Hantar data ke Google Analytics (GA4)
+        if (typeof gtag === 'function') {
+          gtag('event', 'download_completed', {
             'app_name': appName,
-            'file_name': fileName
+            'file_name': fileName,
+            'download_location': clickLocation
           });
+        }
+        
+        // 5. Hantar data ke GTM dataLayer sebagai backup
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          'event': 'download_completed',
+          'app_name': appName,
+          'file_name': fileName,
+          'click_source': clickLocation
         });
-      });
-    });
+      }
+    }, true); 
   </script>
 </body>
 </html>
