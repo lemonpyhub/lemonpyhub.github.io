@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Allow: /css/
+Allow: /pic/
+
 Sitemap: https://lemonpyhub.github.io/sitemap.xml
