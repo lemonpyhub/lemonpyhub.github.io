@@ -1,0 +1,14 @@
+title: LemonPyHub
+url: "https://lemonpyhub.github.io"
+baseurl: ""
+
+description: "Download free Python scripts, tools, and applications for Windows."
+
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - README.md
+  - _headers
+  - .gitignore
