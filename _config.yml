@@ -11,4 +11,4 @@ plugins:
 exclude:
   - README.md
   - _headers
-  - .gitignore
+
