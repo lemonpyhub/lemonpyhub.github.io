@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
 
-Disallow: /README.md
-Disallow: /_headers
 Disallow: /_config.yml
+Disallow: /_headers
+Disallow: /README.md
+Disallow: /googlee4b91e620bd47c0c.html
+Disallow: /manifest.json
 
 Sitemap: https://lemonpyhub.github.io/sitemap.xml
