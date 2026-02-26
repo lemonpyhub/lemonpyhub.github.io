@@ -1,7 +1,8 @@
 User-agent: *
 Allow: /
 
-Allow: /css/
-Allow: /pic/
+Disallow: /README.md
+Disallow: /_headers
+Disallow: /_config.yml
 
 Sitemap: https://lemonpyhub.github.io/sitemap.xml
