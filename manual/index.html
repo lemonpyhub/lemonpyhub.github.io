@@ -59,11 +59,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
-
+    
     html {
       height: 100%;
       scroll-behavior: smooth;
@@ -650,9 +647,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="muted">A: Double-check your antivirus settings, whitelist the file, and ensure you have admin rights.</p>
     </div>
 
-    </div>
-    <div class="intro-box glow fade-in delay-4" style="border-top: 2px solid #58a6ff;">
-      <h2 id="privacy-policy">Privacy Policy</h2>
+    </div> 
+
+      <div class="intro-box glow fade-in delay-4" style="border-top: 2px solid #58a6ff;">
+      <h2 id="privacy-policy">Privacy Policy</h2>
       <p class="muted">
         Your privacy is important to us. <strong>LemonPyHub</strong> does not collect, store, or share any personal data, system information, or usage statistics from the tools you download. 
       </p>
@@ -784,4 +782,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
     }
   </script>
+  <script>
+  window.addEventListener('load', function() {
+    // Load Font Awesome
+    var fa = document.createElement('link');
+    fa.rel = 'stylesheet';
+    fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
+    document.head.appendChild(fa);
+
+    // Load Google Fonts
+    var gf = document.createElement('link');
+    gf.rel = 'stylesheet';
+    gf.href = 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap';
+    document.head.appendChild(gf);
+  });
+</script>
 </body>
