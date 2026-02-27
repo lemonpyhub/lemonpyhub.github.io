@@ -1,175 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
-<!-- End Google Tag Manager -->
-  <meta charset="UTF-8">
-  <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows Maintenance Tool V3 User Manual & Guides - LemonPyHub</title>
-  <meta name="description" content="Optimize your PC with the Windows Maintenance Tool V3. Complete step-by-step guide to clearing temp folders, running DISM, flushing DNS, and improving performance.">
-  <meta property="og:description" content="Optimize your PC with the Windows Maintenance Tool V3. Complete step-by-step guide to clearing temp folders, running DISM, flushing DNS, and improving performance.">
-  <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://lemonpyhub.github.io/manual/">
-  
-  <!-- Open Graph tags for better social sharing -->
-  
-  <meta property="og:title" content="Windows Maintenance Tool V3 User Manual & Guides - LemonPyHub">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:url" content="https://lemonpyhub.github.io/manual/">
-  <meta property="og:type" content="website">
-  <meta name="theme-color" content="#00ffcc">
-  
-  <!-- Schema.org structured data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Windows System Maintenance Manual - LemonPyHub Tools & Guides",
-    "url": "https://lemonpyhub.github.io/manual/",
-    "description": "Step-by-step manual and guides for using LemonPyHub tools and downloads.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "LemonPyHub",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://lemonpyhub.github.io/pic/lemonpy.png"
-      }
-    }
-  }
-  </script>
-  
-  <!-- FAQ Schema for Rich Results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "How do I clear temporary files in Windows?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "You can clear temporary files by pressing Win + R, typing 'temp', then pressing Ctrl + A to select all files and deleting them. Alternatively, use the Windows Maintenance Tool for one-click cleaning."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I run System File Checker (SFC)?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Run SFC by opening Command Prompt as administrator and typing 'sfc /scannow'. This scans and repairs system files. The Windows Maintenance Tool automates this process with one click."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I change DNS settings to Google or Cloudflare?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use the DNS Manager tool for one-click DNS switching. Manually, go to Network Connections, select your adapter properties, and set preferred DNS to 8.8.8.8 (Google) or 1.1.1.1 (Cloudflare)."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I optimize Windows performance?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Use Windows Optimizer tool to adjust visual effects, disable background apps, modify taskbar settings, and manage search indexing for better system performance."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How do I flush DNS cache in Windows?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Open Command Prompt as administrator and run 'ipconfig /flushdns'. This clears the DNS resolver cache and can help resolve network connectivity issues."
-        }
-      }
-    ]
-  }
-  </script>
-  
-  <!-- How-To Schema for Rich Results -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "HowTo",
-    "name": "How to Perform Windows System Maintenance",
-    "description": "Step-by-step guide to optimize Windows performance using system maintenance tools",
-    "totalTime": "PT10M",
-    "supply": [
-      {
-        "@type": "HowToSupply",
-        "name": "Windows Maintenance Tool"
-      }
-    ],
-    "tool": [
-      {
-        "@type": "HowToTool",
-        "name": "Command Prompt"
-      }
-    ],
-    "step": [
-      {
-        "@type": "HowToStep",
-        "name": "Clear temporary files",
-        "text": "Press Win + R, type 'temp', select all files with Ctrl + A and delete them",
-        "url": "https://lemonpyhub.github.io/manual/#clear-temp"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Run System File Checker",
-        "text": "Open Command Prompt as administrator and run 'sfc /scannow'",
-        "url": "https://lemonpyhub.github.io/manual/#run-sfc"
-      },
-      {
-        "@type": "HowToStep",
-        "name": "Flush DNS cache",
-        "text": "In Command Prompt, run 'ipconfig /flushdns' to clear DNS resolver cache",
-        "url": "https://lemonpyhub.github.io/manual/#flush-dns"
-      }
-    ]
-  }
-  </script>
-  
-<!-- Software Application Schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Windows Maintenance Tool",
-  "applicationCategory": "UtilitiesApplication",
-  "operatingSystem": "Windows 10, Windows 11",
-  "description": "One-click Windows system maintenance and optimization tool",
-  "downloadUrl": "https://lemonpyhub.github.io/Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe",
-  "softwareVersion": "3.9.7",
-  "fileSize": "11.16 MB",
-  "license": "Freeware",
-  "datePublished": "2025-09-01",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "ratingCount": "150"
-  },
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
-}
-</script>
-  
-  <meta name="robots" content="index, follow">
-  
-  <!-- Google tag (gtag.js) -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -178,13 +13,57 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gtag('config', 'G-Q9HFE57YHB');
   </script>
 
-  <!-- Font performance: preconnect & load -->
+  <meta charset="UTF-8">
+  <meta http-equiv="Cache-Control" content="max-age=3600, must-revalidate">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#00ffcc">
+  <link rel="icon" href="../pic/favicon.ico" type="image/x-icon">
+
+  <title>Help & FAQ - LemonPyHub</title>
+  <meta name="description" content="Get help and troubleshooting for LemonPyHub applications. FAQ about antivirus false positives, Windows Defender, and installation issues.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lemonpyhub.github.io/helpfaq/">
+
+  <meta property="og:title" content="Help & FAQ - LemonPyHub - Troubleshooting and Support">
+  <meta property="og:description" content="Get help and troubleshooting for LemonPyHub applications. FAQ about antivirus false positives, Windows Defender, and installation issues.">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:url" content="https://lemonpyhub.github.io/helpfaq/">
+  <meta property="og:type" content="website">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why does my antivirus flag the app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "This is a false positive. The app is safe, but some antivirus programs may wrongly flag it because of system optimization functions."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is LemonPyHub free?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes, all scripts and tools are free to use."
+        }
+      }
+    ]
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
+
     html {
       height: 100%;
       scroll-behavior: smooth;
@@ -196,8 +75,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 0;
       font-family: 'Fira Code', monospace;
       background: #1a1a1a;
-      color: #e8e6e3;
-      text-align: center;
+      color: #e8e6e3; /* Improved contrast for better readability */
+      text-align: left; /* Changed from center to left */
       padding: 50px;
       position: relative;
     }
@@ -235,11 +114,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       position: relative;
       display: inline-block;
       margin-bottom: 20px;
+      text-align: center; /* Keep logo centered */
+      width: 100%;
     }
 
     p { 
-      color: #e8e6e3;
-      line-height: 1.7;
+      color: #e8e6e3; /* Improved contrast */
+      line-height: 1.7; /* Better readability */
     }
 
     .glow, .glow * {
@@ -247,7 +128,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc;
     }
 
-    /* Light effect */
+    /*	
+    ============
+      Light
+    ============
+    */
     body::before {
       content:"";
       width: 100%;
@@ -267,7 +152,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       z-index: -1;
     }
 
-    /* 3D Effect for Title */
+    /*	
+    ========================
+        3D Effect for Title
+    ========================
+    */
     h1 {
       width: 100%;
       margin: 0 auto 0 auto;
@@ -275,10 +164,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       line-height: 1.2;
       font-size: 5rem;
       padding: 80px 50px 30px;
-      text-align: center;
+      text-align: center; /* Keep title centered */
       text-transform: uppercase;
       text-rendering: optimizeLegibility;
-      color: #00ffcc;
+      color: #00ffcc; /* Changed to neon green */
       letter-spacing: .15em;
       text-shadow: 
         -1px -1px 1px #00ffcc, 
@@ -301,9 +190,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         5px 23px 5px rgba(0, 0, 0, 0.3),
         8px 27px 8px rgba(0, 0, 0, 0.5),
         8px 28px 35px rgba(0, 0, 0, 0.9),
-        0 0 10px #00ffcc,
-        0 0 20px #00ffcc,
-        0 0 30px #00ffcc;
+        0 0 10px #00ffcc, /* Added neon glow */
+        0 0 20px #00ffcc, /* Added neon glow */
+        0 0 30px #00ffcc; /* Added neon glow */
       position: relative;
     }
 
@@ -312,20 +201,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: block;
       width: 120px;
       height: 2px;
-      background: #00ffcc;
+      background: #00ffcc; /* Changed to neon green */
       margin: 30px auto 0 auto;
       border-radius: 2px;
       box-shadow: 0 0 6px rgba(0, 255, 204, 0.6);
     }
 
-    h2, h3 { color: #58a6ff; }
+    h2, h3 { 
+      color: #58a6ff; 
+      text-align: left; /* Align headings to left */
+    }
 
     nav {
-      text-align: center;
+      text-align: center; /* Keep navigation centered */
       margin-top: 10px;
     }
 
-    /* Navigation Buttons */
     .nav-btn {
       position: relative;
       display: inline-flex;
@@ -391,7 +282,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       max-width: 800px;
       border-radius: 10px;
       box-shadow: 0 0 15px rgba(0,255,200,0.3);
-      text-align: center;
+      text-align: left; /* Changed from center to left */
       font-size: 16px;
       line-height: 1.6;
     }
@@ -425,6 +316,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       to   { left: calc(100% - 40px); }
     }
 
+    @keyframes laser-scan {
+      from { left: 0; }
+      to   { left: calc(100% - 40px); }
+    }
+
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -435,135 +331,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .fade-in.delay-2 { animation-delay: 0.6s; }
     .fade-in.delay-3 { animation-delay: 0.9s; }
     .fade-in.delay-4 { animation-delay: 1.2s; }
-
-    /* Tool sections */
-    .about-tool {
-      background: #161b22;
-      border-radius: 16px;
-      padding: 20px;
-      margin: 25px auto;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: inline-block;
-      text-align: left;
-      max-width: 900px;
-      width: 100%;
-    }
-
-    .about-tool:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
-    }
-
-    .tool-content {
-      display: flex;
-      align-items: flex-start;
-      gap: 20px;
-    }
-
-    .tool-img {
-      max-width: 250px;
-      border-radius: 12px;
-      cursor: pointer;
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease;
-    }
-
-    .tool-img:hover {
-      transform: scale(1.02);
-    }
-
-    .download-block {
-      font-family: 'Fira Code', monospace;
-      color: #c9d1d9;
-      background: #0d1117;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: inset 0 0 8px rgba(0, 255, 204, 0.3);
-      flex: 1;
-    }
-
-    .download-date {
-      margin-bottom: 12px;
-      font-weight: bold;
-      color: #fff;
-    }
-
-    .download-size {
-      margin: 6px 0 4px;
-      font-size: 0.9em;
-      color: #ccc;
-    }
-
-    .btn {
-      display: block;
-      margin: 0 0 12px;
-      width: fit-content;
-      text-align: left;
-      color: #00ffcc;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
-      border: 1px solid #00ffcc;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      background: #21262d;
-    }
-
-    .btn:hover,
-    .btn:focus {
-      background: #00ffcc;
-      color: #0d1117;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
-      outline: 2px solid #00ffcc;
-      outline-offset: 2px;
-    }
-
-    .tool-description {
-      margin-top: 20px;
-      font-family: 'Fira Code', monospace;
-      color: #c9d1d9;
-      line-height: 1.6;
-    }
-
-    .tool-description h2 {
-      color: #00ffcc;
-    }
-
-    .tool-description ul {
-      padding-left: 20px;
-    }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 12px;
-    }
-
-    .modal-close {
-      position: absolute;
-      top: 20px;
-      right: 35px;
-      color: #fff;
-      font-size: 40px;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 10001;
-    }
 
     .share-container {
       position: fixed;
@@ -633,54 +400,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .native-share-btn:hover,
     .native-share-btn:focus { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
 
-    /* External links section */
-    .external-links {
-      background: #161b22;
-      border-radius: 16px;
-      padding: 25px;
-      margin: 30px auto;
-      max-width: 900px;
-      text-align: center;
-    }
-    
-    .external-links h2 {
-      color: #00ffcc;
-      margin-bottom: 20px;
-    }
-    
-    .external-links ul {
-      list-style: none;
-      padding: 0;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-    
-    .external-links li {
-      margin: 10px;
-    }
-    
-    .external-link {
-      display: inline-block;
-      padding: 12px 20px;
-      background: #21262d;
-      color: #58a6ff;
-      text-decoration: none;
-      border-radius: 8px;
-      border: 1px solid #58a6ff;
-      transition: all 0.3s ease;
-      font-weight: bold;
-    }
-    
-    .external-link:hover {
-      background: #00ffcc;
-      color: #0d1117;
-      transform: scale(1.05);
-      box-shadow: 0 0 15px rgba(0, 255, 204, 0.7);
+    /* Additional styles for left alignment */
+    .muted {
+      color: #8b949e;
+      text-align: left;
     }
 
-    /* PERBAIKAN MEDIA QUERIES UNTUK MOBILE */
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
     @media (max-width: 768px) {
       body { 
         padding: 20px; 
@@ -728,26 +462,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         min-width: 44px;
         min-height: 44px;
       }
-      
-      .tool-content { 
-        flex-direction: column; 
-        align-items: center;
-      }
-      
-      .tool-img { 
-        max-width: 100%; 
-        margin-bottom: 15px;
-      }
-      
-      .about-tool {
-        padding: 15px;
-        margin: 15px auto;
-      }
-      
-      .external-links ul {
-        flex-direction: column;
-        align-items: center;
-      }
     }
 
     @media (max-width: 480px) {
@@ -779,10 +493,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         font-size: 17px;
         min-width: 44px;
         min-height: 44px;
-      }
-      
-      .tool-img {
-        max-width: 100%;
       }
     }
 
@@ -820,15 +530,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .share-container { 
         gap: 8px; 
       }
-      
-      .about-tool {
-        padding: 12px;
-      }
-      
-      .btn {
-        padding: 6px 10px;
-        font-size: 12px;
-      }
     }
   </style>
 </head>
@@ -855,289 +556,125 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <main id="main-content">
     <div class="logo-container">
-      <img src="https://lemonpyhub.github.io/pic/lemonpy.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
+      <img src="../pic/lemonpy.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
     </div>
     
-  <h1 class="fade-in delay-2">
-    LemonPyHub
-    <span style="position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;">
-      — Free Python Tools and Windows Utilities for Windows 10 &amp; 11
-    </span>
-  </h1>
-
-
+    <h1 class="fade-in delay-2" style="text-align:center;">LemonPyHub</h1>
     <p class="glow fade-in delay-3" style="text-align:center;">
-  LemonPyHub Manual & Guides<br> Complete guides, tutorials, and API references for mastering LemonPyHub development
-</p>
+      Where coding meets efficiency and innovation <br>
+      transforming ideas into powerful digital solutions <br> 
+      serving as your hub for advanced system optimization 🚀
+    </p><br>
 
     <nav>
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
-      <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
-    </nav>
+      <a href="../" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="../donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+      <a href="../download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+      <a href="../helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help/FAQ</a>
+      <a href="../manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+    </nav><br>
 
-    <p class="fade-in delay-4">This Windows System Maintenance Manual provides comprehensive guides for using LemonPyHub tools<br> These tools help optimize your Windows system performance.</p>
+    <div class="intro-box glow fade-in delay-4">
+      <h2>Help &amp; Troubleshooting</h2>
 
-    <ul style="list-style: none; padding: 0;" class="fade-in delay-4">
-      <li>
-        <div class="about-tool fade-in delay-2" id="clear-temp">
-          <div class="tool-content">
-            <img src="https://lemonpyhub.github.io/download/Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool Screenshot - System optimization utility" class="tool-img" id="windows-maintenance-tool">
-            <div class="download-block">
-              <a class="btn" href="../Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Windows Maintenance 3.9.5 (Installer)</a>
-              <a class="btn" href="../Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download>Windows Maintenance 3.9.7 (Portable)</a>
-              <div class="download-date">v3.9.7 | Windows 10 & 11</div>
-              <div class="download-date">Freeware | September 2025</div>
-              <div class="download-size">Installer: 10.45MB | Portable: 11.16MB</div>
-            </div>
-          </div>
-
-          <div class="tool-description">
-            <h2>Windows Maintenance Tool 3.9.7</h2>
-            <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
-
-            <h3>Key features include:</h3>
-            <ul>
-              <li><strong>How to Clear all files in "temp" folder</strong><br>Win + R → <code>temp</code> → Ctrl + A → Delete</li>
-              <li><strong>How to Clear all files in "prefetch" folder</strong><br>Win + R → <code>prefetch</code> → Ctrl + A → Delete</li>
-              <li><strong>How to Clear all files in "%temp%" folder</strong><br>Win + R → <code>%temp%</code> → Ctrl + A → Delete</li>
-              <li><strong>How to Run Disk Cleanup</strong><br>Win + R → <code>cleanmgr</code></li>
-              <li><strong>How to Empty Recycle Bin</strong><br>Win + R → <code>shell:RecycleBinFolder</code> → Ctrl + A → Delete</li>
-              <li><strong>How to Run SFC (System File Checker)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>sfc /scannow</code></li>
-              <li><strong>How to Run DISM (Deployment Imaging Service and Management Tool)</strong><br>Win + R → <code>cmd</code> → Ctrl + Shift + Enter → <code>DISM /Online /Cleanup-Image /RestoreHealth</code></li>
-              <li><strong>How to Release IP Address</strong><br>Admin CMD → <code>ipconfig /release</code></li>
-              <li><strong>How to Renew IP Address</strong><br>Admin CMD → <code>ipconfig /renew</code></li>
-              <li><strong>How to Flush DNS Cache</strong><br>Admin CMD → <code>ipconfig /flushdns</code></li>
-            </ul>
-            <p>With this tool, maintaining your Windows system becomes faster, easier, and more user-friendly — no technical expertise required.</p>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="about-tool fade-in delay-2" id="run-sfc">
-          <div class="tool-content">
-            <img src="https://lemonpyhub.github.io/download/DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager Screenshot - Network optimization tool" class="tool-img" id="DNS-Manager">
-            <div class="download-block">
-              <a class="btn" href="../DNS_Manager/DNS_Manager.rar" download>DNS Manager (Portable)</a>
-              <div class="download-date">Windows 10 & 11</div>
-              <div class="download-date">Freeware | September 2025</div>
-              <div class="download-size">Portable: 24.58MB</div>
-            </div>
-          </div>
-
-          <div class="tool-description">
-            <h2>DNS Manager</h2>
-            <p>DNS Manager makes it simple to switch your system DNS to Google or Cloudflare—no need to manually configure network settings. With one click, you can apply the most reliable DNS servers for faster browsing and improved privacy.</p>
-
-            <h3>Change DNS Options:</h3>
-            <ul>
-              <li><strong>Google DNS (IPv4)</strong><br>
-                Preferred: <code>8.8.8.8</code><br>
-                Alternate: <code>8.8.4.4</code>
-              </li>
-              <li><strong>Cloudflare DNS (IPv4)</strong><br>
-                Preferred: <code>1.1.1.1</code><br>
-                Alternate: <code>1.0.0.1</code>
-              </li>
-              <li>Switch DNS instantly with one click (via DNS Manager)</li>
-              <li>Automatically applies settings system-wide</li>
-              <li>Quick, safe, and hassle-free</li>
-            </ul>
-
-            <h3>Step-by-step (GUI)</h3>
-            <ol>
-              <li>Press <strong>Win + R</strong>, type <code>ncpa.cpl</code> and press <strong>Enter</strong> → opens Network Connections.</li>
-              <li>Right-click your active adapter (e.g. <em>Wi-Fi</em> or <em>Ethernet</em>) → choose <strong>Properties</strong>.</li>
-              <li>Select <strong>Internet Protocol Version 4 (TCP/IPv4)</strong> → click <strong>Properties</strong>.</li>
-              <li>Choose <strong>Use the following DNS server addresses</strong> and enter the addresses for Google or Cloudflare (see list above).</li>
-              <li>Click <strong>OK</strong> → <strong>Close</strong>. Optionally repeat for <strong>Internet Protocol Version 6 (TCP/IPv6)</strong> if you use IPv6.</li>
-              <li>Flush DNS cache: press <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong> to open Admin CMD → run <code>ipconfig /flushdns</code>.</li>
-            </ol>
-
-            <h3>Step-by-step (Command Prompt / netsh)</h3>
-            <ol>
-              <li>Open Admin Command Prompt: <strong>Win + R</strong> → type <code>cmd</code> → press <strong>Ctrl + Shift + Enter</strong>.</li>
-              <li>For Wi-Fi (replace <code>Wi-Fi</code> with <code>Ethernet</code> if wired):</li>
-              <li>
-                <code>netsh interface ip set dns name="Wi-Fi" static 8.8.8.8</code><br>
-                <code>netsh interface ip add dns name="Wi-Fi" 8.8.4.4 index=2</code>
-              </li>
-              <li>Or for Cloudflare:</li>
-              <li>
-                <code>netsh interface ip set dns name="Wi-Fi" static 1.1.1.1</code><br>
-                <code>netsh interface ip add dns name="Wi-Fi" 1.0.0.1 index=2</code>
-              </li>
-              <li>After running commands, run <code>ipconfig /flushdns</code> to clear DNS cache.</li>
-            </ol>
-
-            <h3>Step-by-step (PowerShell)</h3>
-            <ol>
-              <li>Open PowerShell as Admin: <strong>Win + X</strong> → <strong>Windows PowerShell (Admin)</strong> or press <strong>Win + R</strong>, type <code>powershell</code>, then <strong>Ctrl + Shift + Enter</strong>.</li>
-              <li>For Google DNS (replace <code>Wi-Fi</code> if your adapter name differs):</li>
-              <li>
-                <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 8.8.8.8,8.8.4.4</code>
-              </li>
-              <li>For Cloudflare DNS:</li>
-              <li>
-                <code>Set-DnsClientServerAddress -InterfaceAlias "Wi-Fi" -ServerAddresses 1.1.1.1,1.0.0.1</code>
-              </li>
-              <li>Flush DNS cache after changes: <code>ipconfig /flushdns</code>.</li>
-            </ol>
-
-            <p><em>Notes:</em> If you're unsure of your adapter name, run <code>netsh interface show interface</code> (CMD) or <code>Get-NetAdapter</code> (PowerShell). Replace <code>"Wi-Fi"</code> with the correct adapter name. If you want IPv6 addresses too, I can add those into the UI.</p>
-
-            <p>With DNS Manager, you can also switch between these presets automatically—no manual typing required.</p>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="about-tool fade-in delay-2" id="flush-dns">
-          <div class="tool-content">
-            <img src="https://lemonpyhub.github.io/download/Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot - Performance enhancement tool" class="tool-img" id="Windows-Optimizer">
-            <div class="download-block">
-              <a class="btn" href="../Windows_Optimizer/Windows_Optimizer.rar" download>Windows Optimizer (Portable)</a>
-              <div class="download-date">Win7, Win8, Win8.1, Win10, Win11</div>
-              <div class="download-date">Auto-Detect Windows</div>
-              <div class="download-date">Freeware | September 2025</div>
-              <div class="download-size">Portable: 27.24MB</div>
-            </div>
-          </div>
-
-          <div class="tool-description" style="max-width: 800px; word-wrap: break-word; overflow-wrap: break-word; line-height: 1.6; margin-top: 20px;">
-            <h2>Windows Optimizer</h2>
-            <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management. This Python-based utility leverages PowerShell commands to intelligently modify Windows Registry settings and service configurations, targeting specific system components that impact resource utilization. The application provides users with granular control over visual effects, background processes, search functionality, and UI elements, enabling tailored optimization based on individual performance requirements.</p>
-
-            <p><strong>Important before you start:</strong> create a System Restore point and export registry backups. Many tweaks require Administrator rights and may need sign-out/restart or Explorer restart to take effect.</p>
-
-            <h3>Tweaks — Step by step</h3>
-
-            <h4>1) Visual Effects (appearance vs performance)</h4>
-            <strong>GUI</strong>
-            <ol>
-              <li>Press <code>Win + R</code>, type <code>SystemPropertiesPerformance.exe</code> and press Enter.</li>
-              <li>In Performance Options → Visual Effects select <em>Adjust for best performance</em>, <em>Adjust for best appearance</em>, or <em>Custom</em>.</li>
-              <li>Click <strong>Apply → OK</strong>. Sign out or restart Explorer if needed.</li>
-            </ol>
-            <strong>PowerShell / Registry (current user)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" -Name "VisualFXSetting" -Value 2 -Type DWord
-    # Restart Explorer to apply:
-    Stop-Process -Name explorer -Force
-    Start-Process explorer</code></pre>
-
-            <h4>2) Background Apps (allow / block UWP apps)</h4>
-            <strong>GUI</strong>
-            <ol>
-              <li>Win + I → Apps (or Settings → Privacy → Background apps on Win10).</li>
-              <li>For each app: click the three dots → Advanced options → Background apps permissions → choose <em>Never</em>.</li>
-            </ol>
-            <strong>PowerShell / Registry (disable all background apps via policy)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Run as Admin PowerShell
-    New-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Force | Out-Null
-    New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" -Name "LetAppsRunInBackground" -PropertyType DWord -Value 2 -Force
-    # Reboot for policy to take full effect</code></pre>
-
-            <h4>3) Taskbar Small Icon (make taskbar icons smaller)</h4>
-            <strong>Windows 10 (GUI)</strong>
-            <ol>
-              <li>Win + I → Personalization → Taskbar → turn <em>Use small taskbar buttons</em> On.</li>
-            </ol>
-            <strong>Windows 11 (Registry / PowerShell)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># set Taskbar to small icons (Windows 11)
-    Set-ItemProperty -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarSi" -Value 0 -Type DWord
-    # Restart Explorer:
-    Stop-Process -Name explorer -Force
-    Start-Process explorer</code></pre>
-
-            <h4>4) Transparency Effect (enable / disable acrylic)</h4>
-            <strong>GUI</strong>
-            <ol>
-              <li>Win + I → Personalization → Colors (or Accessibility → Visual effects) → toggle <em>Transparency effects</em> On/Off.</li>
-            </ol>
-            <strong>PowerShell / Registry</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># 0 = Off, 1 = On
-    Set-ItemProperty -Path "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" -Name "EnableTransparency" -Value 0 -Type DWord
-    # Restart Explorer:
-    Stop-Process -Name explorer -Force
-    Start-Process explorer</code></pre>
-
-            <h4>5) Search Indexing (Windows Search)</h4>
-            <strong>Adjust locations (GUI)</strong>
-            <ol>
-              <li>Start → type <em>Indexing Options</em> → Open → click <strong>Modify</strong> → add/remove indexed folders.</li>
-            </ol>
-            <strong>Stop / Disable Indexer (Service)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code># Disable Windows Search service (Admin PowerShell)
-    Set-Service -Name WSearch -StartupType Disabled
-    Stop-Service -Name WSearch -Force
-
-    # Re-enable when needed:
-    Set-Service -Name WSearch -StartupType "Automatic"
-    Start-Service -Name WSearch</code></pre>
-            <p><em>Note:</em> disabling indexing reduces background disk/CPU usage but makes file searches slower.</p>
-
-            <h4>6) Create Backup Settings (recommended before applying tweaks)</h4>
-            <strong>Create a System Restore point (GUI)</strong>
-            <ol>
-              <li>Win + R → type <code>SystemPropertiesProtection.exe</code> → Enter.</li>
-              <li>Select your system drive (usually C:) → <strong>Create</strong> → name e.g. "Before Windows Optimizer".</li>
-            </ol>
-            <strong>Create a Restore point (PowerShell — Admin)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Checkpoint-Computer -Description "Before Windows Optimizer" -RestorePointType "MODIFY_SETTINGS"</code></pre>
-            <strong>Export registry keys you will change</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects" "%USERPROFILE%\Desktop\visualfx_backup.reg"
-    reg export "HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" "%USERPROFILE%\Desktop\taskbar_backup.reg"
-    reg export "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Themes\Personalize" "%USERPROFILE%\Desktop\personalize_backup.reg"
-    reg export "HKLM\SOFTWARE\Policies\Microsoft\Windows\AppPrivacy" "%USERPROFILE%\Desktop\appprivacy_backup.reg"</code></pre>
-
-            <h4>7) Rollback / Restore</h4>
-            <strong>Restore System Restore point (GUI)</strong>
-            <ol>
-              <li>Win + R → type <code>rstrui.exe</code> → Enter → follow the wizard to restore a saved restore point.</li>
-            </ol>
-            <strong>Import registry backups (if you exported .reg files)</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>reg import "%USERPROFILE%\Desktop\visualfx_backup.reg"
-    reg import "%USERPROFILE%\Desktop\taskbar_backup.reg"</code></pre>
-            <strong>Re-enable services</strong>
-            <pre style="max-width: 100%; overflow-x: auto; white-space: pre-wrap;"><code>Set-Service -Name WSearch -StartupType "Automatic"
-    Start-Service -Name WSearch</code></pre>
-
-            <h4>8) Quick commands & tips</h4>
-            <ul>
-              <li>Restart Explorer to apply many UI/registry changes: <code>Stop-Process -Name explorer -Force; Start-Process explorer</code></li>
-              <li>If unsure of adapter names / settings, test changes on a non-critical account first.</li>
-              <li>Always create a restore point & export the registry keys you modify.</li>
-            </ul>
-
-            <p>This Windows Optimizer workflow lets users safely toggle visual effects, background apps, taskbar sizing, transparency, and indexing — with easy rollback through restore points or registry imports. If you want, I can generate a ready-to-use <code>.ps1</code> script (with confirmations and automatic backups) that performs these tweaks and also provides a one-click rollback option.</p>
-          </div>
-        </div>
-      </li>
-    </ul>
-
-
-    <!-- External Links Section -->
-    <div class="external-links fade-in delay-3">
-      <h2>Useful External Resources</h2>
+      <h3>1. Why does my antivirus flag the app?</h3>
+      <p class="muted"><strong>The app does not contain malware or harmful code.</strong></p>
+      <p class="muted">Some antivirus programs (including Windows Defender) may mistakenly flag this app as harmful. This is known as a <em>false positive</em>.</p>
+      <p class="muted"><strong>What is a false positive?</strong>  
+      A false positive means the antivirus incorrectly marks safe software as a threat. This often happens with new or lesser-known programs because they don't yet have a reputation in the antivirus company's database.</p>
       <ul>
-        <li><a href="https://www.microsoft.com/en-us/windows" class="external-link" target="_blank" rel="noopener">Official Windows Support</a></li>
-        <li><a href="https://docs.python.org/3/" class="external-link" target="_blank" rel="noopener">Python Documentation</a></li>
-        <li><a href="https://github.com/" class="external-link" target="_blank" rel="noopener">GitHub - Open Source</a></li>
-        <li><a href="https://stackoverflow.com/" class="external-link" target="_blank" rel="noopener">Stack Overflow</a></li>
-        <li><a href="https://www.reddit.com/r/Windows10/" class="external-link" target="_blank" rel="noopener">Windows Community</a></li>
+        <li class="muted">Detection occurs because the app interacts with system settings and files to perform its functions.</li>
+        <li class="muted">This behaviour, while safe, can sometimes be misinterpreted by security software.</li>
+      </ul>
+
+      <h3>2. Why does Windows Defender block the download?</h3>
+      <p class="muted">Windows Defender or certain browsers may display a warning when you download the app. This is a standard safety measure for software that is <strong>new or not yet widely distributed</strong>.</p>
+      <p class="muted">You may see a message like <em>"This file may be harmful"</em>. This does not mean the app is unsafe, only that it hasn't yet built a large reputation in Microsoft's or the browser's database.</p>
+
+      <h3>3. Why does the app need Administrator rights?</h3>
+      <p class="muted">Some advanced features require access to system-level settings. To ensure full functionality:</p>
+      <ul>
+        <li class="muted">Right-click the app → <strong>Run as Administrator</strong>.</li>
+        <li class="muted">Without admin rights, certain features (like system-level changes or optimizations) may not work as intended.</li>
+      </ul>
+
+      <h3>4. Tips for a smooth installation</h3>
+      <ul>
+        <li class="muted">✅ Always download from the official website.</li>
+        <li class="muted">✅ If antivirus flags it, add the app to your safe list/whitelist.</li>
+        <li class="muted">✅ Keep your Windows system up to date (Windows Update).</li>
+        <li class="muted">✅ Avoid renaming or moving the installer until the setup is complete.</li>
+      </ul>
+
+      <h3>5. Still experiencing problems?</h3>
+      <ul>
+        <li class="muted">Check antivirus quarantine — the app may have been placed there.</li>
+        <li class="muted">Ensure stable internet connection — required for download and updates.</li>
+        <li class="muted">Run with administrator permissions — make sure admin rights are enabled.</li>
       </ul>
     </div>
 
-    <div id="imgModal" class="modal">
-      <span class="modal-close">&times;</span>
-      <img class="modal-content" id="modalImage" alt="Enlarged application screenshot">
+    <div class="intro-box glow fade-in delay-4">
+      <h2>(FAQ)</h2>
+
+      <h3>Q1: Why does my antivirus say the app is a virus?</h3>
+      <p class="muted">A: This is a false positive. The app is safe, but some antivirus programs may wrongly flag it because of how it works with system files.</p>
+
+      <h3>Q2: Why does Windows Defender block the download?</h3>
+      <p class="muted">A: Windows Defender (and sometimes your browser) may show warnings for apps that are not widely downloaded yet. This does not mean the app is harmful — it's just a precaution.</p>
+
+      <h3>Q3: Do I need to run the app as Administrator?</h3>
+      <p class="muted">A: Yes. Some apps use Command Prompt (cmd) or PowerShell commands that require administrator rights to work correctly.</p>
+      <p class="muted">Right-click the app → <strong>Run as administrator</strong>.</p>
+      <p class="muted">Without admin rights, these commands may fail and certain features will not work.</p>
+
+      <h3>Q4: What should I do if my antivirus deletes the file?</h3>
+      <p class="muted">A: If your antivirus mistakenly deletes the app:</p>
+      <ul>
+        <li class="muted">Open your antivirus program.</li>
+        <li class="muted">Go to Quarantine or Virus Chest.</li>
+        <li class="muted">Restore the file.</li>
+        <li class="muted">Add the app to your antivirus Whitelist / Exclusion list so it won't be flagged again.</li>
+      </ul>
+
+      <h3>Q5: How do I whitelist the app in my antivirus?</h3>
+      <p class="muted">A: Most antivirus software has a section called Exclusions, Exceptions, or Whitelist. Add the app's .exe file (or folder) there. This tells your antivirus to ignore it.</p>
+
+      <h3>Q6: How do I make sure I download the safe version?</h3>
+      <p class="muted">A: Always download directly from our official website. Do not use third-party links or file-sharing sites.</p>
+
+      <h3>Q7: Are these apps paid or free?</h3>
+      <p class="muted">A: All apps provided here are Freeware. You can download and use them at no cost. Donations are optional and help support further development.</p>
+
+      <h3>Q8: Still having issues?</h3>
+      <p class="muted">A: Double-check your antivirus settings, whitelist the file, and ensure you have admin rights.</p>
+    </div>
+
+    </div>
+    <div class="intro-box glow fade-in delay-4" style="border-top: 2px solid #58a6ff;">
+      <h2 id="privacy-policy">Privacy Policy</h2>
+      <p class="muted">
+        Your privacy is important to us. <strong>LemonPyHub</strong> does not collect, store, or share any personal data, system information, or usage statistics from the tools you download. 
+      </p>
+      <ul>
+        <li class="muted"><strong>No Data Collection:</strong> Our Python tools are designed to run locally on your machine.</li>
+        <li class="muted"><strong>GitHub Pages:</strong> This website is hosted via GitHub Pages. Any basic logging (like IP addresses for security) is handled by GitHub according to their standard privacy policy.</li>
+        <li class="muted"><strong>Cookies:</strong> We use Google Analytics (GTAG/GTM) only to understand website traffic and improve user experience.</li>
+      </ul>
+
+      <h2 id="disclaimer" style="margin-top: 30px;">Disclaimer</h2>
+      <p class="muted">
+        All software and scripts provided on LemonPyHub are for <strong>educational and system maintenance purposes only</strong>. 
+      </p>
+      <ul>
+        <li class="muted"><strong>Use at Your Own Risk:</strong> While we strive to ensure our tools are safe and effective, we are not responsible for any data loss, hardware damage, or system instability that may occur.</li>
+        <li class="muted"><strong>Backups Recommended:</strong> We strongly advise users to create a System Restore Point or backup important data before using any system optimization tool.</li>
+        <li class="muted"><strong>Non-Affiliation:</strong> LemonPyHub is an independent project and is not endorsed by, or affiliated with, Microsoft Corporation.</li>
+      </ul>
     </div>
   </main>
 
-<footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #8b949e; text-align: center;">
+  <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #8b949e; text-align: center;">
     <div style="margin-bottom: 10px;">
         <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
         <a href="/helpfaq/#disclaimer" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Disclaimer</a> | 
@@ -1146,7 +683,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p>Disclaimer: LemonPyHub is not affiliated with Microsoft. Windows is a registered trademark of Microsoft Corporation.</p>
     <div class="powered">Powered by LΣⱮØπPyHub 2026 - Free Tools for Everyone</div>
 </footer>
-
   <script>
     // Optimized Matrix Digital Rain Effect with error handling
     let animationId;
@@ -1247,84 +783,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         navigator.share({ title: document.title, text: 'Check out this awesome website - LemonPyHub!', url: window.location.href });
       } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
     }
-
-    // Handle window resize
-    window.addEventListener('resize', function() {
-      const canvas = document.getElementById('matrixCanvas');
-      if (canvas) {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-      }
-    });
-
-    // Download tracking script
-    document.addEventListener("DOMContentLoaded", function() {
-      document.querySelectorAll("a").forEach(link => {
-        const url = link.getAttribute("href");
-        if (!url) return;
-
-        const downloadExt = [".zip", ".exe", ".rar", ".7z", ".pdf", ".msi", ".apk"];
-
-        if (downloadExt.some(ext => url.toLowerCase().endsWith(ext))) {
-          link.addEventListener("click", function(event) {
-            event.preventDefault();
-            const filename = url.split("/").pop();
-
-            gtag("event", "download", {
-              event_category: "File",
-              event_label: filename,
-              value: 1
-            });
-
-            setTimeout(() => {
-              window.location.href = url;
-            }, 200);
-          });
-        }
-      });
-    });
-
-    // Modal image functionality
-    const modal = document.getElementById("imgModal");
-    const modalImg = document.getElementById("modalImage");
-    const closeBtn = document.querySelector(".modal-close");
-
-    const images = ["windows-maintenance-tool", "DNS-Manager", "Windows-Optimizer"];
-    images.forEach(id => {
-      const element = document.getElementById(id);
-      if (element) {
-        element.onclick = function() {
-          modal.style.display = "flex";
-          modalImg.src = this.src;
-          modalImg.alt = this.alt + " - Enlarged view";
-        }
-      }
-    });
-
-    closeBtn.onclick = () => modal.style.display = "none";
-    modal.onclick = e => { if(e.target === modal) modal.style.display = "none"; }
-    modalImg.onclick = () => modal.style.display = "none";
-
-    // Close modal with Escape key
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        modal.style.display = "none";
-      }
-    });
   </script>
-  <script>
-  window.addEventListener('load', function() {
-    var link1 = document.createElement('link');
-    link1.rel = 'stylesheet';
-    link1.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css';
-    document.head.appendChild(link1);
-
-    var link2 = document.createElement('link');
-    link2.rel = 'stylesheet';
-    link2.href = 'https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap';
-    document.head.appendChild(link2);
-  });
-</script>
 </body>
-</html>
-
