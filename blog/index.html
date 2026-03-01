@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager (sama seperti root) -->
+  <!-- Google Tag Manager -->
   <script>
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -27,23 +27,19 @@
   <meta property="og:title" content="Blog - Windows Optimization Guides | LemonPyHub">
   <meta property="og:description" content="Free guides to optimize Windows 10/11 for low-end PCs with Python tools.">
   <meta property="og:url" content="https://lemonpyhub.github.io/blog/">
-  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
+  <meta property="og:image" content="/pic/lemonpyhub-og-image.png">
   
-  <!-- Favicon (sama) -->
+  <!-- Favicon -->
   <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
   
-  <!-- Fonts dan CSS (sama seperti root) -->
+  <!-- Fonts dan CSS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
-    /* ===== CSS SAMA SEPERTI ROOT ===== */
-    /* Copy semua CSS dari root/index.html */
-    /* Tapi tambah CSS khusus untuk blog di bawah */
-    
-    /* Critical CSS (sama seperti root) */
+    /* ===== CRITICAL CSS ===== */
     html { height: 100%; }
     body {
       overflow-x: hidden;
@@ -107,7 +103,7 @@
     h2 { color: #58a6ff; font-size: 2rem; margin-top: 40px; }
     h3 { color: #58a6ff; font-size: 1.5rem; }
     
-    /* Navigation buttons (sama) */
+    /* Navigation */
     nav { text-align: center; margin-top: 10px; }
     .nav-btn { 
       position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
@@ -121,7 +117,7 @@
       box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); 
     }
     
-    /* ===== CSS KHUSUS UNTUK BLOG ===== */
+    /* ===== BLOG SPECIFIC CSS ===== */
     
     /* Blog post cards */
     .blog-grid {
@@ -201,20 +197,76 @@
       margin-top: 0;
     }
     
-    /* Share buttons (sama) */
+    /* ===== SHARE BUTTONS - 7 BUTTONS WITH HOVER COLORS ===== */
     .share-container { 
-      position: fixed; top: 50%; right: 15px; transform: translateY(-50%); 
-      display: flex; flex-direction: column; gap: 12px; z-index: 1000; 
+      position: fixed; 
+      top: 50%; 
+      right: 15px; 
+      transform: translateY(-50%); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 12px; 
+      z-index: 1000; 
     }
-    .share-btn { 
-      width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; 
-      justify-content: center; font-size: 20px; color: white; background-color: #333; 
-      transition: all 0.3s ease; box-shadow: 0 0 10px #00ffcc; cursor: pointer; 
-      border: none; outline: none; 
-    }
-    .share-btn:hover { transform: scale(1.1); }
     
-    /* Footer (sama) */
+    .share-btn { 
+      width: 45px; 
+      height: 45px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 20px; 
+      color: white; 
+      background-color: #333; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 0 10px #00ffcc; 
+      cursor: pointer; 
+      border: none; 
+      outline: none; 
+    }
+    
+    .share-btn:hover { 
+      transform: scale(1.1); 
+    }
+    
+    /* Individual button hover colors */
+    .share-btn.facebook-btn:hover { 
+      background-color: #1877F2; 
+      box-shadow: 0 0 20px #1877F2; 
+    }
+    
+    .share-btn.tiktok-btn:hover { 
+      background-color: #000000; 
+      box-shadow: 0 0 20px #000000; 
+    }
+    
+    .share-btn.instagram-btn:hover { 
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
+      box-shadow: 0 0 20px #d6249f; 
+    }
+    
+    .share-btn.whatsapp-btn:hover { 
+      background-color: #25D366; 
+      box-shadow: 0 0 20px #25D366; 
+    }
+    
+    .share-btn.telegram-btn:hover { 
+      background-color: #0088cc; 
+      box-shadow: 0 0 20px #0088cc; 
+    }
+    
+    .share-btn.reddit-btn:hover { 
+      background-color: #FF4500; 
+      box-shadow: 0 0 20px #FF4500; 
+    }
+    
+    .share-btn.native-share-btn:hover { 
+      background-color: #7e57c2; 
+      box-shadow: 0 0 20px #7e57c2; 
+    }
+    
+    /* Footer */
     footer {
       margin-top: 50px;
       padding: 20px;
@@ -224,11 +276,24 @@
       text-align: center;
     }
     
+    .powered { 
+      font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
+      position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
+    }
+    
     /* Responsive */
     @media (max-width: 768px) {
       body { padding: 20px; padding-right: 70px; }
       h1 { font-size: 2.5rem; padding: 40px 20px 20px; }
       .blog-grid { grid-template-columns: 1fr; }
+      .share-container { right: 8px; gap: 8px; }
+      .share-btn { width: 38px; height: 38px; font-size: 18px; }
+    }
+    
+    @media (max-width: 480px) {
+      body { padding: 15px; padding-right: 65px; }
+      h1 { font-size: 2rem; padding: 30px 15px 15px; }
+      .share-btn { width: 35px; height: 35px; font-size: 16px; }
     }
   </style>
 </head>
@@ -241,15 +306,32 @@
   <!-- Matrix Canvas -->
   <canvas id="matrixCanvas"></canvas>
   
-  <!-- Share buttons (sama) -->
+  <!-- ===== SHARE BUTTONS - 7 BUTTONS WITH HOVER COLORS ===== -->
   <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok">
+      <i class="fab fa-tiktok"></i>
+    </button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram">
+      <i class="fab fa-instagram"></i>
+    </button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram">
+      <i class="fab fa-telegram-plane"></i>
+    </button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit">
+      <i class="fab fa-reddit-alien"></i>
+    </button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share">
+      <i class="fas fa-share-alt"></i>
+    </button>
   </div>
   
-  <!-- Logo (sama) -->
+  <!-- Logo -->
   <header class="logo-container">
     <img src="/pic/lemonpy.webp" 
          alt="LemonPyHub Logo" 
@@ -269,7 +351,7 @@
     Learn how to speed up your computer with Python tools.
   </p>
   
-  <!-- Navigasi (tambah link ke blog) -->
+  <!-- Navigasi -->
   <nav>
     <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
     <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
@@ -279,7 +361,7 @@
     <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
   </nav>
   
-  <!-- Featured Article (artikel terkini) -->
+  <!-- Featured Article -->
   <section class="featured-article">
     <span style="background:#00ffcc; color:#1a1a1a; padding:3px 10px; border-radius:3px; font-size:0.8rem; font-weight:bold;">NEW</span>
     <h2>Windows Maintenance Tool V3 GUI: Free Download (2026)</h2>
@@ -291,7 +373,7 @@
   <!-- Blog Posts Grid -->
   <div class="blog-grid">
     
-    <!-- Article 1 -->
+    <!-- Article 1: Windows 11 vs Windows 10 -->
     <div class="blog-card">
       <h3>Windows 11 vs Windows 10: Which is Better for 4GB RAM?</h3>
       <p class="blog-meta">Feb 25, 2026 • 8 min read</p>
@@ -299,7 +381,7 @@
       <a href="/blog/windows-11-vs-10-4gb-ram/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 2 -->
+    <!-- Article 2: Clean Junk Files -->
     <div class="blog-card">
       <h3>How to Clean Junk Files Automatically with Free Tools</h3>
       <p class="blog-meta">Feb 18, 2026 • 6 min read</p>
@@ -307,7 +389,7 @@
       <a href="/blog/clean-junk-files-automatically/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 3 -->
+    <!-- Article 3: 5 Best Optimizers -->
     <div class="blog-card">
       <h3>5 Best Free Optimizers for Windows 11 Low-End PCs (2026)</h3>
       <p class="blog-meta">Feb 10, 2026 • 12 min read</p>
@@ -315,7 +397,7 @@
       <a href="/blog/best-free-optimizers-windows-11/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 4 -->
+    <!-- Article 4: DISM and SFC -->
     <div class="blog-card">
       <h3>Step-by-Step Guide to Run DISM and SFC Commands</h3>
       <p class="blog-meta">Feb 3, 2026 • 7 min read</p>
@@ -323,7 +405,7 @@
       <a href="/blog/dism-sfc-commands-guide/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 5 -->
+    <!-- Article 5: Disable Startup Programs -->
     <div class="blog-card">
       <h3>How to Disable Startup Programs for Faster Boot Times</h3>
       <p class="blog-meta">Jan 28, 2026 • 5 min read</p>
@@ -331,7 +413,7 @@
       <a href="/blog/disable-startup-programs/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 6 -->
+    <!-- Article 6: Windows Debloater -->
     <div class="blog-card">
       <h3>Windows Debloater: Remove Bloatware Safely</h3>
       <p class="blog-meta">Jan 20, 2026 • 9 min read</p>
@@ -339,18 +421,8 @@
       <a href="/blog/windows-debloater-guide/" class="read-more">Read More →</a>
     </div>
   </div>
-  
-  <!-- Newsletter Section (optional) -->
-  <section style="max-width:600px; margin:50px auto; padding:30px; background:#161b22; border-radius:10px;">
-    <h3 style="color:#00ffcc;">Get New Guides in Your Inbox</h3>
-    <p>Subscribe for free Windows optimization tips and new tool announcements.</p>
-    <form style="display:flex; gap:10px; justify-content:center;">
-      <input type="email" placeholder="Your email" style="padding:10px; border-radius:5px; border:none; flex:1; background:#0d1117; color:#c9d1d9; border:1px solid #58a6ff;">
-      <button type="submit" style="padding:10px 20px; background:#00ffcc; color:#1a1a1a; border:none; border-radius:5px; font-weight:bold; cursor:pointer;">Subscribe</button>
-    </form>
-  </section>
-  
-  <!-- Footer (sama) -->
+   
+  <!-- Footer -->
   <footer>
     <div style="margin-bottom: 10px;">
         <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
@@ -362,7 +434,7 @@
   </footer>
   
   <script>
-    // Matrix effect (sama)
+    // Matrix Digital Rain Effect
     const canvas = document.getElementById('matrixCanvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -392,13 +464,55 @@
       setInterval(drawMatrix, 50);
     }
     
-    // Share functions (sama)
+    // ===== SHARE FUNCTIONS - 7 FUNCTIONS =====
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
-    function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
-    function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
-    function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
-    function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
+    
+    function shareOnFacebook() { 
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); 
+    }
+    
+    function shareOnTikTok() { 
+      // TikTok doesn't have direct share URL, open TikTok upload page
+      window.open('https://www.tiktok.com/upload?lang=en','_blank'); 
+    }
+    
+    function shareOnInstagram() { 
+      // Instagram doesn't have direct web share, open Instagram
+      window.open('https://www.instagram.com/','_blank'); 
+    }
+    
+    function shareOnWhatsApp() { 
+      window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); 
+    }
+    
+    function shareOnTelegram() { 
+      window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); 
+    }
+    
+    function shareOnReddit() { 
+      window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); 
+    }
+    
+    function nativeShare() { 
+      if (navigator.share) { 
+        navigator.share({ 
+          title: document.title, 
+          text: 'Check out these Windows optimization guides from LemonPyHub!', 
+          url: window.location.href 
+        }); 
+      } else { 
+        alert('Web Share not supported in your browser. Please use the specific share buttons above.'); 
+      } 
+    }
+    
+    // Handle resize
+    window.addEventListener('resize', function() {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    });
   </script>
 </body>
 </html>
