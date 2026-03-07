@@ -78,7 +78,7 @@
 
   <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
   
-  <!-- 📱 OG TAGS -->
+  <!-- OG TAGS -->
   <meta property="og:title" content="Download Free Windows Utilities - LemonPyHub">
   <meta property="og:description" content="Download free Windows utilities: Maintenance Tool, DNS Manager, Optimizer, Debloater, Dockers, Winget Tool and more.">
   <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
@@ -88,18 +88,17 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LemonPyHub">
   
-  <!-- 🐦 TWITTER CARD -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Download Free Windows Utilities - LemonPyHub">
   <meta name="twitter:description" content="Free Python tools and Windows utilities for system optimization">
   <meta name="twitter:image" content="https://lemonpyhub.github.io/pic/lemonpy.webp">
 
-  <!-- PERFORMANCE: Preconnect & Preload -->
+  <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
-  <!-- Critical CSS Inlined, non-critical loaded later -->
   <style>
     /* ===== CRITICAL CSS (above the fold) ===== */
     html { height: 100%; scroll-behavior: smooth; }
@@ -283,10 +282,10 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 15px;
-      height: 140px; /* Reduced from 180px */
+      height: 140px;
     }
     .app-icon {
-      width: 120px;  /* Smaller icons */
+      width: 120px;
       height: 120px;
       border-radius: 10px;
       object-fit: cover;
@@ -296,7 +295,7 @@
     .app-image-container:hover .app-icon { transform: scale(1.05); }
     
     .app-title {
-      font-size: 1.2rem; /* Smaller */
+      font-size: 1.2rem;
       font-weight: bold;
       color: #00ffcc;
       margin: 0 0 10px 0;
@@ -304,10 +303,10 @@
     
     .app-description {
       color: #c9d1d9;
-      font-size: 0.85rem; /* Smaller */
+      font-size: 0.85rem;
       line-height: 1.5;
       margin-bottom: 15px;
-      height: 60px; /* Fixed height for consistency */
+      height: 60px;
       overflow: hidden;
       text-align: left;
     }
@@ -315,7 +314,7 @@
     .app-meta {
       display: flex;
       justify-content: space-between;
-      font-size: 0.75rem; /* Smaller */
+      font-size: 0.75rem;
       color: #8b949e;
       margin-bottom: 15px;
     }
@@ -336,7 +335,7 @@
     .download-btn {
       display: block;
       text-align: center;
-      padding: 8px; /* Smaller */
+      padding: 8px;
       background: #21262d;
       color: #00ffcc;
       text-decoration: none;
@@ -344,7 +343,7 @@
       border: 1px solid #00ffcc;
       font-weight: bold;
       transition: all 0.3s ease;
-      font-size: 0.85rem; /* Smaller */
+      font-size: 0.85rem;
     }
     .download-btn:hover, .download-btn:focus {
       background: #00ffcc;
@@ -355,13 +354,13 @@
     .details-btn {
       display: block;
       text-align: center;
-      padding: 6px; /* Smaller */
+      padding: 6px;
       background: transparent;
       color: #58a6ff;
       text-decoration: none;
       border-radius: 6px;
       border: 1px solid #58a6ff;
-      font-size: 0.75rem; /* Smaller */
+      font-size: 0.75rem;
       transition: all 0.3s ease;
       cursor: pointer;
     }
@@ -377,7 +376,7 @@
       margin-top: 15px;
       padding-top: 10px;
       border-top: 1px solid #30363d;
-      font-size: 0.7rem; /* Smaller */
+      font-size: 0.7rem;
       color: #8b949e;
     }
     
@@ -454,7 +453,7 @@
       flex-wrap: wrap;
     }
     .tool-img {
-      max-width: 200px; /* Smaller */
+      max-width: 200px;
       border-radius: 12px;
       cursor: pointer;
       box-shadow: 0 3px 10px rgba(0,0,0,0.5);
@@ -560,7 +559,7 @@
     }
   </style>
   
-  <!-- Non-critical fonts loaded asynchronously -->
+  <!-- Non-critical fonts -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
   
@@ -617,6 +616,8 @@
         <button class="filter-btn" data-filter="optimization">Optimization</button>
         <button class="filter-btn" data-filter="network">Network</button>
         <button class="filter-btn" data-filter="productivity">Productivity</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="game">Game</button>
       </div>
     </div>
 
@@ -628,13 +629,13 @@
       </div>
     </section>
 
-    <!-- APPS GRID - Coming Soon apps removed -->
+    <!-- APPS GRID - 8 tools only -->
     <div class="apps-grid" id="appsGrid">
       
       <!-- Windows Maintenance Tool -->
       <div class="app-card" data-category="windows optimization" id="app-windows-maintenance">
         <div class="app-image-container">
-          <img src="Windows_Utilities/pic/windows-maintenance-tool.webp" alt="Windows Maintenance Tool" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='Windows_Utilities/pic/windows-maintenance-tool.png'">
+          <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Windows Maintenance Tool</h3>
         <p class="app-description">One-click system cleaner: temp files, SFC, DISM, storage optimization. GUI for beginners.</p>
@@ -656,7 +657,7 @@
       <!-- DNS Manager -->
       <div class="app-card" data-category="network windows" id="app-dns-manager">
         <div class="app-image-container">
-          <img src="DNS_Manager/pic/DNS-Manager.webp" alt="DNS Manager" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='DNS_Manager/pic/DNS-Manager.png'">
+          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">DNS Manager</h3>
         <p class="app-description">Find & set fastest DNS automatically. Switch between Google, Cloudflare, AdGuard with one click.</p>
@@ -677,7 +678,7 @@
       <!-- Windows Optimizer -->
       <div class="app-card" data-category="windows optimization" id="app-windows-optimizer">
         <div class="app-image-container">
-          <img src="Windows_Optimizer/pic/Windows-Optimizer.webp" alt="Windows Optimizer" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='Windows_Optimizer/pic/Windows-Optimizer.png'">
+          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Windows Optimizer</h3>
         <p class="app-description">Disable animations, transparency, background apps. Boost performance on low-end PCs.</p>
@@ -718,7 +719,7 @@
       <!-- Windows Debloater & Privacy -->
       <div class="app-card" data-category="windows optimization" id="app-windows-debloater">
         <div class="app-image-container">
-          <img src="Windows_Debloater_Privacy/pic/windows-debloater.webp" alt="Windows Debloater" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='Windows_Debloater_Privacy/pic/windows-debloater.png'">
+          <img src="Windows_Debloater_Privacy/pic/windows-debloater.png" alt="Windows Debloater" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Windows Debloater</h3>
         <p class="app-description">Remove bloatware, disable telemetry, free up RAM. Restore if needed.</p>
@@ -739,7 +740,7 @@
       <!-- Winget Tool -->
       <div class="app-card" data-category="windows productivity" id="app-winget-tool">
         <div class="app-image-container">
-          <img src="WingetTool/pic/Winget.webp" alt="Winget Tool" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='WingetTool/pic/Winget.png'">
+          <img src="WingetTool/pic/Winget.png" alt="Winget Tool" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Winget Tool</h3>
         <p class="app-description">GUI for Windows Package Manager. Scan, select, and upgrade all apps with progress bars.</p>
@@ -759,7 +760,7 @@
       <!-- Windows Security Manager -->
       <div class="app-card" data-category="windows security" id="app-windows-security-manager">
         <div class="app-image-container">
-          <img src="WinSecurityManager/pic/WinSecurityManager.webp" alt="Windows Security Manager" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='WinSecurityManager/pic/WinSecurityManager.png'">
+          <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Windows Security Manager</h3>
         <p class="app-description">One-click toggle for Defender, Firewall, UAC, BitLocker. Real-time security status.</p>
@@ -779,7 +780,7 @@
       <!-- Math Challenge Pro Game -->
       <div class="app-card" data-category="game kids" id="app-math-challenge">
         <div class="app-image-container">
-          <img src="MathGame/pic/mathgame.webp" alt="Math Challenge Pro Game" class="app-icon" loading="lazy" width="120" height="120" onerror="this.src='MathGame/pic/mathgame.png'">
+          <img src="MathGame/pic/mathgame.png" alt="Math Challenge Pro Game" class="app-icon" loading="lazy" width="120" height="120">
         </div>
         <h3 class="app-title">Math Challenge Pro</h3>
         <p class="app-description">Educational math game for ages 7-12. 4 difficulty levels, leaderboard, profile tracking.</p>
@@ -798,72 +799,314 @@
       
     </div> <!-- End apps-grid -->
 
-    <!-- MODALS (kept but content unchanged) -->
+    <!-- ========== MODALS (8 modals - semua app ada modal) ========== -->
+    
     <!-- Windows Maintenance Tool Modal -->
     <div id="windows-maintenance-modal" class="app-detail-modal">
       <div class="modal-app-content">
         <span class="close-detail">&times;</span>
-        <h2>Windows Maintenance Tool 3.9.7</h2>
+        <h2>Windows Maintenance Tool v3.9.7</h2>
         <div class="tool-content">
           <img src="Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool" class="tool-img" loading="lazy">
           <div class="download-block">
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download>Installer (10.4MB)</a>
-            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download>Portable (11.2MB)</a>
-            <div>Windows 10/11 • Freeware</div>
-            <div>Updated: Sept 2025</div>
-            <div><button onclick="copyHash('sha-wmt')" class="copy-btn">Copy SHA256</button></div>
-            <p><a href="https://www.virustotal.com/gui/file/5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6" target="_blank">VirusTotal (0/98)</a></p>
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Setup_3.9.5.exe" download><i class="fas fa-download"></i> Installer (10.4MB)</a>
+            <a class="btn" href="Windows_Utilities/Windows_Maintenance_Portable_3.9.7.rar" download><i class="fas fa-download"></i> Portable (11.2MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: September 2025</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-wmt')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/98)</a>
+            </div>
             <code id="sha-wmt" style="display:none;">5f48913790ece9da82a8022a5ea816eac9834e509d4dfca348a0a0590eae4ab6</code>
           </div>
         </div>
         <div class="tool-description">
-          <p>All-in-one system care: temp file cleaner, SFC, DISM, disk health, storage optimizer. Perfect for beginners.</p>
-          <p>📖 <a href="/blog/best-free-optimizers-windows-11/">Read our full review</a></p>
+          <p><strong>Simplify essential system care tasks with a single click instead of complex commands.</strong></p>
+          <p>This Windows Maintenance Tool is designed to simplify essential system care tasks. Instead of typing complex commands in Command Prompt, you can now perform them with a single click.</p>
+          <h3>Key features include:</h3>
+          <ul>
+            <li>Clearing temporary and prefetch files</li>
+            <li>Emptying the Recycle Bin</li>
+            <li>Running System File Checker (SFC)</li>
+            <li>Running Deployment Image Servicing and Management (DISM)</li>
+            <li>Drive Health Check</li>
+            <li>Optimize Storage</li>
+          </ul>
+          <p>📖 <a href="/blog/best-free-optimizers-windows-11/" style="color:#58a6ff;">Read our full review</a></p>
         </div>
       </div>
     </div>
 
-    <!-- Other modals remain with same structure (omitted for brevity but keep all in final) -->
-    <!-- ... (sambungan modal lain) ... -->
+    <!-- DNS Manager Modal -->
+    <div id="dns-manager-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>DNS Manager v1.0</h2>
+        <div class="tool-content">
+          <img src="DNS_Manager/pic/DNS-Manager.png" alt="DNS Manager" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="DNS_Manager/DNS_Manager.rar" download><i class="fas fa-download"></i> Portable (24.6MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: September 2025</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-dns')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/f4ff4d285fe8c37c2b809bb5d03d941ad0181ae1e42776f4d9c508347101c9f7" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/98)</a>
+            </div>
+            <code id="sha-dns" style="display:none;">f4ff4d285fe8c37c2b809bb5d03d941ad0181ae1e42776f4d9c508347101c9f7</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>DNS Manager lets you easily find and set the fastest DNS for your system—no need to manually enter IP addresses. Scan, compare, and choose from Google, Cloudflare, AdGuard, and other free DNS providers. Switch to a single DNS or multiple DNS servers with just one click—fast, simple, and secure.</p>
+          <h3>Key features include:</h3>
+          <ul>
+            <li>Scan and benchmark DNS speeds</li>
+            <li>Compare multiple DNS options</li>
+            <li>Set your preferred DNS instantly</li>
+            <li>Supports multiple DNS selections</li>
+            <li>One-click DNS switching</li>
+          </ul>
+          <p>📖 <a href="/blog/speed-up-internet-dns/" style="color:#58a6ff;">Read our DNS guide</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows Optimizer Modal -->
+    <div id="windows-optimizer-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Windows Optimizer v1.0</h2>
+        <div class="tool-content">
+          <img src="Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="Windows_Optimizer/Windows_Optimizer.rar" download><i class="fas fa-download"></i> Portable (27.2MB)</a>
+            <div><strong>Windows 7/8/10/11</strong> • Freeware</div>
+            <div>Updated: September 2025</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-wopt')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/4e42b76a1cd1c801561b4e4b2c057b044aa27dff4ce6677c36365e4d3c28d9bc" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/98)</a>
+            </div>
+            <code id="sha-wopt" style="display:none;">4e42b76a1cd1c801561b4e4b2c057b044aa27dff4ce6677c36365e4d3c28d9bc</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>The Windows Optimizer application represents a sophisticated Windows system optimization tool designed to enhance performance through systematic configuration management.</p>
+          <h3>Tweak enable/disable:</h3>
+          <ul>
+            <li>Visual Effects</li>
+            <li>Background Apps</li>
+            <li>Taskbar Small Icons</li>
+            <li>Transparency Effects</li>
+            <li>Search Indexing</li>
+            <li>Create Backup Settings</li>
+            <li>Rollback system</li>
+          </ul>
+          <p>📖 <a href="/blog/best-free-optimizers-windows-11/#windows-optimizer" style="color:#58a6ff;">See it in our top 5 list</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dockers Modal -->
+    <div id="dockers-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Dockers v1.0</h2>
+        <div class="tool-content">
+          <img src="Dockers/pic/dockers.webp" alt="Dockers" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="Dockers/DockersSetup.rar" download><i class="fas fa-download"></i> Installer (24.9MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: October 2025</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-dockers')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/url/e3c238dc6fb3abbf4f844b14da449c1841fa5f4faf2ac0b35f8fec796af6592b" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/98)</a>
+            </div>
+            <code id="sha-dockers" style="display:none;">2cdee2f7561f9723ec12cee6696e472240a2d797f64707e6a66bc84d6312baf3</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>LemonPy Dockers provides instant access to your favorite folders with a sleek, auto-hiding dock. Customize 7 shortcut buttons with your preferred icons for quick navigation. The dock intelligently appears when needed and hides automatically. Easily enable or disable the entire dock by pressing <strong>Ctrl+Shift+L</strong> key.</p>
+          <h3>Features:</h3>
+          <ul>
+            <li>7 Customizable Folder Shortcuts</li>
+            <li>Auto-Hide/Show Function</li>
+            <li>Custom Icon Support</li>
+            <li>Quick Enable/Disable (Ctrl+Shift+L)</li>
+            <li>Multiple Screen Position</li>
+            <li>Transparency Control</li>
+            <li>System Tray Integration</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows Debloater Modal -->
+    <div id="windows-debloater-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Windows Debloater & Privacy v1.2</h2>
+        <div class="tool-content">
+          <img src="Windows_Debloater_Privacy/pic/windows-debloater.png" alt="Windows Debloater" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="Windows_Debloater_Privacy/Windows_Debloater_Privacy.rar" download><i class="fas fa-download"></i> Portable (28.5MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: January 2026</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-wdp')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/c6a2f1e9ee17f79db71ea6148de1da186a299f06d331b6bad947b8684aefbe0f" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/65)</a>
+            </div>
+            <code id="sha-wdp" style="display:none;">c6a2f1e9ee17f79db71ea6148de1da186a299f06d331b6bad947b8684aefbe0f</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>LemonPyHub Windows Debloater is a powerful utility designed to optimize system performance and reclaim privacy. Key features include one-click bloatware removal, telemetry disabling to block Microsoft data collection, and a restore center. It effectively frees up RAM and CPU resources, ensuring a faster, cleaner, and more secure PC.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li><strong>Bloatware Removal:</strong> Uninstall pre-installed system apps</li>
+            <li><strong>Telemetry Disabling:</strong> Block data collection</li>
+            <li><strong>Restore Center:</strong> Reinstall removed apps</li>
+            <li><strong>Resource Optimization:</strong> Free up RAM and CPU</li>
+          </ul>
+          <p>📖 <a href="/blog/best-free-optimizers-windows-11/#windows-debloater" style="color:#58a6ff;">Read our blog post</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Winget Tool Modal -->
+    <div id="winget-tool-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Winget Tool v1.0</h2>
+        <div class="tool-content">
+          <img src="WingetTool/pic/Winget.png" alt="Winget Tool" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="WingetTool/WingetTool.rar" download><i class="fas fa-download"></i> Portable (35.2MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: October 2025</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-winget')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/98)</a>
+            </div>
+            <code id="sha-winget" style="display:none;">0ffb99b3884c36fbad0b3dd7e94897fb8d609df5e09f01fa9b609a8fb71d9f2e</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>WingetTool is a modern GUI utility for managing Windows package updates via Winget. It scans available updates, allows selective or full upgrades with progress tracking, and displays real-time logs. Features include dark theme, progress bars, blinking status alerts, and admin auto-elevation for seamless software maintenance.</p>
+          <h3>Features:</h3>
+          <ul>
+            <li>One-click Winget scan for available updates</li>
+            <li>Upgrade selected or all apps easily</li>
+            <li>Real-time progress bars and logs</li>
+            <li>Dark modern interface with blinking status alerts</li>
+            <li>Auto admin elevation for system access</li>
+            <li>Cancel operation anytime</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows Security Manager Modal -->
+    <div id="windows-security-manager-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Windows Security Manager v3.0</h2>
+        <div class="tool-content">
+          <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="WinSecurityManager/WindowsSecurityManager.rar" download><i class="fas fa-download"></i> Portable (29.1MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: February 2026</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-wsm')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/file/e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/94)</a>
+            </div>
+            <code id="sha-wsm" style="display:none;">e468d622cd377924c8715d1d4a0ffbb74294e948d78d5c2a18030044f52c031f</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>Take command of your system's safety with this all-in-one security management solution. It puts you in complete control of eight critical Windows security features, including Windows Defender, Firewall, Remote Desktop, UAC, Windows Update, SmartScreen, Core Isolation, and BitLocker Encryption.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li><strong>One-Click Control:</strong> Instantly check, enable, or disable any security feature</li>
+            <li><strong>Real-Time Monitoring:</strong> Track all security changes via detailed activity log</li>
+            <li><strong>Advanced Protection:</strong> Create security backups and restore points</li>
+            <li><strong>Smart PowerShell Integration:</strong> Executes commands silently with auto-admin</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Math Challenge Pro Game Modal -->
+    <div id="math-challenge-pro-game-modal" class="app-detail-modal">
+      <div class="modal-app-content">
+        <span class="close-detail">&times;</span>
+        <h2>Math Challenge Pro Game v2.0</h2>
+        <div class="tool-content">
+          <img src="MathGame/pic/mathgame.png" alt="Math Challenge Pro Game" class="tool-img" loading="lazy">
+          <div class="download-block">
+            <a class="btn" href="MathGame/MathChallengeProGame.rar" download><i class="fas fa-download"></i> Portable (30.3MB)</a>
+            <div><strong>Windows 10/11</strong> • Freeware</div>
+            <div>Updated: February 2026</div>
+            <div style="margin-top:10px;">
+              <button onclick="copyHash('sha-math')" class="copy-btn">Copy SHA256</button>
+              <a href="https://www.virustotal.com/gui/url/00c7fadb67791aed03bc7729cfaa90895ce469c1a7c3c818c5931225890f3904/details" target="_blank" style="color:#58a6ff; margin-left:10px;">VirusTotal (0/94)</a>
+            </div>
+            <code id="sha-math" style="display:none;">2e0e8fbd4e063ceb9ad1e12b3f6f8723f70247590025fd9d5e57fbce1c20cff3</code>
+          </div>
+        </div>
+        <div class="tool-description">
+          <p>Master mathematics while having the time of your life! <strong>Math Challenge Pro</strong> is the ultimate interactive educational game specifically designed for primary school students aged 7 to 12. Transforming "boring" study into a high-stakes competition, this app empowers kids to go from "Zero to Hero" by mastering essential math operations through fun, timed challenges.</p>
+          <h3>Key Features:</h3>
+          <ul>
+            <li><strong>Dynamic Difficulty Levels:</strong> Four distinct levels from Basic to Expert</li>
+            <li><strong>Adaptive Challenges:</strong> Choose between Beginner, Intermediate, and Advance modes</li>
+            <li><strong>Real-Time Scoring:</strong> Earn higher points by answering faster</li>
+            <li><strong>Local Leaderboard:</strong> Track progress and compete with friends</li>
+            <li><strong>Profile Management:</strong> Create custom profiles that track performance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   </main>
 
   <footer>
     <div style="margin-bottom: 10px;">
-      <a href="/helpfaq/#privacy-policy" style="color: #58a6ff;">Privacy Policy</a> | 
-      <a href="/helpfaq/#disclaimer" style="color: #58a6ff;">Disclaimer</a> | 
-      <a href="/manual/" style="color: #58a6ff;">Support</a>
+      <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+      <a href="/helpfaq/#disclaimer" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Disclaimer</a> | 
+      <a href="/manual/" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Support</a>
     </div>
     <p>Disclaimer: LemonPyHub is not affiliated with Microsoft. Windows is a registered trademark of Microsoft Corporation.</p>
     <div class="powered">Powered by LΣⱮØπPyHub 2026 - Free Tools for Everyone</div>
   </footer>
 
-  <!-- JavaScript (condensed) -->
+  <!-- JavaScript -->
   <script>
     // Matrix effect
     const canvas = document.getElementById('matrixCanvas');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth; canvas.height = window.innerHeight;
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
-    const fontSize = 14; const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
-    function drawMatrix() {
-      ctx.fillStyle = 'rgba(10,10,10,0.04)'; ctx.fillRect(0,0,canvas.width,canvas.height);
-      ctx.fillStyle = '#00ffcc'; ctx.font = fontSize+'px monospace';
-      for (let i=0; i<drops.length; i++) {
-        const text = chars[Math.floor(Math.random()*chars.length)];
-        ctx.fillText(text, i*fontSize, drops[i]*fontSize);
-        if (drops[i]*fontSize > canvas.height && Math.random()>0.975) drops[i]=0;
-        drops[i]++;
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth; canvas.height = window.innerHeight;
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+      const fontSize = 14; const columns = canvas.width / fontSize;
+      const drops = Array(Math.floor(columns)).fill(1);
+      function drawMatrix() {
+        ctx.fillStyle = 'rgba(10,10,10,0.04)'; ctx.fillRect(0,0,canvas.width,canvas.height);
+        ctx.fillStyle = '#00ffcc'; ctx.font = fontSize+'px monospace';
+        for (let i=0; i<drops.length; i++) {
+          const text = chars[Math.floor(Math.random()*chars.length)];
+          ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+          if (drops[i]*fontSize > canvas.height && Math.random()>0.975) drops[i]=0;
+          drops[i]++;
+        }
       }
+      setInterval(drawMatrix, 50);
+      window.addEventListener('resize', ()=>{ canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
     }
-    setInterval(drawMatrix, 50);
-    window.addEventListener('resize', ()=>{ canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
 
     // Share functions
     function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`); }
-    function shareOnTikTok() { navigator.clipboard.writeText(location.href).then(()=>alert('Link copied!')); }
-    function shareOnInstagram() { navigator.clipboard.writeText(location.href).then(()=>alert('Link copied!')); }
+    function shareOnTikTok() { navigator.clipboard.writeText(location.href).then(()=>alert('Link copied for TikTok!')); }
+    function shareOnInstagram() { navigator.clipboard.writeText(location.href).then(()=>alert('Link copied for Instagram!')); }
     function shareOnWhatsApp() { window.open(`https://wa.me/?text=${encodeURIComponent('Check out LemonPyHub free tools: '+location.href)}`); }
     function shareOnTelegram() { window.open(`https://t.me/share/url?url=${encodeURIComponent(location.href)}&text=Free Windows Utilities`); }
     function shareOnReddit() { window.open(`https://reddit.com/submit?url=${encodeURIComponent(location.href)}&title=Free Windows Utilities`); }
@@ -892,38 +1135,92 @@
       btn.classList.add('active');
       filterApps();
     }));
-    searchInput.addEventListener('input', filterApps);
+    if (searchInput) searchInput.addEventListener('input', filterApps);
 
-    // Modal handling
+    // Image modal (click to enlarge)
     const modal = document.getElementById("imgModal");
+    if (!modal) {
+      // Create modal if not exists (just in case)
+      const newModal = document.createElement('div');
+      newModal.id = 'imgModal';
+      newModal.className = 'modal';
+      newModal.innerHTML = '<span class="modal-close">&times;</span><img class="modal-content" id="modalImage" src="#" alt="Enlarged">';
+      document.body.appendChild(newModal);
+    }
     const modalImg = document.getElementById("modalImage");
-    document.querySelectorAll('.tool-img').forEach(img => img.onclick = ()=>{ modal.style.display='flex'; modalImg.src=img.src; });
-    document.querySelector('.modal-close')?.addEventListener('click', ()=> modal.style.display='none');
-    window.onclick = e => { if(e.target===modal) modal.style.display='none'; };
+    document.querySelectorAll('.tool-img').forEach(img => {
+      img.onclick = function() {
+        const modal = document.getElementById('imgModal');
+        const modalImg = document.getElementById('modalImage');
+        if (modal && modalImg) {
+          modal.style.display = 'flex';
+          modalImg.src = this.src;
+        }
+      };
+    });
+    document.querySelector('.modal-close')?.addEventListener('click', ()=>{
+      document.getElementById('imgModal').style.display = 'none';
+    });
+    window.onclick = e => {
+      const modal = document.getElementById('imgModal');
+      if (e.target === modal) modal.style.display = 'none';
+    };
 
+    // Details buttons
     document.querySelectorAll('.details-btn').forEach(btn => {
-      btn.addEventListener('click', function(){
-        const appId = this.dataset.app;
-        const modal = document.getElementById(appId+'-modal');
-        if(modal) modal.style.display='block';
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const appId = this.getAttribute('data-app');
+        const modal = document.getElementById(appId + '-modal');
+        if (modal) {
+          modal.style.display = 'block';
+          modal.scrollTop = 0;
+        } else {
+          console.warn('Modal not found:', appId + '-modal');
+        }
       });
     });
+
+    // Close buttons for modals
     document.querySelectorAll('.close-detail').forEach(btn => {
-      btn.addEventListener('click', function(){ this.closest('.app-detail-modal').style.display='none'; });
+      btn.addEventListener('click', function() {
+        this.closest('.app-detail-modal').style.display = 'none';
+      });
     });
-    window.addEventListener('click', e => {
-      document.querySelectorAll('.app-detail-modal').forEach(m => { if(e.target===m) m.style.display='none'; });
+
+    // Click outside modal to close
+    window.addEventListener('click', function(e) {
+      document.querySelectorAll('.app-detail-modal').forEach(modal => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      });
     });
-    document.addEventListener('keydown', e => {
-      if(e.key==='Escape') {
-        document.querySelectorAll('.app-detail-modal, .modal').forEach(m => m.style.display='none');
+
+    // Escape key to close modals
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.app-detail-modal, .modal').forEach(m => m.style.display = 'none');
       }
     });
 
-    function copyHash(id) {
-      const text = document.getElementById(id)?.innerText;
-      if(text) navigator.clipboard.writeText(text).then(()=>alert('SHA256 copied!'));
-    }
+    // Copy hash function
+    window.copyHash = function(id) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => alert('SHA256 copied!'));
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('SHA256 copied!');
+      }
+    };
   </script>
 
   <!-- Schema Markup for SoftwareApplication (ItemList) -->
@@ -1019,6 +1316,11 @@
 
   <!-- Google Analytics -->
   <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-Q9HFE57YHB');</script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB');
+  </script>
 </body>
 </html>
