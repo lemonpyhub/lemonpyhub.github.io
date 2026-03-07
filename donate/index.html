@@ -27,7 +27,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Support LemonPyHub - Donate to Free Python Tools & Applications</title>
-  <meta name="description" content="Support LemonPyHub's free Python tools development. Donate via Touch 'n Go, DuitNow (Malaysia) or Buy Me a Coffee (International). Help maintain DNS Manager, Windows Optimizer, and system utilities.">
+  <meta name="description" content="Support LemonPyHub's free Python tools development. Donate via Buy Me a Coffee. Help maintain DNS Manager, Windows Optimizer, and system utilities.">
   <meta name="keywords" content="donate LemonPyHub, support Python tools, free software donation, Windows optimizer support, open source funding">
 
   <link rel="icon" href="../pic/favicon.ico" type="image/x-icon">
@@ -265,11 +265,6 @@
     .fade-in.delay-3 { animation-delay: 0.9s; }
     .fade-in.delay-4 { animation-delay: 1.2s; }
 
-    #qr-container { display: flex; justify-content: center; gap: 40px; margin-top: 20px; flex-wrap: wrap; }
-    #qr-container div { text-align: center; }
-    #qr-container img { width: 350px; height: auto; border-radius: 10px; box-shadow: 0 0 12px rgba(88,166,255,0.4); transition: transform 0.3s ease, box-shadow 0.3s ease; }
-    #qr-container img:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(88,166,255,0.7); }
-
     .share-container {
       position: fixed;
       top: 50%;
@@ -341,8 +336,6 @@
       .intro-box, .content-section { font-size: 14px; padding: 20px; margin: 15px auto; }
       .share-container { right: 8px; gap: 10px; }
       .share-btn { width: 40px; height: 40px; font-size: 18px; min-width: 44px; min-height: 44px; }
-      #qr-container { gap: 20px; }
-      #qr-container img { width: 280px; }
       #matrixCanvas { display: none; }
     }
 
@@ -352,7 +345,6 @@
       .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
       nav { gap: 6px; }
       .share-btn { width: 38px; height: 38px; font-size: 17px; min-width: 44px; min-height: 44px; }
-      #qr-container img { width: 250px; }
     }
 
     @media (max-width: 360px) {
@@ -362,7 +354,6 @@
       nav { gap: 4px; }
       .share-btn { width: 35px; height: 35px; font-size: 16px; min-width: 44px; min-height: 44px; }
       .share-container { gap: 8px; }
-      #qr-container img { width: 220px; }
     }
   </style>
 </head>
@@ -426,14 +417,23 @@
     </div>
 
     <div class="content-section fade-in delay-4">
-      <h2>Choose Your Donation Method</h2>
-      <p id="msg">Detecting your location for localized donation options...</p>
-
-      <div id="donate-container">
-        <!-- Loading state - will be replaced by JavaScript -->
-        <div style="text-align: center; padding: 20px;">
-          <p>Loading donation options based on your location...</p>
-        </div>
+      <h2>Support Us with Buy Me a Coffee</h2>
+      
+      <!-- Donation container - Now only shows Buy Me a Coffee -->
+      <div id="donate-container" style="text-align: center; padding: 20px 0;">
+        <p style="margin-bottom: 25px;">🌍 Thank you for supporting free and open-source software!</p>
+        <a href="https://buymeacoffee.com/lemonpy" target="_blank" rel="noopener noreferrer" aria-label="Support LemonPyHub on Buy Me a Coffee">
+          <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
+               alt="Buy Me A Coffee - Support LemonPyHub Development" 
+               height="70" 
+               style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); transition: transform 0.3s ease;" 
+               onmouseover="this.style.transform='scale(1.05)'" 
+               onmouseout="this.style.transform='scale(1)'"
+               loading="lazy">
+        </a>
+        <p style="margin-top: 20px; font-size: 0.9em; color: #8b949e;">
+          Buy Me a Coffee accepts credit/debit cards, PayPal, and international payments.
+        </p>
       </div>
     </div>
 
@@ -442,10 +442,10 @@
       <p>Every donation, regardless of size, makes a difference. Here's what your support achieves:</p>
       
       <ul class="benefits-list">
-        <li><strong>₡5-10</strong> - Helps cover basic hosting for a month</li>
-        <li><strong>₡10-20</strong> - Supports bug fixes and minor updates</li>
-        <li><strong>₡20-50</strong> - Enables development of new features</li>
-        <li><strong>₡50+</strong> - Funds major improvements and new tools</li>
+        <li><strong>$1-3</strong> - Helps cover basic hosting for a month</li>
+        <li><strong>$3-5</strong> - Supports bug fixes and minor updates</li>
+        <li><strong>$5-10</strong> - Enables development of new features</li>
+        <li><strong>$10+</strong> - Funds major improvements and new tools</li>
       </ul>
       
       <p style="text-align: center; margin-top: 20px;">
@@ -537,66 +537,6 @@
       }
     }
 
-    // Optimized location detection
-    function loadDonationOptions() {
-      const container = document.getElementById("donate-container");
-      const msg = document.getElementById("msg");
-
-      // Gunakan API yang paling cepat
-      fetch("https://api.country.is/")
-        .then(res => res.ok ? res.json() : Promise.reject())
-        .then(data => {
-          if (data.country === "MY") {
-            showMalaysianQR();
-          } else {
-            showInternationalCoffee();
-          }
-        })
-        .catch(error => {
-          // Fallback ke language detection
-          const userLanguage = navigator.language || navigator.userLanguage || "";
-          if (userLanguage.includes('ms') || userLanguage.includes('MY') || userLanguage.toLowerCase().includes('malay')) {
-            showMalaysianQR();
-          } else {
-            showInternationalCoffee();
-          }
-        });
-    }
-
-    function showMalaysianQR() {
-      const container = document.getElementById("donate-container");
-      const msg = document.getElementById("msg");
-      
-      msg.innerText = "🇲🇾 Terima kasih! Sumbangan anda menyokong pembangunan tools percuma:";
-      container.innerHTML = `
-        <div id="qr-container">
-          <div>
-            <p><strong>Touch 'n Go eWallet</strong></p>
-            <img src="../donate/pic/tng.jpg" alt="Touch 'n Go eWallet QR Code for LemonPyHub donations" loading="lazy" width="350" height="350">
-          </div>
-          <div>
-            <p><strong>DuitNow QR</strong></p>
-            <img src="../donate/pic/duitnow.jpg" alt="DuitNow QR Code for LemonPyHub donations" loading="lazy" width="350" height="350">
-          </div>
-        </div>
-      `;
-    }
-
-    function showInternationalCoffee() {
-      const container = document.getElementById("donate-container");
-      const msg = document.getElementById("msg");
-      
-      msg.innerText = "🌍 Thank you! Your donation supports free tools development:";
-      container.innerHTML = `
-        <div style="text-align: center;">
-          <a href="https://buymeacoffee.com/lemonpy" target="_blank" aria-label="Support LemonPyHub on Buy Me a Coffee">
-            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" 
-                 alt="Buy Me A Coffee - Support LemonPyHub Development" height="60" style="border-radius: 5px;" loading="lazy">
-          </a>
-        </div>
-      `;
-    }
-
     // Share functions
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
@@ -614,10 +554,7 @@
 
     // Initialize dengan performance optimization
     document.addEventListener('DOMContentLoaded', function() {
-      // Load content utama dulu
-      loadDonationOptions();
-      
-      // Then load non-critical features
+      // Matrix effect hanya untuk non-mobile
       setTimeout(() => {
         initMatrix();
       }, 100);
