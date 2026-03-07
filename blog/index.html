@@ -15,17 +15,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="LemonPy">
   
-  <!-- SEO Meta untuk Blog - OPTIMIZED WITH NEW ARTICLE -->
+  <!-- SEO Meta untuk Blog - UPDATED WITH ALL 9 ARTICLES -->
   <title>Blog - Windows Optimization Guides & Tutorials 2026 | LemonPyHub</title>
-  <meta name="description" content="Free guides to optimize Windows 10/11 for low-end PCs. Latest: Windows 11 vs Windows 10 RAM Usage 2026 comparison. Learn how to speed up your computer with free Python tools.">
-  <meta name="keywords" content="windows optimization guide, speed up windows 10, windows 11 low spec, free windows optimizer, pc maintenance tips, windows 11 vs windows 10 ram usage 2026, windows 11 on 4gb ram performance">
+  <meta name="description" content="Free guides to optimize Windows 10/11 for low-end PCs. Latest: Upgrade old PC with SSD + RAM + 4 free tools. Boot time from 4:40 to 45 seconds!">
+  <meta name="keywords" content="windows optimization guide, speed up windows 10, upgrade old pc with ssd, free windows optimizer, pc maintenance tips, ssd upgrade boot time, ram upgrade for windows 11, windows 11 on old hardware">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lemonpyhub.github.io/blog/">
   
   <!-- Open Graph untuk Blog -->
   <meta property="og:type" content="blog">
   <meta property="og:title" content="Blog - Windows Optimization Guides & Tutorials 2026 | LemonPyHub">
-  <meta property="og:description" content="Free guides to optimize Windows 10/11 for low-end PCs. Latest: Windows 11 vs Windows 10 RAM Usage 2026 comparison with benchmarks.">
+  <meta property="og:description" content="Free guides to optimize Windows 10/11 for low-end PCs. Latest: Upgrade old PC with SSD + RAM + 4 free tools. Boot time from 4:40 to 45 seconds!">
   <meta property="og:url" content="https://lemonpyhub.github.io/blog/">
   <meta property="og:image" content="/pic/lemonpyhub-og-image.png">
   <meta property="og:site_name" content="LemonPyHub">
@@ -135,7 +135,7 @@
     
     /* ===== BLOG SPECIFIC CSS ===== */
     
-    /* Featured article - UPDATED STYLE FOR NEW ARTICLE */
+    /* Featured article */
     .featured-article {
       max-width: 1000px;
       margin: 40px auto;
@@ -195,6 +195,41 @@
     .stat-item i {
       color: #00ffcc;
       margin-right: 5px;
+    }
+    
+    /* Before/After mini display */
+    .ba-mini {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    
+    .ba-mini-item {
+      background: #0d1117;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    
+    .ba-mini-item.before {
+      border-left: 3px solid #ff6b6b;
+    }
+    
+    .ba-mini-item.after {
+      border-left: 3px solid #4caf50;
+    }
+    
+    .ba-mini-time {
+      font-size: 1.8rem;
+      font-weight: bold;
+    }
+    
+    .ba-mini-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: #8b949e;
     }
     
     /* Blog post cards */
@@ -278,7 +313,7 @@
       color: #1a1a1a;
     }
     
-    /* Category filter */
+    /* Category filter - UPDATED with hardware */
     .category-filter {
       display: flex;
       justify-content: center;
@@ -350,7 +385,26 @@
       box-shadow: 0 0 20px #00ffcc;
     }
     
-    /* ===== SHARE BUTTONS - 7 BUTTONS WITH HOVER COLORS ===== */
+    /* Call to Action Section */
+    .cta-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #0d1117;
+      border-radius: 12px;
+      border: 1px solid #00ffcc;
+      text-align: center;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin: 25px 0;
+    }
+    
+    /* ===== SHARE BUTTONS ===== */
     .share-container { 
       position: fixed; 
       top: 50%; 
@@ -379,45 +433,14 @@
       outline: none; 
     }
     
-    .share-btn:hover { 
-      transform: scale(1.1); 
-    }
-    
-    /* Individual button hover colors */
-    .share-btn.facebook-btn:hover { 
-      background-color: #1877F2; 
-      box-shadow: 0 0 20px #1877F2; 
-    }
-    
-    .share-btn.tiktok-btn:hover { 
-      background-color: #000000; 
-      box-shadow: 0 0 20px #000000; 
-    }
-    
-    .share-btn.instagram-btn:hover { 
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); 
-      box-shadow: 0 0 20px #d6249f; 
-    }
-    
-    .share-btn.whatsapp-btn:hover { 
-      background-color: #25D366; 
-      box-shadow: 0 0 20px #25D366; 
-    }
-    
-    .share-btn.telegram-btn:hover { 
-      background-color: #0088cc; 
-      box-shadow: 0 0 20px #0088cc; 
-    }
-    
-    .share-btn.reddit-btn:hover { 
-      background-color: #FF4500; 
-      box-shadow: 0 0 20px #FF4500; 
-    }
-    
-    .share-btn.native-share-btn:hover { 
-      background-color: #7e57c2; 
-      box-shadow: 0 0 20px #7e57c2; 
-    }
+    .share-btn:hover { transform: scale(1.1); }
+    .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
+    .tiktok-btn:hover { background-color: #000000; box-shadow: 0 0 20px #000000; }
+    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 0 20px #d6249f; }
+    .whatsapp-btn:hover { background-color: #25D366; box-shadow: 0 0 20px #25D366; }
+    .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
+    .reddit-btn:hover { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
+    .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
     
     /* Footer */
     footer {
@@ -447,13 +470,13 @@
         padding: 3px 30px;
         right: -30px;
       }
+      .ba-mini { flex-direction: column; align-items: flex-start; }
     }
     
     @media (max-width: 480px) {
       body { padding: 15px; padding-right: 65px; }
       h1 { font-size: 2rem; padding: 30px 15px 15px; }
       .share-btn { width: 35px; height: 35px; font-size: 16px; }
-      .featured-stats { flex-direction: column; gap: 10px; }
     }
   </style>
 </head>
@@ -466,7 +489,7 @@
   <!-- Matrix Canvas -->
   <canvas id="matrixCanvas"></canvas>
   
-  <!-- ===== SHARE BUTTONS - 7 BUTTONS WITH HOVER COLORS ===== -->
+  <!-- Share Buttons -->
   <div class="share-container">
     <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook">
       <i class="fab fa-facebook-f"></i>
@@ -508,7 +531,7 @@
   
   <p class="glow" style="text-align:center; font-size:1.2rem;">
     Free guides to optimize Windows 10/11 for low-end PCs.<br>
-    Learn how to speed up your computer with Python tools.
+    Learn how to speed up your computer with hardware upgrades and Python tools.
   </p>
   
   <!-- Navigasi -->
@@ -521,50 +544,80 @@
     <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
   </nav>
   
-  <!-- Category Filter - NEW -->
+  <!-- Category Filter - ADDED HARDWARE -->
   <div class="category-filter">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="comparison">Comparisons</button>
     <button class="filter-btn" data-filter="optimization">Optimization</button>
+    <button class="filter-btn" data-filter="hardware">Hardware</button>
     <button class="filter-btn" data-filter="debloat">Debloat</button>
     <button class="filter-btn" data-filter="maintenance">Maintenance</button>
   </div>
   
-  <!-- FEATURED ARTICLE: Windows 11 vs Windows 10 RAM Usage 2026 (NEW) -->
+  <!-- FEATURED ARTICLE: Need More Speed? Upgrade Your Old PC (NEW) -->
   <section class="featured-article">
     <span style="background:#00ffcc; color:#1a1a1a; padding:3px 10px; border-radius:3px; font-size:0.8rem; font-weight:bold; margin-right:10px;">🚀 NEW 2026</span>
-    <span style="background:#58a6ff; color:#fff; padding:3px 10px; border-radius:3px; font-size:0.8rem; font-weight:bold;">🏆 TOP PERFORMANCE</span>
+    <span style="background:#4caf50; color:#fff; padding:3px 10px; border-radius:3px; font-size:0.8rem; font-weight:bold;">⚡ REAL RESULTS</span>
     
-    <h2>Windows 11 vs Windows 10 RAM Usage 2026: Which is Lighter?</h2>
+    <h2>Need More Speed? Upgrade Your Old PC (SSD + RAM) + 4 Free Tools to Make It Fly</h2>
+    
+    <!-- Before/After Mini Display -->
+    <div class="ba-mini">
+      <div class="ba-mini-item before">
+        <div class="ba-mini-label">BEFORE (HDD + 4GB)</div>
+        <div class="ba-mini-time">4:40</div>
+        <div style="font-size:0.8rem;">boot time</div>
+      </div>
+      <div style="font-size:2rem; color:#58a6ff;">→</div>
+      <div class="ba-mini-item after">
+        <div class="ba-mini-label">AFTER (SSD + 16GB + Tools)</div>
+        <div class="ba-mini-time">0:45</div>
+        <div style="font-size:0.8rem;">boot time</div>
+      </div>
+    </div>
     
     <div class="featured-stats">
-      <span class="stat-item"><i class="fas fa-microchip"></i> Idle RAM: 3.3GB (Win11) vs 2.5GB (Win10)</span>
-      <span class="stat-item"><i class="fas fa-gamepad"></i> Gaming: Win11 4-5% faster</span>
-      <span class="stat-item"><i class="fas fa-memory"></i> 4GB RAM: Win10 recommended</span>
+      <span class="stat-item"><i class="fas fa-clock"></i> 84% faster boot</span>
+      <span class="stat-item"><i class="fas fa-memory"></i> 800MB RAM freed</span>
+      <span class="stat-item"><i class="fas fa-dollar-sign"></i> Only $80 cost</span>
       <span class="stat-item"><i class="fas fa-calendar"></i> Updated: March 2026</span>
     </div>
     
-    <p><strong>Complete comparison with real benchmarks:</strong> We tested Windows 11 25H2 vs Windows 10 22H2 on identical hardware to measure idle RAM consumption, gaming performance, and 4GB RAM usability. Includes data on <strong>windows 11 on 4gb ram performance 2026</strong>, <strong>windows 11 memory usage vs windows 10</strong>, and <strong>windows 11 performance on old hardware</strong>. Plus free tools to optimize your system!</p>
+    <p><strong>My personal story:</strong> My old Dell Inspiron took <strong>4 minutes 40 seconds</strong> to boot. After upgrading to an SSD and 16GB RAM, plus using 4 free tools from LemonPyHub, it now boots in <strong>just 45 seconds</strong>. Here's exactly how I did it, including step-by-step instructions and real benchmarks.</p>
     
     <div style="display: flex; gap: 15px; flex-wrap: wrap; margin: 25px 0;">
-      <a href="/blog/windows-11-vs-10-ram-usage-2026/" class="read-more" style="background:#00ffcc; color:#1a1a1a; padding:12px 30px;">📊 Read Full Comparison →</a>
-      <a href="/download/#Windows-Optimizer" class="read-more" style="border-color:#58a6ff; color:#58a6ff;">⚡ Download Free Optimizer</a>
+      <a href="/blog/upgrade-old-pc-speed-ssd-ram/" class="read-more" style="background:#00ffcc; color:#1a1a1a; padding:12px 30px;">📖 Read My Story →</a>
+      <a href="/download/" class="read-more" style="border-color:#58a6ff; color:#58a6ff;">⚡ Download Free Tools</a>
     </div>
     
     <!-- Quick preview of tools mentioned -->
     <div style="background:#0d1117; padding:15px; border-radius:8px; margin-top:20px;">
-      <p style="margin:0; font-size:0.9rem;"><i class="fas fa-tools" style="color:#00ffcc;"></i> <strong>Free tools to reduce RAM usage:</strong> 
+      <p style="margin:0; font-size:0.9rem;"><i class="fas fa-tools" style="color:#00ffcc;"></i> <strong>Free tools used in this guide:</strong> 
         <a href="/download/#Windows-Debloater-&-Privacy" style="color:#58a6ff;">Windows Debloater</a> • 
         <a href="/download/#Windows-Optimizer" style="color:#58a6ff;">Windows Optimizer</a> • 
-        <a href="/download/#Windows-Maintenance-Tool" style="color:#58a6ff;">Maintenance Tool</a>
+        <a href="/download/#Windows-Maintenance-Tool" style="color:#58a6ff;">Maintenance Tool</a> • 
+        <a href="/download/#Windows-Security-Manager" style="color:#58a6ff;">Security Manager</a>
       </p>
     </div>
   </section>
   
-  <!-- Blog Posts Grid -->
+  <!-- Blog Posts Grid - ALL 9 ARTICLES -->
   <div class="blog-grid">
     
-    <!-- Article 1: Windows 11 vs Windows 10 RAM Usage (DUPLICATE IN GRID - VISIBLE IN ALL) -->
+    <!-- Article 1: Upgrade Old PC (NEW) - First in grid -->
+    <div class="blog-card" data-category="hardware optimization">
+      <div class="blog-tags">
+        <span class="blog-tag">#hardware</span>
+        <span class="blog-tag">#ssd</span>
+        <span class="blog-tag">#ram</span>
+      </div>
+      <h3>Need More Speed? Upgrade Your Old PC (SSD + RAM) + 4 Free Tools</h3>
+      <p class="blog-meta">March 10, 2026 • 12 min read</p>
+      <p>My old PC booted in 4 min 40 sec. After SSD + 16GB RAM + 4 free tools, it boots in 45 sec. Complete guide with benchmarks and step-by-step instructions.</p>
+      <a href="/blog/upgrade-old-pc-speed-ssd-ram/" class="read-more">Read My Story →</a>
+    </div>
+    
+    <!-- Article 2: Windows 11 vs Windows 10 RAM Usage -->
     <div class="blog-card" data-category="comparison">
       <div class="blog-tags">
         <span class="blog-tag">#comparison</span>
@@ -573,11 +626,11 @@
       </div>
       <h3>Windows 11 vs Windows 10 RAM Usage 2026: Which is Lighter?</h3>
       <p class="blog-meta">March 5, 2026 • 15 min read</p>
-      <p>Complete comparison of Windows 11 25H2 vs Windows 10 22H2. Includes idle RAM consumption (3.3GB vs 2.5GB), gaming benchmarks (+4-5% for Win11), and 4GB RAM performance tests. Plus free optimization tools.</p>
+      <p>Complete comparison of Windows 11 25H2 vs Windows 10 22H2. Includes idle RAM consumption (3.3GB vs 2.5GB), gaming benchmarks (+4-5% for Win11), and 4GB RAM performance tests.</p>
       <a href="/blog/windows-11-vs-10-ram-usage-2026/" class="read-more">Read Comparison →</a>
     </div>
     
-    <!-- Article 2: Windows 11 vs Windows 10 4GB RAM (Existing) -->
+    <!-- Article 3: Windows 11 vs Windows 10 4GB RAM -->
     <div class="blog-card" data-category="comparison">
       <div class="blog-tags">
         <span class="blog-tag">#comparison</span>
@@ -590,7 +643,7 @@
       <a href="/blog/windows-11-vs-10-4gb-ram/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 3: 5 Best Optimizers -->
+    <!-- Article 4: 5 Best Optimizers -->
     <div class="blog-card" data-category="optimization">
       <div class="blog-tags">
         <span class="blog-tag">#optimizers</span>
@@ -603,7 +656,7 @@
       <a href="/blog/best-free-optimizers-windows-11/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 4: Windows Debloater Guide -->
+    <!-- Article 5: Windows Debloater Guide -->
     <div class="blog-card" data-category="debloat">
       <div class="blog-tags">
         <span class="blog-tag">#debloat</span>
@@ -616,7 +669,7 @@
       <a href="/blog/windows-debloater-guide/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 5: DISM and SFC Commands -->
+    <!-- Article 6: DISM and SFC Commands -->
     <div class="blog-card" data-category="maintenance">
       <div class="blog-tags">
         <span class="blog-tag">#dism</span>
@@ -629,7 +682,7 @@
       <a href="/blog/dism-sfc-commands-guide/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 6: Disable Startup Programs -->
+    <!-- Article 7: Disable Startup Programs -->
     <div class="blog-card" data-category="optimization">
       <div class="blog-tags">
         <span class="blog-tag">#startup</span>
@@ -642,7 +695,7 @@
       <a href="/blog/disable-startup-programs/" class="read-more">Read More →</a>
     </div>
     
-    <!-- Article 7: Clean Junk Files -->
+    <!-- Article 8: Clean Junk Files -->
     <div class="blog-card" data-category="maintenance">
       <div class="blog-tags">
         <span class="blog-tag">#junk-files</span>
@@ -655,6 +708,45 @@
       <a href="/blog/clean-junk-files-automatically/" class="read-more">Read More →</a>
     </div>
     
+    <!-- Article 9: Speed Up Windows 10 8GB RAM (NEW - placeholder) -->
+    <div class="blog-card" data-category="optimization">
+      <div class="blog-tags">
+        <span class="blog-tag">#windows10</span>
+        <span class="blog-tag">#8gb-ram</span>
+        <span class="blog-tag">#optimization</span>
+      </div>
+      <h3>How to Speed Up Windows 10 on 8GB RAM (2026 Guide)</h3>
+      <p class="blog-meta">Coming Soon • 0 min read</p>
+      <p>Optimize Windows 10 for 8GB RAM systems. Tips to reduce memory usage, disable bloatware, and improve performance without hardware upgrades.</p>
+      <a href="#" class="read-more" style="opacity:0.7; pointer-events:none;">Coming Soon</a>
+    </div>
+    
+  </div>
+  
+  <!-- Call to Action Section - DOWNLOAD ALL TOOLS -->
+  <div class="cta-section">
+    <h2 style="color:#00ffcc; text-align:center;">Ready to Speed Up Your PC?</h2>
+    <p style="text-align:center; font-size:1.1rem;">Download all the free tools mentioned in our guides:</p>
+    <div class="cta-buttons">
+      <a href="/download/#Windows-Debloater-&-Privacy" class="read-more" style="background:#58a6ff; border-color:#58a6ff; color:#1a1a1a;">Windows Debloater</a>
+      <a href="/download/#Windows-Optimizer" class="read-more" style="background:#58a6ff; border-color:#58a6ff; color:#1a1a1a;">Windows Optimizer</a>
+      <a href="/download/#Windows-Maintenance-Tool" class="read-more" style="background:#58a6ff; border-color:#58a6ff; color:#1a1a1a;">Maintenance Tool</a>
+      <a href="/download/#Windows-Security-Manager" class="read-more" style="background:#58a6ff; border-color:#58a6ff; color:#1a1a1a;">Security Manager</a>
+    </div>
+    <p style="text-align:center; margin-top:20px;">
+      <a href="/download/" style="color:#00ffcc; font-weight:bold; font-size:1.2rem;">👉 Browse All Free Tools 👈</a>
+    </p>
+  </div>
+  
+  <!-- Newsletter Section -->
+  <div class="newsletter-section">
+    <h3 style="color:#00ffcc;">Get New Optimization Guides</h3>
+    <p>Subscribe for the latest tips to speed up your PC.</p>
+    <div class="newsletter-input">
+      <input type="email" placeholder="your@email.com" aria-label="Email for newsletter">
+      <button>Subscribe</button>
+    </div>
+    <p style="font-size:0.8rem; color:#8b949e; margin-top:15px;">No spam. Unsubscribe anytime.</p>
   </div>
   
   <!-- Footer -->
@@ -699,7 +791,7 @@
       setInterval(drawMatrix, 50);
     }
     
-    // ===== SHARE FUNCTIONS - 7 FUNCTIONS =====
+    // Share Functions
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
     
@@ -739,22 +831,20 @@
       } 
     }
     
-    // ===== CATEGORY FILTER FUNCTIONALITY =====
+    // Category Filter Functionality - UPDATED to handle multiple categories
     document.querySelectorAll('.filter-btn').forEach(button => {
       button.addEventListener('click', function() {
-        // Remove active class from all buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
           btn.classList.remove('active');
         });
-        
-        // Add active class to clicked button
         this.classList.add('active');
         
         const filter = this.getAttribute('data-filter');
         const articles = document.querySelectorAll('.blog-card');
         
         articles.forEach(article => {
-          if (filter === 'all' || article.getAttribute('data-category') === filter) {
+          const categories = article.getAttribute('data-category');
+          if (filter === 'all' || (categories && categories.includes(filter))) {
             article.style.display = 'flex';
           } else {
             article.style.display = 'none';
