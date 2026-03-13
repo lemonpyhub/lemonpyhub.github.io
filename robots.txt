@@ -4,7 +4,8 @@ Allow: /
 Disallow: /_config.yml
 Disallow: /_headers
 Disallow: /README.md
-Disallow: /googlee4b91e620bd47c0c.html
 Disallow: /manifest.json
+
+Allow: /googlee4b91e620bd47c0c.html
 
 Sitemap: https://lemonpyhub.github.io/sitemap.xml
