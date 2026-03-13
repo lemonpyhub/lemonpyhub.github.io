@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <script>
+    (function(w,d,s,l,i){
+      w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});
+      var f=d.getElementsByTagName(s)[0], j=d.createElement(s);
+      j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i;
+      f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P5MN58K4');
+  </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 - Page Not Found | LemonPyHub</title>
+  
+  <meta name="author" content="LemonPy">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#00ffcc">
+
+  <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Critical CSS matched with your index.html */
+    html { height: 100%; }
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: #1a1a1a;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 50px;
+      position: relative;
+    }
+
+    #matrixCanvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.3; }
+
+    .logo-container { position: relative; display: inline-block; margin-bottom: 20px; }
+    
+    .glow, .glow * { color: #00ffcc !important; text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc; }
+
+    h1 {
+      width: 100%; margin: 0 auto 0 auto; font-family: 'Lato', sans-serif; line-height: 1.2; font-size: 5rem;
+      padding: 80px 50px 30px; text-align: center; text-transform: uppercase; color: #00ffcc; letter-spacing: .15em;
+      text-shadow: -1px -1px 1px #00ffcc, 0px 1px 0 #2e2e2e, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      position: relative;
+    }
+
+    h1::after { content: ""; display: block; width: 120px; height: 2px; background: #00ffcc; margin: 30px auto 0 auto; border-radius: 2px; box-shadow: 0 0 6px rgba(0,255,204,0.6); }
+
+    /* Animation for initial content */
+    @keyframes fadeSlideUp { 
+      from { opacity: 0; transform: translateY(30px); } 
+      to { opacity: 1; transform: translateY(0); } 
+    }
+    .fade-in { opacity: 0; animation: fadeSlideUp 1s ease forwards; }
+    .fade-in.delay-1 { animation-delay: 0.3s; }
+    .fade-in.delay-2 { animation-delay: 0.6s; }
+    .fade-in.delay-3 { animation-delay: 0.9s; }
+
+    nav { text-align: center; margin-top: 10px; }
+    .nav-btn { 
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
+      margin: 0 10px 10px 10px; padding: 12px 20px; text-decoration: none; color: #58a6ff; 
+      font-weight: bold; border-radius: 8px; background: #21262d; border: 1px solid #58a6ff; 
+      transition: all 0.3s ease; box-shadow: 0 0 10px rgba(88, 166, 255, 0.7); box-sizing: border-box; 
+      min-width: 140px; max-width: 200px; font-size: 14px; 
+    }
+    .nav-btn:hover { 
+      color: #00ffcc; border-color: #00ffcc; transform: scale(1.05); 
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); animation: pulse 1s infinite; 
+    }
+
+    @keyframes pulse { 
+      0% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0.7); } 
+      70% { transform: scale(1.08); box-shadow: 0 0 0 10px rgba(0,255,204,0); } 
+      100% { transform: scale(1.05); box-shadow: 0 0 0 0 rgba(0,255,204,0); } 
+    }
+
+    .intro-box { 
+      background: #161b22; padding: 25px 20px; margin: 20px auto 10px auto; 
+      max-width: 800px; border-radius: 10px; box-shadow: 0 0 15px rgba(0,255,200,0.3); 
+      text-align: center; font-size: 16px; line-height: 1.6; 
+    }
+
+    .powered { 
+      font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
+      position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
+    }
+    .powered::before { 
+      content: ""; position: absolute; left: -40px; bottom: 0; height: 4px; width: 40px; 
+      background: linear-gradient(90deg, transparent, #00ffcc, transparent); border-radius: 4px; 
+      animation: laser-scan 4s ease-in-out infinite alternate; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+    }
+
+    @keyframes laser-scan { from { left: 0; } to { left: calc(100% - 40px); } }
+
+    @media (max-width: 768px) {
+      body { padding: 20px; }
+      h1 { font-size: 3.2rem; padding: 50px 20px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <canvas id="matrixCanvas"></canvas>
+
+  <header class="logo-container">
+    <img src="/pic/lemonpy.webp" alt="LemonPyHub" style="height:120px; width:auto;" class="fade-in delay-1">
+  </header>
+
+  <main>
+    <h1 class="fade-in delay-2">404 - ERROR</h1>
+
+    <p class="glow fade-in delay-3" style="text-align:center;">
+      SYSTEM_FAILURE: Requested URL not found.<br>
+      The page you are looking for might have been removed or is temporarily unavailable.<br> 
+      Let's get you back to the main console.
+    </p>
+
+    <nav aria-label="404 navigation">
+      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+      <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
+      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+    </nav>
+
+    <section class="intro-box glow fade-in delay-4">
+      <h2 style="color: #00ffcc;">Lost in the Matrix?</h2>
+      <p>
+        It seems like your script took a wrong turn. Don't worry, even the best developers encounter a 404 once in a while. 
+        You can use the navigation buttons above to return to the homepage or browse our free Python tools.
+      </p>
+    </section>
+  </main>
+
+  <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #8b949e; text-align: center;">
+    <div style="margin-bottom: 10px;">
+        <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+        <a href="/helpfaq/#disclaimer" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Disclaimer</a> | 
+        <a href="/manual/" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Support</a>
+    </div>
+    <p>Disclaimer: LemonPyHub is not affiliated with Microsoft. Windows is a registered trademark of Microsoft Corporation.</p>
+    <div class="powered">Powered by LΣⱮØπPyHub 2026 - Free Tools for Everyone</div>
+  </footer>
+
+  <script>
+    // Matrix Digital Rain Effect
+    const canvas = document.getElementById('matrixCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function drawMatrix() {
+      ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#00ffcc';
+      ctx.font = `${fontSize}px 'Fira Code', monospace`;
+      for (let i = 0; i < drops.length; i++) {
+        const text = characters.charAt(Math.floor(Math.random() * characters.length));
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+    setInterval(drawMatrix, 50);
+
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
