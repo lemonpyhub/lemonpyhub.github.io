@@ -322,20 +322,35 @@
 
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   
-  <!-- Matrix Effect Canvas -->
+  <!-- Matrix Canvas -->
   <canvas id="matrixCanvas"></canvas>
-
+  
+  <!-- Share Buttons -->
   <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
-    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
-    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
-    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook">
+      <i class="fab fa-facebook-f"></i>
+    </button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok">
+      <i class="fab fa-tiktok"></i>
+    </button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram">
+      <i class="fab fa-instagram"></i>
+    </button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram">
+      <i class="fab fa-telegram-plane"></i>
+    </button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit">
+      <i class="fab fa-reddit-alien"></i>
+    </button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share">
+      <i class="fas fa-share-alt"></i>
+    </button>
   </div>
 
   <header class="logo-container">
