@@ -432,20 +432,20 @@
       }
     }
 @media (max-width: 480px) {
-  body { padding: 15px; }
+  body { padding: 10px; }
   h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
   .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
   nav { gap: 6px; }
-  .share-container { right: 5px; }  /* ← TAMBAH NI! */
+  .share-container { right: 5px; } 
   .share-btn { width: 38px; height: 38px; font-size: 17px; min-width: 44px; min-height: 44px; }
 }
 
 @media (max-width: 360px) {
-  body { padding: 12px; }
+  body { padding: 8px; }
   h1 { font-size: 2rem; padding: 30px 10px 10px; }
   .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
   nav { gap: 4px; }
-  .share-container { right: 3px; gap: 8px; }  /* ← TAMBAH right: 3px */
+  .share-container { right: 3px; gap: 8px; } 
   .share-btn { width: 35px; height: 35px; font-size: 16px; min-width: 44px; min-height: 44px; }
 }
     
@@ -461,16 +461,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Matrix Effect Canvas -->
   <canvas id="matrixCanvas"></canvas>
-
-  <div class="share-container">
-    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
-    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
-    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
-    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
-    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></button>
-    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit"><i class="fab fa-reddit-alien"></i></button>
-    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
-  </div>
 
   <main id="main-content">
     <div class="logo-container">
@@ -703,5 +693,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
     }
   </script>
+    <div class="share-container">
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()" aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()" aria-label="Share on TikTok"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()" aria-label="Share on Instagram"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()" aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()" aria-label="Share on Telegram"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()" aria-label="Share on Reddit"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
+  </div>
 </body>
 </html>
