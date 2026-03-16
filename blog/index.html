@@ -76,6 +76,17 @@
       position: relative;
     }
     
+	/* Make intro boxes centered */
+      .intro-box {
+      text-align: center;
+      background: #161b22;
+      padding: 25px 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,255,200,0.3);
+      line-height: 1.6;
+    }
+
     #matrixCanvas { 
       position: fixed; 
       top: 0; 
@@ -89,7 +100,7 @@
     .logo-container { 
       position: relative; 
       display: inline-block; 
-      margin-bottom: 20px; 
+      margin-bottom: 5px; 
     }
     
     .glow, .glow * { 
@@ -102,8 +113,8 @@
       margin: 0 auto 0 auto; 
       font-family: 'Lato', sans-serif; 
       line-height: 1.2; 
-      font-size: 4rem;
-      padding: 60px 50px 30px; 
+      font-size: 5rem;
+      padding: 10px 20px 15px;
       text-align: center; 
       text-transform: uppercase; 
       color: #00ffcc; 
@@ -542,14 +553,16 @@
   
   <!-- Logo -->
   <header class="logo-container">
-    <img src="/pic/lemonpy.webp" 
-         alt="LemonPyHub Logo" 
-         width="373" 
-         height="210"
-         style="height:100px; width:auto;">
+    <img src="https://lemonpyhub.github.io/pic/lemonpy.webp" 
+        alt="LemonPyHub Logo - Free Python Tools and Applications" 
+        width="100" 
+        height="56"
+        style="height:60px; width:auto;"
+        class="fade-in delay-1"
+        fetchpriority="high"
+        loading="eager">
   </header>
   
-  <!-- Tajuk Blog -->
   <h1>
     LemonPyHub Blog
     <span style="position:absolute; left:-9999px;">Windows Optimization Guides and Tutorials 2026</span>
@@ -561,14 +574,14 @@
   </p>
   
   <!-- Navigasi -->
-  <nav>
-    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-    <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
-    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-    <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
-    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> FAQ</a>
-    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-  </nav>
+<nav aria-label="Main navigation">
+  <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+  <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
+  <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+  <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+  <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+  <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+</nav><br>
   
   <!-- Category Filter - ADDED HARDWARE -->
   <div class="category-filter">
