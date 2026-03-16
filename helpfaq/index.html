@@ -64,9 +64,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    * {
-  box-sizing: border-box;
-}
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap');
 
     html {
@@ -75,12 +72,13 @@
     }
 
     body {
+      overflow-x: hidden;
       margin: 0;
       padding: 0;
       font-family: 'Fira Code', monospace;
       background: #1a1a1a;
       color: #e8e6e3;
-      text-align: center;
+      text-align: left;
       padding: 50px;
       position: relative;
     }
@@ -114,10 +112,12 @@
       opacity: 0.3;
     }
 
-    .logo-container { 
-      position: relative; 
-      display: inline-block; 
-      margin-bottom: 5px;
+    .logo-container {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
     }
 
     p { 
@@ -165,7 +165,7 @@
       font-family: 'Lato', sans-serif;
       line-height: 1.2;
       font-size: 5rem;
-      padding: 10px 20px 15px;
+      padding: 80px 50px 30px;
       text-align: center;
       text-transform: uppercase;
       text-rendering: optimizeLegibility;
@@ -340,6 +340,26 @@
       z-index: 1000;
     }
 
+    .share-btn {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: white;
+      background-color: #333;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px #00ffcc;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      position: relative;
+      min-width: 44px;
+      min-height: 44px;
+    }
+
     .share-btn { 
       width: 45px; 
       height: 45px; 
@@ -381,34 +401,121 @@
       margin-bottom: 8px;
     }
 
-      /* Media queries */
-      @media (max-width: 768px) {
-        body { padding: 20px; }
-        h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
-        .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 150px; max-width: 180px; padding: 12px 18px; font-size: 13px; }
-        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-        .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
-        .share-container { right: 8px; gap: 10px; }
-        .share-btn { width: 40px; height: 40px; font-size: 18px; }
+    @media (max-width: 768px) {
+      body { 
+        padding: 20px;
       }
+      
+      h1 { 
+        font-size: 3.2rem; 
+        padding: 50px 20px 20px;
+        letter-spacing: .1em;
+      }
+      
+      .nav-btn { 
+        display: inline-block;
+        margin: 8px 10px;
+        width: auto;
+        min-width: 150px;
+        max-width: 180px;
+        padding: 12px 18px;
+        font-size: 13px;
+      }
+      
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+      }
+      
+      .intro-box { 
+        font-size: 14px; 
+        padding: 20px; 
+        margin: 15px auto;
+      }
+      
+      .share-container { 
+        right: 8px; 
+        gap: 10px; 
+      }
+      
+      .share-btn { 
+        width: 40px; 
+        height: 40px; 
+        font-size: 18px;
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
 
-      @media (max-width: 480px) {
-        body { padding: 15px; }
-        h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
-        .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
-        nav { gap: 6px; }
-        .share-container { right: 5px; }
-        .share-btn { width: 38px; height: 38px; font-size: 17px; }
+    @media (max-width: 480px) {
+      body { 
+        padding: 15px;
+        padding-right: 65px;
       }
+      
+      h1 { 
+        font-size: 2.4rem; 
+        padding: 40px 15px 15px;
+      }
+      
+      .nav-btn { 
+        margin: 6px 8px;
+        min-width: 140px;
+        max-width: 160px;
+        padding: 10px 15px;
+        font-size: 12px;
+      }
+      
+      nav {
+        gap: 6px;
+      }
+      
+      .share-btn { 
+        width: 38px; 
+        height: 38px; 
+        font-size: 17px;
+        min-width: 44px;
+        min-height: 44px;
+      }
+    }
 
-      @media (max-width: 360px) {
-        body { padding: 10px; }
-        h1 { font-size: 2rem; padding: 30px 10px 10px; }
-        .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
-        nav { gap: 4px; }
-        .share-container { right: 3px; gap: 8px; }
-        .share-btn { width: 35px; height: 35px; font-size: 16px; }
+    @media (max-width: 360px) {
+      body { 
+        padding: 12px;
+        padding-right: 60px;
       }
+      
+      h1 { 
+        font-size: 2rem; 
+        padding: 30px 10px 10px;
+      }
+      
+      .nav-btn { 
+        margin: 4px 6px;
+        min-width: 130px;
+        max-width: 150px;
+        padding: 8px 12px;
+        font-size: 11px;
+      }
+      
+      nav {
+        gap: 4px;
+      }
+      
+      .share-btn { 
+        width: 35px; 
+        height: 35px; 
+        font-size: 16px;
+        min-width: 44px;
+        min-height: 44px;
+      }
+      
+      .share-container { 
+        gap: 8px; 
+      }
+    }
   </style>
 </head>
 <body>
@@ -432,17 +539,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="share-btn native-share-btn" onclick="nativeShare()" aria-label="Share using native share"><i class="fas fa-share-alt"></i></button>
   </div>
 
-    <header class="logo-container" style="text-align: center; width: 100%;">
-      <img src="https://lemonpyhub.github.io/pic/lemonpy.webp" 
-          alt="LemonPyHub Logo - Free Python Tools and Applications" 
-          width="100" 
-          height="56"
-          style="height:120px; width:auto;"
-          class="fade-in delay-1"
-          fetchpriority="high"
-          loading="eager">
-    </header>
-
+  <main id="main-content">
+    <div class="logo-container">
+      <img src="../pic/lemonpy.png" alt="LemonPyHub Logo - Free Python Tools and Applications" style="height:120px;" class="fade-in delay-1">
+    </div>
+    
     <h1 class="fade-in delay-2" style="text-align:center;">LemonPyHub</h1>
     <p class="glow fade-in delay-3" style="text-align:center;">
       Where coding meets efficiency and innovation <br>
@@ -450,16 +551,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       serving as your hub for advanced system optimization 🚀
     </p><br>
 
-      <!-- Navigasi -->
-      <nav aria-label="Main navigation">
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-      <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
-      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
-      <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
-      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-    </nav><br>
-    <main>
+<nav>
+  <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+  <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
+  <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+  <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+  <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> FAQ</a>
+  <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+</nav>
 
     <div class="intro-box glow fade-in delay-4">
       <h2>Help &amp; Troubleshooting</h2>
@@ -672,3 +771,5 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </script>
 </body>
 </html>
+
+
