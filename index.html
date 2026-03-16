@@ -235,6 +235,7 @@
       gap: 12px; 
       z-index: 1000; 
     }
+    
     .share-btn { 
       width: 45px; 
       height: 45px; 
@@ -260,7 +261,36 @@
     .telegram-btn:hover { background-color: #0088cc; box-shadow: 0 0 20px #0088cc; }
     .reddit-btn:hover { background-color: #FF4500; box-shadow: 0 0 20px #FF4500; }
     .native-share-btn:hover { background-color: #7e57c2; box-shadow: 0 0 20px #7e57c2; }
+    
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      border-top: 1px solid #333;
+      font-size: 0.8em;
+      color: #8b949e;
+      text-align: center;
+    }
+    
+    .powered { 
+      font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
+      position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
+    }
+    .powered::before { 
+      content: ""; position: absolute; left: -40px; bottom: 0; height: 4px; width: 40px; 
+      background: linear-gradient(90deg, transparent, #00ffcc, transparent); border-radius: 4px; 
+      animation: laser-scan 4s ease-in-out infinite alternate; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+    }
 
+    @keyframes laser-scan { 
+      from { left: 0; } 
+      to { left: calc(100% - 40px); } 
+    }
+
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+    .fade-in.delay-5 { animation-delay: 1.5s; }
+    
+    /* Media queries */
     @media (max-width: 768px) {
       body { padding: 20px; padding-right: 70px; }
       h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
