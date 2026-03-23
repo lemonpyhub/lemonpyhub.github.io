@@ -18,64 +18,65 @@
    <meta name="theme-color" content="#00ffcc">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
-    "@graph": [
-      {
-        "@type": "SoftwareApplication",
-        "name": "LemonPyHub Tools Collection",
-        "url": "https://lemonpyhub.github.io/download/",
-        "description": "Free Python scripts, tools, and applications including Windows utilities, DNS Manager, Optimizer, Dockers, and Winget Tool for Windows systems",
-        "applicationCategory": "UtilitiesApplication",
-        "operatingSystem": "Windows 10, Windows 11",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        },
-        "publisher": {
-          "@type": "Organization",
-          "name": "LemonPyHub",
-          "url": "https://lemonpyhub.github.io/",
-          "logo": "https://lemonpyhub.github.io/pic/lemonpy.webp"
-        },
-        "author": {
-          "@type": "Person",
-          "name": "LemonPyHub Developer"
-        }
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "LemonPyHub Tools Collection",
+      "url": "https://lemonpyhub.github.io/download/",
+      "description": "Free Python scripts, tools, and applications including Windows utilities, DNS Manager, Optimizer, Dockers, and Winget Tool for Windows systems",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
       },
-      {
-        "@type": "WebSite",
+      "publisher": {
+        "@type": "Organization",
         "name": "LemonPyHub",
         "url": "https://lemonpyhub.github.io/",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://lemonpyhub.github.io/download/?search={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
+        "logo": "https://lemonpyhub.github.io/pic/lemonpy.webp"
       },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          {
-            "@type": "ListItem",
-            "position": 1,
-            "name": "Home",
-            "item": "https://lemonpyhub.github.io/"
-          },
-          {
-            "@type": "ListItem", 
-            "position": 2,
-            "name": "Download",
-            "item": "https://lemonpyhub.github.io/download/"
-          }
-        ]
+      "author": {
+        "@type": "Person",
+        "name": "LemonPyHub Developer"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "WebSite",
+      "name": "LemonPyHub",
+      "url": "https://lemonpyhub.github.io/",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://lemonpyhub.github.io/download/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://lemonpyhub.github.io/"
+        },
+        {
+          "@type": "ListItem", 
+          "position": 2,
+          "name": "Download",
+          "item": "https://lemonpyhub.github.io/download/"
+        }
+      ]
+    }
+  ]
+}
+</script>
 
   <link rel="icon" href="https://lemonpyhub.github.io/pic/favicon.ico" type="image/x-icon">
   
@@ -551,32 +552,34 @@
     .fade-in.delay-5 { animation-delay: 1.5s; }
     
     /* Media queries */
-    @media (max-width: 768px) {
-      body { padding: 20px; padding-right: 70px; }
-      h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
-      .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 150px; max-width: 180px; padding: 12px 18px; font-size: 13px; }
-      nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-      .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
-      .share-container { right: 8px; gap: 10px; }
-      .share-btn { width: 40px; height: 40px; font-size: 18px; }
-    }
+@media (max-width: 768px) {
+  body { padding: 20px; }
+  h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
+  .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 150px; max-width: 180px; padding: 12px 18px; font-size: 13px; }
+  nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
+  .share-container { right: 8px; gap: 10px; }
+  .share-btn { width: 40px; height: 40px; font-size: 18px; }
+}
 
-    @media (max-width: 480px) {
-      body { padding: 15px; padding-right: 65px; }
-      h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
-      .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
-      nav { gap: 6px; }
-      .share-btn { width: 38px; height: 38px; font-size: 17px; }
-    }
+@media (max-width: 480px) {
+  body { padding: 15px; }
+  h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
+  .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
+  nav { gap: 6px; }
+  /* TIADA PERUBAHAN PADA share-container */
+  .share-btn { width: 38px; height: 38px; font-size: 17px; }
+}
 
-    @media (max-width: 360px) {
-      body { padding: 12px; padding-right: 60px; }
-      h1 { font-size: 2rem; padding: 30px 10px 10px; }
-      .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
-      nav { gap: 4px; }
-      .share-btn { width: 35px; height: 35px; font-size: 16px; }
-      .share-container { gap: 8px; }
-    }
+@media (max-width: 360px) {
+  body { padding: 12px; }
+  h1 { font-size: 2rem; padding: 30px 10px 10px; }
+  .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
+  nav { gap: 4px; }
+  /* TIADA PERUBAHAN PADA share-container */
+  .share-btn { width: 35px; height: 35px; font-size: 16px; }
+  .share-container { gap: 8px; }
+}
   </style>
   
   <!-- Non-critical fonts -->
@@ -826,8 +829,6 @@
       
     </div> <!-- End apps-grid -->
 
-    <!-- ========== MODALS (8 modals - semua app ada modal) ========== -->
-    
     <!-- Windows Maintenance Tool Modal -->
     <div id="windows-maintenance-modal" class="app-detail-modal">
       <div class="modal-app-content">
