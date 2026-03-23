@@ -1352,20 +1352,17 @@
     gtag('config', 'G-Q9HFE57YHB');
     
     // Function to track downloads with short labels
-    function trackDownload(appShortName, fileName) {
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'download', {
-          'event_category': 'Software',
-          'event_label': appShortName,
-          'value': 1,
-          'file_name': fileName
-        });
-        console.log('GA Tracked: ' + appShortName + ' - ' + fileName);
-      } else {
-        console.warn('GA not loaded yet');
-      }
-    }
+function trackDownload(appShortName, fileName) {
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'download_completed', {
+      'event_category': 'Software',
+      'event_label': appShortName,
+      'value': 1,
+      'file_name': fileName
+    });
+    console.log('GA Tracked: ' + appShortName + ' - ' + fileName);
+  }
+}
   </script>
 </body>
 </html>
-
