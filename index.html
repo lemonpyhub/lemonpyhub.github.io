@@ -20,56 +20,57 @@
 
   <!-- 🔹 Primary Structured Data: WebSite, Organization, Person -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": "https://lemonpyhub.github.io/#website",
-        "url": "https://lemonpyhub.github.io/",
-        "name": "LemonPyHub",
-        "description": "LemonPyHub provides free Python tools and Windows utilities (Windows Optimizer, DNS Manager, Winget Tool, Dockers, Windows Maintenance Tool). Download safe, lightweight apps built with Python.",
-        "publisher": {
-          "@id": "https://lemonpyhub.github.io/#organization"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": "https://lemonpyhub.github.io/#organization",
-        "name": "LemonPyHub",
-        "url": "https://lemonpyhub.github.io/",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://lemonpyhub.github.io/pic/lemonpy.webp",
-          "width": 373,
-          "height": 210
-        }
-      },
-      {
-        "@type": "Person",
-        "@id": "https://lemonpyhub.github.io/#person",
-        "name": "LemonPy",
-        "url": "https://lemonpyhub.github.io/",
-        "sameAs": [
-          "https://github.com/lemonpyhub/",
-          "https://www.youtube.com/@lemonpyhub"
-        ]
-      },
-      {
-        "@type": "SoftwareApplication",
-        "name": "LemonPy Windows Optimizer",
-        "operatingSystem": "Windows 10, Windows 11",
-        "applicationCategory": "UtilitiesApplication",
-        "description": "A lightweight Windows optimization tool built with Python to enhance system performance.",
-        "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-        }
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://lemonpyhub.github.io/#website",
+      "url": "https://lemonpyhub.github.io/",
+      "name": "LemonPyHub",
+      "description": "LemonPyHub provides free Python tools and Windows utilities (Windows Optimizer, DNS Manager, Winget Tool, Dockers, Windows Maintenance Tool). Download safe, lightweight apps built with Python.",
+      "publisher": {
+        "@id": "https://lemonpyhub.github.io/#organization"
       }
-    ]
-  }
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://lemonpyhub.github.io/#organization",
+      "name": "LemonPyHub",
+      "url": "https://lemonpyhub.github.io/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lemonpyhub.github.io/pic/lemonpy.webp",
+        "width": 373,
+        "height": 210
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://lemonpyhub.github.io/#person",
+      "name": "LemonPy",
+      "url": "https://lemonpyhub.github.io/",
+      "sameAs": [
+        "https://github.com/lemonpyhub/",
+        "https://www.youtube.com/@lemonpyhub"
+      ]
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "LemonPy Windows Optimizer",
+      "operatingSystem": "Windows 10, Windows 11",
+      "applicationCategory": "UtilitiesApplication",
+      "description": "A lightweight Windows optimization tool built with Python to enhance system performance.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+  ]
+}
   </script>
   <!-- 🔹 Optimized Meta Tags -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
