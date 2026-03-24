@@ -86,10 +86,9 @@
 
     .logo-container {
       position: relative;
-      display: inline-block;
+      display: block;
+      text-align: center; 
       margin-bottom: 20px;
-      text-align: center;
-      width: 100%;
     }
 
     p { 
@@ -137,7 +136,7 @@
       font-family: 'Lato', sans-serif;
       line-height: 1.2;
       font-size: 5rem;
-      padding: 80px 50px 30px;
+      padding: 10px 20px 15px;
       text-align: center;
       text-transform: uppercase;
       text-rendering: optimizeLegibility;
@@ -213,8 +212,7 @@
       font-size: 14px;
     }
 
-    .nav-btn:hover,
-    .nav-btn:focus {
+    .nav-btn:hover, .nav-btn:focus {
       color: #00ffcc;
       border-color: #00ffcc;
       transform: scale(1.05);
@@ -224,14 +222,8 @@
       outline-offset: 2px;
     }
 
-    .nav-btn i {
-      font-size: 1.1em;
-      transition: transform 0.3s ease;
-    }
-
-    .nav-btn:hover i {
-      transform: scale(1.2);
-    }
+    .nav-btn i { font-size: 1.1em; transition: transform 0.3s ease; }
+    .nav-btn:hover i { transform: scale(1.2); }
 
     /* Pulse animation for the entire button */
     @keyframes pulse {
@@ -353,120 +345,32 @@
       margin-bottom: 8px;
     }
 
+    /* Media queries */
     @media (max-width: 768px) {
-      body { 
-        padding: 20px;
-      }
-      
-      h1 { 
-        font-size: 3.2rem; 
-        padding: 50px 20px 20px;
-        letter-spacing: .1em;
-      }
-      
-      .nav-btn { 
-        display: inline-block;
-        margin: 8px 10px;
-        width: auto;
-        min-width: 150px;
-        max-width: 180px;
-        padding: 12px 18px;
-        font-size: 13px;
-      }
-      
-      nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 8px;
-      }
-      
-      .intro-box { 
-        font-size: 14px; 
-        padding: 20px; 
-        margin: 15px auto;
-      }
-      
-      .share-container { 
-        right: 8px; 
-        gap: 10px; 
-      }
-      
-      .share-btn { 
-        width: 40px; 
-        height: 40px; 
-        font-size: 18px;
-        min-width: 44px;
-        min-height: 44px;
-      }
+      body { padding: 20px; }
+      h1 { font-size: 3.2rem; padding: 50px 20px 20px; letter-spacing: .1em; }
+      .nav-btn { display: inline-block; margin: 8px 10px; width: auto; min-width: 150px; max-width: 180px; padding: 12px 18px; font-size: 13px; }
+      nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+      .intro-box { font-size: 14px; padding: 20px; margin: 15px auto; }
+      .share-container { right: 8px; gap: 10px; }
+      .share-btn { width: 40px; height: 40px; font-size: 18px; }
     }
 
     @media (max-width: 480px) {
-      body { 
-        padding: 15px;
-        padding-right: 65px;
-      }
-      
-      h1 { 
-        font-size: 2.4rem; 
-        padding: 40px 15px 15px;
-      }
-      
-      .nav-btn { 
-        margin: 6px 8px;
-        min-width: 140px;
-        max-width: 160px;
-        padding: 10px 15px;
-        font-size: 12px;
-      }
-      
-      nav {
-        gap: 6px;
-      }
-      
-      .share-btn { 
-        width: 38px; 
-        height: 38px; 
-        font-size: 17px;
-        min-width: 44px;
-        min-height: 44px;
-      }
+      body { padding: 15px; padding-right: 65px; }
+      h1 { font-size: 2.4rem; padding: 40px 15px 15px; }
+      .nav-btn { margin: 6px 8px; min-width: 140px; max-width: 160px; padding: 10px 15px; font-size: 12px; }
+      nav { gap: 6px; }
+      .share-btn { width: 38px; height: 38px; font-size: 17px; }
     }
 
     @media (max-width: 360px) {
-      body { 
-        padding: 12px;
-        padding-right: 60px;
-      }
-      
-      h1 { 
-        font-size: 2rem; 
-        padding: 30px 10px 10px;
-      }
-      
-      .nav-btn { 
-        margin: 4px 6px;
-        min-width: 130px;
-        max-width: 150px;
-        padding: 8px 12px;
-        font-size: 11px;
-      }
-      
-      nav {
-        gap: 4px;
-      }
-      
-      .share-btn { 
-        width: 35px; 
-        height: 35px; 
-        font-size: 16px;
-        min-width: 44px;
-        min-height: 44px;
-      }
-      
-      .share-container { 
-        gap: 8px; 
-      }
+      body { padding: 12px; padding-right: 60px; }
+      h1 { font-size: 2rem; padding: 30px 10px 10px; }
+      .nav-btn { margin: 4px 6px; min-width: 130px; max-width: 150px; padding: 8px 12px; font-size: 11px; }
+      nav { gap: 4px; }
+      .share-btn { width: 35px; height: 35px; font-size: 16px; }
+      .share-container { gap: 8px; }
     }
   </style>
 </head>
