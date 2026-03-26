@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P5MN58K4');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="LemonPy">
+  <meta name="google-site-verification" content="8bihwO02fCW81kabobdtGCb_BFokgC_-vNkRihyLwU8">
+  
+  <!-- SEO Meta Tags -->
+  <title>Check PC Specs & Run Performance Test (2026) | Free Windows Optimizer Tools</title>
+  <meta name="description" content="Check your PC hardware specs and run Windows performance benchmark in 2 minutes. Get personalized free tool recommendations based on your CPU, RAM, and SSD scores.">
+  <meta name="keywords" content="check pc specs, windows hardware test, benchmark windows, powershell hardware info, winsat benchmark, speed up pc, free windows optimizer, ssd score, ram usage test, pc performance test">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://lemonpyhub.github.io/blog/check-pc-specs-performance-test/">
+  
+  <!-- SEO Enhancements -->
+  <meta name="article:reading_time" content="4">
+  <meta property="article:modified_time" content="2026-03-26">
+  <meta property="article:published_time" content="2026-03-26">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Check PC Specs & Run Performance Test (2026) | Free Tools Inside">
+  <meta property="og:description" content="Run two simple PowerShell commands to see your full hardware specs and Windows performance scores. Get personalized tool recommendations to speed up your PC.">
+  <meta property="og:url" content="https://lemonpyhub.github.io/blog/check-pc-specs-performance-test/">
+  <meta property="og:image" content="/pic/lemonpyhub-og-image.png">
+  <meta property="og:site_name" content="LemonPyHub">
+  <meta property="article:author" content="LemonPy">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Check PC Specs & Benchmark (2026) | Free Speed-Up Tools">
+  <meta name="twitter:description" content="Run hardware info & performance tests in PowerShell. See CPU, RAM, disk scores and get free tools to optimize your PC.">
+  <meta name="twitter:image" content="/pic/lemonpyhub-og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB');
+  </script>
+  
+  <!-- HowTo Schema for Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "Check PC Specs and Run Performance Test",
+    "description": "Step-by-step guide to check hardware specs and benchmark Windows PC using PowerShell",
+    "totalTime": "PT4M",
+    "estimatedCost": {
+      "@type": "MonetaryAmount",
+      "currency": "USD",
+      "value": "0"
+    },
+    "datePublished": "2026-03-26",
+    "dateModified": "2026-03-26",
+    "supply": [
+      {
+        "@type": "HowToSupply",
+        "name": "Windows PC with PowerShell"
+      }
+    ],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Open PowerShell as Administrator",
+        "text": "Press Windows Key + S, type PowerShell, right-click and select Run as Administrator"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Run Hardware Information Script",
+        "text": "Copy and paste the hardware info script into PowerShell to see CPU, RAM, storage details"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Run Windows Performance Benchmark",
+        "text": "Copy and paste the WinSAT benchmark script to get CPU, RAM, Graphics, and Disk scores"
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Download Recommended Tools",
+        "text": "Based on your scores, download free Windows Optimizer, Debloater, or Maintenance Tool"
+      }
+    ]
+  }
+  </script>
+  
+  <style>
+    /* ===== CRITICAL CSS (Consistent with theme) ===== */
+    html { height: 100%; scroll-behavior: smooth; }
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      font-family: 'Fira Code', monospace;
+      background: #1a1a1a;
+      color: #c9d1d9;
+      text-align: center;
+      padding: 50px;
+      position: relative;
+    }
+    
+    #matrixCanvas { 
+      position: fixed; 
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%; 
+      z-index: -1; 
+      opacity: 0.3; 
+    }
+    
+    .logo-container { 
+      position: relative; 
+      display: inline-block; 
+      margin-bottom: 20px; 
+    }
+    
+    .glow, .glow * { 
+      color: #00ffcc !important; 
+      text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+    }
+    
+    h1 {
+      width: 100%; 
+      margin: 0 auto 0 auto; 
+      font-family: 'Lato', sans-serif; 
+      line-height: 1.2; 
+      font-size: 2.5rem;
+      padding: 40px 30px 20px; 
+      text-align: center; 
+      text-transform: uppercase; 
+      color: #00ffcc; 
+      letter-spacing: .1em;
+      text-shadow: -1px -1px 1px #00ffcc, 0px 1px 0 #2e2e2e, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc;
+      position: relative;
+    }
+    
+    h1::after { 
+      content: ""; 
+      display: block; 
+      width: 120px; 
+      height: 2px; 
+      background: #00ffcc; 
+      margin: 30px auto 0 auto; 
+      border-radius: 2px; 
+      box-shadow: 0 0 6px rgba(0,255,204,0.6); 
+    }
+    
+    h2 { 
+      color: #58a6ff; 
+      font-size: 1.8rem;
+      margin-top: 40px;
+      text-align: left;
+      border-left: 4px solid #00ffcc;
+      padding-left: 20px;
+    }
+    
+    h3 {
+      color: #00ffcc;
+      font-size: 1.3rem;
+      margin-top: 25px;
+      text-align: left;
+    }
+    
+    p {
+      text-align: left;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #c9d1d9;
+    }
+    
+    /* Breadcrumbs */
+    .breadcrumb {
+      background: #0d1117;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin: 15px auto 20px;
+      max-width: 900px;
+      text-align: left;
+      font-size: 0.85rem;
+    }
+    .breadcrumb a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    .breadcrumb a:hover {
+      color: #00ffcc;
+    }
+    .breadcrumb i {
+      color: #00ffcc;
+      font-size: 0.7rem;
+      margin: 0 8px;
+    }
+    .breadcrumb span {
+      color: #00ffcc;
+    }
+    
+    /* Table of Contents */
+    .toc {
+      background: #0d1117;
+      border: 1px solid #58a6ff;
+      border-radius: 12px;
+      padding: 20px 25px;
+      margin: 30px 0;
+    }
+    .toc h3 {
+      margin-top: 0;
+      color: #00ffcc;
+      font-size: 1.2rem;
+      border-left: none;
+      padding-left: 0;
+    }
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .toc li {
+      width: calc(50% - 12px);
+    }
+    .toc a {
+      color: #58a6ff;
+      text-decoration: none;
+      display: block;
+      padding: 8px 12px;
+      background: #161b22;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-size: 0.9rem;
+    }
+    .toc a:hover {
+      color: #00ffcc;
+      transform: translateX(5px);
+      border-left: 2px solid #00ffcc;
+      background: #21262d;
+    }
+    @media (max-width: 600px) {
+      .toc li { width: 100%; }
+    }
+    
+    /* Navigation */
+    nav { text-align: center; margin: 30px 0 20px; }
+    .nav-btn { 
+      position: relative; display: inline-flex; align-items: center; justify-content: center; gap: 8px; 
+      margin: 0 10px 10px 10px; padding: 12px 20px; text-decoration: none; color: #58a6ff; 
+      font-weight: bold; border-radius: 8px; background: #21262d; border: 1px solid #58a6ff; 
+      transition: all 0.3s ease; box-shadow: 0 0 10px rgba(88, 166, 255, 0.7); box-sizing: border-box; 
+      min-width: 140px; font-size: 14px; 
+    }
+    .nav-btn:hover { 
+      color: #00ffcc; border-color: #00ffcc; transform: scale(1.05); 
+      box-shadow: 0 0 20px rgba(0, 255, 204, 0.9); 
+    }
+    
+    /* Article container */
+    .article-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #161b22;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 30px rgba(0, 255, 204, 0.2);
+      border: 1px solid #58a6ff;
+      text-align: left;
+    }
+    
+    .article-meta {
+      color: #8b949e;
+      font-size: 0.9rem;
+      margin: 20px 0;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #333;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: space-between;
+    }
+    .article-meta-left i, .article-meta-right i { color: #00ffcc; margin-right: 5px; }
+    .article-meta-left { display: flex; flex-wrap: wrap; gap: 15px; }
+    
+    /* Info boxes */
+    .tip-box {
+      background: #0d1117;
+      border-left: 4px solid #00ffcc;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .warning-box {
+      background: #0d1117;
+      border-left: 4px solid #ff6b6b;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    .success-box {
+      background: #0d1117;
+      border-left: 4px solid #4caf50;
+      padding: 20px;
+      margin: 30px 0;
+      border-radius: 0 8px 8px 0;
+    }
+    
+    /* Command Block with Scroll */
+    .command-block {
+      background: #0d1117;
+      border-radius: 12px;
+      padding: 20px;
+      margin: 25px 0;
+      border-left: 4px solid #00ffcc;
+    }
+    
+    .command-code {
+      font-family: 'Fira Code', monospace;
+      background: #010409;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      overflow-y: auto;
+      max-height: 280px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      color: #7ee787;
+      margin: 10px 0;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      scrollbar-width: thin;
+    }
+    
+    .command-code::-webkit-scrollbar {
+      height: 8px;
+      width: 8px;
+      background: #0d1117;
+    }
+    .command-code::-webkit-scrollbar-thumb {
+      background: #58a6ff;
+      border-radius: 4px;
+    }
+    
+    .copy-btn {
+      background: #238636;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: monospace;
+      font-weight: bold;
+      transition: 0.2s;
+      margin-top: 10px;
+    }
+    .copy-btn:hover { background: #2ea043; transform: scale(1.02); }
+    
+    /* Tool card */
+    .tool-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+      background: #0d1117;
+      border-left: 4px solid #00ffcc;
+      padding: 25px;
+      margin: 30px 0;
+      border-radius: 0 12px 12px 0;
+    }
+    
+    .tool-thumbnail {
+      flex: 0 0 100px;
+      text-align: center;
+    }
+    
+    .tool-thumbnail img {
+      width: 100px;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #00ffcc;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .tool-thumbnail img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    
+    .tool-content { flex: 1; min-width: 250px; }
+    .tool-content p { margin-top: 0; }
+    
+    .tool-footer {
+      flex: 0 0 100%;
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    /* Download buttons */
+    .download-btn {
+      display: inline-block;
+      background: #00ffcc;
+      color: #1a1a1a;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 10px 0;
+      transition: all 0.3s ease;
+      border: 1px solid #00ffcc;
+      box-shadow: 0 4px 6px rgba(0, 255, 204, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .download-btn::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+    
+    .download-btn:hover {
+      background: transparent;
+      color: #00ffcc;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ffcc;
+    }
+    
+    .download-btn:hover::after {
+      left: 100%;
+    }
+    
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 30px 0;
+      background: #0d1117;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .comparison-table th {
+      background: #00ffcc;
+      color: #1a1a1a;
+      padding: 12px;
+      text-align: center;
+    }
+    
+    .comparison-table td {
+      padding: 12px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+    
+    .comparison-table td:first-child { text-align: left; font-weight: bold; color: #58a6ff; }
+    
+    /* FAQ */
+    .faq-item {
+      margin: 20px 0;
+      border-bottom: 1px solid #333;
+      padding-bottom: 20px;
+    }
+    .faq-question { color: #00ffcc; font-weight: bold; font-size: 1.1rem; cursor: pointer; }
+    .faq-answer { margin-top: 10px; }
+    
+    /* Share buttons */
+    .share-container { 
+      position: fixed; 
+      top: 50%; 
+      right: 15px; 
+      transform: translateY(-50%); 
+      display: flex; 
+      flex-direction: column; 
+      gap: 12px; 
+      z-index: 1000; 
+    }
+    
+    .share-btn { 
+      width: 45px; 
+      height: 45px; 
+      border-radius: 50%; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      font-size: 20px; 
+      color: white; 
+      background-color: #333; 
+      transition: all 0.3s ease; 
+      box-shadow: 0 0 10px #00ffcc; 
+      cursor: pointer; 
+      border: none; 
+      outline: none; 
+    }
+    
+    .share-btn:hover { transform: scale(1.1); }
+    .facebook-btn:hover { background-color: #1877F2; }
+    .tiktok-btn:hover { background-color: #000000; }
+    .instagram-btn:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .whatsapp-btn:hover { background-color: #25D366; }
+    .telegram-btn:hover { background-color: #0088cc; }
+    .reddit-btn:hover { background-color: #FF4500; }
+    .native-share-btn:hover { background-color: #7e57c2; }
+    
+    /* Footer */
+    footer {
+      margin-top: 50px;
+      padding: 20px;
+      border-top: 1px solid #333;
+      font-size: 0.8em;
+      color: #8b949e;
+      text-align: center;
+    }
+    
+    .powered { 
+      font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc; 
+      position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      body { padding: 20px; padding-right: 70px; }
+      h1 { font-size: 2rem; padding: 30px 15px 15px; }
+      h2 { font-size: 1.5rem; }
+      .article-container { padding: 20px; }
+      .share-btn { width: 38px; height: 38px; font-size: 18px; }
+      .nav-btn { min-width: 110px; font-size: 12px; padding: 10px 15px; }
+      .article-meta { flex-direction: column; gap: 8px; }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+  <canvas id="matrixCanvas"></canvas>
+  
+  <!-- Share Buttons -->
+  <div class="share-container">
+    <button class="share-btn facebook-btn" onclick="shareOnFacebook()"><i class="fab fa-facebook-f"></i></button>
+    <button class="share-btn tiktok-btn" onclick="shareOnTikTok()"><i class="fab fa-tiktok"></i></button>
+    <button class="share-btn instagram-btn" onclick="shareOnInstagram()"><i class="fab fa-instagram"></i></button>
+    <button class="share-btn whatsapp-btn" onclick="shareOnWhatsApp()"><i class="fab fa-whatsapp"></i></button>
+    <button class="share-btn telegram-btn" onclick="shareOnTelegram()"><i class="fab fa-telegram-plane"></i></button>
+    <button class="share-btn reddit-btn" onclick="shareOnReddit()"><i class="fab fa-reddit-alien"></i></button>
+    <button class="share-btn native-share-btn" onclick="nativeShare()"><i class="fas fa-share-alt"></i></button>
+  </div>
+  
+  <!-- Logo -->
+  <header class="logo-container">
+    <img src="https://lemonpyhub.github.io/pic/lemonpy.webp" 
+        alt="LemonPyHub Logo - Free Python Tools and Applications" 
+        width="100" 
+        height="56"
+        style="height:120px; width:auto;" 
+        fetchpriority="high"
+        loading="eager">
+  </header>
+  
+  <!-- Navigation -->
+  <nav>
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+    <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
+    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+    <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+  </nav>
+  
+  <!-- Breadcrumbs (Improves CTR) -->
+  <div class="breadcrumb">
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <i class="fas fa-chevron-right"></i>
+    <a href="/blog/">Blog</a>
+    <i class="fas fa-chevron-right"></i>
+    <span>Check PC Specs & Performance Test</span>
+  </div>
+  
+  <!-- Main Article -->
+  <main class="article-container">
+    
+    <h1>Check Your PC Specs & Run a Real Performance Test</h1>
+    
+    <div class="article-meta">
+      <div class="article-meta-left">
+        <span><i class="fas fa-calendar-alt"></i> Published: March 26, 2026</span>
+        <span><i class="fas fa-clock"></i> 4 min read</span>
+        <span><i class="fas fa-user"></i> By LemonPy</span>
+        <span><i class="fas fa-chart-line"></i> Beginner Friendly</span>
+      </div>
+      <div class="article-meta-right">
+        <span><i class="fas fa-sync-alt"></i> Last Updated: March 26, 2026</span>
+      </div>
+    </div>
+     Why This Matters
+    <div class="success-box">
+      <p style="font-size:1.1rem; margin-bottom:10px;"><strong> Why This Matters:</strong> Knowing your exact hardware specs and Windows performance scores helps you pick the right optimization tools. We'll run two safe PowerShell commands — no installation required.</p>
+    </div>
+    
+    <!-- Table of Contents (Improves User Engagement) -->
+    <div class="toc">
+      <h3><i class="fas fa-list-ul"></i> What You'll Learn</h3>
+      <ul>
+        <li><a href="#step1"><i class="fas fa-terminal"></i> Step 1: Open PowerShell as Admin</a></li>
+        <li><a href="#step2"><i class="fas fa-microchip"></i> Step 2: Run Hardware Information Script</a></li>
+        <li><a href="#step3"><i class="fas fa-chart-simple"></i> Step 3: Run Windows Performance Benchmark</a></li>
+        <li><a href="#step4"><i class="fas fa-download"></i> Step 4: Get Personalized Tools</a></li>
+        <li><a href="#faq"><i class="fas fa-question-circle"></i> Frequently Asked Questions</a></li>
+        <li><a href="#more"><i class="fas fa-book-open"></i> You Might Also Like</a></li>
+      </ul>
+    </div>
+    
+    <h2 id="step1"> Step 1: Open PowerShell as Administrator</h2>
+    <div class="tip-box">
+      <p><i class="fas fa-shield-alt" style="color:#ffcc00"></i> The benchmark test requires <strong>Administrator rights</strong>. Follow these steps:</p>
+      <ol>
+        <li>Press <strong>Windows Key + S</strong> and type <strong>PowerShell</strong></li>
+        <li>Right-click on <strong>Windows PowerShell</strong> in the search results</li>
+        <li>Select <strong>Run as administrator</strong></li>
+        <li>Click <strong>Yes</strong> on the UAC prompt</li>
+      </ol>
+      <p><i class="fas fa-check-circle" style="color:#4caf50"></i> You'll see a blue PowerShell window with "Administrator: Windows PowerShell" on the title bar.</p>
+    </div>
+    
+    <h2 id="step2"> Step 2: Run Hardware Information Script</h2>
+    <p>Copy the command below and paste it into PowerShell (right-click to paste). It shows your CPU, RAM modules, storage type, and motherboard.</p>
+    
+    <div class="command-block">
+      <div class="command-code" id="hardwareCmd">
+        Write-Host ""; Write-Host "========================================" -ForegroundColor Cyan; Write-Host "        SYSTEM INFORMATION" -ForegroundColor Cyan; Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""; Write-Host "[OPERATING SYSTEM]" -ForegroundColor Yellow; $os = Get-CimInstance Win32_OperatingSystem; Write-Host "  Version      : " -NoNewline -ForegroundColor White; Write-Host "$($os.Caption)" -ForegroundColor Green; Write-Host "  Build        : " -NoNewline -ForegroundColor White; Write-Host "$($os.BuildNumber)" -ForegroundColor Green; Write-Host ""; Write-Host "[RAM]" -ForegroundColor Yellow; $totalRAM = [math]::Round($os.TotalVisibleMemorySize / 1MB, 2); Write-Host "  Total RAM    : " -NoNewline -ForegroundColor White; Write-Host "$totalRAM GB" -ForegroundColor Green; $ramModules = Get-CimInstance Win32_PhysicalMemory; $i = 1; foreach ($ram in $ramModules) { $ramSize = [math]::Round($ram.Capacity / 1GB, 0); if ($i -eq 1) { Write-Host "  Slot 1       : " -NoNewline -ForegroundColor White } else { Write-Host "  Slot $i       : " -NoNewline -ForegroundColor White }; Write-Host "$ramSize GB ($($ram.Manufacturer))" -ForegroundColor Green; $i++ }; Write-Host ""; Write-Host "[STORAGE]" -ForegroundColor Yellow; $disks = Get-PhysicalDisk; foreach ($disk in $disks) { $size = [math]::Round($disk.Size / 1GB, 2); $mediaType = $disk.MediaType; if ($mediaType -eq "Unspecified") { $mediaType = "HDD/SSD (check Device Manager)" }; Write-Host "  $($disk.FriendlyName): " -NoNewline -ForegroundColor White; Write-Host "$size GB ($mediaType)" -ForegroundColor Green }; Write-Host ""; Write-Host "[PROCESSOR]" -ForegroundColor Yellow; $cpu = Get-CimInstance Win32_Processor; Write-Host "  Name         : " -NoNewline -ForegroundColor White; Write-Host "$($cpu.Name)" -ForegroundColor Green; Write-Host "  Cores        : " -NoNewline -ForegroundColor White; Write-Host "$($cpu.NumberOfCores) | Logical Processors: $($cpu.NumberOfLogicalProcessors)" -ForegroundColor Green; Write-Host "  Max Speed    : " -NoNewline -ForegroundColor White; Write-Host "$($cpu.MaxClockSpeed) MHz" -ForegroundColor Green; Write-Host ""; Write-Host "[MOTHERBOARD]" -ForegroundColor Yellow; $mb = Get-CimInstance Win32_BaseBoard; Write-Host "  Manufacturer : " -NoNewline -ForegroundColor White; Write-Host "$($mb.Manufacturer)" -ForegroundColor Green; Write-Host "  Product      : " -NoNewline -ForegroundColor White; Write-Host "$($mb.Product)" -ForegroundColor Green; Write-Host ""; Write-Host "========================================" -ForegroundColor Cyan
+      </div>
+      <button class="copy-btn" data-copy="hardwareCmd">📋 Copy Hardware Script</button>
+    </div>
+    <p>✔️ Press <kbd>Enter</kbd> after pasting. You'll see detailed hardware specs. Take a screenshot or note your RAM and storage type.</p>
+    
+    <h2 id="step3"> Step 3: Run Windows Performance Benchmark (WinSAT)</h2>
+    
+    <div class="warning-box">
+      <i class="fas fa-hourglass-half" style="color:#ffaa33; font-size: 1.2rem;"></i> 
+      <strong> Important — This benchmark takes 1 to 3 minutes to complete.</strong><br>
+      The assessment will stress your CPU, disk, and graphics. <strong>Please be patient and do NOT close the PowerShell window</strong>. You will see progress messages, and final scores (CPU, RAM, Graphics, Disk) will appear automatically.
+    </div>
+    
+    <div class="command-block">
+      <div class="command-code" id="winsatCmd">
+        Write-Host ""; Write-Host "========================================" -ForegroundColor Cyan; Write-Host "     WINDOWS PERFORMANCE BENCHMARK" -ForegroundColor Cyan; Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""; $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator); if (-not $isAdmin) { Write-Host "⚠️ Please run PowerShell as Administrator!" -ForegroundColor Red; exit }; $battery = Get-WmiObject -Class Win32_Battery -ErrorAction SilentlyContinue; if ($battery -and $battery.BatteryStatus -eq 1) { Write-Host "⚠️ Warning: Laptop running on battery! Plug in charger for accurate results." -ForegroundColor Yellow }; Write-Host "[1] Running WinSAT Formal Assessment (1-3 minutes)..." -ForegroundColor Yellow; winsat formal -xml C:\Windows\Temp\winsat_result.xml; Write-Host ""; Write-Host "[2] Benchmark complete! Getting scores..." -ForegroundColor Green; $scores = Get-CimInstance Win32_WinSAT; Write-Host "========================================" -ForegroundColor Cyan; Write-Host "        BENCHMARK SCORES" -ForegroundColor Cyan; Write-Host "========================================" -ForegroundColor Cyan; Write-Host ""; Write-Host "[PROCESSOR (CPU)]" -ForegroundColor Yellow; $cpuScore = $scores.CPUScore; if ($cpuScore -ge 8) { $color = "Green" } elseif ($cpuScore -ge 5) { $color = "Yellow" } else { $color = "Red" }; Write-Host "  Score        : " -NoNewline -ForegroundColor White; Write-Host "$cpuScore" -ForegroundColor $color; Write-Host ""; Write-Host "[MEMORY (RAM)]" -ForegroundColor Yellow; $memScore = $scores.MemoryScore; if ($memScore -ge 8) { $color = "Green" } elseif ($memScore -ge 5) { $color = "Yellow" } else { $color = "Red" }; Write-Host "  Score        : " -NoNewline -ForegroundColor White; Write-Host "$memScore" -ForegroundColor $color; Write-Host ""; Write-Host "[GRAPHICS (Desktop)]" -ForegroundColor Yellow; $graphicsScore = $scores.GraphicsScore; if ($graphicsScore -ge 8) { $color = "Green" } elseif ($graphicsScore -ge 5) { $color = "Yellow" } else { $color = "Red" }; Write-Host "  Score        : " -NoNewline -ForegroundColor White; Write-Host "$graphicsScore" -ForegroundColor $color; Write-Host ""; Write-Host "[GAMING GRAPHICS (3D)]" -ForegroundColor Yellow; $d3dScore = $scores.D3DScore; if ($d3dScore -ge 8) { $color = "Green" } elseif ($d3dScore -ge 5) { $color = "Yellow" } else { $color = "Red" }; Write-Host "  Score        : " -NoNewline -ForegroundColor White; Write-Host "$d3dScore" -ForegroundColor $color; Write-Host ""; Write-Host "[DISK (Storage)]" -ForegroundColor Yellow; $diskScore = $scores.DiskScore; if ($diskScore -ge 8) { $color = "Green" } elseif ($diskScore -ge 5) { $color = "Yellow" } else { $color = "Red" }; Write-Host "  Score        : " -NoNewline -ForegroundColor White; Write-Host "$diskScore" -ForegroundColor $color; Write-Host ""; Write-Host "========================================" -ForegroundColor Cyan; $baseScore = $scores.WinSPRLevel; Write-Host "[BASE SCORE]" -ForegroundColor Magenta; Write-Host "  Overall      : " -NoNewline -ForegroundColor White; Write-Host "$baseScore" -ForegroundColor $(if ($baseScore -ge 8) { "Green" } elseif ($baseScore -ge 5) { "Yellow" } else { "Red" }); Write-Host "  (Lowest subscore determines base score)" -ForegroundColor White; Write-Host ""; Write-Host "[INTERPRETATION]" -ForegroundColor Yellow; Write-Host "  1.0 - 3.9  : Basic - Light tasks only" -ForegroundColor Red; Write-Host "  4.0 - 5.9  : Moderate - Office & multimedia" -ForegroundColor Yellow; Write-Host "  6.0 - 7.9  : Good - Light gaming & creative" -ForegroundColor Green; Write-Host "  8.0 - 9.9  : Excellent - High performance" -ForegroundColor Green
+      </div>
+      <button class="copy-btn" data-copy="winsatCmd">📋 Copy Benchmark Script</button>
+    </div>
+    
+    <p>⏳ <strong>Wait for the assessment to finish (1-3 minutes).</strong> Do not interrupt. At the end, you'll see your scores for CPU, RAM, Graphics, and Disk.</p>
+    
+    <h2 id="step4"> Step 4: Understand Your Scores & Get Personalized Tools</h2>
+    <p>Based on your benchmark results, download the free tools that address your weakest areas:</p>
+    
+    <table class="comparison-table">
+      <thead><tr><th>If Your Score Is</th><th>Recommended Tool</th><th>What It Does</th></tr></thead>
+      <tbody>
+        <tr><td>CPU Score < 6.0</td><td><strong>Windows Optimizer</strong></td><td>Disables animations, background services, startup programs</td></tr>
+        <tr><td>RAM Score < 5.9 or ≤8GB RAM</td><td><strong>Windows Debloater</strong></td><td>Removes bloatware, stops background apps, frees 400MB-1GB RAM</td></tr>
+        <tr><td>Disk Score < 6.0 or HDD detected</td><td><strong>Windows Maintenance Tool</strong></td><td>Cleans junk, runs TRIM/defrag, fixes system files</td></tr>
+        <tr><td>Overall Base Score < 5.0</td><td><strong>All Three Tools</strong></td><td>Combine all tools for maximum performance boost</td></tr>
+      </tbody>
+    </table>
+    
+    <!-- Tool 1: Windows Debloater -->
+    <div class="tool-card">
+      <div class="tool-thumbnail">
+        <img src="/download/Windows_Debloater_Privacy/pic/windows-debloater.png" alt="Windows Debloater Screenshot">
+      </div>
+      <div class="tool-content">
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Debloater & Privacy Tool</h3>
+        <p><strong>Best for:</strong> Low RAM scores (below 5.9) or systems with 4GB/8GB RAM.</p>
+        <p>Removes pre-installed bloatware, disables telemetry, and stops background apps. Frees up 200-500MB RAM instantly.</p>
+        <ul><li>✅ One-click bloatware removal</li><li>✅ Safe & reversible</li><li>✅ Privacy protection</li></ul>
+      </div>
+      <div class="tool-footer">
+        <a href="/download/#Windows-Debloater-&-Privacy" class="download-btn"><i class="fas fa-download"></i> Download Windows Debloater (Free)</a>
+      </div>
+    </div>
+    
+    <!-- Tool 2: Windows Optimizer -->
+    <div class="tool-card">
+      <div class="tool-thumbnail">
+        <img src="/download/Windows_Optimizer/pic/Windows-Optimizer.png" alt="Windows Optimizer Screenshot">
+      </div>
+      <div class="tool-content">
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Optimizer</h3>
+        <p><strong>Best for:</strong> Low CPU scores (below 6.0) or slow system responsiveness.</p>
+        <p>Disables visual effects, animations, and unnecessary Windows services. Improves UI responsiveness and reduces CPU usage.</p>
+        <ul><li>✅ Disable animations & transparency</li><li>✅ Turn off background apps</li><li>✅ Create backup settings</li></ul>
+      </div>
+      <div class="tool-footer">
+        <a href="/download/#Windows-Optimizer" class="download-btn"><i class="fas fa-download"></i> Download Windows Optimizer (Free)</a>
+      </div>
+    </div>
+    
+    <!-- Tool 3: Windows Maintenance Tool -->
+    <div class="tool-card">
+      <div class="tool-thumbnail">
+        <img src="/download/Windows_Utilities/pic/windows-maintenance-tool.png" alt="Windows Maintenance Tool Screenshot">
+      </div>
+      <div class="tool-content">
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Maintenance Tool V3</h3>
+        <p><strong>Best for:</strong> Low disk scores (below 6.0), HDD users, or system clutter.</p>
+        <p>Cleans junk files, runs DISM & SFC repairs, optimizes storage. Speeds up boot time and file access.</p>
+        <ul><li>✅ One-click junk cleaner</li><li>✅ DISM & SFC repair</li><li>✅ Storage optimization</li></ul>
+      </div>
+      <div class="tool-footer">
+        <a href="/download/#Windows-Maintenance-Tool" class="download-btn"><i class="fas fa-download"></i> Download Maintenance Tool (Free)</a>
+      </div>
+    </div>
+    
+    <div class="success-box">
+      <p><strong>💡 Pro Tip:</strong> After downloading, run Windows Debloater first, then Windows Optimizer, then Maintenance Tool. Restart after each tool for best results.</p>
+    </div>
+    
+    <div style="background:#0d1117; padding:25px; border-radius:12px; text-align:center; margin:40px 0; border:1px solid #00ffcc;">
+      <h3 style="color:#00ffcc; margin-top:0;"> Ready to Speed Up Your PC?</h3>
+      <p style="text-align:center;">All tools are 100% free, lightweight, and safe for Windows 10 & 11.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin: 20px 0;">
+        <a href="/download/" class="download-btn" style="background:#58a6ff; border-color:#58a6ff;">
+          <i class="fas fa-download"></i> Browse All Free Tools
+        </a>
+      </div>
+    </div>
+    
+    <h2 id="faq">❓ Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: The script shows "execution policy" error?</div>
+      <div class="faq-answer">A: Run this command first: <code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code> then paste the script again.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: Benchmark takes too long. Is something wrong?</div>
+      <div class="faq-answer">A: No! WinSAT runs multiple tests (CPU encryption, video encoding, disk streaming). 1-3 minutes is normal. Be patient and let it finish.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: Can I run these on Windows 11?</div>
+      <div class="faq-answer">A: Yes! Both scripts and all tools work perfectly on Windows 10 and Windows 11.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: Are these tools really free?</div>
+      <div class="faq-answer">A: 100% free. No trials, no ads, no premium versions. They're developed to help the community.</div>
+    </div>
+    
+    <h3 id="more">📚 You Might Also Like:</h3>
+    <ul>
+      <li><a href="/blog/upgrade-old-pc-speed-ssd-ram/" style="color:#58a6ff;">From 4:40 to 45 Seconds: How I Upgraded My Old PC</a></li>
+      <li><a href="/blog/windows-11-vs-10-ram-usage-2026/" style="color:#58a6ff;">Windows 11 vs Windows 10 RAM Usage 2026</a></li>
+      <li><a href="/blog/best-free-optimizers-windows-11/" style="color:#58a6ff;">5 Best Free Optimizers for Windows 11</a></li>
+      <li><a href="/blog/windows-debloater-guide/" style="color:#58a6ff;">Windows Debloater: Remove Bloatware Safely</a></li>
+    </ul>
+    
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <div style="margin-bottom: 10px;">
+        <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
+        <a href="/helpfaq/#disclaimer" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Disclaimer</a> | 
+        <a href="/manual/" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Support</a>
+    </div>
+    <p>Disclaimer: LemonPyHub is not affiliated with Microsoft. Windows is a registered trademark of Microsoft Corporation.</p>
+    <div class="powered">Powered by LΣⱮØπPyHub 2026 - Free Tools for Everyone</div>
+  </footer>
+  
+  <script>
+    // Matrix Rain Effect
+    const canvas = document.getElementById('matrixCanvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth; 
+      canvas.height = window.innerHeight;
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+      const fontSize = 14; 
+      const columns = canvas.width / fontSize; 
+      const drops = Array(Math.floor(columns)).fill(1);
+      
+      function drawMatrix() {
+        ctx.fillStyle = 'rgba(13, 17, 23, 0.1)'; 
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#00ffcc'; 
+        ctx.font = `${fontSize}px 'Fira Code', monospace`;
+        for (let i = 0; i < drops.length; i++) {
+          const text = chars.charAt(Math.floor(Math.random() * chars.length));
+          const x = i * fontSize; 
+          const y = drops[i] * fontSize;
+          ctx.fillText(text, x, y);
+          if (y > canvas.height && Math.random() > 0.975) drops[i] = 0;
+          drops[i]++;
+        }
+      }
+      setInterval(drawMatrix, 50);
+    }
+    
+    // Copy function
+    function copyToClipboard(elementId) {
+      const pre = document.getElementById(elementId);
+      if (!pre) return;
+      const text = pre.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const btn = document.querySelector(`button[data-copy="${elementId}"]`);
+        if (btn) {
+          const originalText = btn.innerHTML;
+          btn.innerHTML = '✅ Copied!';
+          setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+        }
+      }).catch(() => alert('Could not copy. Select manually.'));
+    }
+    
+    document.querySelectorAll('.copy-btn').forEach(btn => {
+      const target = btn.getAttribute('data-copy');
+      if (target) btn.addEventListener('click', () => copyToClipboard(target));
+    });
+    
+    // Share functions
+    function getCurrentURL() { return encodeURIComponent(window.location.href); }
+    function getPageTitle() { return encodeURIComponent(document.title); }
+    function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank'); }
+    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en','_blank'); }
+    function shareOnInstagram() { window.open('https://www.instagram.com/','_blank'); }
+    function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
+    function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
+    function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
+    function nativeShare() { if (navigator.share) { navigator.share({ title: document.title, text: 'Check your PC specs and run performance test! Get free tools to speed up your computer.', url: window.location.href }); } else { alert('Web Share not supported.'); } }
+    
+    window.addEventListener('resize', function() { if (canvas) { canvas.width = window.innerWidth; canvas.height = window.innerHeight; } });
+  </script>
+</body>
+</html>
