@@ -832,7 +832,6 @@
       </div>
 
       <!-- Windows Security Manager -->
-      <!-- Windows Security Manager -->
       <div class="app-card" data-category="windows security" id="app-windows-security-manager" data-shortname="WSM">
         <div class="app-image-container">
           <img src="WinSecurityManager/pic/WinSecurityManager.png" alt="Windows Security Manager" class="app-icon" loading="lazy" width="120" height="120">
@@ -1301,19 +1300,21 @@ document.addEventListener('click', function(event) {
   const link = event.target.closest('a[download]');
   if (!link) return;
   
-  let appName = 'Unknown App';
-  
-  const modal = link.closest('.app-detail-modal');
-  if (modal && modal.getAttribute('data-shortname')) {
-    appName = modal.getAttribute('data-shortname');
+let appName = 'Unknown App';
+
+const modal = link.closest('.app-detail-modal');
+if (modal) {
+  appName = modal.getAttribute('data-shortname') || 
+            modal.querySelector('.app-title')?.textContent.trim() || 
+            'Unknown App';
+} else {
+  const card = link.closest('.app-card');
+  if (card) {
+    appName = card.getAttribute('data-shortname') || 
+              card.querySelector('.app-title')?.textContent.trim() || 
+              'Unknown App';
   }
-  
-  if (appName === 'Unknown App') {
-    const card = link.closest('.app-card');
-    if (card && card.getAttribute('data-shortname')) {
-      appName = card.getAttribute('data-shortname');
-    }
-  }
+}
   
   const fileUrl = link.getAttribute('href');
   const fileName = fileUrl ? fileUrl.split('/').pop() : 'unknown';
