@@ -1319,17 +1319,6 @@ if (modal) {
   const fileUrl = link.getAttribute('href');
   const fileName = fileUrl ? fileUrl.split('/').pop() : 'unknown';
   
-  if (typeof gtag === 'function') {
-    gtag('event', 'download_completed', {
-      'event_category': 'Software',
-      'event_label': appName,
-      'app_name': appName,
-      'file_name': fileName,
-      'value': 1
-    });
-    console.log('✅ GA4 Tracked:', appName, '-', fileName);
-  }
-  
   if (typeof dataLayer !== 'undefined') {
     dataLayer.push({
       'event': 'download_completed',
@@ -1430,16 +1419,6 @@ if (modal) {
       }
     ]
   }
-  </script>
-
-  <!-- Google Analytics -->
-  <script defer src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Q9HFE57YHB');
-    
   </script>
 </body>
 </html>
