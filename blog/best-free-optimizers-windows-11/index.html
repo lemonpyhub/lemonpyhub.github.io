@@ -424,6 +424,19 @@
       font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
       position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
     }
+    .powered::before { 
+      content: ""; position: absolute; left: -40px; bottom: 0; height: 4px; width: 40px; 
+      background: linear-gradient(90deg, transparent, #00ffcc, transparent); border-radius: 4px; 
+      animation: laser-scan 4s ease-in-out infinite alternate; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+    }
+
+    @keyframes laser-scan { 
+      from { left: 0; } 
+      to { left: calc(100% - 40px); } 
+    }
+
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+    .fade-in.delay-5 { animation-delay: 1.5s; }
     
     /* Responsive */
     @media (max-width: 768px) {
@@ -564,7 +577,7 @@
         </a>
       </div>
       <div class="tool-content">
-        <h3 style="margin-top:0; color:#00ffcc;">⚡ Windows Maintenance Tool V3 GUI</h3>
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Maintenance Tool V3 GUI</h3>
         
         <p><strong>Why it's #1:</strong> Unlike other tools that only do one thing, this tool is a complete system optimization suite.</p>
         
@@ -600,7 +613,7 @@
         </a>
       </div>
       <div class="tool-content">
-        <h3 style="margin-top:0; color:#00ffcc;">✨ Windows Optimizer</h3>
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Optimizer</h3>
         
         <ul>
           <li>✅ <strong>Disable animations & transparency</strong> – Free up RAM instantly</li>
@@ -633,7 +646,7 @@
         </a>
       </div>
       <div class="tool-content">
-        <h3 style="margin-top:0; color:#00ffcc;">🧹 Windows Debloater & Privacy</h3>
+        <h3 style="margin-top:0; color:#00ffcc;"> Windows Debloater & Privacy</h3>
         
         <ul>
           <li>✅ <strong>Bloatware removal</strong> – Uninstall pre-installed apps in bulk</li>
@@ -668,7 +681,7 @@
         </a>
       </div>
       <div class="tool-content">
-        <h3 style="margin-top:0; color:#00ffcc;">⚡ ZyperWin++</h3>
+        <h3 style="margin-top:0; color:#00ffcc;"> ZyperWin++</h3>
         
         <p><strong>Key Features:</strong></p>
         <ul>
@@ -705,7 +718,7 @@
         </a>
       </div>
       <div class="tool-content">
-        <h3 style="margin-top:0; color:#00ffcc;">🎮 Project Ronin</h3>
+        <h3 style="margin-top:0; color:#00ffcc;"> Project Ronin</h3>
         
         <p><strong>Core Modules:</strong></p>
         <ul>
@@ -838,6 +851,7 @@
     
   </main>
   
+<!-- Footer -->
   <footer>
     <div style="margin-bottom: 10px;">
         <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
@@ -849,13 +863,13 @@
   </footer>
   
   <script>
-    // Matrix Rain Effect
+    // Matrix Digital Rain Effect
     const canvas = document.getElementById('matrixCanvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
       canvas.width = window.innerWidth; 
       canvas.height = window.innerHeight;
-      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
+      const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
       const fontSize = 14; 
       const columns = canvas.width / fontSize; 
       const drops = Array(Math.floor(columns)).fill(1);
@@ -866,11 +880,13 @@
         ctx.fillStyle = '#00ffcc'; 
         ctx.font = `${fontSize}px 'Fira Code', monospace`;
         for (let i = 0; i < drops.length; i++) {
-          const text = chars.charAt(Math.floor(Math.random() * chars.length));
+          const text = characters.charAt(Math.floor(Math.random() * characters.length));
           const x = i * fontSize; 
           const y = drops[i] * fontSize;
           ctx.fillText(text, x, y);
-          if (y > canvas.height && Math.random() > 0.975) drops[i] = 0;
+          if (y > canvas.height && Math.random() > 0.975) { 
+            drops[i] = 0; 
+          }
           drops[i]++;
         }
       }
