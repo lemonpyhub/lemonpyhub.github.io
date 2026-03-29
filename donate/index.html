@@ -7,6 +7,29 @@
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
   <!-- End Google Tag Manager -->
   
+  <!-- ========== RICH RESULTS SCHEMA MARKUP ========== -->
+  
+  <!-- Organization Schema untuk Knowledge Panel -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "LemonPyHub",
+    "url": "https://lemonpyhub.github.io/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lemonpyhub.github.io/pic/lemonpy.webp"
+    },
+    "description": "Free Python tools and Windows optimization utilities for low-end PCs. Open-source software including DNS Manager, Windows Optimizer, and system maintenance tools.",
+    "sameAs": [
+      "https://github.com/lemonpyhub",
+      "https://buymeacoffee.com/lemonpy"
+    ],
+    "email": "support@lemonpyhub.com"
+  }
+  </script>
+  
+  <!-- WebPage Schema dengan potentialAction untuk Donation -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -21,9 +44,69 @@
         "@type": "ImageObject",
         "url": "https://lemonpyhub.github.io/pic/lemonpy.webp"
       }
+    },
+    "potentialAction": {
+      "@type": "DonateAction",
+      "name": "Support LemonPyHub",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://buymeacoffee.com/lemonpy",
+        "inLanguage": "en",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      }
     }
   }
   </script>
+  
+  <!-- BreadcrumbList Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://lemonpyhub.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Donate",
+        "item": "https://lemonpyhub.github.io/donate/"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- Product Schema untuk Buy Me a Coffee (Donation) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "LemonPyHub Support - Buy Me a Coffee",
+    "description": "Support the development of free Python tools including DNS Manager, Windows Optimizer, and system maintenance utilities.",
+    "url": "https://lemonpyhub.github.io/donate/",
+    "brand": {
+      "@type": "Brand",
+      "name": "LemonPyHub"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/OnlineOnly",
+      "url": "https://buymeacoffee.com/lemonpy"
+    },
+    "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png"
+  }
+  </script>
+  
+  <!-- ========== END RICH RESULTS SCHEMA ========== -->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LΣⱮØπPyHub - Donate to Free Python Tools & Applications</title>
@@ -231,6 +314,17 @@
       line-height: 1.6;
     }
 
+    .benefits-list {
+      text-align: left;
+      max-width: 500px;
+      margin: 20px auto;
+      padding-left: 20px;
+    }
+    .benefits-list li {
+      margin: 10px 0;
+      color: #e8e6e3;
+    }
+
     .powered { 
       font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
       position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
@@ -248,8 +342,6 @@
 
     .fade-in.delay-4 { animation-delay: 1.2s; }
     .fade-in.delay-5 { animation-delay: 1.5s; }
-
-    @keyframes laser-scan { from { left: 0; } to { left: calc(100% - 40px); } }
 
     @keyframes fadeSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -290,23 +382,6 @@
       min-height: 44px;
     }
 
-    .share-btn { 
-      width: 45px; 
-      height: 45px; 
-      border-radius: 50%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      font-size: 20px; 
-      color: white; 
-      background-color: #333; 
-      transition: all 0.3s ease; 
-      box-shadow: 0 0 10px #00ffcc; 
-      cursor: pointer; 
-      border: none; 
-      outline: none; 
-    }
-    
     .share-btn:hover { transform: scale(1.1); }
     .facebook-btn:hover { background-color: #1877F2; box-shadow: 0 0 20px #1877F2; }
     .tiktok-btn:hover { background-color: #000000; box-shadow: 0 0 20px #000000; }
@@ -375,20 +450,23 @@
         loading="eager">
   </header>
     
-    <p class="glow fade-in delay-3" style="font-size: 1.2em;">
-      Thank you for your support. Your donation helps maintain and develop free Python tools for everyone. 
-    </p>
+  <h1 class="fade-in delay-2">Support LemonPyHub</h1>
+    
+  <p class="glow fade-in delay-3" style="font-size: 1.2em;">
+    Thank you for your support. Your donation helps maintain and develop free Python tools for everyone. 
+  </p>
 
-    <nav>
-      <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
-      <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
-      <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
-      <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
-      <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
-      <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
-    </nav>
+  <nav aria-label="Main navigation">
+    <a href="/" class="nav-btn"><i class="fas fa-home"></i> Home</a>
+    <a href="/blog/" class="nav-btn"><i class="fas fa-blog"></i> Blog</a>
+    <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
+    <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
+    <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
+    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+  </nav>
 
-    <!-- SEO-Friendly Content Sections -->
+  <!-- SEO-Friendly Content Sections -->
+  <main id="main-content">
     <div class="content-section fade-in delay-3">
       <h2>Why Support LemonPyHub?</h2>
       <p>LemonPyHub provides <strong>free, open-source Python tools</strong> that help users optimize their systems, manage networks, and enhance productivity. Your support enables us to:</p>
@@ -408,7 +486,7 @@
     <div class="content-section fade-in delay-4">
       <h2>Support Us with Buy Me a Coffee</h2>
       
-      <!-- Donation container - Now only shows Buy Me a Coffee -->
+      <!-- Donation container -->
       <div id="donate-container" style="text-align: center; padding: 20px 0;">
         <p style="margin-bottom: 25px;">🌍 Thank you for supporting free and open-source software!</p>
         <a href="https://buymeacoffee.com/lemonpy" target="_blank" rel="noopener noreferrer" aria-label="Support LemonPyHub on Buy Me a Coffee">
@@ -441,6 +519,7 @@
         <em>Thank you for considering supporting open-source development!</em>
       </p>
     </div>
+  </main>
 
   <footer style="margin-top: 50px; padding: 20px; border-top: 1px solid #333; font-size: 0.8em; color: #8b949e; text-align: center;">
     <div style="margin-bottom: 10px;">
@@ -458,7 +537,6 @@
     function initMatrix() {
       // Skip matrix on mobile untuk performance
       if (window.innerWidth < 768) {
-        console.log('Matrix disabled on mobile for performance');
         return;
       }
 
@@ -503,7 +581,6 @@
           animationId = requestAnimationFrame(animateMatrix);
         }
 
-        // Delay matrix untuk better perceived performance
         setTimeout(animateMatrix, 1000);
 
         window.addEventListener('resize', function() {
@@ -528,25 +605,29 @@
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
     function shareOnFacebook() { window.open(`https://www.facebook.com/sharer/sharer.php?u=${getCurrentURL()}`,'_blank','width=600,height=400'); }
-    function shareOnTikTok() { window.open('https://www.tiktok.com/upload?lang=en','_blank'); }
-    function shareOnInstagram() { window.open('https://www.instagram.com/','_blank'); }
+    function shareOnTikTok() { 
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied! Now paste it on TikTok 🎵');
+    }
+    function shareOnInstagram() { 
+      navigator.clipboard.writeText(window.location.href);
+      alert('Link copied! Now paste it on Instagram 📸');
+    }
     function shareOnWhatsApp() { window.open(`https://api.whatsapp.com/send?text=${getPageTitle()} - ${getCurrentURL()}`,'_blank'); }
     function shareOnTelegram() { window.open(`https://t.me/share/url?url=${getCurrentURL()}&text=${getPageTitle()}`,'_blank'); }
     function shareOnReddit() { window.open(`https://reddit.com/submit?url=${getCurrentURL()}&title=${getPageTitle()}`,'_blank'); }
     function nativeShare() {
       if (navigator.share) {
         navigator.share({ title: document.title, text: 'Support LemonPyHub - Free Python Tools!', url: window.location.href });
-      } else { alert('Web Share not supported in your browser. Please use the specific share buttons above.'); }
+      } else { alert('Web Share not supported. Please copy the URL manually.'); }
     }
 
-    // Initialize dengan performance optimization
+    // Initialize
     document.addEventListener('DOMContentLoaded', function() {
-      // Matrix effect hanya untuk non-mobile
       setTimeout(() => {
         initMatrix();
       }, 100);
     });
-
   </script>
 </body>
 </html>
