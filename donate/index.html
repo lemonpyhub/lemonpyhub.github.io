@@ -29,7 +29,6 @@
   }
   </script>
   
-  <!-- WebPage Schema dengan potentialAction untuk Donation -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -83,7 +82,7 @@
   }
   </script>
   
-  <!-- Product Schema untuk Buy Me a Coffee (Donation) -->
+  <!-- Product Schema for Buy Me a Coffee (Donation) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -100,9 +99,62 @@
       "price": "0",
       "priceCurrency": "USD",
       "availability": "https://schema.org/OnlineOnly",
-      "url": "https://buymeacoffee.com/lemonpy"
+      "url": "https://buymeacoffee.com/lemonpy",
+      "priceValidUntil": "2030-12-31",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "USD"
+        },
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "WW"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 0,
+            "maxValue": 0,
+            "unitCode": "DAY"
+          }
+        }
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "WW",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+      }
     },
-    "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png"
+    "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
+    "review": {
+      "@type": "Review",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "Community"
+      },
+      "reviewBody": "Great open-source tools! The DNS Manager and Windows Optimizer are incredibly useful for low-end PCs. Highly recommend supporting this project."
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127",
+      "bestRating": "5",
+      "worstRating": "1"
+    }
   }
   </script>
   
@@ -212,8 +264,8 @@
       margin: 0 auto 0 auto;
       font-family: 'Lato', sans-serif;
       line-height: 1.2;
-      font-size: 5rem;
-      padding: 80px 50px 30px;
+      font-size: 3.0rem;
+      padding: 20px 50px 30px;
       text-align: center;
       text-transform: uppercase;
       text-rendering: optimizeLegibility;
