@@ -28,7 +28,7 @@
   <meta property="og:title" content="Step-by-Step Guide to Run DISM and SFC Commands (2026)">
   <meta property="og:description" content="Complete guide to running DISM and SFC commands. Learn the manual way, then discover how to do it with one click using our free tool.">
   <meta property="og:url" content="https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/">
-  <meta property="og:image" content="/pic/lemonpyhub-og-image.png">
+  <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
   <meta property="og:site_name" content="LemonPyHub">
   <meta property="article:published_time" content="Feb 3, 2026">
   <meta property="article:author" content="LemonPy">
@@ -37,7 +37,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="DISM and SFC Commands Guide">
   <meta name="twitter:description" content="Step-by-step guide to repair Windows system files.">
-  <meta name="twitter:image" content="/pic/lemonpyhub-og-image.png">
+  <meta name="twitter:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
   
   <!-- Favicon -->
   <link rel="icon" href="/pic/favicon.ico" type="image/x-icon">
@@ -646,7 +646,7 @@
     <div class="tool-card">
       <div class="tool-thumbnail">
         <a href="/download/Windows_Utilities/pic/windows-maintenance-tool.png" target="_blank">
-          <img src="/download/Windows_Utilities/pic/windows-maintenance-tool.png" 
+          <img src="https://lemonpyhub.github.io/download/Windows_Utilities/pic/windows-maintenance-tool.png">
                alt="Windows Maintenance Tool V3 GUI Screenshot"
                title="Click to enlarge">
         </a>
@@ -815,6 +815,137 @@
     
   </main>
   
+<!-- ========== 1. ARTICLE SCHEMA ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Step-by-Step Guide to Run DISM and SFC Commands (2026)",
+  "description": "Learn how to run DISM and SFC commands step by step to repair Windows system files. Includes both manual methods and the easy way with Windows Maintenance Tool GUI.",
+  "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
+  "author": {
+    "@type": "Person",
+    "name": "LemonPy",
+    "url": "https://lemonpyhub.github.io"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "LemonPyHub",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://lemonpyhub.github.io/pic/lemonpy.webp"
+    }
+  },
+  "datePublished": "2026-02-03T00:00:00+08:00",
+  "dateModified": "2026-02-03T00:00:00+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/"
+  }
+}
+</script>
+
+<!-- ========== 2. HOWTO SCHEMA ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Run DISM and SFC Commands to Repair Windows System Files",
+  "description": "Step-by-step guide to running DISM and SFC commands, including the manual command line method and the easy way using Windows Maintenance Tool V3 GUI.",
+  "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
+  "totalTime": "PT30M",
+  "estimatedCost": {
+    "@type": "MonetaryAmount",
+    "currency": "USD",
+    "value": "0"
+  },
+  "datePublished": "2026-02-03T00:00:00+08:00",
+  "dateModified": "2026-02-03T00:00:00+08:00",
+  "author": {
+    "@type": "Person",
+    "name": "LemonPy",
+    "url": "https://lemonpyhub.github.io"
+  },
+  "supply": [
+    {
+      "@type": "HowToSupply",
+      "name": "Windows PC with administrator access"
+    }
+  ],
+  "tool": [
+    {
+      "@type": "HowToTool",
+      "name": "Command Prompt (built-in)"
+    },
+    {
+      "@type": "HowToTool",
+      "name": "Windows Maintenance Tool V3 GUI",
+      "url": "https://lemonpyhub.github.io/download/#Windows-Maintenance-Tool"
+    }
+  ],
+  "step": [
+    {
+      "@type": "HowToStep",
+      "name": "Open Command Prompt as Administrator",
+      "text": "Press Windows Key + X and select 'Terminal (Admin)' or 'Command Prompt (Admin)'. Click Yes on UAC prompt.",
+      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step1"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Run DISM to Repair Windows Image",
+      "text": "Type 'DISM /Online /Cleanup-Image /RestoreHealth' and press Enter. Wait 10-30 minutes for completion.",
+      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step2"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Run SFC to Scan and Repair System Files",
+      "text": "After DISM completes, type 'sfc /scannow' and press Enter. Wait 10-20 minutes for completion.",
+      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step3"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Restart Your Computer",
+      "text": "Restart your PC to apply all repairs and changes.",
+      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step4"
+    },
+    {
+      "@type": "HowToStep",
+      "name": "Alternative: Use Windows Maintenance Tool GUI (One-Click)",
+      "text": "Download Windows Maintenance Tool V3 GUI, run as administrator, go to System Health tab, click 'DISM Restore' then 'SFC Scan'.",
+      "url": "https://lemonpyhub.github.io/download/#Windows-Maintenance-Tool"
+    }
+  ]
+}
+</script>
+
+<!-- ========== 3. BREADCRUMB SCHEMA ========== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://lemonpyhub.github.io/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://lemonpyhub.github.io/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "DISM and SFC Commands Guide",
+      "item": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/"
+    }
+  ]
+}
+</script>
+
   <footer>
     <div style="margin-bottom: 10px;">
         <a href="/helpfaq/#privacy-policy" style="color: #58a6ff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
