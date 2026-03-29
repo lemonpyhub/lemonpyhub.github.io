@@ -479,6 +479,19 @@
       font-size: 12px; color: #00ffcc; text-align: center; text-shadow: 0 0 3px #00ffcc, 0 0 6px #00ffcc; 
       position: relative; display: inline-block; margin-top: 15px; padding-bottom: 14px; 
     }
+    .powered::before { 
+      content: ""; position: absolute; left: -40px; bottom: 0; height: 4px; width: 40px; 
+      background: linear-gradient(90deg, transparent, #00ffcc, transparent); border-radius: 4px; 
+      animation: laser-scan 4s ease-in-out infinite alternate; box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; 
+    }
+
+    @keyframes laser-scan { 
+      from { left: 0; } 
+      to { left: calc(100% - 40px); } 
+    }
+
+    .fade-in.delay-4 { animation-delay: 1.2s; }
+    .fade-in.delay-5 { animation-delay: 1.5s; }
     
     /* Responsive */
     @media (max-width: 768px) {
