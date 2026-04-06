@@ -4,12 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.defer=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-P5MN58K4');</script>
- 
   <title>Download Free Windows Utilities - LemonPyHub | System Tools & Optimizers</title>
   <meta name="description" content="Download free Windows utilities from LemonPyHub. Windows Maintenance Tool, DNS Manager, Optimizer, Debloater, Dockers, and Winget Tool for Windows 10/11. 100% free.">
   
@@ -638,8 +632,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P5MN58K4" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  
+    
   <a href="#main-content" class="skip-link">Skip to main content</a>
   <canvas id="matrixCanvas"></canvas>
 
@@ -1298,9 +1291,19 @@
         alert('SHA256 copied!');
       }
     };
+  </script>
+  <!-- Google tag (gtag.js) GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-Q9HFE57YHB');
+    </script>
 // =============================================
 // DOWNLOAD TRACKING - GLOBAL EVENT LISTENER
 // =============================================
+<script>
 document.addEventListener('click', function(event) {
   const link = event.target.closest('a[download]');
   if (!link) return;
@@ -1324,16 +1327,16 @@ if (modal) {
   const fileUrl = link.getAttribute('href');
   const fileName = fileUrl ? fileUrl.split('/').pop() : 'unknown';
   
-  if (typeof dataLayer !== 'undefined') {
-    dataLayer.push({
-      'event': 'download_completed',
-      'app_name': appName,
-      'file_name': fileName
-    });
-    console.log('✅ GTM Tracked:', appName, '-', fileName);
-  }
+if (typeof gtag === 'function') {
+  gtag('event', 'download_completed', {
+    'app_name': appName,
+    'file_name': fileName
+  });
+  console.log('✅ GA4 Tracked:', appName, '-', fileName);
+}
+
 }, true);
-  </script>
+</script>
 
   <!-- Schema Markup for SoftwareApplication (ItemList) - UPDATED with offers + aggregateRating -->
   <script type="application/ld+json">
@@ -1445,8 +1448,8 @@ if (modal) {
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "112" }
       }
-    ]
-  }
-  </script>
+    }
+</script>
+
 </body>
 </html>
