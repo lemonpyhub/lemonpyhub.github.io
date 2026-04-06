@@ -1294,15 +1294,12 @@
   </script>
   <!-- Google tag (gtag.js) GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9HFE57YHB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-Q9HFE57YHB');
-    </script>
-// =============================================
-// DOWNLOAD TRACKING - GLOBAL EVENT LISTENER
-// =============================================
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-Q9HFE57YHB');
+  </script>
 <script>
 document.addEventListener('click', function(event) {
   const link = event.target.closest('a[download]');
@@ -1447,8 +1444,8 @@ if (typeof gtag === 'function') {
         "image": "https://lemonpyhub.github.io/MathGame/pic/mathgame.png",
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
         "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "ratingCount": "112" }
-      }
     }
+  }
 </script>
 
 </body>
