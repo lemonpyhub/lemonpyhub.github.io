@@ -1325,9 +1325,9 @@ document.addEventListener('click', function(event) {
   
   const fileName = link.href.split('/').pop();
   
-  // HANTAR KE GA4
   if (typeof gtag === 'function') {
     gtag('event', 'download_completed', {
+      'debug_mode': true,
       'app_name': appName,
       'file_name': fileName,
       'send_to': 'G-Q9HFE57YHB'
