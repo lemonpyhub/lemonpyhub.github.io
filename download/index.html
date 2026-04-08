@@ -1307,34 +1307,42 @@ document.addEventListener('click', function(event) {
   const link = event.target.closest('a[download]');
   if (!link) return;
   
-let appName = 'Unknown App';
-
-const modal = link.closest('.app-detail-modal');
-if (modal) {
-  appName = modal.getAttribute('data-shortname') || 
-            modal.querySelector('.app-title')?.textContent.trim() || 
-            'Unknown App';
-} else {
-  const card = link.closest('.app-card');
-  if (card) {
-    appName = card.getAttribute('data-shortname') || 
-              card.querySelector('.app-title')?.textContent.trim() || 
-              'Unknown App';
+  // CEK - jangan track dua kali
+  if (link.getAttribute('data-tracked') === 'true') return;
+  link.setAttribute('data-tracked', 'true');
+  
+  // DAPATKAN APP NAME
+  let appName = 'Unknown';
+  const modal = link.closest('.app-detail-modal');
+  if (modal && modal.getAttribute('data-shortname')) {
+    appName = modal.getAttribute('data-shortname');
+  } else {
+    const card = link.closest('.app-card');
+    if (card && card.getAttribute('data-shortname')) {
+      appName = card.getAttribute('data-shortname');
+    }
   }
-}
   
-  const fileUrl = link.getAttribute('href');
-  const fileName = fileUrl ? fileUrl.split('/').pop() : 'unknown';
+  const fileName = link.href.split('/').pop();
   
-if (typeof gtag === 'function') {
-  gtag('event', 'download_completed', {
-    'app_name': appName,
-    'file_name': fileName,
-    'transport_type': 'beacon'
-  });
-  console.log('✅ GA4 Tracked:', appName, '-', fileName);
-}
-
+  // HANTAR KE GA4
+  if (typeof gtag === 'function') {
+    gtag('event', 'download_completed', {
+      'app_name': appName,
+      'file_name': fileName,
+      'send_to': 'G-Q9HFE57YHB'
+    });
+  }
+  
+  // PASTI TRACKING SUKSES SEBELUM REDIRECT
+  if (link.target !== '_blank') {
+    event.preventDefault();
+    setTimeout(() => {
+      window.location.href = link.href;
+    }, 200);
+  }
+  
+  console.log('✅ Tracked:', appName, fileName);
 }, true);
 </script>
 
