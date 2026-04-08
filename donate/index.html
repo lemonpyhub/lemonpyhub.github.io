@@ -192,11 +192,11 @@
     gtag('config', 'G-Q9HFE57YHB');
   </script>
 
-  <!-- Load resources asynchronously untuk avoid render blocking -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap"></noscript>
 
   <!-- CRITICAL CSS -->
@@ -241,10 +241,9 @@
   </style>
   
   <!-- Defer non-critical CSS -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Lato:wght@700&display=swap" media="print" onload="this.media='all'">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
-  <!-- NON-CRITICAL CSS - Sekarang dalam head -->
+  <!-- NON-CRITICAL CSS -->
   <style>
     body::before {
       content:"";
@@ -496,7 +495,6 @@
         alt="LemonPyHub Logo - Free Python Tools and Applications" 
         width="100" 
         height="56"
-        style="height:120px; width:auto;" 
         class="fade-in delay-1"
         fetchpriority="high"
         loading="eager">
@@ -514,7 +512,7 @@
     <a href="/download/" class="nav-btn"><i class="fas fa-download"></i> Download</a>
     <a href="/manual/" class="nav-btn"><i class="fas fa-tools"></i> Manual</a>
     <a href="/helpfaq/" class="nav-btn"><i class="fas fa-question-circle"></i> Help / FAQ</a>
-    <a href="/donate/" class="nav-btn"><i class="fas fa-heart"></i> Donate</a>
+    <a href="/donate/" class="nav-btn" aria-current="page"><i class="fas fa-heart"></i> Donate</a>
   </nav>
 
   <!-- SEO-Friendly Content Sections -->
