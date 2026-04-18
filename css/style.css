@@ -1094,3 +1094,13 @@ li {
     gap: 8px;
   }
 }
+
+/* Add spacing between list items */
+ul li {
+  margin-bottom: 15px;
+}
+
+/* Optional: Remove margin from last item */
+ul li:last-child {
+  margin-bottom: 0;
+}
