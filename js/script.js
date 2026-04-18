@@ -9,10 +9,6 @@ let isMatrixRunning = false;
 
 // ===== 2. MATRIX RAIN EFFECT (Single Master Function) =====
 function initMatrixRain() {
-  // Skip matrix on mobile for performance
-  if (window.innerWidth < 768) {
-    return;
-  }
 
   // Stop existing animation if running
   if (matrixAnimationId) {
