@@ -472,6 +472,40 @@ function loadDynamicFonts() {
   }
 }
 
+// ============================================
+// MANUAL PAGE SPECIFIC CODE
+// ============================================
+
+// Manual page initialization
+function initManualPage() {
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === "#" || href === "") return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Add keyboard shortcut tooltips
+    const shortcuts = document.querySelectorAll('.shortcut-key');
+    shortcuts.forEach(el => {
+        if (!el.hasAttribute('title')) {
+            el.setAttribute('title', 'Keyboard shortcut');
+        }
+    });
+    
+    console.log('Manual page initialized');
+}
+
 // ===== 8. PAGE INITIALIZATION (Detect which page is loaded) =====
 document.addEventListener('DOMContentLoaded', function() {
   // Load fonts
@@ -490,8 +524,13 @@ document.addEventListener('DOMContentLoaded', function() {
     initBlogFilters();
     initMatrixRain(); // Use advanced requestAnimationFrame
   }
-  // Check for manual or helpfaq page
-  else if (path.includes('/manual/') || path.includes('/helpfaq/')) {
+  // Check for manual page
+  else if (path.includes('/manual/')) {
+    initManualPage();  // Initialize manual page specific features
+    initMatrixRain();
+  }
+  // Check for helpfaq page
+  else if (path.includes('/helpfaq/')) {
     initMatrixRain();
   }
   // Default for other pages (root, donate)
