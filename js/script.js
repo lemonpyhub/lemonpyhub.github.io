@@ -472,11 +472,7 @@ function loadDynamicFonts() {
   }
 }
 
-// ============================================
-// MANUAL PAGE SPECIFIC CODE
-// ============================================
-
-// Manual page initialization
+// ===== 8. MANUAL PAGE SPECIFIC =====
 function initManualPage() {
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -506,12 +502,7 @@ function initManualPage() {
     console.log('Manual page initialized');
 }
 
-// ============================================
-// BLOG PAGE SPECIFIC CODE
-// Added without modifying existing code
-// ============================================
-
-// Blog page image modal functionality
+// ===== 9. BLOG PAGE IMAGE MODAL =====
 function initBlogPage() {
     // Add click handlers for all tool images to open modal
     const modal = document.getElementById('imgModal');
@@ -563,12 +554,7 @@ function initBlogPage() {
     console.log('Blog page initialized');
 }
 
-// ===== 8. PAGE INITIALIZATION (Detect which page is loaded) =====
-document.addEventListener('DOMContentLoaded', function() {
-  // Load fonts
-  loadDynamicFonts();
-  
-// ===== 8. PAGE INITIALIZATION (Detect which page is loaded) =====
+// ===== 10. PAGE INITIALIZATION (SINGLE SOURCE OF TRUTH) =====
 document.addEventListener('DOMContentLoaded', function() {
   // Load fonts
   loadDynamicFonts();
@@ -602,35 +588,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-  // Detect page type and initialize accordingly
-  const path = window.location.pathname;
-  
-  // Check for download page (has apps-grid)
-  if (document.querySelector('.apps-grid') || document.querySelector('.app-card')) {
-    initDownloadPage();
-    initSimpleMatrixRain(); // Use simple setInterval for download page
-  }
-  // Check for blog page (has blog-card)
-  else if (document.querySelector('.blog-card')) {
-    initBlogFilters();
-    initMatrixRain(); // Use advanced requestAnimationFrame
-  }
-  // Check for manual page
-  else if (path.includes('/manual/')) {
-    initManualPage();  // Initialize manual page specific features
-    initMatrixRain();
-  }
-  // Check for helpfaq page
-  else if (path.includes('/helpfaq/')) {
-    initMatrixRain();
-  }
-  // Default for other pages (root, donate)
-  else {
-    initMatrixRain();
-  }
-});
-
-// Also initialize on load for pages that might have dynamic content
+// ===== 11. WINDOW LOAD HANDLER (For dynamically loaded images) =====
 window.addEventListener('load', function() {
   // Re-initialize download page if needed (for modal images that load late)
   if (document.querySelector('.apps-grid')) {
