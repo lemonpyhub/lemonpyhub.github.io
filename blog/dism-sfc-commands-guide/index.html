@@ -6,17 +6,17 @@
   <meta name="author" content="LemonPy">
   <meta name="google-site-verification" content="8bihwO02fCW81kabobdtGCb_BFokgC_-vNkRihyLwU8">
   
-  <!-- SEO Meta Tags -->
-  <title>Step-by-Step Guide to Run DISM and SFC Commands (2026) | LemonPyHub</title>
-  <meta name="description" content="Learn how to run DISM and SFC commands step by step to repair Windows system files. Includes both manual methods and the easy way with Windows Maintenance Tool GUI.">
-  <meta name="keywords" content="dism commands, sfc scannow, dism restorehealth, repair windows system files, dism sfc guide, windows system file checker">
+  <!-- SEO Meta Tags - UPDATED with all keywords -->
+  <title>Fix Blue Screen & Repair Windows 10/11: Complete DISM & SFC Guide (2026) | LemonPyHub</title>
+  <meta name="description" content="Fix blue screen Windows, repair Windows image corruption using DISM and SFC commands. Learn command prompt repair Windows with system file checker and deployment imaging tools. Step-by-step guide for Windows 10/11.">
+  <meta name="keywords" content="fix blue screen windows, windows image corruption, command prompt repair windows, system file checker, deployment imaging, repair windows 10, repair windows 11, dism commands, sfc scannow, dism restorehealth, repair windows system files, dism sfc guide, windows system file checker">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/">
   
   <!-- Open Graph -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Step-by-Step Guide to Run DISM and SFC Commands (2026)">
-  <meta property="og:description" content="Complete guide to running DISM and SFC commands. Learn the manual way, then discover how to do it with one click using our free tool.">
+  <meta property="og:title" content="Fix Blue Screen & Repair Windows 10/11: Complete DISM & SFC Guide (2026)">
+  <meta property="og:description" content="Fix blue screen Windows and repair Windows image corruption. Complete guide to running DISM and SFC commands - the ultimate system file checker and deployment imaging solution for Windows 10/11.">
   <meta property="og:url" content="https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/">
   <meta property="og:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
   <meta property="og:site_name" content="LemonPyHub">
@@ -25,8 +25,8 @@
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="DISM and SFC Commands Guide">
-  <meta name="twitter:description" content="Step-by-step guide to repair Windows system files.">
+  <meta name="twitter:title" content="Fix Blue Screen & Repair Windows 10/11: DISM & SFC Guide">
+  <meta name="twitter:description" content="Fix blue screen Windows and repair image corruption. Complete guide to system file checker and deployment imaging tools.">
   <meta name="twitter:image" content="https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png">
   
   <!-- Favicon -->
@@ -47,7 +47,7 @@
     gtag('config', 'G-Q9HFE57YHB');
   </script>
   
-  <!-- CSS - EXACTLY SAME AS ARTICLES 1-4 -->
+  <!-- CSS - EXACTLY SAME AS ARTICLES 1-4 + Copy button styles -->
   <style>
     /* ===== CRITICAL CSS ===== */
     html { height: 100%; scroll-behavior: smooth; }
@@ -185,7 +185,7 @@
       border-radius: 0 8px 8px 0;
     }
     
-    /* Code blocks - for commands */
+    /* Code blocks - with copy button */
     .code-block {
       background: #0d1117;
       padding: 15px;
@@ -194,6 +194,43 @@
       border: 1px solid #58a6ff;
       margin: 20px 0;
       overflow-x: auto;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .code-block code {
+      flex: 1;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: #00ffcc;
+      color: #1a1a1a;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 5px;
+      font-family: 'Fira Code', monospace;
+      cursor: pointer;
+      font-size: 0.8rem;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .copy-btn:hover {
+      background: transparent;
+      color: #00ffcc;
+      border: 1px solid #00ffcc;
+      transform: scale(1.02);
+    }
+    .copy-btn.copied {
+      background: #28a745;
+      color: white;
+      border-color: #28a745;
     }
     
     /* Comparison table */
@@ -491,7 +528,7 @@
   <main class="article-container">
     
     <!-- Article Header -->
-    <h1>Step-by-Step Guide to Run DISM and SFC Commands (2026)</h1>
+    <h1>Fix Blue Screen & Repair Windows 10/11: Complete DISM & SFC Guide (2026)</h1>
     
     <div class="article-meta">
       <i class="fas fa-calendar-alt"></i> Published: Feb 3, 2026 • 
@@ -499,54 +536,54 @@
       <i class="fas fa-user"></i> By LemonPy
     </div>
     
-    <p><strong>Is your Windows acting up? Random crashes, blue screens, or strange errors?</strong></p>
+    <p><strong>Is your Windows acting up? Random crashes, blue screen windows errors, or strange system corruption?</strong></p>
     
-    <p>Before you give up and reinstall Windows, there are two powerful commands that can fix most system issues: <strong>DISM (Deployment Imaging Service and Management)</strong> and <strong>SFC (System File Checker)</strong>.</p>
+    <p>Before you give up and reinstall Windows, there are two powerful commands that can fix most system issues: <strong>DISM (Deployment Imaging Service and Management)</strong> and <strong>SFC (System File Checker)</strong>. These are the ultimate tools for command prompt repair windows and fixing windows image corruption.</p>
     
-    <p>In this guide, we'll show you exactly how to run these commands – both the manual way and the easy way using our <strong>Windows Maintenance Tool V3 GUI</strong>.</p>
+    <p>In this guide, we'll show you exactly how to run these commands – both the manual way and the easy way using our <strong>Windows Maintenance Tool V3 GUI</strong>. Whether you need to repair windows 10 or repair windows 11, this guide covers both.</p>
     
     <div class="tip-box">
       <p><strong>Quick Answer:</strong></p>
       <ul>
-        <li>✅ <strong>SFC /scannow</strong> – Scans and repairs protected system files</li>
-        <li>✅ <strong>DISM /Online /Cleanup-Image /RestoreHealth</strong> – Repairs the Windows image itself</li>
-        <li>✅ <strong>Always run DISM first, then SFC</strong> for best results</li>
+        <li>✅ <strong>SFC /scannow</strong> – The system file checker that scans and repairs protected system files</li>
+        <li>✅ <strong>DISM /Online /Cleanup-Image /RestoreHealth</strong> – The deployment imaging tool that repairs the Windows image itself</li>
+        <li>✅ <strong>Always run DISM first, then SFC</strong> for best results when you need to fix blue screen windows issues</li>
         <li>✅ <strong>Our tool does both with one click!</strong></li>
       </ul>
     </div>
     
     <!-- What are DISM and SFC? -->
-    <h2>What Are DISM and SFC?</h2>
+    <h2>What Are DISM and SFC? (System File Checker & Deployment Imaging Explained)</h2>
     
-    <p>Think of Windows as a house:</p>
+    <p>Think of Windows as a house. When you need to fix blue screen windows errors or repair windows image corruption, you need the right tools:</p>
     
     <div class="feature-grid">
       <div class="feature-item">
         <i class="fas fa-tools"></i>
         <h3>SFC (System File Checker)</h3>
-        <p>Like a handyman that fixes broken furniture. It scans all protected system files and replaces corrupted ones with a cached copy.</p>
+        <p>Like a handyman that fixes broken furniture. This system file checker scans all protected system files and replaces corrupted ones with a cached copy. Essential for command prompt repair windows.</p>
       </div>
       <div class="feature-item">
         <i class="fas fa-home"></i>
         <h3>DISM (Deployment Imaging Service)</h3>
-        <p>Like a foundation repair specialist. If the source files that SFC uses are corrupted, DISM fixes them first.</p>
+        <p>Like a foundation repair specialist. This deployment imaging tool fixes the source files that SFC uses. If the source files are corrupted, DISM repairs them first.</p>
       </div>
     </div>
     
-    <p><strong>Rule of thumb:</strong> Always run DISM first, then SFC. DISM fixes the source, SFC fixes the files.</p>
+    <p><strong>Rule of thumb:</strong> Always run DISM first, then SFC. DISM fixes the source, SFC fixes the files. This is the proven sequence to repair windows 10 and repair windows 11 successfully.</p>
     
     <!-- When to Use Them -->
-    <h2>When Should You Run DISM and SFC?</h2>
+    <h2>When Should You Run DISM and SFC? (Fix Blue Screen Windows & More)</h2>
     
     <p>Run these commands if you experience:</p>
     
     <ul>
-      <li>⚠️ Frequent blue screen errors (BSOD)</li>
+      <li>⚠️ Frequent blue screen errors (BSOD) - the classic "fix blue screen windows" scenario</li>
       <li>⚠️ System crashes or freezes</li>
       <li>⚠️ Missing DLL files or application errors</li>
       <li>⚠️ Windows Update failures</li>
       <li>⚠️ Slow system performance (when other optimizations don't help)</li>
-      <li>⚠️ Corrupted registry or system files</li>
+      <li>⚠️ Corrupted registry or system files (windows image corruption)</li>
     </ul>
     
     <div class="warning-box">
@@ -554,7 +591,7 @@
     </div>
     
     <!-- Method 1: Manual Way -->
-    <h2>Method 1: Run DISM and SFC Manually (Command Line)</h2>
+    <h2>Method 1: Command Prompt Repair Windows - Manual Way</h2>
     
     <h3>Step 1: Open Command Prompt as Administrator</h3>
     
@@ -563,32 +600,34 @@
       <li>If prompted by UAC, click <strong>Yes</strong>.</li>
     </ol>
     
-    <h3>Step 2: Run DISM First</h3>
+    <h3>Step 2: Run DISM First (Deployment Imaging Tool)</h3>
     
     <p>Type or paste this command and press Enter:</p>
     
-    <div class="code-block">
+    <div class="code-block" id="cmd1">
       <code>DISM /Online /Cleanup-Image /RestoreHealth</code>
+      <button class="copy-btn" onclick="copyCommand('cmd1')"><i class="fas fa-copy"></i> Copy</button>
     </div>
     
-    <p>This command will:</p>
+    <p>This deployment imaging command will:</p>
     <ul>
-      <li>✅ Check the Windows image for corruption</li>
+      <li>✅ Check the Windows image for windows image corruption</li>
       <li>✅ Download healthy files from Windows Update (if needed)</li>
       <li>✅ Fix any issues it finds</li>
     </ul>
     
     <p><strong>This process can take 10-30 minutes.</strong> Be patient and don't close the window. You'll see a progress bar.</p>
     
-    <h3>Step 3: Run SFC After DISM Completes</h3>
+    <h3>Step 3: Run SFC After DISM Completes (System File Checker)</h3>
     
-    <p>Once DISM is done, run SFC:</p>
+    <p>Once DISM is done, run the system file checker:</p>
     
-    <div class="code-block">
+    <div class="code-block" id="cmd2">
       <code>sfc /scannow</code>
+      <button class="copy-btn" onclick="copyCommand('cmd2')"><i class="fas fa-copy"></i> Copy</button>
     </div>
     
-    <p>SFC will:</p>
+    <p>This system file checker will:</p>
     <ul>
       <li>✅ Scan all protected system files</li>
       <li>✅ Replace corrupted files with good copies</li>
@@ -597,7 +636,7 @@
     
     <h3>Step 4: Restart Your Computer</h3>
     
-    <p>After both commands complete, restart your PC to apply the changes.</p>
+    <p>After both commands complete, restart your PC to apply the changes. This should help fix blue screen windows issues.</p>
     
     <!-- Manual vs Automatic Comparison -->
     <h2>Manual Way vs The Easy Way</h2>
@@ -642,7 +681,7 @@
     <!-- Method 2: Easy Way -->
     <h2>Method 2: The Easy Way – Windows Maintenance Tool V3 GUI</h2>
     
-    <p>Why type complex commands when you can do it with one click? Our <strong>Windows Maintenance Tool V3 GUI</strong> has dedicated buttons for both DISM and SFC – and it even runs them in the correct order automatically.</p>
+    <p>Why type complex commands when you can do command prompt repair windows with one click? Our <strong>Windows Maintenance Tool V3 GUI</strong> has dedicated buttons for both DISM and SFC – and it even runs them in the correct order automatically. Perfect for anyone who wants to fix blue screen windows issues without memorizing commands.</p>
     
     <div class="tool-card">
       <div class="tool-thumbnail">
@@ -658,12 +697,12 @@
         <p><strong>Why type commands when you can click buttons?</strong></p>
         
         <ul>
-          <li>✅ <strong>One-click DISM</strong> – Runs /CheckHealth, /ScanHealth, or /RestoreHealth</li>
-          <li>✅ <strong>One-click SFC</strong> – Runs sfc /scannow with visual progress</li>
-          <li>✅ <strong>Automatic order</strong> – The tool knows to run DISM first, then SFC</li>
+          <li>✅ <strong>One-click DISM</strong> – Runs /CheckHealth, /ScanHealth, or /RestoreHealth (deployment imaging made easy)</li>
+          <li>✅ <strong>One-click SFC</strong> – Runs sfc /scannow with visual progress (system file checker simplified)</li>
+          <li>✅ <strong>Automatic order</strong> – The tool knows to run DISM first, then SFC to properly repair windows image corruption</li>
           <li>✅ <strong>Real-time progress bars</strong> – See exactly what's happening</li>
           <li>✅ <strong>Color-coded logs</strong> – Easy to read results</li>
-          <li>✅ <strong>No command line knowledge required</strong> – Perfect for beginners</li>
+          <li>✅ <strong>No command line knowledge required</strong> – Perfect for beginners who want to fix blue screen windows errors</li>
         </ul>
         
         <p>Plus, it includes junk file cleaning, storage optimization, and more – all in one free tool.</p>
@@ -681,55 +720,66 @@
       <li><strong>Download and extract</strong> the tool (portable version available).</li>
       <li><strong>Run as administrator</strong> (right-click, select "Run as administrator").</li>
       <li>In the main interface, go to the <strong>"System Health"</strong> tab.</li>
-      <li>Click <strong>"DISM Restore"</strong> to run DISM /RestoreHealth.</li>
-      <li>When it completes, click <strong>"SFC Scan"</strong> to run sfc /scannow.</li>
-      <li>Watch the progress bars and logs – that's it!</li>
+      <li>Click <strong>"DISM Restore"</strong> to run DISM /RestoreHealth (deployment imaging repair).</li>
+      <li>When it completes, click <strong>"SFC Scan"</strong> to run sfc /scannow (system file checker scan).</li>
+      <li>Watch the progress bars and logs – that's it! Your command prompt repair windows is complete.</li>
     </ol>
     
     <div class="tip-box">
-      <p><strong>Pro tip:</strong> The tool also has "DISM Check" which runs a faster check without repairing. Use this first if you just want to see if there's corruption.</p>
+      <p><strong>Pro tip:</strong> The tool also has "DISM Check" which runs a faster check without repairing. Use this first if you just want to see if there's windows image corruption.</p>
     </div>
     
     <!-- Understanding the Results -->
     <h2>Understanding DISM and SFC Results</h2>
     
-    <h3>DISM Results:</h3>
+    <h3>DISM Results (Deployment Imaging Tool Output):</h3>
     <ul>
-      <li><strong>"The operation completed successfully"</strong> – Great! DISM fixed everything.</li>
+      <li><strong>"The operation completed successfully"</strong> – Great! DISM fixed everything. No more windows image corruption.</li>
       <li><strong>"The component store corruption was repaired"</strong> – Issues were found and fixed.</li>
       <li><strong>"Error: 0x800f081f"</strong> – DISM couldn't find source files. This can happen if Windows Update is disabled. Try using an installation media as source.</li>
     </ul>
     
-    <h3>SFC Results:</h3>
+    <h3>SFC Results (System File Checker Output):</h3>
     <ul>
       <li><strong>"Windows Resource Protection did not find any integrity violations"</strong> – All system files are healthy.</li>
-      <li><strong>"Windows Resource Protection found corrupt files and successfully repaired them"</strong> – Issues were found and fixed.</li>
+      <li><strong>"Windows Resource Protection found corrupt files and successfully repaired them"</strong> – Issues were found and fixed. Your fix blue screen windows mission is complete!</li>
       <li><strong>"Windows Resource Protection found corrupt files but was unable to fix some of them"</strong> – Some files couldn't be repaired. Run DISM again, then SFC.</li>
     </ul>
     
     <!-- Advanced: Using Installation Media -->
     <h2>Advanced: If DISM Can't Download Files</h2>
     
-    <p>Sometimes DISM can't download healthy files from Windows Update (if your internet is down or Windows Update is broken). In this case, you can use a Windows installation USB as the source.</p>
+    <p>Sometimes DISM can't download healthy files from Windows Update (if your internet is down or Windows Update is broken). In this case, you can use a Windows installation USB as the source for your command prompt repair windows.</p>
     
     <h3>Step 1: Create Windows Installation Media</h3>
-    <p>Download the <a href="https://www.microsoft.com/software-download/windows11" target="_blank" style="color:#58a6ff;">Windows 11 Media Creation Tool</a> and create a USB installer.</p>
+    <p>Download the <a href="https://www.microsoft.com/software-download/windows11" target="_blank" style="color:#58a6ff;">Windows 11 Media Creation Tool</a> and create a USB installer to repair windows 11.</p>
     
     <h3>Step 2: Mount or Insert the USB</h3>
     <p>Note the drive letter (e.g., E:).</p>
     
     <h3>Step 3: Run DISM with Source Parameter</h3>
     
-    <div class="code-block">
+    <div class="code-block" id="cmd3">
       <code>DISM /Online /Cleanup-Image /RestoreHealth /Source:E:\sources\install.wim /LimitAccess</code>
+      <button class="copy-btn" onclick="copyCommand('cmd3')"><i class="fas fa-copy"></i> Copy</button>
     </div>
     
     <p>(Replace E: with your USB drive letter)</p>
     
-    <p>This tells DISM to use the USB as the source instead of Windows Update.</p>
+    <p>This tells DISM to use the USB as the source instead of Windows Update, allowing you to repair windows image corruption even without internet.</p>
     
     <!-- FAQ -->
     <h2>Frequently Asked Questions</h2>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: How do I fix blue screen windows errors?</div>
+      <div class="faq-answer">A: Run DISM first (deployment imaging tool), then SFC (system file checker). This combo fixes most blue screen issues caused by system file corruption. Our tool automates this process.</div>
+    </div>
+    
+    <div class="faq-item">
+      <div class="faq-question">Q: What is windows image corruption and how to fix it?</div>
+      <div class="faq-answer">A: Windows image corruption happens when the core system files get damaged. Use DISM /RestoreHealth to repair it. This is the most reliable command prompt repair windows method.</div>
+    </div>
     
     <div class="faq-item">
       <div class="faq-question">Q: How long do DISM and SFC take?</div>
@@ -738,12 +788,12 @@
     
     <div class="faq-item">
       <div class="faq-question">Q: Do I need to run both DISM and SFC?</div>
-      <div class="faq-answer">A: Yes – run DISM first to fix the source files, then SFC to fix system files. Our tool makes this sequence automatic.</div>
+      <div class="faq-answer">A: Yes – run DISM first to fix the source files (deployment imaging repair), then SFC to fix system files (system file checker scan). Our tool makes this sequence automatic.</div>
     </div>
     
     <div class="faq-item">
-      <div class="faq-question">Q: Can I use these commands on Windows 10?</div>
-      <div class="faq-answer">A: Absolutely! DISM and SFC work on Windows 10, 11, 8, and even 7. The commands are identical.</div>
+      <div class="faq-question">Q: Can I use these commands to repair windows 10?</div>
+      <div class="faq-answer">A: Absolutely! DISM and SFC work on Windows 10, 11, 8, and even 7. The commands are identical. Use this guide to repair windows 10 or repair windows 11 easily.</div>
     </div>
     
     <div class="faq-item">
@@ -757,7 +807,7 @@
     </div>
     
     <!-- Download Table -->
-    <h2>Download the Easy Way</h2>
+    <h2>Download the Easy Way to Repair Windows 10/11</h2>
     
     <table>
       <thead>
@@ -770,12 +820,12 @@
       <tbody>
         <tr>
           <td><strong>Windows Maintenance Tool V3 GUI</strong></td>
-          <td>One-click DISM & SFC + junk cleanup</td>
+          <td>One-click DISM & SFC + junk cleanup - perfect to fix blue screen windows issues</td>
           <td><a href="/download/#Windows-Maintenance-Tool" style="color:#00ffcc;">Download →</a></td>
         </tr>
         <tr>
           <td><strong>Windows Optimizer</strong></td>
-          <td>Disable visual effects & services</td>
+          <td>Disable visual effects & services to speed up your PC</td>
           <td><a href="/download/#Windows-Optimizer" style="color:#00ffcc;">Download →</a></td>
         </tr>
         <tr>
@@ -789,16 +839,16 @@
     <!-- Conclusion -->
     <h2>Stop Typing Commands – Start Clicking Buttons</h2>
     
-    <p>DISM and SFC are powerful tools that can fix many Windows problems. But why type long commands and remember the correct order when you can do it with one click?</p>
+    <p>DISM and SFC are powerful tools that can fix many Windows problems, from blue screen windows errors to windows image corruption. But why type long commands and remember the correct order when you can do it with one click?</p>
     
     <ul>
-      <li>✅ <strong>Windows Maintenance Tool V3 GUI</strong> makes it foolproof</li>
-      <li>✅ No technical knowledge required</li>
+      <li>✅ <strong>Windows Maintenance Tool V3 GUI</strong> makes command prompt repair windows foolproof</li>
+      <li>✅ No technical knowledge required to use the system file checker or deployment imaging tools</li>
       <li>✅ Visual progress bars so you know what's happening</li>
       <li>✅ Free and open-source</li>
     </ul>
     
-    <p>Download it now and fix your Windows the easy way!</p>
+    <p>Download it now and repair windows 10 or repair windows 11 the easy way!</p>
     
     <div style="text-align:center; margin:40px 0;">
       <a href="/download/#Windows-Maintenance-Tool" class="download-btn" style="font-size:1.2rem; padding:18px 40px;">
@@ -821,8 +871,8 @@
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "Step-by-Step Guide to Run DISM and SFC Commands (2026)",
-  "description": "Learn how to run DISM and SFC commands step by step to repair Windows system files. Includes both manual methods and the easy way with Windows Maintenance Tool GUI.",
+  "headline": "Fix Blue Screen & Repair Windows 10/11: Complete DISM & SFC Guide (2026)",
+  "description": "Fix blue screen Windows, repair Windows image corruption using DISM and SFC commands. Learn command prompt repair Windows with system file checker and deployment imaging tools. Step-by-step guide for Windows 10/11.",
   "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
   "author": {
     "@type": "Person",
@@ -851,8 +901,8 @@
 {
   "@context": "https://schema.org",
   "@type": "HowTo",
-  "name": "How to Run DISM and SFC Commands to Repair Windows System Files",
-  "description": "Step-by-step guide to running DISM and SFC commands, including the manual command line method and the easy way using Windows Maintenance Tool V3 GUI.",
+  "name": "How to Fix Blue Screen Windows and Repair Windows Image Corruption Using DISM and SFC",
+  "description": "Step-by-step guide to command prompt repair Windows using system file checker and deployment imaging tools. Includes manual method and one-click solution.",
   "image": "https://lemonpyhub.github.io/pic/lemonpyhub-og-image.png",
   "totalTime": "PT30M",
   "estimatedCost": {
@@ -888,32 +938,27 @@
     {
       "@type": "HowToStep",
       "name": "Open Command Prompt as Administrator",
-      "text": "Press Windows Key + X and select 'Terminal (Admin)' or 'Command Prompt (Admin)'. Click Yes on UAC prompt.",
-      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step1"
+      "text": "Press Windows Key + X and select 'Terminal (Admin)' or 'Command Prompt (Admin)'. Click Yes on UAC prompt."
     },
     {
       "@type": "HowToStep",
-      "name": "Run DISM to Repair Windows Image",
-      "text": "Type 'DISM /Online /Cleanup-Image /RestoreHealth' and press Enter. Wait 10-30 minutes for completion.",
-      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step2"
+      "name": "Run DISM to Repair Windows Image (Deployment Imaging)",
+      "text": "Type 'DISM /Online /Cleanup-Image /RestoreHealth' and press Enter. Wait 10-30 minutes for completion."
     },
     {
       "@type": "HowToStep",
-      "name": "Run SFC to Scan and Repair System Files",
-      "text": "After DISM completes, type 'sfc /scannow' and press Enter. Wait 10-20 minutes for completion.",
-      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step3"
+      "name": "Run SFC to Scan and Repair System Files (System File Checker)",
+      "text": "After DISM completes, type 'sfc /scannow' and press Enter. Wait 10-20 minutes for completion."
     },
     {
       "@type": "HowToStep",
       "name": "Restart Your Computer",
-      "text": "Restart your PC to apply all repairs and changes.",
-      "url": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/#step4"
+      "text": "Restart your PC to apply all repairs and changes."
     },
     {
       "@type": "HowToStep",
       "name": "Alternative: Use Windows Maintenance Tool GUI (One-Click)",
-      "text": "Download Windows Maintenance Tool V3 GUI, run as administrator, go to System Health tab, click 'DISM Restore' then 'SFC Scan'.",
-      "url": "https://lemonpyhub.github.io/download/#Windows-Maintenance-Tool"
+      "text": "Download Windows Maintenance Tool V3 GUI, run as administrator, go to System Health tab, click 'DISM Restore' then 'SFC Scan'."
     }
   ]
 }
@@ -940,7 +985,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "DISM and SFC Commands Guide",
+      "name": "Fix Blue Screen & Repair Windows 10/11 - DISM & SFC Guide",
       "item": "https://lemonpyhub.github.io/blog/dism-sfc-commands-guide/"
     }
   ]
@@ -986,6 +1031,26 @@
       setInterval(drawMatrix, 50);
     }
     
+    // Copy function for commands
+    function copyCommand(elementId) {
+      const codeBlock = document.getElementById(elementId);
+      const codeElement = codeBlock.querySelector('code');
+      const textToCopy = codeElement.innerText;
+      
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const button = codeBlock.querySelector('.copy-btn');
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+        button.classList.add('copied');
+        setTimeout(() => {
+          button.innerHTML = originalHTML;
+          button.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+    }
+    
     // Share functions
     function getCurrentURL() { return encodeURIComponent(window.location.href); }
     function getPageTitle() { return encodeURIComponent(document.title); }
@@ -1012,7 +1077,7 @@
       if (navigator.share) { 
         navigator.share({ 
           title: document.title, 
-          text: 'Step-by-step guide to run DISM and SFC commands', 
+          text: 'Fix blue screen Windows and repair Windows image corruption with DISM and SFC', 
           url: window.location.href 
         }); 
       } else { alert('Web Share not supported.'); }
