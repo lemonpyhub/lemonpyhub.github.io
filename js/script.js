@@ -7,7 +7,7 @@
 let matrixAnimationId = null;
 let isMatrixRunning = false;
 
-// ===== 2. MATRIX RAIN EFFECT (Single Master Function) =====
+// ===== 2. MATRIX RAIN EFFECT (Optimized for Mobile & Desktop) =====
 function initMatrixRain() {
 
   // Stop existing animation if running
@@ -33,27 +33,36 @@ function initMatrixRain() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
+    // Responsive font size: 14px on desktop, 10px on mobile
+    const isMobile = window.innerWidth <= 768;
+    const fontSize = isMobile ? 10 : 14;
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops = Array(Math.floor(columns)).fill(1);
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops = Array(columns).fill(1);
+    
+    // Limit columns on mobile for better performance
+    const maxColumns = isMobile ? 40 : 200;
+    const actualColumns = Math.min(columns, maxColumns);
 
     function drawMatrix() {
-      // Semi-transparent black to create trail effect
-      ctx.fillStyle = 'rgba(13, 17, 23, 0.1)';
+      // Semi-transparent black to create trail effect - lighter on mobile for performance
+      ctx.fillStyle = isMobile ? 'rgba(13, 17, 23, 0.15)' : 'rgba(13, 17, 23, 0.1)';
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       
       ctx.fillStyle = '#00ffcc';
       ctx.font = `${fontSize}px 'Fira Code', monospace`;
       
-      for (let i = 0; i < drops.length; i++) {
+      for (let i = 0; i < actualColumns; i++) {
         const text = characters.charAt(Math.floor(Math.random() * characters.length));
         const x = i * fontSize;
         const y = drops[i] * fontSize;
         
-        ctx.fillText(text, x, y);
+        // Only draw if within canvas bounds (performance)
+        if (y < canvas.height + fontSize) {
+          ctx.fillText(text, x, y);
+        }
         
-        // Reset drop to top when it reaches bottom with random condition
+        // Reset drop to top when it reaches bottom
         if (y > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }
@@ -62,22 +71,48 @@ function initMatrixRain() {
     }
 
     // Optimized animation using requestAnimationFrame
-    function animateMatrix() {
+    let lastTimestamp = 0;
+    const frameInterval = isMobile ? 60 : 40; // Lower fps on mobile for battery
+    
+    function animateMatrix(currentTime) {
+      if (!isMatrixRunning) return;
+      
+      // Throttle frame rate on mobile for better battery
+      if (isMobile && currentTime - lastTimestamp < frameInterval) {
+        matrixAnimationId = requestAnimationFrame(animateMatrix);
+        return;
+      }
+      lastTimestamp = currentTime;
+      
       drawMatrix();
       matrixAnimationId = requestAnimationFrame(animateMatrix);
     }
 
     // Start optimized animation
-    animateMatrix();
     isMatrixRunning = true;
+    animateMatrix(0);
 
-    // Handle window resize
+    // Handle window resize with debounce for mobile
+    let resizeTimeout;
     function handleResize() {
-      const resizeCanvas = document.getElementById('matrixCanvas');
-      if (resizeCanvas) {
-        resizeCanvas.width = window.innerWidth;
-        resizeCanvas.height = window.innerHeight;
-      }
+      clearTimeout(resizeTimeout);
+      resizeTimeout = setTimeout(() => {
+        if (canvas) {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          
+          // Recalculate columns on resize
+          const newIsMobile = window.innerWidth <= 768;
+          const newFontSize = newIsMobile ? 10 : 14;
+          const newColumns = Math.min(Math.floor(canvas.width / newFontSize), newIsMobile ? 40 : 200);
+          
+          // Reset drops array with new size
+          drops.length = newColumns;
+          for (let i = 0; i < newColumns; i++) {
+            drops[i] = drops[i] || 1;
+          }
+        }
+      }, 150);
     }
     
     window.removeEventListener('resize', handleResize);
@@ -94,7 +129,8 @@ function initMatrixRain() {
         // Restart animation
         const restartCanvas = document.getElementById('matrixCanvas');
         if (restartCanvas && restartCanvas.getContext) {
-          animateMatrix();
+          isMatrixRunning = true;
+          animateMatrix(0);
         }
       }
     }
@@ -107,7 +143,7 @@ function initMatrixRain() {
   }
 }
 
-// ===== 3. SIMPLE MATRIX RAIN (Fallback for older pages using setInterval) =====
+// ===== 3. SIMPLE MATRIX RAIN (Optimized for Mobile & Desktop - Fallback) =====
 function initSimpleMatrixRain() {
   const canvas = document.getElementById('matrixCanvas');
   if (!canvas) return;
@@ -117,21 +153,31 @@ function initSimpleMatrixRain() {
   
   canvas.width = window.innerWidth; 
   canvas.height = window.innerHeight;
+  
+  const isMobile = window.innerWidth <= 768;
+  const fontSize = isMobile ? 10 : 14;
   const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789$#@%&*';
-  const fontSize = 14; 
-  const columns = canvas.width / fontSize; 
-  const drops = Array(Math.floor(columns)).fill(1);
+  const columns = Math.min(Math.floor(canvas.width / fontSize), isMobile ? 40 : 200);
+  const drops = Array(columns).fill(1);
+  
+  // Slower interval on mobile for battery saving
+  const intervalTime = isMobile ? 80 : 50;
   
   function drawMatrix() {
-    ctx.fillStyle = 'rgba(13, 17, 23, 0.1)'; 
+    ctx.fillStyle = isMobile ? 'rgba(13, 17, 23, 0.15)' : 'rgba(13, 17, 23, 0.1)'; 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = '#00ffcc'; 
     ctx.font = `${fontSize}px 'Fira Code', monospace`;
-    for (let i = 0; i < drops.length; i++) {
+    
+    for (let i = 0; i < columns; i++) {
       const text = characters.charAt(Math.floor(Math.random() * characters.length));
       const x = i * fontSize; 
       const y = drops[i] * fontSize;
-      ctx.fillText(text, x, y);
+      
+      if (y < canvas.height + fontSize) {
+        ctx.fillText(text, x, y);
+      }
+      
       if (y > canvas.height && Math.random() > 0.975) { 
         drops[i] = 0; 
       }
@@ -140,13 +186,17 @@ function initSimpleMatrixRain() {
   }
   
   if (window.matrixInterval) clearInterval(window.matrixInterval);
-  window.matrixInterval = setInterval(drawMatrix, 50);
+  window.matrixInterval = setInterval(drawMatrix, intervalTime);
   
+  let resizeTimeout;
   window.addEventListener('resize', function() {
-    if (canvas) {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      if (canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+    }, 150);
   });
 }
 
