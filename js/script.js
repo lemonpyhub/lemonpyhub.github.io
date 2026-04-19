@@ -270,7 +270,7 @@ function nativeShare() {
   } 
 }
 
-// ===== 5. BLOG PAGE SPECIFIC (Filters for listing page) =====
+// ===== 5. BLOG PAGE SPECIFIC =====
 function initBlogFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (filterBtns.length === 0) return;
@@ -507,7 +507,8 @@ function initManualPage() {
 }
 
 // ============================================
-// BLOG PAGE SPECIFIC CODE (Single article page)
+// BLOG PAGE SPECIFIC CODE
+// Added without modifying existing code
 // ============================================
 
 // Blog page image modal functionality
@@ -567,6 +568,11 @@ document.addEventListener('DOMContentLoaded', function() {
   // Load fonts
   loadDynamicFonts();
   
+// ===== 8. PAGE INITIALIZATION (Detect which page is loaded) =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Load fonts
+  loadDynamicFonts();
+  
   // Detect page type and initialize accordingly
   const path = window.location.pathname;
   
@@ -575,15 +581,43 @@ document.addEventListener('DOMContentLoaded', function() {
     initDownloadPage();
     initSimpleMatrixRain(); // Use simple setInterval for download page
   }
-  // Check for blog listing page (has blog-card) OR single article page (has article-container)
+  // Check for blog page (has blog-card OR article-container)
   else if (document.querySelector('.blog-card') || document.querySelector('.article-container')) {
-    initBlogFilters();      // For blog listing page filters
-    initBlogPage();         // For single article page image modal
+    initBlogFilters();      // For blog listing page
+    initBlogPage();         // For single article page (image modal)
     initMatrixRain();       // Use advanced requestAnimationFrame
   }
   // Check for manual page
   else if (path.includes('/manual/')) {
     initManualPage();
+    initMatrixRain();
+  }
+  // Check for helpfaq page
+  else if (path.includes('/helpfaq/')) {
+    initMatrixRain();
+  }
+  // Default for other pages (root, donate)
+  else {
+    initMatrixRain();
+  }
+});
+
+  // Detect page type and initialize accordingly
+  const path = window.location.pathname;
+  
+  // Check for download page (has apps-grid)
+  if (document.querySelector('.apps-grid') || document.querySelector('.app-card')) {
+    initDownloadPage();
+    initSimpleMatrixRain(); // Use simple setInterval for download page
+  }
+  // Check for blog page (has blog-card)
+  else if (document.querySelector('.blog-card')) {
+    initBlogFilters();
+    initMatrixRain(); // Use advanced requestAnimationFrame
+  }
+  // Check for manual page
+  else if (path.includes('/manual/')) {
+    initManualPage();  // Initialize manual page specific features
     initMatrixRain();
   }
   // Check for helpfaq page
