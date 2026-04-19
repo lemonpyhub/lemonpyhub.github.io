@@ -270,7 +270,7 @@ function nativeShare() {
   } 
 }
 
-// ===== 5. BLOG PAGE SPECIFIC =====
+// ===== 5. BLOG PAGE SPECIFIC (Filters for listing page) =====
 function initBlogFilters() {
   const filterBtns = document.querySelectorAll('.filter-btn');
   if (filterBtns.length === 0) return;
@@ -506,6 +506,62 @@ function initManualPage() {
     console.log('Manual page initialized');
 }
 
+// ============================================
+// BLOG PAGE SPECIFIC CODE (Single article page)
+// ============================================
+
+// Blog page image modal functionality
+function initBlogPage() {
+    // Add click handlers for all tool images to open modal
+    const modal = document.getElementById('imgModal');
+    if (!modal) {
+        // Create modal if it doesn't exist
+        const newModal = document.createElement('div');
+        newModal.id = 'imgModal';
+        newModal.className = 'modal';
+        newModal.innerHTML = `
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modalImage" src="#" alt="Enlarged">
+        `;
+        document.body.appendChild(newModal);
+        
+        // Add close button handler
+        const closeBtn = newModal.querySelector('.modal-close');
+        closeBtn.addEventListener('click', function() {
+            newModal.style.display = 'none';
+        });
+        
+        // Click outside to close
+        newModal.addEventListener('click', function(e) {
+            if (e.target === newModal) {
+                newModal.style.display = 'none';
+            }
+        });
+    }
+    
+    // Add click handlers to all tool thumbnails
+    document.querySelectorAll('.tool-thumbnail img').forEach(img => {
+        img.addEventListener('click', function(e) {
+            const modalElem = document.getElementById('imgModal');
+            const modalImgElem = document.getElementById('modalImage');
+            if (modalElem && modalImgElem) {
+                modalElem.style.display = 'flex';
+                modalImgElem.src = this.src;
+            }
+        });
+    });
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const modalElem = document.getElementById('imgModal');
+            if (modalElem) modalElem.style.display = 'none';
+        }
+    });
+    
+    console.log('Blog page initialized');
+}
+
 // ===== 8. PAGE INITIALIZATION (Detect which page is loaded) =====
 document.addEventListener('DOMContentLoaded', function() {
   // Load fonts
@@ -519,14 +575,15 @@ document.addEventListener('DOMContentLoaded', function() {
     initDownloadPage();
     initSimpleMatrixRain(); // Use simple setInterval for download page
   }
-  // Check for blog page (has blog-card)
-  else if (document.querySelector('.blog-card')) {
-    initBlogFilters();
-    initMatrixRain(); // Use advanced requestAnimationFrame
+  // Check for blog listing page (has blog-card) OR single article page (has article-container)
+  else if (document.querySelector('.blog-card') || document.querySelector('.article-container')) {
+    initBlogFilters();      // For blog listing page filters
+    initBlogPage();         // For single article page image modal
+    initMatrixRain();       // Use advanced requestAnimationFrame
   }
   // Check for manual page
   else if (path.includes('/manual/')) {
-    initManualPage();  // Initialize manual page specific features
+    initManualPage();
     initMatrixRain();
   }
   // Check for helpfaq page
