@@ -472,7 +472,11 @@ function loadDynamicFonts() {
   }
 }
 
-// ===== 8. MANUAL PAGE SPECIFIC =====
+// ============================================
+// MANUAL PAGE SPECIFIC CODE
+// ============================================
+
+// Manual page initialization
 function initManualPage() {
     // Add smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -502,7 +506,11 @@ function initManualPage() {
     console.log('Manual page initialized');
 }
 
-// ===== 9. BLOG PAGE IMAGE MODAL =====
+// ============================================
+// BLOG PAGE SPECIFIC CODE
+// ============================================
+
+// Blog page image modal functionality
 function initBlogPage() {
     // Add click handlers for all tool images to open modal
     const modal = document.getElementById('imgModal');
@@ -554,7 +562,35 @@ function initBlogPage() {
     console.log('Blog page initialized');
 }
 
-// ===== 10. PAGE INITIALIZATION (SINGLE SOURCE OF TRUTH) =====
+// ===== 8. ANCHOR LINK HANDLER =====
+function handleAnchorLink() {
+    if (window.location.hash) {
+        setTimeout(function() {
+            const targetId = window.location.hash.substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                targetElement.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+                
+                // Highlight effect
+                targetElement.style.transition = 'box-shadow 0.3s ease';
+                targetElement.style.boxShadow = '0 0 0 3px #00ffcc';
+                setTimeout(function() {
+                    targetElement.style.boxShadow = '';
+                }, 2000);
+                
+                console.log('✅ Scrolled to:', targetId);
+            } else {
+                console.log('⚠️ Element not found:', targetId);
+            }
+        }, 500);
+    }
+}
+
+// ===== 9. PAGE INITIALIZATION (Detect which page is loaded) =====
 document.addEventListener('DOMContentLoaded', function() {
   // Load fonts
   loadDynamicFonts();
@@ -586,9 +622,12 @@ document.addEventListener('DOMContentLoaded', function() {
   else {
     initMatrixRain();
   }
+  
+  // Handle anchor links (scroll to element from URL hash)
+  handleAnchorLink();
 });
 
-// ===== 11. WINDOW LOAD HANDLER (For dynamically loaded images) =====
+// Also initialize on load for pages that might have dynamic content
 window.addEventListener('load', function() {
   // Re-initialize download page if needed (for modal images that load late)
   if (document.querySelector('.apps-grid')) {
