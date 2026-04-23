@@ -562,7 +562,7 @@ function initBlogPage() {
     console.log('Blog page initialized');
 }
 
-// ===== 8. ANCHOR LINK HANDLER =====
+// ===== 8. ANCHOR LINK HANDLER (Blink 3 times) =====
 function handleAnchorLink() {
     if (window.location.hash) {
         setTimeout(function() {
@@ -570,19 +570,46 @@ function handleAnchorLink() {
             const targetElement = document.getElementById(targetId);
             
             if (targetElement) {
+                // Scroll to element
                 targetElement.scrollIntoView({ 
                     behavior: 'smooth', 
-                    block: 'start' 
+                    block: 'center' 
                 });
                 
-                // Highlight effect
-                targetElement.style.transition = 'box-shadow 0.3s ease';
-                targetElement.style.boxShadow = '0 0 0 3px #00ffcc';
-                setTimeout(function() {
-                    targetElement.style.boxShadow = '';
-                }, 2000);
+                // BLINK 3 TIMES effect
+                let blinkCount = 0;
+                const originalBorder = targetElement.style.border;
+                const originalBoxShadow = targetElement.style.boxShadow;
+                const originalTransition = targetElement.style.transition;
                 
-                console.log('✅ Scrolled to:', targetId);
+                targetElement.style.transition = 'all 0.15s ease';
+                
+                const blinkInterval = setInterval(function() {
+                    if (blinkCount >= 6) { // 6 = 3 kali blink (on/off)
+                        clearInterval(blinkInterval);
+                        // Restore original styles
+                        targetElement.style.boxShadow = originalBoxShadow;
+                        targetElement.style.border = originalBorder;
+                        setTimeout(function() {
+                            targetElement.style.transition = originalTransition;
+                        }, 300);
+                        console.log('✅ Blink completed for:', targetId);
+                        return;
+                    }
+                    
+                    if (blinkCount % 2 === 0) {
+                        // ON - highlight
+                        targetElement.style.boxShadow = '0 0 0 4px #00ffcc, 0 0 15px 2px #00ffcc';
+                        targetElement.style.border = '1px solid #00ffcc';
+                    } else {
+                        // OFF - normal
+                        targetElement.style.boxShadow = originalBoxShadow;
+                        targetElement.style.border = originalBorder;
+                    }
+                    
+                    blinkCount++;
+                }, 200); // Setiap blink 200ms
+                
             } else {
                 console.log('⚠️ Element not found:', targetId);
             }
