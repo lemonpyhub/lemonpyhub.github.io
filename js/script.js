@@ -608,7 +608,7 @@ function handleAnchorLink() {
                     }
                     
                     blinkCount++;
-                }, 200); // Setiap blink 200ms
+                }, 400); // each blink 400ms
                 
             } else {
                 console.log('⚠️ Element not found:', targetId);
