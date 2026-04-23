@@ -585,7 +585,7 @@ function handleAnchorLink() {
                 targetElement.style.transition = 'all 0.15s ease';
                 
                 const blinkInterval = setInterval(function() {
-                    if (blinkCount >= 6) { // 6 = 3 kali blink (on/off)
+                    if (blinkCount >= 14) { // 14 = 7 times blink (on/off)
                         clearInterval(blinkInterval);
                         // Restore original styles
                         targetElement.style.boxShadow = originalBoxShadow;
