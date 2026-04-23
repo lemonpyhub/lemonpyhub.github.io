@@ -422,18 +422,29 @@ document.addEventListener('click', function(event) {
   if (link.getAttribute('data-tracked') === 'true') return;
   link.setAttribute('data-tracked', 'true');
   
-  let appName = 'Unknown';
-  const modal = link.closest('.app-detail-modal');
-  if (modal && modal.getAttribute('data-shortname')) {
-    appName = modal.getAttribute('data-shortname');
-  } else {
-    const card = link.closest('.app-card');
-    if (card && card.getAttribute('data-shortname')) {
-      appName = card.getAttribute('data-shortname');
-    }
+let appName = 'Unknown';
+const modal = link.closest('.app-detail-modal');
+if (modal && modal.getAttribute('data-shortname')) {
+  appName = modal.getAttribute('data-shortname');
+} else {
+  const card = link.closest('.app-card');
+  if (card && card.getAttribute('data-shortname')) {
+    appName = card.getAttribute('data-shortname');
   }
-  
+}
+
+// FALLBACK: teka dari nama file
+if (appName === 'Unknown') {
   const fileName = link.href.split('/').pop();
+  if (fileName.includes('Maintenance')) appName = 'WMT';
+  else if (fileName.includes('DNS')) appName = 'DNSM';
+  else if (fileName.includes('Optimizer')) appName = 'WOPT';
+  else if (fileName.includes('Dockers')) appName = 'DOCK';
+  else if (fileName.includes('Debloater')) appName = 'WDP';
+  else if (fileName.includes('Winget')) appName = 'WGET';
+  else if (fileName.includes('Security')) appName = 'WSM';
+  else if (fileName.includes('Math')) appName = 'MCPG';
+}
   
   if (typeof gtag === 'function') {
     gtag('event', 'download_completed', {
